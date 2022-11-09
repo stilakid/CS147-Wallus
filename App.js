@@ -1,3 +1,6 @@
+import 'react-native-gesture-handler';
+// The statement above must be at the absolute top of the entry file (app.js)
+
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
