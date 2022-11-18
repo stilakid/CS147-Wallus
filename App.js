@@ -10,6 +10,14 @@ import { createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator} from '@react-navigation/drawer';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
+// Tab screens
+import HomeScreen from "./app/components/homeScreen";
+import MarketScreen from "./app/components/marketScreen";
+import DictionaryScreen from "./app/components/dictionaryScreen";
+import CommunityScreen from "./app/components/communityScreen";
+
+
+
 export default function App() {
   const Stack = createStackNavigator();
   const BottomTab = createBottomTabNavigator();
@@ -17,10 +25,14 @@ export default function App() {
   const TopTab = createMaterialTopTabNavigator();
 
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+        <BottomTab.Navigator>
+            <BottomTab.Screen name = "HomeScreen" component = {HomeScreen} />
+            <BottomTab.Screen name = "MarketScreen" component={MarketScreen} />
+            <BottomTab.Screen name = "DictionaryScreen" component={DictionaryScreen} />
+            <BottomTab.Screen name = "CommunityScreen" component={CommunityScreen} />
+        </BottomTab.Navigator>
+    </NavigationContainer>
   );
 }
 

@@ -1,13 +1,13 @@
 import { StyleSheet, SafeAreaView, Text, View } from "react-native";
 import { Themes } from "../../assets/themes"
 
-export default function HomeScreen({navigation, route}) {
+export default function CommunityScreen({navigation, route}) {
     
     // const {  } = route.params;
     return(
         <SafeAreaView style={styles.container}>
             <Text>
-                HOME PAGE!!!
+                COMMUNITY PAGE!!!
             </Text>
         </SafeAreaView>
     );
