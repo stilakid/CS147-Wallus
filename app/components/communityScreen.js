@@ -16,7 +16,7 @@ export default function CommunityScreen({navigation, route}) {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: Themes.colors.background,
+        backgroundColor: Themes.colors.white,
         flex: 1,
       },
       header: {
