@@ -9,7 +9,6 @@ export default function MarketScreen({navigation, route}) {
             <Text>
                 MARKET PAGE!!!
             </Text>
-            <View style={styles.divider}/>
         </SafeAreaView>
     );
 }
@@ -22,9 +21,4 @@ const styles = StyleSheet.create({
       },
       header: {
       },
-      divider: {
-        backgroundColor: Themes.colors.neutral_200,
-        height: 2,
-        borderRadius:999,
-      }
 });

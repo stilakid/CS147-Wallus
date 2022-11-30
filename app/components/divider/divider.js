@@ -1,7 +1,7 @@
 import { StyleSheet, View } from "react-native";
-import { Themes } from "../../assets/themes"
+import { Themes } from "../../../assets/themes"
 
-export default function MarketScreen({navigation, route}) {
+export default function Divider() {
     return(
         <View style={styles.divider}/>
     );
