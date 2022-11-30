@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
 // The statement above must be at the absolute top of the entry file (app.js)
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
@@ -55,7 +55,7 @@ import { BookOpen } from 'lucide-react-native';
 import { Users } from 'lucide-react-native';
 
 
-// SplashScreen.preventAutoHideAsync();
+SplashScreen.preventAutoHideAsync();
 
 export default function App() {
     let [fontsLoaded] = useFonts({
@@ -108,13 +108,13 @@ export default function App() {
                         let icon;
                         
                         if (route.name === "HomeScreen") {
-                            icon = focused ? <Home color="black" size={48} /> : <Home color="blue" size={48} />;
+                            icon = focused ? <Home size={24} /> : <Home color="black" size={24} />;
                         } else if (route.name === "MarketScreen") {
-                            icon = focused ? <TrendingUp color="black" size={48} /> : <TrendingUp color="blue" size={48} />;
+                            icon = focused ? <TrendingUp size={24} /> : <TrendingUp color="black" size={24} />;
                         } else if (route.name === "DictionaryScreen") {
-                            icon = focused ? <BookOpen color="black" size={48} /> : <BookOpen color="blue" size={48} />;
+                            icon = focused ? <BookOpen size={24} /> : <BookOpen color="black" size={24} />;
                         } else if (route.name === "CommunityScreen") {
-                            icon = focused ? <Users color="black" size={48} /> : <Users color="blue" size={48} />;
+                            icon = focused ? <Users size={24} /> : <Users color="black" size={24} />;
                         }
                         return icon;
                     }
