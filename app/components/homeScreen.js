@@ -1,24 +1,14 @@
 import { StyleSheet, SafeAreaView, Text, View } from "react-native";
 import { Themes } from "../../assets/themes"
 import { AppText } from "./CustomText/customText";
-import { Buttons } from "./Buttons/Buttons"
-import { AppButton } from "./Juben/buttons";
+import { AppButton } from "./Buttons/buttons";
 
 export default function HomeScreen({navigation, route}) {
     // const {  } = route.params;
     return(
         <SafeAreaView style={styles.container}>
-            <AppText.TitleBoldOne style={styles.text}>
-                HOME PAGE!!!
-                <Buttons.FullWidth48Blue>
-                    text
-                </Buttons.FullWidth48Blue>
-            </AppText.TitleBoldOne>
-
-            <AppButton.BlueButton>
-
-                
-            </AppButton.BlueButton>
+                <AppButton.PrimaryThinFour text='Wallus gy' TouchableOpacityStyle={styles.test1} TextStyle={styles.test}>
+                </AppButton.PrimaryThinFour>
         </SafeAreaView>
     );
 }
@@ -58,6 +48,9 @@ const styles = StyleSheet.create({
         height: 19,
         color: "#FFFFFF",   
         order: 0,
-    }
-    
+    },
+    test: {
+        color: "#ffffff",
+        // padding: 21
+    },    
 });
