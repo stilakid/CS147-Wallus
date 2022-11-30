@@ -10,7 +10,7 @@ export default function RationaleCard() {
   return (
     <View style={styles.card}>
       <Image
-            source={require('./assets/profilePic.png')}
+            source={require('../../../assets/profilePic.png')}
             style={styles.profilePic}
       />
       <View style={styles.container}>
