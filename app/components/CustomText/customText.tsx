@@ -11,16 +11,36 @@ export const AppText = ({style, ...props }: AppTextProps) => (
     <Text {...props} style={[styles.default, style]} />
 )
 
-AppText.TitleOne = ({style, ...props }: AppTextProps) => (
-    <AppText {...props} style={[styles.titleOne, style]} />
+AppText.TitleBoldOne = ({style, ...props }: AppTextProps) => (
+    <AppText {...props} style={[styles.titleBoldOne, style]} />
 )
 
-AppText.TitleTwo = ({style, ...props }: AppTextProps) => (
-    <AppText {...props} style={[styles.titleTwo, style]} />
+AppText.TitleBoldTwo = ({style, ...props }: AppTextProps) => (
+    <AppText {...props} style={[styles.titleBoldTwo, style]} />
 )
 
-AppText.TitleThree = ({style, ...props }: AppTextProps) => (
-    <AppText {...props} style={[styles.titleThree, style]} />
+AppText.TitleBoldThree = ({style, ...props }: AppTextProps) => (
+    <AppText {...props} style={[styles.titleBoldThree, style]} />
+)
+
+AppText.TitleBoldFour = ({style, ...props }: AppTextProps) => (
+    <AppText {...props} style={[styles.titleBoldFour, style]} />
+)
+
+AppText.TitleSemiBoldOne = ({style, ...props }: AppTextProps) => (
+    <AppText {...props} style={[styles.titleSemiBoldOne, style]} />
+)
+
+AppText.TitleSemiBoldTwo = ({style, ...props }: AppTextProps) => (
+    <AppText {...props} style={[styles.titleSemiBoldTwo, style]} />
+)
+
+AppText.TitleSemiBoldThree = ({style, ...props }: AppTextProps) => (
+    <AppText {...props} style={[styles.titleSemiBoldThree, style]} />
+)
+
+AppText.TitleSemiBoldFour = ({style, ...props }: AppTextProps) => (
+    <AppText {...props} style={[styles.titleSemiBoldFour, style]} />
 )
 
 AppText.Headline = ({style, ...props }: AppTextProps) => (
@@ -51,22 +71,29 @@ AppText.Input = ({style, ...props }: AppTextProps) => (
     <AppText {...props} style={[styles.inputTextField, style]} />
 )
 
-AppText.LabelOne = ({style, ...props }: AppTextProps) => (
-    <AppText {...props} style={[styles.LabelOne, style]} />
+AppText.LabelBoldOne = ({style, ...props }: AppTextProps) => (
+    <AppText {...props} style={[styles.LabelBoldOne, style]} />
 )
 
-AppText.LabelTwo = ({style, ...props }: AppTextProps) => (
-    <AppText {...props} style={[styles.LabelTwo, style]} />
+AppText.LabelBoldTwo = ({style, ...props }: AppTextProps) => (
+    <AppText {...props} style={[styles.LabelBoldTwo, style]} />
 )
 
-AppText.LabelThree = ({style, ...props }: AppTextProps) => (
-    <AppText {...props} style={[styles.LabelThree, style]} />
+AppText.LabelBoldThree = ({style, ...props }: AppTextProps) => (
+    <AppText {...props} style={[styles.LabelBoldThree, style]} />
 )
 
-AppText.LabelFour = ({style, ...props }: AppTextProps) => (
-    <AppText {...props} style={[styles.LabelFour, style]} />
+AppText.LabelSemiBoldOne = ({style, ...props }: AppTextProps) => (
+    <AppText {...props} style={[styles.LabelSemiBoldThree, style]} />
 )
 
+AppText.LabelSemiBoldTwo = ({style, ...props }: AppTextProps) => (
+    <AppText {...props} style={[styles.LabelSemiBoldThree, style]} />
+)
+
+AppText.LabelSemiBoldThree = ({style, ...props }: AppTextProps) => (
+    <AppText {...props} style={[styles.LabelSemiBoldThree, style]} />
+)
 
 
 
@@ -77,25 +104,57 @@ const styles = StyleSheet.create({
     },
 
 
-    titleOne: {
-        fontFamily: Themes.typography.title_1.font,
-        fontSize: Themes.typography.title_1.size,
-        lineHeight: Themes.typography.title_1.line_height,
-        color: Themes.typography.title_1.color
+    titleBoldOne: {
+        fontFamily: Themes.typography.title_bold_1.font,
+        fontSize: Themes.typography.title_bold_1.size,
+        lineHeight: Themes.typography.title_bold_1.line_height,
+        color: Themes.typography.title_bold_1.color
     },
 
-    titleTwo: {
-        fontFamily: Themes.typography.title_2.font,
-        fontSize: Themes.typography.title_2.size,
-        lineHeight: Themes.typography.title_2.line_height,
-        color: Themes.typography.title_2.color
+    titleBoldTwo: {
+        fontFamily: Themes.typography.title_bold_2.font,
+        fontSize: Themes.typography.title_bold_2.size,
+        lineHeight: Themes.typography.title_bold_2.line_height,
+        color: Themes.typography.title_bold_2.color
     },
 
-    titleThree: {
-        fontFamily: Themes.typography.title_3.font,
-        fontSize: Themes.typography.title_3.size,
-        lineHeight: Themes.typography.title_3.line_height,
-        color: Themes.typography.title_3.color
+    titleBoldThree: {
+        fontFamily: Themes.typography.title_bold_3.font,
+        fontSize: Themes.typography.title_bold_3.size,
+        lineHeight: Themes.typography.title_bold_3.line_height,
+        color: Themes.typography.title_bold_3.color
+    },
+    titleBoldFour: {
+        fontFamily: Themes.typography.title_bold_4.font,
+        fontSize: Themes.typography.title_bold_4.size,
+        lineHeight: Themes.typography.title_bold_4.line_height,
+        color: Themes.typography.title_bold_4.color
+    },
+
+
+    titleSemiBoldOne: {
+        fontFamily: Themes.typography.title_semibold_1.font,
+        fontSize: Themes.typography.title_semibold_1.size,
+        lineHeight: Themes.typography.title_semibold_1.line_height,
+        color: Themes.typography.title_semibold_1.color
+    },
+    titleSemiBoldTwo: {
+        fontFamily: Themes.typography.title_semibold_2.font,
+        fontSize: Themes.typography.title_semibold_2.size,
+        lineHeight: Themes.typography.title_semibold_2.line_height,
+        color: Themes.typography.title_semibold_2.color
+    },
+    titleSemiBoldThree: {
+        fontFamily: Themes.typography.title_semibold_3.font,
+        fontSize: Themes.typography.title_semibold_3.size,
+        lineHeight: Themes.typography.title_semibold_3.line_height,
+        color: Themes.typography.title_semibold_3.color
+    },
+    titleSemiBoldFour: {
+        fontFamily: Themes.typography.title_semibold_4.font,
+        fontSize: Themes.typography.title_semibold_4.size,
+        lineHeight: Themes.typography.title_semibold_4.line_height,
+        color: Themes.typography.title_semibold_4.color
     },
 
 
@@ -149,30 +208,44 @@ const styles = StyleSheet.create({
     },
 
 
-    LabelOne: {
-        fontFamily: Themes.typography.label_1.font,
-        fontSize: Themes.typography.label_1.size,
-        lineHeight: Themes.typography.label_1.line_height,
-        color: Themes.typography.label_1.color
+    LabelBoldOne: {
+        fontFamily: Themes.typography.label_bold_1.font,
+        fontSize: Themes.typography.label_bold_1.size,
+        lineHeight: Themes.typography.label_bold_1.line_height,
+        color: Themes.typography.label_bold_1.color
     },
-    LabelTwo: {
-        fontFamily: Themes.typography.label_2.font,
-        fontSize: Themes.typography.label_2.size,
-        lineHeight: Themes.typography.label_2.line_height,
-        color: Themes.typography.label_2.color
+    LabelBoldTwo: {
+        fontFamily: Themes.typography.label_bold_2.font,
+        fontSize: Themes.typography.label_bold_2.size,
+        lineHeight: Themes.typography.label_bold_2.line_height,
+        color: Themes.typography.label_bold_2.color
     },
-    LabelThree: {
-        fontFamily: Themes.typography.label_3.font,
-        fontSize: Themes.typography.label_3.size,
-        lineHeight: Themes.typography.label_3.line_height,
-        color: Themes.typography.label_3.color
+    LabelBoldThree: {
+        fontFamily: Themes.typography.label_bold_3.font,
+        fontSize: Themes.typography.label_bold_3.size,
+        lineHeight: Themes.typography.label_bold_3.line_height,
+        color: Themes.typography.label_bold_3.color
     },
-    LabelFour: {
-        fontFamily: Themes.typography.label_4.font,
-        fontSize: Themes.typography.label_4.size,
-        lineHeight: Themes.typography.label_4.line_height,
-        color: Themes.typography.label_4.color
+
+
+    LabelSemiBoldOne: {
+        fontFamily: Themes.typography.label_semibold_1.font,
+        fontSize: Themes.typography.label_semibold_1.size,
+        lineHeight: Themes.typography.label_semibold_1.line_height,
+        color: Themes.typography.label_semibold_1.color
     },
+    LabelSemiBoldTwo: {
+        fontFamily: Themes.typography.label_semibold_2.font,
+        fontSize: Themes.typography.label_semibold_2.size,
+        lineHeight: Themes.typography.label_semibold_2.line_height,
+        color: Themes.typography.label_semibold_2.color
+    },
+    LabelSemiBoldThree: {
+        fontFamily: Themes.typography.label_semibold_3.font,
+        fontSize: Themes.typography.label_semibold_3.size,
+        lineHeight: Themes.typography.label_semibold_3.line_height,
+        color: Themes.typography.label_semibold_3.color
+    }
 
 });
 

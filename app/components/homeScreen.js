@@ -10,13 +10,12 @@ export default function HomeScreen({navigation, route}) {
     // const {  } = route.params;
     return(
         <SafeAreaView style={styles.container}>
-            <AppText.LabelFour style={styles.text}>
+            <AppText.TitleBoldOne style={styles.text}>
                 HOME PAGE!!!
-            </AppText.LabelFour>
-
-            <Buttons.FullWidth48Blue>
-                text
-            </Buttons.FullWidth48Blue>
+                <Buttons.FullWidth48Blue>
+                    text
+                </Buttons.FullWidth48Blue>
+            </AppText.TitleBoldOne>
 
         </SafeAreaView>
     );
@@ -32,7 +31,6 @@ const styles = StyleSheet.create({
       header: {
       },
       text: {
-        fontStyle: Themes.typography.title_1.font_style,
         fontStyle: 'italic'
 
         // fontFamily: 'Outfit_100Thin',
