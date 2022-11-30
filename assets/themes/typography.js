@@ -1,20 +1,52 @@
 export const typography = {
-    title_1: {
+    title_bold_1: {
+        font: 'Outfit_700Bold',
+        size: 32,
+        line_height: 32,
+        color: '#303030'
+    },
+    title_bold_2: {
         font: 'Outfit_700Bold',
         size: 28,
         line_height: 28,
         color: '#303030'
     },
-    title_2: {
+    title_bold_3: {
         font: 'Outfit_700Bold',
         size: 24,
-        line_height: 26.4,
+        line_height: 26,
         color: '#303030'
     },
-    title_3: {
+    title_bold_4: {
         font: 'Outfit_700Bold',
         size: 20,
         line_height: 24,
+        color: '#303030'
+    },
+
+
+    title_semibold_1: {
+        font: 'Outfit_600SemiBold',
+        size: 32,
+        line_height: 32,
+        color: '#303030'
+    },
+    title_semibold_2: {
+        font: 'Outfit_600SemiBold',
+        size: 28,
+        line_height: 28,
+        color: '#303030'
+    },
+    title_semibold_3: {
+        font: 'Outfit_600SemiBold',
+        size: 24,
+        line_height: 24,
+        color: '#303030'
+    },
+    title_semibold_4: {
+        font: 'Outfit_600SemiBold',
+        size: 20,
+        line_height: 20,
         color: '#303030'
     },
 
@@ -69,29 +101,43 @@ export const typography = {
     },
 
 
-    label_1: {
+    label_bold_1: {
         font: 'Roboto_700Bold',
         size: 16,
         line_height: 19,
         color: '#303030', 
     },
-    label_2: {
+    label_bold_2: {
         font: 'Roboto_700Bold',
         size: 14,
         line_height: 21,
         color: '#303030', 
     },
-    label_3: {
+    label_bold_3: {
         font: 'Roboto_700Bold',
         size: 12,
         line_height: 16,
         // letter_spacing: 0.25,
         color: '#303030', 
     },
-    label_4: {
+
+
+    label_semibold_1: {
+        font: 'Roboto_500Medium',
+        size: 16,
+        line_height: 18,
+        color: '#303030',
+    },
+    label_semibold_2: {
+        font: 'Roboto_500Medium',
+        size: 14,
+        line_height: 18,
+        color: '#303030', 
+    },
+    label_semibold_3: {
         font: 'Roboto_500Medium',
         size: 12,
         line_height: 16,
         color: '#303030', 
-    },
+    }
 }
