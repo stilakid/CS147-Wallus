@@ -13,10 +13,17 @@ export default function DictionaryScreen({navigation, route}) {
             <View style={styles.textContainer}>
                 <AppText.TitleBoldOne style={{color:Themes.colors.neutral_800, textAlign: 'center'}}>
                     Congratulations!</AppText.TitleBoldOne>
-                <AppText.LabelSemiBoldOne style={{color: Themes.colors.neutral_600, textAlign: 'center', marginTop: 8}}>
+                <AppText.LabelSemiBoldOne style={{color: Themes.colors.neutral_600, textAlign: 'center', marginTop: 16}}>
                     You just joined the friendly Bananas!</AppText.LabelSemiBoldOne>
             </View>
-            
+            <AppButton.PrimaryThickTwo text="Go to investment group"/>
+
+            {/* Buttons are not linked yet */}
+
+            <View style={{paddingVertical:12}}>
+                <AppButton.SecondaryOutlineThickTwo text="Invite more friends"/>
+            </View>
+            <AppButton.SecondaryOutlineThickTwo text="Home"/>
         </SafeAreaView>
     );
 }
