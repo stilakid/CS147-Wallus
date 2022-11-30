@@ -3,10 +3,10 @@ import { Text, View, StyleSheet, Image } from 'react-native';
 import { Themes} from "../../../assets/themes"
 import {TrendTags} from '../TrendTags';
 
-export default function InvitationCard() {
+export default function InvestmentHomeCard() {
 
   const onPressName = () => {
-    console.log("logging invitation card group name click")
+    console.log("logging group name in investment home card")
   }
 
   return (
@@ -26,7 +26,7 @@ export default function InvitationCard() {
           </View>
         </View>
         <View>
-          <TrendTags.smallGrey tagText={"Price: $28.32"}/>
+          <TrendTags.smallGrey tagText={"USD 27.4 total"}/>
         </View>
       </View>
       <Image
