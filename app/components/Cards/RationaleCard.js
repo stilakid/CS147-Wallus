@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, Image } from 'react-native';
-import { Themes} from "../../../assets/themes"
+import { Themes} from "../../../assets/themes";
+import { AppText } from '../CustomText/customText';
 
 export default function RationaleCard() {
   function onPressUser() {
@@ -14,15 +15,16 @@ export default function RationaleCard() {
             style={styles.profilePic}
       />
       <View style={styles.container}>
-        <View style={styles.header}>
+        {/* <View style={styles.header}>
           <View> 
             <Text style={styles.userText} onPress={onPressUser}>{"Benji"}</Text> 
           </View>
           <View style={styles.time}>
             <Text style={styles.dateText}>{"Oct 16 2022"}</Text>
           </View>
-        </View>
-        <Text style={styles.commentText}>{"I wanted to invest in something safe."}</Text>
+        </View> */}
+        <Text style={styles.commentText}>"I wanted to invest in something safe."</Text>
+        <AppText.LabelSemiBoldTwo>"I wanted to invest in something safe."</AppText.LabelSemiBoldTwo>
       </View>
     </View>
   );
@@ -66,14 +68,14 @@ const styles = StyleSheet.create({
   },
   userText: {
     color: Themes.colors.neutral_600,
-    fontFamily: Themes.typography.label_semibold_2
+    fontFamily: Themes.typography.label_semibold_2.font
   },
   dateText: {
     color: Themes.colors.neutral_600,
-    fontFamily: Themes.typography.paragraph_text_3
+    fontFamily: Themes.typography.paragraph_text_3.font
   },
   commentText: {
     color: Themes.colors.neutral_800,
-    fontFamily: Themes.typography.label_semibold_1
+    fontFamily: Themes.typography.label_semibold_1.font,
   }
 });  

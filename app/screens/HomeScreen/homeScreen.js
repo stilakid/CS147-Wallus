@@ -11,6 +11,7 @@ export default function HomeScreen({navigation, route}) {
         <SafeAreaView style={styles.container}>
             <Text>Home Screen</Text>
             <Button title="Notifs" onPress={() => navigation.navigate('Notifications')} />
+            <Button title="Cards" onPress={() => navigation.navigate('Card')} />
         </SafeAreaView>
     );
 }
