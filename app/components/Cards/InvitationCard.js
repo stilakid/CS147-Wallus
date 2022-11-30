@@ -30,7 +30,7 @@ export default function RationaleCard() {
         </View>
       </View>
       <Image
-            source={require('./assets/groupProfiles.png')}
+            source={require('../../../assets/groupProfiles.png')}
             style={styles.profilePic}
       />
     </View>
