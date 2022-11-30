@@ -7,8 +7,8 @@ export default function HomeScreen({navigation, route}) {
     // const {  } = route.params;
     return(
         <SafeAreaView style={styles.container}>
-                <AppButton.PrimaryThinFour text='Wallus gy' TouchableOpacityStyle={styles.test1} TextStyle={styles.test}>
-                </AppButton.PrimaryThinFour>
+                <AppButton.DisabledThinFour text='Wallus gy' TouchableOpacityStyle={styles.test1} TextStyle={styles.test}>
+                </AppButton.DisabledThinFour>
         </SafeAreaView>
     );
 }
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
         order: 0,
     },
     test: {
-        color: "#ffffff",
+        // color: "#000000",
         // padding: 21
     },    
 });

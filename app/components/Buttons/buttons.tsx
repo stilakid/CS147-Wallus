@@ -23,7 +23,7 @@ export const AppButton = ({text, goTo, appText, TouchableOpacityStyle, TextStyle
 
 AppButton.PrimaryThickOne = ({text, goTo, TouchableOpacityStyle, TextStyle}: any) => {
 
-    const appText = <AppText.LabelBoldOne style={TextStyle}> {text} </AppText.LabelBoldOne>
+    const appText = <AppText.LabelBoldOne style={[styles.primaryText, TextStyle]}> {text} </AppText.LabelBoldOne>
 
     return (
         <AppButton
@@ -36,7 +36,7 @@ AppButton.PrimaryThickOne = ({text, goTo, TouchableOpacityStyle, TextStyle}: any
 
 AppButton.PrimaryThickTwo = ({text, goTo, TouchableOpacityStyle, TextStyle}: any) => {
 
-    const appText = <AppText.LabelBoldOne style={TextStyle}> {text} </AppText.LabelBoldOne>
+    const appText = <AppText.LabelBoldOne style={[styles.primaryText, TextStyle]}> {text} </AppText.LabelBoldOne>
 
     return (
         <AppButton
@@ -49,7 +49,7 @@ AppButton.PrimaryThickTwo = ({text, goTo, TouchableOpacityStyle, TextStyle}: any
 
 AppButton.PrimaryThickThree = ({text, goTo, TouchableOpacityStyle, TextStyle}: any) => {
 
-    const appText = <AppText.LabelBoldOne style={TextStyle}> {text} </AppText.LabelBoldOne>
+    const appText = <AppText.LabelBoldOne style={[styles.primaryText, TextStyle]}> {text} </AppText.LabelBoldOne>
 
     return (
         <AppButton
@@ -62,7 +62,7 @@ AppButton.PrimaryThickThree = ({text, goTo, TouchableOpacityStyle, TextStyle}: a
 
 AppButton.PrimaryThickFour = ({text, goTo, TouchableOpacityStyle, TextStyle}: any) => {
 
-    const appText = <AppText.LabelBoldOne style={TextStyle}> {text} </AppText.LabelBoldOne>
+    const appText = <AppText.LabelBoldOne style={[styles.primaryText, TextStyle]}> {text} </AppText.LabelBoldOne>
 
     return (
         <AppButton
@@ -75,7 +75,7 @@ AppButton.PrimaryThickFour = ({text, goTo, TouchableOpacityStyle, TextStyle}: an
 
 AppButton.PrimaryThinOne = ({text, goTo, TouchableOpacityStyle, TextStyle}: any) => {
 
-    const appText = <AppText.LabelBoldTwo style={TextStyle}> {text} </AppText.LabelBoldTwo>
+    const appText = <AppText.LabelBoldTwo style={[styles.primaryText, TextStyle]}> {text} </AppText.LabelBoldTwo>
 
     return (
         <AppButton
@@ -88,7 +88,7 @@ AppButton.PrimaryThinOne = ({text, goTo, TouchableOpacityStyle, TextStyle}: any)
 
 AppButton.PrimaryThinTwo = ({text, goTo, TouchableOpacityStyle, TextStyle}: any) => {
 
-    const appText = <AppText.LabelBoldTwo style={TextStyle}> {text} </AppText.LabelBoldTwo>
+    const appText = <AppText.LabelBoldTwo style={[styles.primaryText, TextStyle]}> {text} </AppText.LabelBoldTwo>
 
     return (
         <AppButton
@@ -101,7 +101,7 @@ AppButton.PrimaryThinTwo = ({text, goTo, TouchableOpacityStyle, TextStyle}: any)
 
 AppButton.PrimaryThinThree = ({text, goTo, TouchableOpacityStyle, TextStyle}: any) => {
 
-    const appText = <AppText.LabelBoldTwo style={TextStyle}> {text} </AppText.LabelBoldTwo>
+    const appText = <AppText.LabelBoldTwo style={[styles.primaryText, TextStyle]}> {text} </AppText.LabelBoldTwo>
 
     return (
         <AppButton
@@ -114,7 +114,7 @@ AppButton.PrimaryThinThree = ({text, goTo, TouchableOpacityStyle, TextStyle}: an
 
 AppButton.PrimaryThinFour = ({text, goTo, TouchableOpacityStyle, TextStyle}: any) => {
 
-    const appText = <AppText.LabelBoldTwo style={TextStyle}> {text} </AppText.LabelBoldTwo>
+    const appText = <AppText.LabelBoldTwo style={[styles.primaryText, TextStyle]}> {text} </AppText.LabelBoldTwo>
 
     return (
         <AppButton
@@ -132,7 +132,7 @@ AppButton.PrimaryThinFour = ({text, goTo, TouchableOpacityStyle, TextStyle}: any
 
 AppButton.SecondaryOutlineThickOne = ({text, goTo, TouchableOpacityStyle, TextStyle}: any) => {
 
-    const appText = <AppText.LabelBoldOne style={TextStyle}> {text} </AppText.LabelBoldOne>
+    const appText = <AppText.LabelBoldOne style={[styles.secondaryText, TextStyle]}> {text} </AppText.LabelBoldOne>
 
     return (
         <AppButton
@@ -145,7 +145,7 @@ AppButton.SecondaryOutlineThickOne = ({text, goTo, TouchableOpacityStyle, TextSt
 
 AppButton.SecondaryOutlineThickTwo = ({text, goTo, TouchableOpacityStyle, TextStyle}: any) => {
 
-    const appText = <AppText.LabelBoldOne style={TextStyle}> {text} </AppText.LabelBoldOne>
+    const appText = <AppText.LabelBoldOne style={[styles.secondaryText, TextStyle]}> {text} </AppText.LabelBoldOne>
 
     return (
         <AppButton
@@ -158,7 +158,7 @@ AppButton.SecondaryOutlineThickTwo = ({text, goTo, TouchableOpacityStyle, TextSt
 
 AppButton.SecondaryOutlineThickThree = ({text, goTo, TouchableOpacityStyle, TextStyle}: any) => {
 
-    const appText = <AppText.LabelBoldOne style={TextStyle}> {text} </AppText.LabelBoldOne>
+    const appText = <AppText.LabelBoldOne style={[styles.secondaryText, TextStyle]}> {text} </AppText.LabelBoldOne>
 
     return (
         <AppButton
@@ -171,7 +171,7 @@ AppButton.SecondaryOutlineThickThree = ({text, goTo, TouchableOpacityStyle, Text
 
 AppButton.SecondaryOutlineThickFour = ({text, goTo, TouchableOpacityStyle, TextStyle}: any) => {
 
-    const appText = <AppText.LabelBoldOne style={TextStyle}> {text} </AppText.LabelBoldOne>
+    const appText = <AppText.LabelBoldOne style={[styles.secondaryText, TextStyle]}> {text} </AppText.LabelBoldOne>
 
     return (
         <AppButton
@@ -184,7 +184,7 @@ AppButton.SecondaryOutlineThickFour = ({text, goTo, TouchableOpacityStyle, TextS
 
 AppButton.SecondaryOutlineThinOne = ({text, goTo, TouchableOpacityStyle, TextStyle}: any) => {
 
-    const appText = <AppText.LabelBoldTwo style={TextStyle}> {text} </AppText.LabelBoldTwo>
+    const appText = <AppText.LabelBoldTwo style={[styles.secondaryText, TextStyle]}> {text} </AppText.LabelBoldTwo>
 
     return (
         <AppButton
@@ -197,7 +197,7 @@ AppButton.SecondaryOutlineThinOne = ({text, goTo, TouchableOpacityStyle, TextSty
 
 AppButton.SecondaryOutlineThinTwo = ({text, goTo, TouchableOpacityStyle, TextStyle}: any) => {
 
-    const appText = <AppText.LabelBoldTwo style={TextStyle}> {text} </AppText.LabelBoldTwo>
+    const appText = <AppText.LabelBoldTwo style={[styles.secondaryText, TextStyle]}> {text} </AppText.LabelBoldTwo>
 
     return (
         <AppButton
@@ -210,7 +210,7 @@ AppButton.SecondaryOutlineThinTwo = ({text, goTo, TouchableOpacityStyle, TextSty
 
 AppButton.SecondaryOutlineThinThree = ({text, goTo, TouchableOpacityStyle, TextStyle}: any) => {
 
-    const appText = <AppText.LabelBoldTwo style={TextStyle}> {text} </AppText.LabelBoldTwo>
+    const appText = <AppText.LabelBoldTwo style={[styles.secondaryText, TextStyle]}> {text} </AppText.LabelBoldTwo>
 
     return (
         <AppButton
@@ -223,7 +223,7 @@ AppButton.SecondaryOutlineThinThree = ({text, goTo, TouchableOpacityStyle, TextS
 
 AppButton.SecondaryOutlineThinFour = ({text, goTo, TouchableOpacityStyle, TextStyle}: any) => {
 
-    const appText = <AppText.LabelBoldTwo style={TextStyle}> {text} </AppText.LabelBoldTwo>
+    const appText = <AppText.LabelBoldTwo style={[styles.secondaryText, TextStyle]}> {text} </AppText.LabelBoldTwo>
 
     return (
         <AppButton
@@ -242,7 +242,7 @@ AppButton.SecondaryOutlineThinFour = ({text, goTo, TouchableOpacityStyle, TextSt
 
 AppButton.SecondaryGreyThickOne = ({text, goTo, TouchableOpacityStyle, TextStyle}: any) => {
 
-    const appText = <AppText.LabelBoldOne style={TextStyle}> {text} </AppText.LabelBoldOne>
+    const appText = <AppText.LabelBoldOne style={[styles.secondaryText, TextStyle]}> {text} </AppText.LabelBoldOne>
 
     return (
         <AppButton
@@ -255,7 +255,7 @@ AppButton.SecondaryGreyThickOne = ({text, goTo, TouchableOpacityStyle, TextStyle
 
 AppButton.SecondaryGreyThickTwo = ({text, goTo, TouchableOpacityStyle, TextStyle}: any) => {
 
-    const appText = <AppText.LabelBoldOne style={TextStyle}> {text} </AppText.LabelBoldOne>
+    const appText = <AppText.LabelBoldOne style={[styles.secondaryText, TextStyle]}> {text} </AppText.LabelBoldOne>
 
     return (
         <AppButton
@@ -268,7 +268,7 @@ AppButton.SecondaryGreyThickTwo = ({text, goTo, TouchableOpacityStyle, TextStyle
 
 AppButton.SecondaryGreyThickThree = ({text, goTo, TouchableOpacityStyle, TextStyle}: any) => {
 
-    const appText = <AppText.LabelBoldOne style={TextStyle}> {text} </AppText.LabelBoldOne>
+    const appText = <AppText.LabelBoldOne style={[styles.secondaryText, TextStyle]}> {text} </AppText.LabelBoldOne>
 
     return (
         <AppButton
@@ -281,7 +281,7 @@ AppButton.SecondaryGreyThickThree = ({text, goTo, TouchableOpacityStyle, TextSty
 
 AppButton.SecondaryGreyThickFour = ({text, goTo, TouchableOpacityStyle, TextStyle}: any) => {
 
-    const appText = <AppText.LabelBoldOne style={TextStyle}> {text} </AppText.LabelBoldOne>
+    const appText = <AppText.LabelBoldOne style={[styles.secondaryText, TextStyle]}> {text} </AppText.LabelBoldOne>
 
     return (
         <AppButton
@@ -294,7 +294,7 @@ AppButton.SecondaryGreyThickFour = ({text, goTo, TouchableOpacityStyle, TextStyl
 
 AppButton.SecondaryGreyThinOne = ({text, goTo, TouchableOpacityStyle, TextStyle}: any) => {
 
-    const appText = <AppText.LabelBoldTwo style={TextStyle}> {text} </AppText.LabelBoldTwo>
+    const appText = <AppText.LabelBoldTwo style={[styles.secondaryText, TextStyle]}> {text} </AppText.LabelBoldTwo>
 
     return (
         <AppButton
@@ -307,7 +307,7 @@ AppButton.SecondaryGreyThinOne = ({text, goTo, TouchableOpacityStyle, TextStyle}
 
 AppButton.SecondaryGreyThinTwo = ({text, goTo, TouchableOpacityStyle, TextStyle}: any) => {
 
-    const appText = <AppText.LabelBoldTwo style={TextStyle}> {text} </AppText.LabelBoldTwo>
+    const appText = <AppText.LabelBoldTwo style={[styles.secondaryText, TextStyle]}> {text} </AppText.LabelBoldTwo>
 
     return (
         <AppButton
@@ -320,7 +320,7 @@ AppButton.SecondaryGreyThinTwo = ({text, goTo, TouchableOpacityStyle, TextStyle}
 
 AppButton.SecondaryGreyThinThree = ({text, goTo, TouchableOpacityStyle, TextStyle}: any) => {
 
-    const appText = <AppText.LabelBoldTwo style={TextStyle}> {text} </AppText.LabelBoldTwo>
+    const appText = <AppText.LabelBoldTwo style={[styles.secondaryText, TextStyle]}> {text} </AppText.LabelBoldTwo>
 
     return (
         <AppButton
@@ -333,7 +333,7 @@ AppButton.SecondaryGreyThinThree = ({text, goTo, TouchableOpacityStyle, TextStyl
 
 AppButton.SecondaryGreyThinFour = ({text, goTo, TouchableOpacityStyle, TextStyle}: any) => {
 
-    const appText = <AppText.LabelBoldTwo style={TextStyle}> {text} </AppText.LabelBoldTwo>
+    const appText = <AppText.LabelBoldTwo style={[styles.secondaryText, TextStyle]}> {text} </AppText.LabelBoldTwo>
 
     return (
         <AppButton
@@ -352,7 +352,7 @@ AppButton.SecondaryGreyThinFour = ({text, goTo, TouchableOpacityStyle, TextStyle
 
 AppButton.DisabledThickOne = ({text, goTo, TouchableOpacityStyle, TextStyle}: any) => {
 
-    const appText = <AppText.LabelBoldOne style={TextStyle}> {text} </AppText.LabelBoldOne>
+    const appText = <AppText.LabelBoldOne style={[styles.disabledText, TextStyle]}> {text} </AppText.LabelBoldOne>
 
     return (
         <AppButton
@@ -365,7 +365,7 @@ AppButton.DisabledThickOne = ({text, goTo, TouchableOpacityStyle, TextStyle}: an
 
 AppButton.DisabledThickTwo = ({text, goTo, TouchableOpacityStyle, TextStyle}: any) => {
 
-    const appText = <AppText.LabelBoldOne style={TextStyle}> {text} </AppText.LabelBoldOne>
+    const appText = <AppText.LabelBoldOne style={[styles.disabledText, TextStyle]}> {text} </AppText.LabelBoldOne>
 
     return (
         <AppButton
@@ -378,7 +378,7 @@ AppButton.DisabledThickTwo = ({text, goTo, TouchableOpacityStyle, TextStyle}: an
 
 AppButton.DisabledThickThree = ({text, goTo, TouchableOpacityStyle, TextStyle}: any) => {
 
-    const appText = <AppText.LabelBoldOne style={TextStyle}> {text} </AppText.LabelBoldOne>
+    const appText = <AppText.LabelBoldOne style={[styles.disabledText, TextStyle]}> {text} </AppText.LabelBoldOne>
 
     return (
         <AppButton
@@ -391,7 +391,7 @@ AppButton.DisabledThickThree = ({text, goTo, TouchableOpacityStyle, TextStyle}: 
 
 AppButton.DisabledThickFour = ({text, goTo, TouchableOpacityStyle, TextStyle}: any) => {
 
-    const appText = <AppText.LabelBoldOne style={TextStyle}> {text} </AppText.LabelBoldOne>
+    const appText = <AppText.LabelBoldOne style={[styles.disabledText, TextStyle]}> {text} </AppText.LabelBoldOne>
 
     return (
         <AppButton
@@ -404,7 +404,7 @@ AppButton.DisabledThickFour = ({text, goTo, TouchableOpacityStyle, TextStyle}: a
 
 AppButton.DisabledThinOne = ({text, goTo, TouchableOpacityStyle, TextStyle}: any) => {
 
-    const appText = <AppText.LabelBoldTwo style={TextStyle}> {text} </AppText.LabelBoldTwo>
+    const appText = <AppText.LabelBoldTwo style={[styles.disabledText, TextStyle]}> {text} </AppText.LabelBoldTwo>
 
     return (
         <AppButton
@@ -417,7 +417,7 @@ AppButton.DisabledThinOne = ({text, goTo, TouchableOpacityStyle, TextStyle}: any
 
 AppButton.DisabledThinTwo = ({text, goTo, TouchableOpacityStyle, TextStyle}: any) => {
 
-    const appText = <AppText.LabelBoldTwo style={TextStyle}> {text} </AppText.LabelBoldTwo>
+    const appText = <AppText.LabelBoldTwo style={[styles.disabledText, TextStyle]}> {text} </AppText.LabelBoldTwo>
 
     return (
         <AppButton
@@ -430,7 +430,7 @@ AppButton.DisabledThinTwo = ({text, goTo, TouchableOpacityStyle, TextStyle}: any
 
 AppButton.DisabledThinThree = ({text, goTo, TouchableOpacityStyle, TextStyle}: any) => {
 
-    const appText = <AppText.LabelBoldTwo style={TextStyle}> {text} </AppText.LabelBoldTwo>
+    const appText = <AppText.LabelBoldTwo style={[styles.disabledText, TextStyle]}> {text} </AppText.LabelBoldTwo>
 
     return (
         <AppButton
@@ -443,7 +443,7 @@ AppButton.DisabledThinThree = ({text, goTo, TouchableOpacityStyle, TextStyle}: a
 
 AppButton.DisabledThinFour = ({text, goTo, TouchableOpacityStyle, TextStyle}: any) => {
 
-    const appText = <AppText.LabelBoldTwo style={TextStyle}> {text} </AppText.LabelBoldTwo>
+    const appText = <AppText.LabelBoldTwo style={[styles.disabledText, TextStyle]}> {text} </AppText.LabelBoldTwo>
 
     return (
         <AppButton
@@ -484,6 +484,10 @@ const styles = StyleSheet.create({
         borderStyle: 'solid'
     },
 
+    primaryText: {
+        color: Themes.colors.white
+    },
+
     secondaryOutline: {
         backgroundColor: Themes.colors.white,
         borderColor: Themes.colors.neutral_200,
@@ -498,10 +502,17 @@ const styles = StyleSheet.create({
         backgroundColor: Themes.colors.neutral_100,
     },
 
+    secondaryText: {
+        color: Themes.colors.neutral_700
+    },
+
     disabled: {
         backgroundColor: Themes.colors.neutral_100,
     },
 
+    disabledText: {
+        color: Themes.colors.neutral_400
+    },
 
 
     // Button Widths
