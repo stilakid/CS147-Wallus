@@ -1,5 +1,7 @@
-import { StyleSheet, Text, View } from "react-native";
 import { Themes } from "../../../assets/themes";
+
+// Components
+import { StyleSheet, Text, View } from "react-native";
 import { AppText } from "../../components/CustomText/customText";
 import { AppButton } from "../../components/Buttons/buttons";
 import { Divider } from "../../components/Divider/divider";
