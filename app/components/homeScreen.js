@@ -3,9 +3,6 @@ import { Themes } from "../../assets/themes"
 import { AppText } from "./CustomText/customText";
 
 export default function HomeScreen({navigation, route}) {
-
-
-    
     // const {  } = route.params;
     return(
         <SafeAreaView style={styles.container}>
