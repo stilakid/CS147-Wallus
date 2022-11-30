@@ -84,11 +84,11 @@ AppText.LabelBoldThree = ({style, ...props }: AppTextProps) => (
 )
 
 AppText.LabelSemiBoldOne = ({style, ...props }: AppTextProps) => (
-    <AppText {...props} style={[styles.labelSemiBoldThree, style]} />
+    <AppText {...props} style={[styles.labelSemiBoldOne, style]} />
 )
 
 AppText.LabelSemiBoldTwo = ({style, ...props }: AppTextProps) => (
-    <AppText {...props} style={[styles.labelSemiBoldThree, style]} />
+    <AppText {...props} style={[styles.labelSemiBoldTwo, style]} />
 )
 
 AppText.LabelSemiBoldThree = ({style, ...props }: AppTextProps) => (
