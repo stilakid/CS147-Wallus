@@ -10,7 +10,7 @@ export default function HomeScreen({navigation, route}) {
         <SafeAreaView style={styles.container}>
             <AppText.TitleBoldOne style={styles.text}>
                 HOME PAGE!!!
-                <Buttons.FullWidth48Blue>
+                <Buttons.FullWidth48Blue text={"wallus"}>
                     text
                 </Buttons.FullWidth48Blue>
             </AppText.TitleBoldOne>

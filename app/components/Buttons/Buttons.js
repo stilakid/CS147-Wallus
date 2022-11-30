@@ -11,13 +11,13 @@ import { AppText } from "../CustomText/customText";
 //     <AppText {...props} style={[styles.titleOne, style]} />
 // )
 
-export const Buttons = ({text, goTo}) => (
+export function Buttons ({text, goTo}){
     <TouchableOpacity onPress={()=>goTo} style={styles.ButtonContainer}>
             <AppText.LabelFour style={styles.ButtonText}>
                 {text} 
             </AppText.LabelFour>
     </TouchableOpacity>
-)
+}
 
 Buttons.FullWidth48Blue = ({text, goTo}) => (
     <Buttons text={text}/>)

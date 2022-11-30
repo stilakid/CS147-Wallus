@@ -1,5 +1,7 @@
 import { StyleSheet, SafeAreaView, Text, View } from "react-native";
 import { Themes } from "../../assets/themes"
+import { AppText } from "./CustomText/customText";
+import { TrendTags } from "./TrendTags/TrendTags";
 
 export default function MarketScreen({navigation, route}) {
     
@@ -9,6 +11,10 @@ export default function MarketScreen({navigation, route}) {
             <Text>
                 MARKET PAGE!!!
             </Text>
+
+            <TrendTags.smallGreen tagText="wallus"></TrendTags.smallGreen>
+            <TrendTags.bigGreen tagText="wallus"></TrendTags.bigGreen>
+
         </SafeAreaView>
     );
 }
@@ -19,6 +25,6 @@ const styles = StyleSheet.create({
         backgroundColor: Themes.colors.white,
         flex: 1,
       },
-      header: {
-      },
+    header: {
+    },
 });
