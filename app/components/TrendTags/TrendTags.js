@@ -1,5 +1,7 @@
-import { StyleSheet, SafeAreaView, Text, View, Button, TouchableOpacity,} from "react-native";
 import { Themes} from "../../../assets/themes"
+
+// Components
+import { StyleSheet, SafeAreaView, Text, View, Button, TouchableOpacity,} from "react-native";
 import { AppText } from "../CustomText/customText";
 
 export function TrendTags ({tagText}) {

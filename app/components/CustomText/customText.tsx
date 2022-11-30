@@ -1,6 +1,8 @@
 import * as React from 'react'
-import { Text, StyleSheet, TextProps } from 'react-native'
 import { Themes } from "../../../assets/themes"
+
+// Components
+import { Text, StyleSheet, TextProps } from 'react-native'
 
 
 interface AppTextProps extends TextProps {

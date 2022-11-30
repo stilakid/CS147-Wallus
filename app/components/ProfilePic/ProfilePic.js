@@ -1,5 +1,7 @@
-import { StyleSheet, Text, View,Image} from "react-native";
 import { Themes} from "../../../assets/themes"
+
+// Components
+import { StyleSheet, Text, View,Image} from "react-native";
 
 export function ProfilePic ({imageURL}) {
     console.log(imageURL);
