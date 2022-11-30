@@ -4,6 +4,8 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { Themes } from "./assets/themes"
+
 
 // Fonts
 import {
@@ -37,16 +39,15 @@ import { useCallback } from 'react';
 
 // Navigation Packages
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator} from '@react-navigation/drawer';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
 // Tab screens
-import HomeScreen from "./app/components/homeScreen";
-import MarketScreen from "./app/components/marketScreen";
-import DictionaryScreen from "./app/components/dictionaryScreen";
-import CommunityScreen from "./app/components/communityScreen";
+import HomeStack from "./app/screens/BottomTabScreens/homeStack";
+import MarketStack from "./app/screens/BottomTabScreens/marketStack";
+import DictionaryStack from "./app/screens/BottomTabScreens/dictionaryStack";
+import CommunityStack from "./app/screens/BottomTabScreens/communityStack";
 
 // Lucide Icons
 import { Home } from 'lucide-react-native';
@@ -93,7 +94,6 @@ export default function App() {
         return null;
     }
 
-    const Stack = createStackNavigator();
     const BottomTab = createBottomTabNavigator();
     const Drawer = createDrawerNavigator();
     const TopTab = createMaterialTopTabNavigator();
@@ -107,23 +107,23 @@ export default function App() {
                     tabBarIcon: ({focused}) => {
                         let icon;
                         
-                        if (route.name === "HomeScreen") {
-                            icon = focused ? <Home size={24} /> : <Home color="black" size={24} />;
-                        } else if (route.name === "MarketScreen") {
-                            icon = focused ? <TrendingUp size={24} /> : <TrendingUp color="black" size={24} />;
-                        } else if (route.name === "DictionaryScreen") {
-                            icon = focused ? <BookOpen size={24} /> : <BookOpen color="black" size={24} />;
-                        } else if (route.name === "CommunityScreen") {
-                            icon = focused ? <Users size={24} /> : <Users color="black" size={24} />;
+                        if (route.name === "HomeStack") {
+                            icon = focused ? <Home size={24} /> : <Home color={Themes.colors.neutral_600} size={24} />;
+                        } else if (route.name === "MarketStack") {
+                            icon = focused ? <TrendingUp size={24} /> : <TrendingUp color={Themes.colors.neutral_600} size={24} />;
+                        } else if (route.name === "DictionaryStack") {
+                            icon = focused ? <BookOpen size={24} /> : <BookOpen color={Themes.colors.neutral_600} size={24} />;
+                        } else if (route.name === "CommunityStack") {
+                            icon = focused ? <Users size={24} /> : <Users color={Themes.colors.neutral_600} size={24} />;
                         }
                         return icon;
                     }
                 })}
             >
-                <BottomTab.Screen name = "HomeScreen" component = {HomeScreen} />
-                <BottomTab.Screen name = "MarketScreen" component={MarketScreen} />
-                <BottomTab.Screen name = "DictionaryScreen" component={DictionaryScreen} />
-                <BottomTab.Screen name = "CommunityScreen" component={CommunityScreen} />
+                <BottomTab.Screen name = "HomeStack" component = {HomeStack} options={{headerShown: false}} />
+                <BottomTab.Screen name = "MarketStack" component={MarketStack} options={{headerShown: false}} />
+                <BottomTab.Screen name = "DictionaryStack" component={DictionaryStack} options={{headerShown: false}} />
+                <BottomTab.Screen name = "CommunityStack" component={CommunityStack} options={{headerShown: false}} />
             </BottomTab.Navigator>
         </NavigationContainer>
     );
