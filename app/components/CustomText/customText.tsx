@@ -72,27 +72,27 @@ AppText.Input = ({style, ...props }: AppTextProps) => (
 )
 
 AppText.LabelBoldOne = ({style, ...props }: AppTextProps) => (
-    <AppText {...props} style={[styles.LabelBoldOne, style]} />
+    <AppText {...props} style={[styles.labelBoldOne, style]} />
 )
 
 AppText.LabelBoldTwo = ({style, ...props }: AppTextProps) => (
-    <AppText {...props} style={[styles.LabelBoldTwo, style]} />
+    <AppText {...props} style={[styles.labelBoldTwo, style]} />
 )
 
 AppText.LabelBoldThree = ({style, ...props }: AppTextProps) => (
-    <AppText {...props} style={[styles.LabelBoldThree, style]} />
+    <AppText {...props} style={[styles.labelBoldThree, style]} />
 )
 
 AppText.LabelSemiBoldOne = ({style, ...props }: AppTextProps) => (
-    <AppText {...props} style={[styles.LabelSemiBoldThree, style]} />
+    <AppText {...props} style={[styles.labelSemiBoldThree, style]} />
 )
 
 AppText.LabelSemiBoldTwo = ({style, ...props }: AppTextProps) => (
-    <AppText {...props} style={[styles.LabelSemiBoldThree, style]} />
+    <AppText {...props} style={[styles.labelSemiBoldThree, style]} />
 )
 
 AppText.LabelSemiBoldThree = ({style, ...props }: AppTextProps) => (
-    <AppText {...props} style={[styles.LabelSemiBoldThree, style]} />
+    <AppText {...props} style={[styles.labelSemiBoldThree, style]} />
 )
 
 
@@ -208,19 +208,19 @@ const styles = StyleSheet.create({
     },
 
 
-    LabelBoldOne: {
+    labelBoldOne: {
         fontFamily: Themes.typography.label_bold_1.font,
         fontSize: Themes.typography.label_bold_1.size,
         lineHeight: Themes.typography.label_bold_1.line_height,
         color: Themes.typography.label_bold_1.color
     },
-    LabelBoldTwo: {
+    labelBoldTwo: {
         fontFamily: Themes.typography.label_bold_2.font,
         fontSize: Themes.typography.label_bold_2.size,
         lineHeight: Themes.typography.label_bold_2.line_height,
         color: Themes.typography.label_bold_2.color
     },
-    LabelBoldThree: {
+    labelBoldThree: {
         fontFamily: Themes.typography.label_bold_3.font,
         fontSize: Themes.typography.label_bold_3.size,
         lineHeight: Themes.typography.label_bold_3.line_height,
@@ -228,19 +228,19 @@ const styles = StyleSheet.create({
     },
 
 
-    LabelSemiBoldOne: {
+    labelSemiBoldOne: {
         fontFamily: Themes.typography.label_semibold_1.font,
         fontSize: Themes.typography.label_semibold_1.size,
         lineHeight: Themes.typography.label_semibold_1.line_height,
         color: Themes.typography.label_semibold_1.color
     },
-    LabelSemiBoldTwo: {
+    labelSemiBoldTwo: {
         fontFamily: Themes.typography.label_semibold_2.font,
         fontSize: Themes.typography.label_semibold_2.size,
         lineHeight: Themes.typography.label_semibold_2.line_height,
         color: Themes.typography.label_semibold_2.color
     },
-    LabelSemiBoldThree: {
+    labelSemiBoldThree: {
         fontFamily: Themes.typography.label_semibold_3.font,
         fontSize: Themes.typography.label_semibold_3.size,
         lineHeight: Themes.typography.label_semibold_3.line_height,

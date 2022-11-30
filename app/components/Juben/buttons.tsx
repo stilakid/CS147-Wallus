@@ -1,18 +1,20 @@
 import * as React from 'react'
-import { Text, StyleSheet, TextProps } from 'react-native'
+import { TouchableOpacity, StyleSheet, TouchableOpacityProps, View, Text } from 'react-native'
 import { Themes } from "../../../assets/themes"
 
 
-interface AppTextProps extends TextProps {
-    children: string
-}
-
-export const AppText = ({style, ...props }: AppTextProps) => (
-    <Text {...props} style={[styles.default, style]} />
+export const AppButton = ({TouchableOpacityStyle, ViewStyle, TextStyle, textContent}: any) => (
+    <TouchableOpacity style={[styles.default, TouchableOpacityStyle]}>
+        <View style={[ViewStyle]}>
+            <Text style={[TextStyle]}>
+                {textContent}
+            </Text>
+        </View>
+    </TouchableOpacity>
 )
 
-AppText.TitleBoldOne = ({style, ...props }: AppTextProps) => (
-    <AppText {...props} style={[styles.titleBoldOne, style]} />
+AppButton.BlueButton = ({TouchableOpacityStyle, ViewStyle, TextStyle, textContent}: any) => (
+    <AppButton TouchableOpacityStyle={{ ...styles.blueButton, ...TouchableOpacityStyle}} ViewStyle={ViewStyle} TextStyle={TextStyle} textContent={textContent} />
 )
 
 const styles = StyleSheet.create({
@@ -21,10 +23,7 @@ const styles = StyleSheet.create({
     },
 
 
-    titleBoldOne: {
-        fontFamily: Themes.typography.title_bold_1.font,
-        fontSize: Themes.typography.title_bold_1.size,
-        lineHeight: Themes.typography.title_bold_1.line_height,
-        color: Themes.typography.title_bold_1.color
+    blueButton: {
+
     },
-}
+})

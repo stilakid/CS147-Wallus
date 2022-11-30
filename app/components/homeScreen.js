@@ -1,12 +1,10 @@
-import { StyleSheet, SafeAreaView, Text, View, Button, TouchableOpacity, onPress } from "react-native";
-import { Themes} from "../../assets/themes"
+import { StyleSheet, SafeAreaView, Text, View } from "react-native";
+import { Themes } from "../../assets/themes"
 import { AppText } from "./CustomText/customText";
 import { Buttons } from "./Buttons/Buttons"
+import { AppButton } from "./Juben/buttons";
 
 export default function HomeScreen({navigation, route}) {
-
-
-    
     // const {  } = route.params;
     return(
         <SafeAreaView style={styles.container}>
@@ -17,6 +15,10 @@ export default function HomeScreen({navigation, route}) {
                 </Buttons.FullWidth48Blue>
             </AppText.TitleBoldOne>
 
+            <AppButton.BlueButton>
+
+                
+            </AppButton.BlueButton>
         </SafeAreaView>
     );
 }
@@ -44,8 +46,6 @@ const styles = StyleSheet.create({
         position: "absolute",
         width: 358,
         height: 48,
-        // left: 24,
-        // top: 24,
         display: "flex",
         flexDirection: "row",
         justifyContent: "center",
