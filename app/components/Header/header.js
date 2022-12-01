@@ -5,7 +5,6 @@ import { StyleSheet, View, Text, Image } from "react-native";
 import { AppButton } from "../Buttons/buttons";
 import { AppText } from "../CustomText/customText";
 import { Divider } from "../Divider/divider";
-import { block } from "react-native-reanimated";
 
 export default function Header({hasDivider, text, navigation}) {
     let divider;

@@ -17,11 +17,11 @@ export default function NotificaitonScreen({navigation, route}) {
 
     const DATA = [
         {
-        title: 'Mains',
+        title: 'Invitations',
         data: ['Pizza', 'Burger', 'Risotto'],
         },
         {
-        title: 'Sides',
+        title: 'Wallus reminders',
         data: ['French Fries', 'Onion Rings', 'Fried Shrimps'],
         },
         {
@@ -39,14 +39,12 @@ export default function NotificaitonScreen({navigation, route}) {
     return(
         <SafeAreaView style={styles.container}>
             <Header text="Notifications" navigation={navigation} hasDivider={true} />
-            <Text>Notifications</Text>
-
             <SectionList
                 sections={DATA}
                 keyExtractor={(item, index) => item + index} /* unique key for each item */
-                renderItem={({ item }) => <MenuItem name={item} />} /* render each item as a MenuItem component with the given name */
+                renderItem={({ item }) => <View><Text>{item}</Text></View>} /* render each item as a MenuItem component with the given name */
                 renderSectionHeader={({ section: { title } }) => ( /* grab the title property from each section element */
-                    <HeaderItem title={title} /> /* render each section header as a Text component displaying the title */
+                    <View><Text>{title}</Text></View> /* render each section header as a Text component displaying the title */
                 )}
             />
         </SafeAreaView>
