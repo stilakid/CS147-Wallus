@@ -15,16 +15,15 @@ export default function RationaleCard() {
             style={styles.profilePic}
       />
       <View style={styles.container}>
-        {/* <View style={styles.header}>
+        <View style={styles.header}>
           <View> 
-            <Text style={styles.userText} onPress={onPressUser}>{"Benji"}</Text> 
+            <AppText.LabelSemiBoldTwo style={styles.userText} onPress={onPressUser}>{"Benji"}</AppText.LabelSemiBoldTwo> 
           </View>
           <View style={styles.time}>
-            <Text style={styles.dateText}>{"Oct 16 2022"}</Text>
+            <AppText.ParagraphThree style={styles.dateText}>{"Oct 16 2022"}</AppText.ParagraphThree>
           </View>
-        </View> */}
-        <Text style={styles.commentText}>"I wanted to invest in something safe."</Text>
-        <AppText.LabelSemiBoldTwo>"I wanted to invest in something safe."</AppText.LabelSemiBoldTwo>
+        </View>
+        <AppText.LabelSemiBoldOne style={styles.commentText}>"I wanted to invest in something safe."</AppText.LabelSemiBoldOne>
       </View>
     </View>
   );
@@ -38,14 +37,15 @@ const styles = StyleSheet.create({
     padding: 16,
     gap: 12,
     position: 'absolute',
-    backgroundColor: Themes.colors.neutral_100,
+    color: Themes.colors.neutral_100,
     borderRadius: 16,
     width: 358,
-    height: 79,
+    height: 79
   },
   container: {
     flexDirection: 'column',
     alignItems: 'flex-start',
+    justifyContent: 'space-between',
     gap: 8,
     width: 282,
     height: 47,
@@ -58,7 +58,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     gap: 4,
-    width: '95%',
     height: 21
   },
   profilePic: {
@@ -68,14 +67,15 @@ const styles = StyleSheet.create({
   },
   userText: {
     color: Themes.colors.neutral_600,
-    fontFamily: Themes.typography.label_semibold_2.font
+    width: 202,
+    height: 18
   },
   dateText: {
     color: Themes.colors.neutral_600,
-    fontFamily: Themes.typography.paragraph_text_3.font
+    width: 76,
+    height: 21
   },
   commentText: {
     color: Themes.colors.neutral_800,
-    fontFamily: Themes.typography.label_semibold_1.font,
   }
 });  
