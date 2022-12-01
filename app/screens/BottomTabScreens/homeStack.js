@@ -12,7 +12,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 // Stack screens
 import NotificationScreen from "../NotificationScreen/notificationScreen";
 import HomeScreen from "../HomeScreen/homeScreen";
-import Card from "../../components/Cards/RationaleCard"
+import Card from "../../components/Cards/InvitationCard"
 
 export default function HomeStack({navigation, route}) {
     
