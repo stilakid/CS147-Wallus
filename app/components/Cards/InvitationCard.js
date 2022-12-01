@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, Image } from 'react-native';
-import { Themes} from "../../../assets/themes"
-import {TrendTags} from '../TrendTags';
+import { Themes} from "../../../assets/themes";
+import { AppText } from '../CustomText/customText';
+import { TrendTags } from '../TrendTags/TrendTags';
 
 export default function InvitationCard() {
 
@@ -33,6 +34,7 @@ export default function InvitationCard() {
             source={require('../../../assets/groupProfiles.png')}
             style={styles.profilePic}
       />
+      
     </View>
   );
 }
@@ -50,9 +52,10 @@ const styles = StyleSheet.create({
     left: 20,
     top: 20,
     backgroundColor: 'white',
-    borderColor: 'gray',
+    borderColor: Themes.colors.neutral_200,
     borderWidth: 2,
     borderRadius: 16,
+    boxSizing: 'border-box'
   },
   title: {
     display: 'flex',
@@ -61,7 +64,9 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     padding: 0,
     gap: 40,
-    width: '95%',
+    width: 326,
+    height: 55,
+    alignSelf: 'stretch'
   },
   details: {
     display: 'flex',
@@ -73,7 +78,7 @@ const styles = StyleSheet.create({
     height: 55   
   },
   groupName: {
-    fontFamily: Themes.typography.label_bold_1,
+    fontFamily: Themes.typography.label_bold_1.font,
     color: Themes.colors.neutral_800
   },
   status: {
@@ -84,9 +89,17 @@ const styles = StyleSheet.create({
     gap: 8,
     width: 128,
     height: 28,
+    marginTop: 8
   },
   stock: {
-    fontFamily: Themes.typography.label_semibold_2,
-    color: Themes.colors.neutral_500
+    fontFamily: Themes.typography.label_semibold_2.font,
+    color: Themes.colors.neutral_500,
+    width: 128,
+    height: 32,
+    marginLeft: 6,
+    marginTop: 15
+  }, 
+  profilePic: {
+    marginTop: 8
   }
 });  

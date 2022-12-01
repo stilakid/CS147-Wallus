@@ -1,5 +1,7 @@
-import { StyleSheet, Text, View } from "react-native";
 import { Themes } from "../../../assets/themes";
+
+// Components
+import { StyleSheet, Text, View } from "react-native";
 import { AppText } from "../../components/CustomText/customText";
 import { AppButton } from "../../components/Buttons/buttons";
 
@@ -12,7 +14,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import NotificationScreen from "../NotificationScreen/notificationScreen";
 import HomeScreen from "../HomeScreen/homeScreen";
 import InvitationScreen from "../InvitationScreen/invitationScreen";
-import Card from "../../components/Cards/RationaleCard"
 
 export default function HomeStack({navigation, route}) {
     
