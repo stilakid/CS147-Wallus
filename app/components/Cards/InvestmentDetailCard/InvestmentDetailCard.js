@@ -2,8 +2,6 @@ import { StyleSheet, SafeAreaView, Text, View, Button, Image } from "react-nativ
 import { Themes } from "../../../../assets/themes"
 import { AppText } from "../../../components/CustomText/customText";
 import { AppButton } from "../../../components/Buttons/buttons";
-import { Divider } from "../../../components/Divider/divider"
-import { Navigation } from "lucide-react-native";
 import { SelectionOptions } from "../../../components/SelectionOptions/SelectionOptions";
 import { TrendTags } from "../../TrendTags/TrendTags";
 
@@ -18,7 +16,7 @@ export default function InvestmentDetailCard({investAmount, trendText, trendGrap
                 </View>
             </View>
             <AppText.TitleBoldOne style={{color:Themes.colors.neutral_800, marginBottom: 16}}>$13.24</AppText.TitleBoldOne>
-            <Image style={{height:64, marginVertical:12}} source={require("../../../../assets/trendCharts/trend1.png")}></Image>
+            <Image style={styles.chart} source={require("../../../../assets/trendCharts/trend1.png")}></Image>
             <View style={styles.selectionContainer}>
                 <SelectionOptions.noBorder_Unselected_28px text={"1D"}/>
                 <SelectionOptions.noBorder_Unselected_28px text={"1W"}/>
@@ -39,7 +37,7 @@ export default function InvestmentDetailCard({investAmount, trendText, trendGrap
 
 
 const styles = StyleSheet.create({
-        detailContainer: {
+    detailContainer: {
         width: 358,
         borderColor: Themes.colors.neutral_200,
         borderWidth: 2,
@@ -54,6 +52,11 @@ const styles = StyleSheet.create({
     textAlignWrapper: {
         marginBottom:4,
         marginLeft: 8,
+    },
+    chart: {
+        width: "100%",
+        height: 64,
+        marginVertical: 12,
     },
     selectionContainer: {
         flexDirection: 'row',
