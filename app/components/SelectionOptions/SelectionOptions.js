@@ -21,11 +21,6 @@ SelectionOptions.border_Unselected_28px = ({text, onPress, TouchableOpacityStyle
         TouchableOpacityStyle={[styles.container, styles.borderContainer, styles.height28, TouchableOpacityStyle]}
         TextStyle={[styles.containerText, TextStyle]}
     />
-
-
-    // <View style={[styles.container, styles.borderContainer]}>
-    //     <AppText.LabelSemiBoldTwo style={{color:Themes.colors.neutral_600}}>{text}</AppText.LabelSemiBoldTwo>
-    // </View>
 )
 
 SelectionOptions.noBorder_Unselected_28px = ({text, onPress, TouchableOpacityStyle, TextStyle}) => (
@@ -35,10 +30,6 @@ SelectionOptions.noBorder_Unselected_28px = ({text, onPress, TouchableOpacitySty
         TouchableOpacityStyle={[styles.container, styles.borderLessContainer, styles.height28, TouchableOpacityStyle]}
         TextStyle={[styles.containerText, TextStyle]}
     />
-
-    // <View style={styles.container}>
-    //     <AppText.LabelSemiBoldTwo style={{color:Themes.colors.neutral_600}}>{text}</AppText.LabelSemiBoldTwo>
-    // </View>
 )
 
 SelectionOptions.selected_28px = ({text, onPress, TouchableOpacityStyle, TextStyle}) => (
@@ -48,10 +39,6 @@ SelectionOptions.selected_28px = ({text, onPress, TouchableOpacityStyle, TextSty
         TouchableOpacityStyle={[styles.container, styles.filledContainer, styles.height28, TouchableOpacityStyle]}
         TextStyle={[styles.filledContainerText, TextStyle]}
     />
-
-    // <View style={[styles.container, styles.filledContainer]}>
-    //     <AppText.LabelSemiBoldTwo style={{color:Themes.colors.primary_900}}>{text}</AppText.LabelSemiBoldTwo>
-    // </View>
 )
 
 /*****32px selection options******/
@@ -63,10 +50,6 @@ SelectionOptions.border_Unselected_32px = ({text, onPress, TouchableOpacityStyle
         TouchableOpacityStyle={[styles.container, styles.borderContainer, styles.height32, TouchableOpacityStyle]}
         TextStyle={[styles.containerText, TextStyle]}
     />
-
-    // <View style={[styles.container, styles.borderContainer, styles.height32]}>
-    //     <AppText.LabelSemiBoldTwo style={{color:Themes.colors.neutral_600}}>{text}</AppText.LabelSemiBoldTwo>
-    // </View>
 )
 
 SelectionOptions.noBorder_Unselected_32px = ({text, onPress, TouchableOpacityStyle, TextStyle}) => (
@@ -76,10 +59,6 @@ SelectionOptions.noBorder_Unselected_32px = ({text, onPress, TouchableOpacitySty
         TouchableOpacityStyle={[styles.container, styles.borderLessContainer, styles.height32, TouchableOpacityStyle]}
         TextStyle={[styles.containerText, TextStyle]}
     />
-
-    // <View style={[styles.container, styles.borderContainer, styles.height32]}>
-    //     <AppText.LabelSemiBoldTwo style={{color:Themes.colors.neutral_600}}>{text}</AppText.LabelSemiBoldTwo>
-    // </View>
 )
 
 SelectionOptions.selected_32px = ({text, onPress, TouchableOpacityStyle, TextStyle}) => (
@@ -89,10 +68,6 @@ SelectionOptions.selected_32px = ({text, onPress, TouchableOpacityStyle, TextSty
         TouchableOpacityStyle={[styles.container, styles.filledContainer, styles.height32, TouchableOpacityStyle]}
         TextStyle={[styles.filledContainerText, TextStyle]}
     />
-    
-    // <View style={[styles.container, styles.filledContainer, styles.height32]}>
-    //     <AppText.LabelSemiBoldTwo style={{color:Themes.colors.primary_900}}>{text}</AppText.LabelSemiBoldTwo>
-    // </View>
 )
 
 const styles = StyleSheet.create({
