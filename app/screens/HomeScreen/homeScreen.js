@@ -6,6 +6,7 @@ import { AppText } from "../../components/CustomText/customText";
 import { AppButton } from "../../components/Buttons/buttons";
 import { Divider } from "../../components/Divider/divider"
 import { Navigation } from "lucide-react-native";
+import { SelectionOptions } from "../../components/SelectionOptions/SelectionOptions";
 
 export default function HomeScreen({navigation, route}) {
     // const {  } = route.params;
@@ -15,7 +16,6 @@ export default function HomeScreen({navigation, route}) {
             <Text>Home Screen</Text>
             <Button title="Notifs" onPress={() => navigation.navigate('Notifications')} />
             <Button title="Cards" onPress={() => navigation.navigate('Card')} />
-
         </SafeAreaView>
     );
 }
