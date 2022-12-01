@@ -474,14 +474,13 @@ AppButton.DisabledThinFour = ({text, onPress, TouchableOpacityStyle, TextStyle})
 // **********************************************************************************************
 
 AppButton.goBack = ({navigation, TouchableOpacityStyle}) => {
-
     const content = <ChevronLeft color={Themes.colors.neutral_600} size={24} />
 
     return (
         <AppButton
             content={content}
             onPress={() => navigation.goBack()}
-            TouchableOpacityStyle={{  ...TouchableOpacityStyle}}
+            TouchableOpacityStyle={{  ...styles.backButton, ...TouchableOpacityStyle}}
         />
     );
 }
@@ -600,13 +599,12 @@ const styles = StyleSheet.create({
     largeHeight: {
         height: 48
     },
-
-
-    ButtonText:{
-        width: 48,      
-        height: 19,
-        color: "#FFFFFF",   
-        order: 0,
-    }
     
+
+    // Back Button
+
+    backButton: {
+        paddingLeft: 16,
+        paddingRight: 16
+    }
 });

@@ -34,6 +34,7 @@ export default function InvitationCard() {
             source={require('../../../assets/groupProfiles.png')}
             style={styles.profilePic}
       />
+      
     </View>
   );
 }

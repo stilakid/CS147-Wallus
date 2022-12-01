@@ -1,6 +1,8 @@
 import * as React from 'react'
-import { StyleSheet, View, TouchableOpacity,} from "react-native"
 import { Themes} from "../../../assets/themes"
+
+// Components
+import { StyleSheet, View, TouchableOpacity,} from "react-native"
 
 export const Divider = () => {
     return(

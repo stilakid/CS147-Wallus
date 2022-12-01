@@ -25,6 +25,9 @@ export default function RationaleCard() {
         </View>
         <AppText.LabelSemiBoldOne style={styles.commentText}>"I wanted to invest in something safe."</AppText.LabelSemiBoldOne>
       </View>
+
+
+
     </View>
   );
 }
