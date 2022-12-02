@@ -1,6 +1,5 @@
 // Components
 import { StyleSheet, View } from "react-native";
-import App from "../../../App";
 import { AppButton } from "./buttons";
 
 

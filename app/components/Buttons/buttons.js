@@ -84,6 +84,7 @@ AppButton.PrimaryThickFour = ({text, onPress, TouchableOpacityStyle, TextStyle})
     );
 }
 
+
 AppButton.PrimaryThinOne = ({text, onPress, TouchableOpacityStyle, TextStyle}) => {
 
     const content = <AppText.LabelBoldTwo style={[styles.primaryText, TextStyle]}> {text} </AppText.LabelBoldTwo>
@@ -136,7 +137,18 @@ AppButton.PrimaryThinFour = ({text, onPress, TouchableOpacityStyle, TextStyle}) 
     );
 }
 
+AppButton.PrimaryThinFive = ({text, onPress, TouchableOpacityStyle, TextStyle}) => {
 
+    const content = <AppText.LabelBoldTwo style={[styles.primaryText, TextStyle]}> {text} </AppText.LabelBoldTwo>
+
+    return (
+        <AppButton
+            content={content}
+            onPress={onPress}
+            TouchableOpacityStyle={{ ...styles.defaultTextButton, ...styles.primary, ...styles.smallHeight, ...styles.xsmallWidth, ...TouchableOpacityStyle}}
+        />
+    );
+}
 // **********************************************************************************************
 // Secondary Outline Buttons
 // **********************************************************************************************
@@ -302,6 +314,7 @@ AppButton.SecondaryGreyThickFour = ({text, onPress, TouchableOpacityStyle, TextS
         />
     );
 }
+
 
 AppButton.SecondaryGreyThinOne = ({text, onPress, TouchableOpacityStyle, TextStyle}) => {
 
@@ -588,6 +601,9 @@ const styles = StyleSheet.create({
         width: 131
     },
 
+    xsmallWidth: {
+        width: 80
+    },
     halfWidth: {
         width: 173
     },
