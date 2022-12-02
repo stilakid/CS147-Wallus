@@ -20,8 +20,8 @@ const images = {
             think: require('../walrus/think.png'),
             wise: require('../walrus/wise.png'),
 
-        }
-        
+        },
+        temp: require('../temp.png')
 
     };
     

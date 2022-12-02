@@ -1,4 +1,4 @@
-import { Themes } from "../../../assets/themes"
+import { Themes, Images } from "../../../assets/themes"
 
 // Components
 import { StyleSheet, SafeAreaView, Text, View, Button, Image } from "react-native";
@@ -25,11 +25,21 @@ export default function HomeScreen({navigation, route}) {
                 </View>
                 <AppButton.notif navigation={navigation}/>
             </View>
-
+            <Image
+                source={Images.temp}
+                style={
+                    {
+                        width: '100%',
+                        resizeMode: 'contain',
+                        height: 750
+                    }
+                }
+            />
+{/* 
             <Text>Home Screen</Text>
             <Button title="Notifs" onPress={() => navigation.navigate('Notifications')} />
             <Button title="Invitation" onPress={() => navigation.navigate('Invitation')} />
-            <Button title="Stock" onPress={() => navigation.navigate('Stock')} />
+            <Button title="Stock" onPress={() => navigation.navigate('Stock')} /> */}
         </SafeAreaView>
     );
 }
