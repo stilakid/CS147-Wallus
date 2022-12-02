@@ -15,6 +15,7 @@ import NotificationScreen from "../NotificationScreen/notificationScreen";
 import HomeScreen from "../HomeScreen/homeScreen";
 import InvitationScreen from "../InvitationScreen/invitationScreen";
 import StockScreen from "../StockScreen/stockScreen";
+import CongratsScreen from "../CongratulationsScreen/congratulationsScreen";
 
 export default function HomeStack({navigation, route}) {
     
@@ -28,6 +29,7 @@ export default function HomeStack({navigation, route}) {
             <Stack.Screen name="Notifications" component={NotificationScreen} options={{headerShown: false}} />
             <Stack.Screen name="Invitation" component={InvitationScreen} options={{headerShown: false}} />
             <Stack.Screen name="Stock" component={StockScreen} options={{headerShown: false}} />
+            <Stack.Screen name="Congrats" component={CongratsScreen} options={{headerShown: false}} />
         </Stack.Navigator>
     );
 }

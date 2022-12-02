@@ -78,10 +78,10 @@ export default function InvitationScreen({navigation, route}) {
                 <BorderedList.InvestmentStat data={investmentInfo} data_primary_key={(item) => item.id} /> */}
 
                 <InvestmentStat portfolioFit={'Great'} expectedReturn={'3.1%'} volatility={'Medium'} typicalHold={'4Y 3M'} />
-                <AppButton.SecondaryOutlineThickOne text={'Stock details'} TouchableOpacityStyle={styles.stockDetailsButton} />
+                <AppButton.SecondaryOutlineThickOne text={'Stock details'} TouchableOpacityStyle={[styles.stockDetailsButton, styles.endOfPage]} onPress={() => navigation.navigate('Stock')} />
             </ScrollView>
 
-            <AppFloatingButton.PrimaryThickDual textOne='Decline' textTwo={'Accept'} />
+            <AppFloatingButton.PrimaryThickDual textOne='Decline' textTwo={'Accept'} onPressOne={() => navigation.pop(1)} onPressTwo={() => navigation.navigate('Congrats')} />
         </SafeAreaView>
     );
 }
@@ -109,11 +109,13 @@ const styles = StyleSheet.create({
     },
     stockDetailsButton: {
         marginTop: 26,
-        marginBottom: 80
     },
     banner: {
         width: '100%',
         resizeMode: 'contain'
+    },
+    endOfPage: {
+        marginBottom: 80
     }
 });
 
