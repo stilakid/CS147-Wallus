@@ -19,18 +19,28 @@ export default function NotificaitonScreen({navigation, route}) {
     const DATA = [
         {
         title: 'Invitations',
-        data: ['Pizza', 'Burger', 'Risotto'],
+        data: [['Dan invites you to join Friendly Bananas', 'Investment: Apple', Images.profilePic.Dan, () => navigation.navigate('Invitation')], ['Dan invites you to join Friendly Bananas', 'Investment: Apple', Images.profilePic.Dan, () => navigation.navigate('Invitation')]],
         },
         {
         title: 'Wallus reminders',
-        data: ['French Fries', 'Onion Rings', 'Fried Shrimps'],
+        data: [['This investment is no longer aligned with your goals', 'Investment: Apple', Images.Wallus, () => navigation.navigate('Invitation')]],
         },
     ];
 
     const renderNotifications = ({item}) => {
+        console.log(item)
         return (
             <View>
-                <Notification message={'Dan invites you to join Friendly Bananas'} investment={'Apple'} imageURL={Images.profilePic.Dan} />    
+                {/* <Notification message={'Dan invites you to join Friendly Bananas'} investment={'Investment: Apple'} imageURL={Images.profilePic.Dan} onPress={() => navigation.navigate('Invitation')}/>   */}
+                <Notification message={item[0]} investment={item[1]} imageURL={item[2]} onPress={item[3]}/>    
+  
+            </View>
+        )
+    }
+    const renderWallusReminders = ({item}) => {
+        return (
+            <View>
+                <Notification message={'This investment is no longer aligned with your goals'} investment={'Investment: Apple'} imageURL={Images.Wallus} onPress={() => navigation.navigate('Invitation')}/>    
             </View>
         )
     }

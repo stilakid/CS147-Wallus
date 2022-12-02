@@ -7,7 +7,11 @@ const images = {
             trend2: require('../trendCharts/trend2.png'),
             trend3: require('../trendCharts/trend3.png'),
             trend4: require('../trendCharts/trend4.png'),
-        }
+        },
+        Wallus: 
+            require('../Walluslogo.png'),
+        
+
     };
     
     export default images;

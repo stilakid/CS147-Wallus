@@ -8,7 +8,7 @@ import { AppText } from "../CustomText/customText";
 // Lucide Icons
 import { ChevronLeft } from 'lucide-react-native';
 import { HelpCircle } from 'lucide-react-native';
-
+import { Bell } from "lucide-react-native"
 
 export const AppButton = ({text, content, onPress, TouchableOpacityStyle, TextStyle}) => {
 
@@ -516,6 +516,20 @@ AppButton.toolTip = ({text, TouchableOpacityStyle}) => {
         />
     );
 }
+
+AppButton.notif = ({navigation, TouchableOpacityStyle}) => {
+
+    const content = <Bell color={Themes.colors.neutral_600} size={20} />
+
+    return (
+        <AppButton
+            content={content}
+            onPress={() => navigation.navigate('Notifications')}
+            TouchableOpacityStyle={TouchableOpacityStyle}
+        />
+    );
+}
+
 
 
 
