@@ -1,4 +1,4 @@
-import { Themes } from "../../../assets/themes"
+import { Themes, Images } from "../../../assets/themes"
 
 // Components
 import { StyleSheet, SafeAreaView, Text, View, SectionList } from "react-native";
@@ -6,6 +6,7 @@ import { AppText } from "../../components/CustomText/customText";
 import { AppButton } from "../../components/Buttons/buttons";
 import { Divider } from "../../components/Divider/divider"
 import Header from "../../components/Header/header";
+import { Notification } from "../../components/Community & Feed/Notification";
 
 // Lucide Icons
 import { ChevronLeft } from 'lucide-react-native';
@@ -28,7 +29,9 @@ export default function NotificaitonScreen({navigation, route}) {
 
     const renderNotifications = ({item}) => {
         return (
-            <View><Text>{item}</Text></View>
+            <View>
+                <Notification message={'Dan invites you to join Friendly Bananas'} investment={'Apple'} imageURL={Images.profilePic.Dan} />    
+            </View>
         )
     }
 
@@ -52,6 +55,7 @@ export default function NotificaitonScreen({navigation, route}) {
                 renderSectionHeader={renderSectionTitle}
                 style={styles.sectionList}
                 contentContainerStyle={styles.sectionListContent}
+                stickySectionHeadersEnabled={false}
             />
         </SafeAreaView>
     );
@@ -71,6 +75,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 16
     },
     sectionListTitle: {
+        marginTop: 24,
         marginBottom: 12
     }
 });
