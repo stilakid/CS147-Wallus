@@ -538,7 +538,7 @@ const styles = StyleSheet.create({
     floatingButtonDefault: {
         position: 'absolute',
         bottom: 0,
-        padding: 16
+        marginBottom: 16
     },
     dualButton: {
         display: 'flex',
