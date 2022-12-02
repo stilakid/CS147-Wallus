@@ -77,7 +77,7 @@ export default function InvitationScreen({navigation, route}) {
 
                 <BorderedList.InvestmentStat data={investmentInfo} data_primary_key={(item) => item.id} /> */}
 
-                <InvestmentStat portfolioFit={'Great'}/>
+                <InvestmentStat portfolioFit={'Great'} expectedReturn={'3.1%'} volatility={'Medium'} typicalHold={'4Y 3M'} />
                 <AppButton.SecondaryOutlineThickOne text={'Stock details'} TouchableOpacityStyle={styles.stockDetailsButton} />
             </ScrollView>
 
