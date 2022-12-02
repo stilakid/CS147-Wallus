@@ -9,7 +9,7 @@ import { AppButton } from "../Buttons/buttons";
 import { TrendTags } from "../TrendTags/TrendTags";
 
 {/* <Home color="black" size={24} />; */}
-export const InvestmentStat = ({portfolioFit, expectedReturn, volatility, typicalHold, market, sp500}) => {
+export const InvestmentStat = ({portfolioFit, expectedReturn, volatility, typicalHold, market, sp500, containerStyle}) => {
 
     //TODO: This is a hack
     let marketTag = <TrendTags.bigGreen tagText={market} />
@@ -58,7 +58,7 @@ export const InvestmentStat = ({portfolioFit, expectedReturn, volatility, typica
 
 
     return(
-        <View style={styles.outerContainer}>
+        <View style={[styles.outerContainer, containerStyle]}>
 
             {performanceTitle}
             {performance}

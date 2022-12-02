@@ -7,7 +7,8 @@ import { AppButton } from "../../components/Buttons/buttons";
 import { Divider } from "../../components/Divider/divider"
 import { Navigation } from "lucide-react-native";
 import { SelectionOptions } from "../../components/SelectionOptions/SelectionOptions";
-import { colors } from "../../../assets/themes/colors";
+
+// Lucide Icons
 import { Bell } from "lucide-react-native"
 
 export default function HomeScreen({navigation, route}) {
@@ -18,8 +19,8 @@ export default function HomeScreen({navigation, route}) {
                 <View style={styles.nameCard}>
                     <Image style={styles.profilePic} source={require("../../../assets/profilePic.png")} resizeMode='contain'></Image>
                     <View style={styles.nameCardText}>
-                        <Text style={AppText.LabelBoldOne}>Emily Sanders</Text>
-                        <Text style={AppText.LabelSemiBoldTwo, {color: colors.neutral_500}}> @emilysndr</Text>
+                        <AppText.LabelBoldOne>Emily Sanders</AppText.LabelBoldOne>
+                        <AppText.LabelSemiBoldTwo style={{color: Themes.colors.neutral_500}}> @emilysndr</AppText.LabelSemiBoldTwo>
                     </View>
                 </View>
                 <AppButton.notif navigation={navigation}/>
@@ -68,7 +69,7 @@ const styles = StyleSheet.create({
         borderTopWidth: 2,
         borderLeftWidth: 2,
         borderRightWidth: 2,
-        borderColor: colors.neutral_200,
+        borderColor: Themes.colors.neutral_200,
         borderRadius: 999
     },
     profilePic: {

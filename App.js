@@ -120,10 +120,10 @@ export default function App() {
                     }
                 })}
             >
-                <BottomTab.Screen name = "HomeStack" component = {HomeStack} options={{headerShown: false}} />
-                <BottomTab.Screen name = "MarketStack" component={MarketStack} options={{headerShown: false}} />
-                <BottomTab.Screen name = "DictionaryStack" component={DictionaryStack} options={{headerShown: false}} />
-                <BottomTab.Screen name = "CommunityStack" component={CommunityStack} options={{headerShown: false}} />
+                <BottomTab.Screen name = "HomeStack" component = {HomeStack} options={{headerShown: false, tabBarShowLabel: false}} />
+                <BottomTab.Screen name = "MarketStack" component={MarketStack} options={{headerShown: false, tabBarShowLabel: false}} />
+                <BottomTab.Screen name = "DictionaryStack" component={DictionaryStack} options={{headerShown: false, tabBarShowLabel: false}} />
+                <BottomTab.Screen name = "CommunityStack" component={CommunityStack} options={{headerShown: false, tabBarShowLabel: false}} />
             </BottomTab.Navigator>
         </NavigationContainer>
     );

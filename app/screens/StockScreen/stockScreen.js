@@ -77,11 +77,10 @@ export default function StockScreen({navigation, route}) {
 
                 <WallusTips.orange titleText={'Not aligned with your preference'} bodyText={'This is a text that explains the reason why it does not match'} />
 
-                <InvestmentStat portfolioFit={'Great'} market={'12.38%'} sp500={'12.88%'} expectedReturn={'3.1%'} volatility={'Medium'} typicalHold={'4Y 3M'} />
-                <AppButton.SecondaryOutlineThickOne text={'Stock details'} TouchableOpacityStyle={styles.stockDetailsButton} />
+                <InvestmentStat  portfolioFit={'Great'} market={'12.38%'} sp500={'12.88%'} expectedReturn={'3.1%'} volatility={'Medium'} typicalHold={'4Y 3M'} containerStyle={styles.endOfPage} />
             </ScrollView>
 
-            <AppFloatingButton.PrimaryThickDual textOne='Decline' textTwo={'Accept'} />
+            <AppFloatingButton.PrimaryThickDual textOne='Decline' textTwo={'Accept'} onPressOne={() => navigation.pop(2)} onPressTwo={() => navigation.navigate('Congrats')} />
         </SafeAreaView>
     );
 }
@@ -109,7 +108,6 @@ const styles = StyleSheet.create({
     },
     stockDetailsButton: {
         marginTop: 26,
-        marginBottom: 80
     },
     banner: {
         width: '100%',
@@ -126,6 +124,9 @@ const styles = StyleSheet.create({
     trendChartContainer: {
         width: '100%',
         paddingHorizontal: 30,
+    },
+    endOfPage: {
+        marginBottom: 80
     }
 });
 

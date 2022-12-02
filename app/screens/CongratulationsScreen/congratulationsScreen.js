@@ -1,15 +1,17 @@
-import { StyleSheet, SafeAreaView, Text, View, Button } from "react-native";
-import { Themes } from "../../../assets/themes"
+import { Themes, Images } from "../../../assets/themes"
+
+// Components
+import { StyleSheet, SafeAreaView, Text, View, Button, Image } from "react-native";
 import { AppText } from "../../components/CustomText/customText";
 import { AppButton } from "../../components/Buttons/buttons";
 import { Divider } from "../../components/Divider/divider"
 import { Navigation } from "lucide-react-native";
 
-export default function DictionaryScreen({navigation, route}) {
+export default function CongratsScreen({navigation, route}) {
     // const {  } = route.params;
     return(
         <SafeAreaView style={styles.container}>
-            <Image style={{width: 246.5, height: 201.5}}source={require("../../../assets/walrus/congratulationsW.png")}/>
+            <Image style={{width: 246.5, height: 201.5, resizeMode: 'contain'}}source={Images.walrus.cheers}/>
             <View style={styles.textContainer}>
                 <AppText.TitleBoldOne style={{color:Themes.colors.neutral_800, textAlign: 'center'}}>
                     Congratulations!</AppText.TitleBoldOne>
@@ -21,9 +23,9 @@ export default function DictionaryScreen({navigation, route}) {
             {/* Buttons are not linked yet */}
 
             <View style={{paddingVertical:12}}>
-                <AppButton.SecondaryOutlineThickTwo text="Invite more friends"/>
+                <AppButton.SecondaryOutlineThickTwo text="Invite more friends" />
             </View>
-            <AppButton.SecondaryOutlineThickTwo text="Home"/>
+            <AppButton.SecondaryOutlineThickTwo text="Home" onPress={() => {navigation.popToTop()}} /> 
         </SafeAreaView>
     );
 }
