@@ -18,7 +18,7 @@
     "@react-navigation/material-top-tabs": "^6.3.0",
     "@react-navigation/native": "^6.0.13",
     "@react-navigation/stack": "^6.3.4",
-    "expo": "~47.0.6",
+    "expo": "^47.0.8",
     "expo-font": "~11.0.1",
     "expo-modules-autolinking": ">=0.8.1",
     "expo-splash-screen": "~0.17.5",

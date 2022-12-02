@@ -6,8 +6,8 @@ import { StyleSheet, TouchableOpacity,} from "react-native";
 import { AppText } from "../CustomText/customText";
 
 // Lucide Icons
- import { ChevronLeft } from 'lucide-react-native';
-
+import { ChevronLeft } from 'lucide-react-native';
+import { HelpCircle } from 'lucide-react-native';
 
 
 export const AppButton = ({text, content, onPress, TouchableOpacityStyle, TextStyle}) => {
@@ -40,7 +40,7 @@ AppButton.PrimaryThickOne = ({text, onPress, TouchableOpacityStyle, TextStyle}) 
         <AppButton
             content={content}
             onPress={onPress}
-            TouchableOpacityStyle={{ ...styles.defaultTextButton, ...styles.primary, ...styles.largeHeight, ...styles.fullWidth, ...TouchableOpacityStyle}}
+            TouchableOpacityStyle={[styles.defaultTextButton, styles.primary, styles.largeHeight, styles.fullWidth, TouchableOpacityStyle]}
         />
     );
 }
@@ -53,7 +53,7 @@ AppButton.PrimaryThickTwo = ({text, onPress, TouchableOpacityStyle, TextStyle}) 
         <AppButton
             content={content}
             onPress={onPress}
-            TouchableOpacityStyle={{ ...styles.defaultTextButton, ...styles.primary, ...styles.largeHeight, ...styles.mediumWidth, ...TouchableOpacityStyle}}
+            TouchableOpacityStyle={[styles.defaultTextButton, styles.primary, styles.largeHeight, styles.mediumWidth, TouchableOpacityStyle]}
         />
     );
 }
@@ -66,7 +66,7 @@ AppButton.PrimaryThickThree = ({text, onPress, TouchableOpacityStyle, TextStyle}
         <AppButton
             content={content}
             onPress={onPress}
-            TouchableOpacityStyle={{ ...styles.defaultTextButton, ...styles.primary, ...styles.largeHeight, ...styles.halfWidth, ...TouchableOpacityStyle}}
+            TouchableOpacityStyle={[styles.defaultTextButton, styles.primary, styles.largeHeight, styles.halfWidth, TouchableOpacityStyle]}
         />
     );
 }
@@ -79,7 +79,7 @@ AppButton.PrimaryThickFour = ({text, onPress, TouchableOpacityStyle, TextStyle})
         <AppButton
             content={content}
             onPress={onPress}
-            TouchableOpacityStyle={{ ...styles.defaultTextButton, ...styles.primary, ...styles.largeHeight, ...styles.smallWidth, ...TouchableOpacityStyle}}
+            TouchableOpacityStyle={[styles.defaultTextButton, styles.primary, styles.largeHeight, styles.smallWidth, TouchableOpacityStyle]}
         />
     );
 }
@@ -93,7 +93,7 @@ AppButton.PrimaryThinOne = ({text, onPress, TouchableOpacityStyle, TextStyle}) =
         <AppButton
             content={content}
             onPress={onPress}
-            TouchableOpacityStyle={{ ...styles.defaultTextButton, ...styles.primary, ...styles.smallHeight, ...styles.fullWidth, ...TouchableOpacityStyle}}
+            TouchableOpacityStyle={[ styles.defaultTextButton, styles.primary, styles.smallHeight, styles.fullWidth, TouchableOpacityStyle]}
         />
     );
 }
@@ -106,7 +106,7 @@ AppButton.PrimaryThinTwo = ({text, onPress, TouchableOpacityStyle, TextStyle}) =
         <AppButton
             content={content}
             onPress={onPress}
-            TouchableOpacityStyle={{ ...styles.defaultTextButton, ...styles.primary, ...styles.smallHeight, ...styles.mediumWidth, ...TouchableOpacityStyle}}
+            TouchableOpacityStyle={[styles.defaultTextButton, styles.primary, styles.smallHeight, styles.mediumWidth, TouchableOpacityStyle]}
         />
     );
 }
@@ -119,7 +119,7 @@ AppButton.PrimaryThinThree = ({text, onPress, TouchableOpacityStyle, TextStyle})
         <AppButton
             content={content}
             onPress={onPress}
-            TouchableOpacityStyle={{ ...styles.defaultTextButton, ...styles.primary, ...styles.smallHeight, ...styles.halfWidth, ...TouchableOpacityStyle}}
+            TouchableOpacityStyle={[styles.defaultTextButton, styles.primary, styles.smallHeight, styles.halfWidth, TouchableOpacityStyle]}
         />
     );
 }
@@ -132,7 +132,7 @@ AppButton.PrimaryThinFour = ({text, onPress, TouchableOpacityStyle, TextStyle}) 
         <AppButton
             content={content}
             onPress={onPress}
-            TouchableOpacityStyle={{ ...styles.defaultTextButton, ...styles.primary, ...styles.smallHeight, ...styles.smallWidth, ...TouchableOpacityStyle}}
+            TouchableOpacityStyle={[styles.defaultTextButton, styles.primary, styles.smallHeight, styles.smallWidth, TouchableOpacityStyle]}
         />
     );
 }
@@ -161,7 +161,7 @@ AppButton.SecondaryOutlineThickOne = ({text, onPress, TouchableOpacityStyle, Tex
         <AppButton
             content={content}
             onPress={onPress}
-            TouchableOpacityStyle={{ ...styles.defaultTextButton, ...styles.secondaryOutline, ...styles.largeHeight, ...styles.fullWidth, ...TouchableOpacityStyle}}
+            TouchableOpacityStyle={[styles.defaultTextButton, styles.secondaryOutline, styles.largeHeight, styles.fullWidth, TouchableOpacityStyle]}
         />
     );
 }
@@ -174,7 +174,7 @@ AppButton.SecondaryOutlineThickTwo = ({text, onPress, TouchableOpacityStyle, Tex
         <AppButton
             content={content}
             onPress={onPress}
-            TouchableOpacityStyle={{ ...styles.defaultTextButton, ...styles.secondaryOutline, ...styles.largeHeight, ...styles.mediumWidth, ...TouchableOpacityStyle}}
+            TouchableOpacityStyle={[styles.defaultTextButton, styles.secondaryOutline, styles.largeHeight, styles.mediumWidth, TouchableOpacityStyle]}
         />
     );
 }
@@ -187,7 +187,7 @@ AppButton.SecondaryOutlineThickThree = ({text, onPress, TouchableOpacityStyle, T
         <AppButton
             content={content}
             onPress={onPress}
-            TouchableOpacityStyle={{ ...styles.defaultTextButton, ...styles.secondaryOutline, ...styles.largeHeight, ...styles.halfWidth, ...TouchableOpacityStyle}}
+            TouchableOpacityStyle={[styles.defaultTextButton, styles.secondaryOutline, styles.largeHeight, styles.halfWidth, TouchableOpacityStyle]}
         />
     );
 }
@@ -200,7 +200,7 @@ AppButton.SecondaryOutlineThickFour = ({text, onPress, TouchableOpacityStyle, Te
         <AppButton
             content={content}
             onPress={onPress}
-            TouchableOpacityStyle={{ ...styles.defaultTextButton, ...styles.secondaryOutline, ...styles.largeHeight, ...styles.smallWidth, ...TouchableOpacityStyle}}
+            TouchableOpacityStyle={[ styles.defaultTextButton, styles.secondaryOutline, styles.largeHeight, styles.smallWidth, TouchableOpacityStyle]}
         />
     );
 }
@@ -213,7 +213,7 @@ AppButton.SecondaryOutlineThinOne = ({text, onPress, TouchableOpacityStyle, Text
         <AppButton
             content={content}
             onPress={onPress}
-            TouchableOpacityStyle={{ ...styles.defaultTextButton, ...styles.secondaryOutline, ...styles.smallHeight, ...styles.fullWidth, ...TouchableOpacityStyle}}
+            TouchableOpacityStyle={[ styles.defaultTextButton, styles.secondaryOutline, styles.smallHeight, styles.fullWidth, TouchableOpacityStyle]}
         />
     );
 }
@@ -226,7 +226,7 @@ AppButton.SecondaryOutlineThinTwo = ({text, onPress, TouchableOpacityStyle, Text
         <AppButton
             content={content}
             onPress={onPress}
-            TouchableOpacityStyle={{ ...styles.defaultTextButton, ...styles.secondaryOutline, ...styles.smallHeight, ...styles.mediumWidth, ...TouchableOpacityStyle}}
+            TouchableOpacityStyle={[ styles.defaultTextButton, styles.secondaryOutline, styles.smallHeight, styles.mediumWidth, TouchableOpacityStyle]}
         />
     );
 }
@@ -239,7 +239,7 @@ AppButton.SecondaryOutlineThinThree = ({text, onPress, TouchableOpacityStyle, Te
         <AppButton
             content={content}
             onPress={onPress}
-            TouchableOpacityStyle={{ ...styles.defaultTextButton, ...styles.secondaryOutline, ...styles.smallHeight, ...styles.halfWidth, ...TouchableOpacityStyle}}
+            TouchableOpacityStyle={[ styles.defaultTextButton, styles.secondaryOutline, styles.smallHeight, styles.halfWidth, TouchableOpacityStyle]}
         />
     );
 }
@@ -252,7 +252,7 @@ AppButton.SecondaryOutlineThinFour = ({text, onPress, TouchableOpacityStyle, Tex
         <AppButton
             content={content}
             onPress={onPress}
-            TouchableOpacityStyle={{ ...styles.defaultTextButton, ...styles.secondaryOutline, ...styles.smallHeight, ...styles.smallWidth, ...TouchableOpacityStyle}}
+            TouchableOpacityStyle={[ styles.defaultTextButton, styles.secondaryOutline, styles.smallHeight, styles.smallWidth, TouchableOpacityStyle]}
         />
     );
 }
@@ -271,7 +271,7 @@ AppButton.SecondaryGreyThickOne = ({text, onPress, TouchableOpacityStyle, TextSt
         <AppButton
             content={content}
             onPress={onPress}
-            TouchableOpacityStyle={{ ...styles.defaultTextButton, ...styles.secondaryGrey, ...styles.largeHeight, ...styles.fullWidth, ...TouchableOpacityStyle}}
+            TouchableOpacityStyle={[ styles.defaultTextButton, styles.secondaryGrey, styles.largeHeight, styles.fullWidth, TouchableOpacityStyle]}
         />
     );
 }
@@ -284,7 +284,7 @@ AppButton.SecondaryGreyThickTwo = ({text, onPress, TouchableOpacityStyle, TextSt
         <AppButton
             content={content}
             onPress={onPress}
-            TouchableOpacityStyle={{ ...styles.defaultTextButton, ...styles.secondaryGrey, ...styles.largeHeight, ...styles.mediumWidth, ...TouchableOpacityStyle}}
+            TouchableOpacityStyle={[ styles.defaultTextButton, styles.secondaryGrey, styles.largeHeight, styles.mediumWidth, TouchableOpacityStyle]}
         />
     );
 }
@@ -297,7 +297,7 @@ AppButton.SecondaryGreyThickThree = ({text, onPress, TouchableOpacityStyle, Text
         <AppButton
             content={content}
             onPress={onPress}
-            TouchableOpacityStyle={{ ...styles.defaultTextButton, ...styles.secondaryGrey, ...styles.largeHeight, ...styles.halfWidth, ...TouchableOpacityStyle}}
+            TouchableOpacityStyle={[ styles.defaultTextButton, styles.secondaryGrey, styles.largeHeight, styles.halfWidth, TouchableOpacityStyle]}
         />
     );
 }
@@ -310,7 +310,7 @@ AppButton.SecondaryGreyThickFour = ({text, onPress, TouchableOpacityStyle, TextS
         <AppButton
             content={content}
             onPress={onPress}
-            TouchableOpacityStyle={{ ...styles.defaultTextButton, ...styles.secondaryGrey, ...styles.largeHeight, ...styles.smallWidth, ...TouchableOpacityStyle}}
+            TouchableOpacityStyle={[ styles.defaultTextButton, styles.secondaryGrey, styles.largeHeight, styles.smallWidth, TouchableOpacityStyle]}
         />
     );
 }
@@ -324,7 +324,7 @@ AppButton.SecondaryGreyThinOne = ({text, onPress, TouchableOpacityStyle, TextSty
         <AppButton
             content={content}
             onPress={onPress}
-            TouchableOpacityStyle={{ ...styles.defaultTextButton, ...styles.secondaryGrey, ...styles.smallHeight, ...styles.fullWidth, ...TouchableOpacityStyle}}
+            TouchableOpacityStyle={[ styles.defaultTextButton, styles.secondaryGrey, styles.smallHeight, styles.fullWidth, TouchableOpacityStyle]}
         />
     );
 }
@@ -337,7 +337,7 @@ AppButton.SecondaryGreyThinTwo = ({text, onPress, TouchableOpacityStyle, TextSty
         <AppButton
             content={content}
             onPress={onPress}
-            TouchableOpacityStyle={{ ...styles.defaultTextButton, ...styles.secondaryGrey, ...styles.smallHeight, ...styles.mediumWidth, ...TouchableOpacityStyle}}
+            TouchableOpacityStyle={[ styles.defaultTextButton, styles.secondaryGrey, styles.smallHeight, styles.mediumWidth, TouchableOpacityStyle]}
         />
     );
 }
@@ -350,7 +350,7 @@ AppButton.SecondaryGreyThinThree = ({text, onPress, TouchableOpacityStyle, TextS
         <AppButton
             content={content}
             onPress={onPress}
-            TouchableOpacityStyle={{ ...styles.defaultTextButton, ...styles.secondaryGrey, ...styles.smallHeight, ...styles.halfWidth, ...TouchableOpacityStyle}}
+            TouchableOpacityStyle={[ styles.defaultTextButton, styles.secondaryGrey, styles.smallHeight, styles.halfWidth, TouchableOpacityStyle]}
         />
     );
 }
@@ -363,7 +363,7 @@ AppButton.SecondaryGreyThinFour = ({text, onPress, TouchableOpacityStyle, TextSt
         <AppButton
             content={content}
             onPress={onPress}
-            TouchableOpacityStyle={{ ...styles.defaultTextButton, ...styles.secondaryGrey, ...styles.smallHeight, ...styles.smallWidth, ...TouchableOpacityStyle}}
+            TouchableOpacityStyle={[ styles.defaultTextButton, styles.secondaryGrey, styles.smallHeight, styles.smallWidth, TouchableOpacityStyle]}
         />
     );
 }
@@ -382,7 +382,7 @@ AppButton.DisabledThickOne = ({text, onPress, TouchableOpacityStyle, TextStyle})
         <AppButton
             content={content}
             onPress={onPress}
-            TouchableOpacityStyle={{ ...styles.defaultTextButton, ...styles.disabled, ...styles.largeHeight, ...styles.fullWidth, ...TouchableOpacityStyle}}
+            TouchableOpacityStyle={[ styles.defaultTextButton, styles.disabled, styles.largeHeight, styles.fullWidth, TouchableOpacityStyle]}
         />
     );
 }
@@ -395,7 +395,7 @@ AppButton.DisabledThickTwo = ({text, onPress, TouchableOpacityStyle, TextStyle})
         <AppButton
             content={content}
             onPress={onPress}
-            TouchableOpacityStyle={{ ...styles.defaultTextButton, ...styles.disabled, ...styles.largeHeight, ...styles.mediumWidth, ...TouchableOpacityStyle}}
+            TouchableOpacityStyle={[ styles.defaultTextButton, styles.disabled, styles.largeHeight, styles.mediumWidth, TouchableOpacityStyle]}
         />
     );
 }
@@ -408,7 +408,7 @@ AppButton.DisabledThickThree = ({text, onPress, TouchableOpacityStyle, TextStyle
         <AppButton
             content={content}
             onPress={onPress}
-            TouchableOpacityStyle={{ ...styles.defaultTextButton, ...styles.disabled, ...styles.largeHeight, ...styles.halfWidth, ...TouchableOpacityStyle}}
+            TouchableOpacityStyle={[ styles.defaultTextButton, styles.disabled, styles.largeHeight, styles.halfWidth, TouchableOpacityStyle]}
         />
     );
 }
@@ -421,7 +421,7 @@ AppButton.DisabledThickFour = ({text, onPress, TouchableOpacityStyle, TextStyle}
         <AppButton
             content={content}
             onPress={onPress}
-            TouchableOpacityStyle={{ ...styles.defaultTextButton, ...styles.disabled, ...styles.largeHeight, ...styles.smallWidth, ...TouchableOpacityStyle}}
+            TouchableOpacityStyle={[ styles.defaultTextButton, styles.disabled, styles.largeHeight, styles.smallWidth, TouchableOpacityStyle]}
         />
     );
 }
@@ -434,7 +434,7 @@ AppButton.DisabledThinOne = ({text, onPress, TouchableOpacityStyle, TextStyle}) 
         <AppButton
             content={content}
             onPress={onPress}
-            TouchableOpacityStyle={{ ...styles.defaultTextButton, ...styles.disabled, ...styles.smallHeight, ...styles.fullWidth, ...TouchableOpacityStyle}}
+            TouchableOpacityStyle={[ styles.defaultTextButton, styles.disabled, styles.smallHeight, styles.fullWidth, TouchableOpacityStyle]}
         />
     );
 }
@@ -447,7 +447,7 @@ AppButton.DisabledThinTwo = ({text, onPress, TouchableOpacityStyle, TextStyle}) 
         <AppButton
             content={content}
             onPress={onPress}
-            TouchableOpacityStyle={{ ...styles.defaultTextButton, ...styles.disabled, ...styles.smallHeight, ...styles.mediumWidth, ...TouchableOpacityStyle}}
+            TouchableOpacityStyle={[ styles.defaultTextButton, styles.disabled, styles.smallHeight, styles.mediumWidth, TouchableOpacityStyle]}
         />
     );
 }
@@ -460,7 +460,7 @@ AppButton.DisabledThinThree = ({text, onPress, TouchableOpacityStyle, TextStyle}
         <AppButton
             content={content}
             onPress={onPress}
-            TouchableOpacityStyle={{ ...styles.defaultTextButton, ...styles.disabled, ...styles.smallHeight, ...styles.halfWidth, ...TouchableOpacityStyle}}
+            TouchableOpacityStyle={[ styles.defaultTextButton, styles.disabled, styles.smallHeight, styles.halfWidth, TouchableOpacityStyle]}
         />
     );
 }
@@ -473,7 +473,7 @@ AppButton.DisabledThinFour = ({text, onPress, TouchableOpacityStyle, TextStyle})
         <AppButton
             content={content}
             onPress={onPress}
-            TouchableOpacityStyle={{ ...styles.defaultTextButton, ...styles.disabled, ...styles.smallHeight, ...styles.smallWidth, ...TouchableOpacityStyle}}
+            TouchableOpacityStyle={[ styles.defaultTextButton, styles.disabled, styles.smallHeight, styles.smallWidth, TouchableOpacityStyle]}
         />
     );
 }
@@ -487,18 +487,35 @@ AppButton.DisabledThinFour = ({text, onPress, TouchableOpacityStyle, TextStyle})
 // **********************************************************************************************
 
 AppButton.goBack = ({navigation, TouchableOpacityStyle}) => {
-
     const content = <ChevronLeft color={Themes.colors.neutral_600} size={24} />
 
     return (
         <AppButton
             content={content}
             onPress={() => navigation.goBack()}
-            TouchableOpacityStyle={{  ...TouchableOpacityStyle}}
+            TouchableOpacityStyle={[ styles.backButton, TouchableOpacityStyle]}
         />
     );
 }
 
+
+
+// **********************************************************************************************
+// Other UI Buttons
+// **********************************************************************************************
+
+AppButton.toolTip = ({text, TouchableOpacityStyle}) => {
+
+    const content = <HelpCircle color={Themes.colors.neutral_600} size={20} />
+
+    return (
+        <AppButton
+            content={content}
+            // onPress={() => navigation.goBack()}
+            TouchableOpacityStyle={TouchableOpacityStyle}
+        />
+    );
+}
 
 
 
@@ -604,13 +621,12 @@ const styles = StyleSheet.create({
     largeHeight: {
         height: 48
     },
-
-
-    ButtonText:{
-        width: 48,      
-        height: 19,
-        color: "#FFFFFF",   
-        order: 0,
-    }
     
+
+    // Back Button
+
+    backButton: {
+        paddingLeft: 16,
+        paddingRight: 16
+    }
 });
