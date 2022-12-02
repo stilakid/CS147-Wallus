@@ -610,7 +610,7 @@ const styles = StyleSheet.create({
     // Back Button
 
     backButton: {
-        paddingLeft: 16,
+        // paddingLeft: 16,
         paddingRight: 16
     }
 });
