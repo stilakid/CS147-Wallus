@@ -1,4 +1,4 @@
-import { Themes } from "../../../assets/themes"
+import { Themes, Images } from "../../../assets/themes"
 
 // Components
 import { StyleSheet, SafeAreaView, Text, View, SectionList } from "react-native";
@@ -6,6 +6,7 @@ import { AppText } from "../../components/CustomText/customText";
 import { AppButton } from "../../components/Buttons/buttons";
 import { Divider } from "../../components/Divider/divider"
 import Header from "../../components/Header/header";
+import { Notification } from "../../components/Community & Feed/Notification";
 
 // Lucide Icons
 import { ChevronLeft } from 'lucide-react-native';
@@ -24,15 +25,23 @@ export default function NotificaitonScreen({navigation, route}) {
         title: 'Wallus reminders',
         data: ['French Fries', 'Onion Rings', 'Fried Shrimps'],
         },
-        {
-        title: 'Drinks',
-        data: ['Water', 'Coke', 'Beer'],
-        },
-        {
-        title: 'Desserts',
-        data: ['Cheese Cake', 'Ice Cream'],
-        },
     ];
+
+    const renderNotifications = ({item}) => {
+        return (
+            <View>
+                <Notification message={'Dan invites you to join Friendly Bananas'} investment={'Apple'} imageURL={Images.profilePic.Dan} />    
+            </View>
+        )
+    }
+
+    const renderSectionTitle = ({ section: { title } }) => {
+        return (
+            <View style={styles.sectionListTitle}>
+                <AppText.TitleSemiBoldFour>{title}</AppText.TitleSemiBoldFour>
+            </View>
+        )
+    }
 
 
     
@@ -42,10 +51,11 @@ export default function NotificaitonScreen({navigation, route}) {
             <SectionList
                 sections={DATA}
                 keyExtractor={(item, index) => item + index} /* unique key for each item */
-                renderItem={({ item }) => <View><Text>{item}</Text></View>} /* render each item as a MenuItem component with the given name */
-                renderSectionHeader={({ section: { title } }) => ( /* grab the title property from each section element */
-                    <View><Text>{title}</Text></View> /* render each section header as a Text component displaying the title */
-                )}
+                renderItem={renderNotifications } /* render each item as a MenuItem component with the given name */
+                renderSectionHeader={renderSectionTitle}
+                style={styles.sectionList}
+                contentContainerStyle={styles.sectionListContent}
+                stickySectionHeadersEnabled={false}
             />
         </SafeAreaView>
     );
@@ -57,7 +67,17 @@ const styles = StyleSheet.create({
         backgroundColor: Themes.colors.white,
         alignItems: "center",
         flex: 1,
-      },
+    },
+    sectionList: {
+        width: '100%',
+    },
+    sectionListContent: {
+        marginHorizontal: 16
+    },
+    sectionListTitle: {
+        marginTop: 24,
+        marginBottom: 12
+    }
 });
 
 
