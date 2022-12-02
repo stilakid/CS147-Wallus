@@ -16,6 +16,8 @@ export default function HomeScreen({navigation, route}) {
             <Text>Home Screen</Text>
             <Button title="Notifs" onPress={() => navigation.navigate('Notifications')} />
             <Button title="Invitation" onPress={() => navigation.navigate('Invitation')} />
+            <Button title="Stock" onPress={() => navigation.navigate('Stock')} />
+
         </SafeAreaView>
     );
 }

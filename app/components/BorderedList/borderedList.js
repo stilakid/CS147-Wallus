@@ -3,22 +3,117 @@ import { Themes } from "../../../assets/themes"
 
 // Components
 import { StyleSheet, SafeAreaView, Text, View, FlatList } from "react-native";
-import { Divider } from "../../components/Divider/divider"
+import { Divider } from "../Divider/divider"
 import { AppText } from "../CustomText/customText";
 import { AppButton } from "../Buttons/buttons";
 import { TrendTags } from "../TrendTags/TrendTags";
 
 {/* <Home color="black" size={24} />; */}
-export const BorderedList = ({data, renderItem, data_primary_key, FlatListStyle, FlatListContentStyle}) => {
+export const InvestmentStat = ({portfolioFit, expectedReturn, volatility, typicalHold, market, sp500}) => {
+
+    //TODO: This is a hack
+    let marketTag = <TrendTags.bigGreen tagText={market} />
+    let sp500Tag = <TrendTags.bigGreen tagText={sp500} />
+    // End of hack
+
+    let performanceTitle;
+    let performance;
+    if (market || sp500) {
+        performanceTitle = <AppText.TitleSemiBoldFour style={styles.title} >Performance</AppText.TitleSemiBoldFour>
+
+        performance = (
+            <View style={[styles.container, styles.profileFitContainer]}>
+                <View style={styles.row}>
+                    <View style={[styles.columnAlt, styles.columnAlt1]}>
+                        <AppText.LabelBoldOne>Past Year's trend</AppText.LabelBoldOne>
+                        <AppButton.toolTip TouchableOpacityStyle={[styles.toolTipDefault, styles.columnValue]}/>
+                    </View>
+                    <Divider.Vertical />
+                    <View style={styles.columnAlt}>
+                        <AppText.LabelBoldOne>Market</AppText.LabelBoldOne>
+                        <AppText.ParagraphTwo style={styles.columnValue} >{marketTag}</AppText.ParagraphTwo>
+                    </View>
+                    <Divider.Vertical />
+                    <View style={styles.columnAlt}>
+                        <AppText.LabelBoldOne>S&P 500</AppText.LabelBoldOne>
+                        <AppText.ParagraphTwo style={styles.columnValue} >{sp500Tag}</AppText.ParagraphTwo>
+                    </View>
+
+                </View>
+            </View>
+        )
+    }
+
+
+    let fitIndicator;
+    if (portfolioFit === 'Great') {
+        fitIndicator = <TrendTags.bigGreen tagText={portfolioFit} />
+    } else if (portfolioFit === 'blue') {
+        fitIndicator = <TrendTags.bigBlue tagText={portfolioFit} />
+    } else if (portfolioFit === 'orange') {
+        fitIndicator = <TrendTags.bigOrange tagText={portfolioFit} />
+    } else {
+        fitIndicator = <TrendTags.bigGrey tagText={portfolioFit} />
+    }
+
+
     return(
-        <FlatList
-            data={data}
-            renderItem = {renderItem}
-            keyExtractor = {data_primary_key}
-            style={[styles.flatList, FlatListStyle]}
-            contentContainerStyle={[styles.flatListContent, FlatListContentStyle]}
-            ItemSeparatorComponent={<Divider />}
-        />
+        <View style={styles.outerContainer}>
+
+            {performanceTitle}
+            {performance}
+
+            <View style={[styles.container, styles.profileFitContainer]}>
+                <View style={styles.row}>
+                    <View style={[styles.column, styles.column1]}>
+                        <AppText.LabelBoldOne>Profile fit</AppText.LabelBoldOne>
+                        <AppButton.toolTip TouchableOpacityStyle={styles.toolTipDefault}/>
+                    </View>
+                    <View style={[styles.column, styles.column2]}>
+                        {fitIndicator}
+                    </View>
+
+                </View>
+            </View>
+
+            <View style={styles.container}>
+                <View style={styles.row}>
+                    <View style={[styles.column, styles.column1]}>
+                        <AppText.LabelBoldOne>Expected return</AppText.LabelBoldOne>
+                        <AppButton.toolTip TouchableOpacityStyle={styles.toolTipDefault}/>
+                    </View>
+                    <View style={[styles.column, styles.column2]}>
+                        <AppText.ParagraphTwo>{expectedReturn}</AppText.ParagraphTwo>
+                    </View>
+                </View>
+
+                <Divider.Horizontal />
+
+                <View style={styles.row}>
+                    <View style={[styles.column, styles.column1]}>
+                        <AppText.LabelBoldOne>Volatility</AppText.LabelBoldOne>
+                        <AppButton.toolTip TouchableOpacityStyle={styles.toolTipDefault}/>
+                    </View>
+                    <View style={[styles.column, styles.column2]}>
+                        <AppText.ParagraphTwo>{volatility}</AppText.ParagraphTwo>
+                    </View>
+                </View>
+
+                <Divider.Horizontal />
+
+                <View style={styles.row}>
+                    <View style={[styles.column, styles.column1]}>
+                        <AppText.LabelBoldOne>Typical Hold</AppText.LabelBoldOne>
+                        <AppButton.toolTip TouchableOpacityStyle={styles.toolTipDefault}/>
+                    </View>
+                    <View style={[styles.column, styles.column2]}>
+                        <AppText.ParagraphTwo>{typicalHold}</AppText.ParagraphTwo>
+                    </View>
+                </View>
+            </View>
+
+        </View>
+        
     );
 }
 
@@ -28,74 +123,82 @@ export const BorderedList = ({data, renderItem, data_primary_key, FlatListStyle,
 //           { statName:'stat', tooltip: 'text', stat: 'value' },
 //            ...
 //          }
-BorderedList.InvestmentStat = ({data, data_primary_key, FlatListStyle, FlatListContentStyle}) => {
-
-    const renderRow = ({item}) => {
-        // let stat = <AppText.ParagraphTwo>{item.stat}</AppText.ParagraphTwo>
-
-        let stat;
-        if (item.statBackgroundColor) {
-            if (item.statBackgroundColor === 'green') {
-                stat = <TrendTags.bigGreen tagText={item.stat}>{item.stat}</TrendTags.bigGreen>
-            } else if (item.statBackgroundColor === 'blue') {
-                stat = <TrendTags.bigBlue tagText={item.stat}>{item.stat}</TrendTags.bigBlue>
-            } else if (item.statBackgroundColor === 'orange') {
-                stat = <TrendTags.bigOrange tagText={item.stat}>{item.stat}</TrendTags.bigOrange>
-            } else {
-                stat = <TrendTags.bigGrey tagText={item.stat}>{item.stat}</TrendTags.bigGrey>
-            }
-        } else {
-            stat = <AppText.ParagraphTwo>{item.stat}</AppText.ParagraphTwo>
-        }
-
-        return (
-            <View style={styles.investmentStatsRow}>
-                <View style={{display: "flex", flexDirection:'row', justifyContent: 'flex-start'}}>
-                    <AppText.LabelBoldOne>{item.statName}</AppText.LabelBoldOne>
-                    <AppButton.toolTip TouchableOpacityStyle={styles.toolTipDefault}/>
-                </View>
-                {stat}
-            </View>
-        );
-    }
-
-    return (
-        <BorderedList
-            data={data}
-            data_primary_key={data_primary_key}
-            renderItem={renderRow}
-            FlatListStyle={[FlatListStyle]}
-            FlatListContentStyle={[styles.investmentStat, FlatListContentStyle]}
-        />
-    );
-}
-
 
 const styles = StyleSheet.create({
-      flatList: {
-        width: '100%'
-      },
-      flatListContent: {
+
+    outerContainer: {
+        width: '100%',
+    },
+
+    container: {
         borderWidth: 2,
         borderColor: Themes.colors.neutral_200,
         borderRadius: 16,
-      },
+        marginHorizontal: 16,
+    },
 
-      investmentStatsRow: {
+    profileFitContainer: {
+        marginVertical: 12
+    },
+
+    title: {
+        paddingHorizontal: 16
+    },
+    row: {
+        display: 'flex',
+        flexDirection: 'row',
+        paddingHorizontal: 16,
+        justifyContent: 'space-between',
+        alignItems: 'center'
+    },
+    column: {
+        marginVertical: 16
+    }, 
+    column1: {
+        display: 'flex',
+        flexDirection: 'row'
+    },
+    column2: {
+    },
+    columnAlt: {
+        display: 'flex',
+        flex: 1,
+        alignItems: 'center',
+        marginVertical: 16
+    },
+    columnAlt1: {
+        display: 'flex',
+        flex: 1,
+        alignItems: 'flex-start'
+    },
+    columnAlt2: {
+        display: 'flex',
+        flex: 1
+    },
+    columnAlt3: {
+        display: 'flex',
+        flex: 1
+    },
+
+    columnValue: {
+        marginTop: 4
+    },
+
+    investmentStatsRow: {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: 16
-      },
+    },
 
-      toolTipDefault: {
-        marginLeft: 4
-      },
+    toolTipDefault: {
+    marginLeft: 4
+    },
 
-      investmentStat: {
-        marginHorizontal: 16
-      }
+    investmentStat: {
+    marginHorizontal: 16
+    }
 
 });
 

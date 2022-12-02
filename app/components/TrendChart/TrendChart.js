@@ -5,7 +5,7 @@ export default function TrendChart({trendGraphURL}) {
     // const {  } = route.params;
     return(
         <View style={styles.container}>
-            <Image style={styles.chart} source={require("../../../assets/trendCharts/trend1.png")}></Image>
+            <Image style={styles.chart} source={trendGraphURL}></Image>
             <View style={styles.selectionContainer}>
                 <SelectionOptions.noBorder_Unselected_28px text={"1D"}/>
                 <SelectionOptions.noBorder_Unselected_28px text={"1W"}/>
@@ -21,14 +21,14 @@ export default function TrendChart({trendGraphURL}) {
 
 const styles = StyleSheet.create({
     container: {
-        width: 358,
+        width: '100%',
         borderRadius: 16,
         padding: 16,
     },
     chart: {
         width: "100%",
-        height: 64,
-        marginVertical: 12,
+        height: 150,
+        resizeMode: 'contain'
     },
     selectionContainer: {
         flexDirection: 'row',

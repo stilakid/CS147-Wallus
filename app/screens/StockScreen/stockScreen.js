@@ -1,5 +1,5 @@
 // import React from 'react';
-import { Themes } from "../../../assets/themes"
+import { Themes, Images } from "../../../assets/themes"
 
 // Components
 import { StyleSheet, SafeAreaView, Text, View, ScrollView, Image } from "react-native";
@@ -12,6 +12,7 @@ import { TrendTags } from "../../components/TrendTags/TrendTags";
 import { AppFloatingButton } from "../../components/Buttons/floatingButtons";
 import { InvestmentStat } from "../../components/BorderedList/borderedList";
 import WallusTips from "../../components/Cards/WallusTips/WallusTips";
+import TrendChart from "../../components/TrendChart/TrendChart";
 
 // Lucide Icons
 import { ChevronLeft } from 'lucide-react-native';
@@ -52,7 +53,7 @@ const portfolioFit= [
 
 
 {/* <Home color="black" size={24} />; */}
-export default function InvitationScreen({navigation, route}) {
+export default function StockScreen({navigation, route}) {
 
     // const {  } = route.params;
 
@@ -62,22 +63,21 @@ export default function InvitationScreen({navigation, route}) {
     return(
         <SafeAreaView style={styles.container}>
             <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent} >
-                <Header text="Dan's Invitation" navigation={navigation} hasDivider={false} />
-                <Image
-                    source={require('../../../assets/InvitationBanner.png')}
-                    style={
-                        styles.banner
-                    }
-                />
+                <Header text="" navigation={navigation} hasDivider={false} />
+                <View style={styles.bannerContainer}>
+                    <Image
+                        source={require('../../../assets/StockBanner.png')}
+                        style={
+                            styles.banner
+                        }
+                    />
+                </View>
 
-                <Divider.Horizontal />
+                <TrendChart trendGraphURL={Images.trendCharts.trend2} />
+
                 <WallusTips.orange titleText={'Not aligned with your preference'} bodyText={'This is a text that explains the reason why it does not match'} />
 
-                {/* <BorderedList.InvestmentStat data={portfolioFit} data_primary_key={(item) => item.id} FlatListStyle={styles.portfolioFit} />
-
-                <BorderedList.InvestmentStat data={investmentInfo} data_primary_key={(item) => item.id} /> */}
-
-                <InvestmentStat portfolioFit={'Great'}/>
+                <InvestmentStat portfolioFit={'Great'} market={'12.38%'} sp500={'12.88%'} expectedReturn={'3.1%'} volatility={'Medium'} typicalHold={'4Y 3M'} />
                 <AppButton.SecondaryOutlineThickOne text={'Stock details'} TouchableOpacityStyle={styles.stockDetailsButton} />
             </ScrollView>
 
@@ -113,7 +113,19 @@ const styles = StyleSheet.create({
     },
     banner: {
         width: '100%',
-        resizeMode: 'contain'
+        resizeMode: 'contain',
+    },
+    bannerContainer: {
+        width: '100%',
+        marginVertical: 24,
+    },
+    trendChart: {
+        width: '100%',
+        resizeMode: 'contain',
+    },
+    trendChartContainer: {
+        width: '100%',
+        paddingHorizontal: 30,
     }
 });
 
