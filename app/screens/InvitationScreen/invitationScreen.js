@@ -53,12 +53,7 @@ const portfolioFit= [
 export default function InvitationScreen({navigation, route}) {
 
     // const {  } = route.params;
-    
-    const renderItem = ({item}) => (
-        <View>
-            <Text>{item.name}</Text>
-        </View>
-    )
+
 
 
     

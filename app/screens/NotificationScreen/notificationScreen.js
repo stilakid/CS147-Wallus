@@ -24,15 +24,21 @@ export default function NotificaitonScreen({navigation, route}) {
         title: 'Wallus reminders',
         data: ['French Fries', 'Onion Rings', 'Fried Shrimps'],
         },
-        {
-        title: 'Drinks',
-        data: ['Water', 'Coke', 'Beer'],
-        },
-        {
-        title: 'Desserts',
-        data: ['Cheese Cake', 'Ice Cream'],
-        },
     ];
+
+    const renderNotifications = ({item}) => {
+        return (
+            <View><Text>{item}</Text></View>
+        )
+    }
+
+    const renderSectionTitle = ({ section: { title } }) => {
+        return (
+            <View style={styles.sectionListTitle}>
+                <AppText.TitleSemiBoldFour>{title}</AppText.TitleSemiBoldFour>
+            </View>
+        )
+    }
 
 
     
@@ -42,10 +48,10 @@ export default function NotificaitonScreen({navigation, route}) {
             <SectionList
                 sections={DATA}
                 keyExtractor={(item, index) => item + index} /* unique key for each item */
-                renderItem={({ item }) => <View><Text>{item}</Text></View>} /* render each item as a MenuItem component with the given name */
-                renderSectionHeader={({ section: { title } }) => ( /* grab the title property from each section element */
-                    <View><Text>{title}</Text></View> /* render each section header as a Text component displaying the title */
-                )}
+                renderItem={renderNotifications } /* render each item as a MenuItem component with the given name */
+                renderSectionHeader={renderSectionTitle}
+                style={styles.sectionList}
+                contentContainerStyle={styles.sectionListContent}
             />
         </SafeAreaView>
     );
@@ -57,7 +63,16 @@ const styles = StyleSheet.create({
         backgroundColor: Themes.colors.white,
         alignItems: "center",
         flex: 1,
-      },
+    },
+    sectionList: {
+        width: '100%',
+    },
+    sectionListContent: {
+        marginHorizontal: 16
+    },
+    sectionListTitle: {
+        marginBottom: 12
+    }
 });
 
 
