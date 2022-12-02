@@ -3,7 +3,7 @@ import { Themes, Images} from "../../../assets/themes"
 import { AppText } from "../CustomText/customText";
 import { AppButton } from "../Buttons/buttons"
 
-export function Notification ({message, investment, imageURL}){
+export function Notification ({message, investment, imageURL, onPress}){
     console.log(imageURL)
     return (
         <View style={styles.container}>
@@ -18,7 +18,7 @@ export function Notification ({message, investment, imageURL}){
                 <Text style={styles.messageStyle}>{message}</Text>
                 <Text style={styles.investmentStyle}>{investment}</Text>
             </View>
-            <AppButton.PrimaryThinFive text="Details"></AppButton.PrimaryThinFive>
+            <AppButton.PrimaryThinFive text="Details" onPress={onPress}></AppButton.PrimaryThinFive>
         </View>
         
     );

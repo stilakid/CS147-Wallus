@@ -5,7 +5,7 @@ import { TrendTags } from '../TrendTags/TrendTags';
 import { AppButton } from "../Buttons/buttons";
 
 export default function StatsDisplay() {
-  
+    
     return (
       <View style={styles.card}>
           <View style={styles.section}>
