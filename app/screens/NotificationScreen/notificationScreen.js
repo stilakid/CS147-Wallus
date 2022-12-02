@@ -23,7 +23,7 @@ export default function NotificaitonScreen({navigation, route}) {
         },
         {
         title: 'Wallus reminders',
-        data: [['This investment is no longer aligned with your goals', 'Investment: Apple', Images.Wallus, () => navigation.navigate('Invitation')]],
+        data: [['This investment is no longer aligned with your goals', 'Investment: Apple', Images.Wallus, () => navigation.navigate('Invitation')], ['This investment is no longer aligned with your goals', 'Investment: Apple', Images.Wallus, () => navigation.navigate('Invitation')]],
         },
     ];
 
