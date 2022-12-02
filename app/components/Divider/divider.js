@@ -4,18 +4,36 @@ import { Themes} from "../../../assets/themes"
 // Components
 import { StyleSheet, View, TouchableOpacity,} from "react-native"
 
-export const Divider = () => {
+export const Divider = ({style}) => {
     return(
-        <View style={styles.divider}/>
+        <View style={[styles.divider, style]}/>
     );
 }
+
+Divider.Vertical = ({style}) => (
+    <Divider
+        style={styles.vertical}
+    />
+)
+
+Divider.Horizontal = ({style}) => (
+    <Divider
+        style={styles.horizontal}
+    />
+)
 
 
 const styles = StyleSheet.create({
     divider: {
         backgroundColor: Themes.colors.neutral_200,
-        height: 2,
-        width: '100%',
         borderRadius:999,
+    },
+    vertical: {
+        width: 2,
+        height: '100%'
+    },
+    horizontal: {
+        width: '100%',
+        height: 2,
     }
 });

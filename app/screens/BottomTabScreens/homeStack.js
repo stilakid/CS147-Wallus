@@ -14,6 +14,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import NotificationScreen from "../NotificationScreen/notificationScreen";
 import HomeScreen from "../HomeScreen/homeScreen";
 import InvitationScreen from "../InvitationScreen/invitationScreen";
+import StockScreen from "../StockScreen/stockScreen";
 
 export default function HomeStack({navigation, route}) {
     
@@ -26,6 +27,7 @@ export default function HomeStack({navigation, route}) {
             <Stack.Screen name="Home Screen" component={HomeScreen} options={{headerShown: false}} />
             <Stack.Screen name="Notifications" component={NotificationScreen} options={{headerShown: false}} />
             <Stack.Screen name="Invitation" component={InvitationScreen} options={{headerShown: false}} />
+            <Stack.Screen name="Stock" component={StockScreen} options={{headerShown: false}} />
         </Stack.Navigator>
     );
 }

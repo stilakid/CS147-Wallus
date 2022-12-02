@@ -9,7 +9,7 @@ import { Divider } from "../Divider/divider";
 export default function Header({hasDivider, text, navigation}) {
     let divider;
     if (hasDivider) {
-        divider = <Divider/>
+        divider = <Divider.Horizontal />
     }
 
     return (

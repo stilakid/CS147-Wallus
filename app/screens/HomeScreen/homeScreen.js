@@ -23,8 +23,12 @@ export default function HomeScreen({navigation, route}) {
                     </View>
                 </View>
                 <AppButton.notif navigation={navigation}/>
-    
             </View>
+
+            <Text>Home Screen</Text>
+            <Button title="Notifs" onPress={() => navigation.navigate('Notifications')} />
+            <Button title="Invitation" onPress={() => navigation.navigate('Invitation')} />
+            <Button title="Stock" onPress={() => navigation.navigate('Stock')} />
         </SafeAreaView>
     );
 }
