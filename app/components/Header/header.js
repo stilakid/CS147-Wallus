@@ -14,13 +14,11 @@ export default function Header({hasDivider, text, navigation}) {
 
     return (
         <View style={styles.outermostContainer}>
-            <View style={styles.outerContainer}>
-                <View style={styles.innerContainer}>
-                    <AppButton.goBack navigation={navigation} TouchableOpacityStyle={styles.goBack} />
-                    <AppText.TitleSemiBoldThree style={styles.text}>
-                        {text}
-                    </AppText.TitleSemiBoldThree>
-                </View>
+            <View style={styles.innerContainer}>
+                <AppButton.goBack navigation={navigation} TouchableOpacityStyle={styles.goBack} />
+                <AppText.TitleSemiBoldThree style={styles.text}>
+                    {text}
+                </AppText.TitleSemiBoldThree>
             </View>
             {divider}
         </View>
@@ -33,15 +31,12 @@ const styles = StyleSheet.create({
         display: 'flex',
         width: '100%',
     },
-    outerContainer: {
-        display: 'flex',
-        height: 70,
-        justifyContent: 'center'
-    },
     innerContainer: {
         display: 'flex',
         flexDirection: "row",
-        alignItems: 'center'
+        alignItems: 'center',
+        height: 70,
+        paddingHorizontal: 16
     },
     text: {
         color: Themes.colors.neutral_800,
