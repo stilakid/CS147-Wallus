@@ -257,7 +257,18 @@ AppButton.SecondaryOutlineThinFour = ({text, onPress, TouchableOpacityStyle, Tex
     );
 }
 
+AppButton.SecondaryOutlineThinFive = ({text, onPress, TouchableOpacityStyle, TextStyle}) => {
 
+    const content = <AppText.LabelBoldTwo style={[styles.secondaryText, TextStyle]}> {text} </AppText.LabelBoldTwo>
+
+    return (
+        <AppButton
+            content={content}
+            onPress={onPress}
+            TouchableOpacityStyle={[ styles.defaultTextButton, styles.secondaryOutline, styles.smallHeight, styles.xxsmallWidth, TouchableOpacityStyle]}
+        />
+    );
+}
 
 // **********************************************************************************************
 // Secondary Grey Buttons
@@ -617,6 +628,9 @@ const styles = StyleSheet.create({
 
     xsmallWidth: {
         width: 80
+    },
+    xxsmallWidth: {
+        width: 61
     },
     halfWidth: {
         width: 173

@@ -12,6 +12,7 @@ export function TrendTags ({tagText}) {
     );
 }
 
+
 /******* 28px height tags *******/
 
 TrendTags.smallGreen = ({tagText}) => (
@@ -72,7 +73,12 @@ TrendTags.bigGrey = ({tagText}) => (
     </View>
 )
 
-
+TrendTags.xsmallGreen = ({tagText}) => (
+    <View style={[styles.tagContainer, {backgroundColor: Themes.colors.secondary_50}, {height: 22, width: 95}]}>
+        <AppText.LabelSemiBoldTwo style={{color: Themes.colors.secondary_900}}>{tagText}
+        </AppText.LabelSemiBoldTwo>
+    </View>
+)
 const styles = StyleSheet.create({
     tagContainer: {
         height: 28,

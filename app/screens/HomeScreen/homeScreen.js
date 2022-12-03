@@ -10,6 +10,7 @@ import { SelectionOptions } from "../../components/SelectionOptions/SelectionOpt
 
 // Lucide Icons
 import { Bell } from "lucide-react-native"
+import Milestone from "../../components/Cards/Milestone";
 
 export default function HomeScreen({navigation, route}) {
     const bellContent = <Bell color={Themes.colors.neutral_600} size={20} />
@@ -25,16 +26,7 @@ export default function HomeScreen({navigation, route}) {
                 </View>
                 <AppButton.notif navigation={navigation}/>
             </View>
-            <Image
-                source={Images.temp}
-                style={
-                    {
-                        width: '100%',
-                        resizeMode: 'contain',
-                        height: 750
-                    }
-                }
-            />
+            <Milestone></Milestone>
 {/* 
             <Text>Home Screen</Text>
             <Button title="Notifs" onPress={() => navigation.navigate('Notifications')} />
