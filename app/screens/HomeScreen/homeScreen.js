@@ -1,7 +1,7 @@
 import { Themes, Images } from "../../../assets/themes"
 
 // Components
-import { StyleSheet, SafeAreaView, Text, View, Button, Image } from "react-native";
+import { StyleSheet, SafeAreaView, Text, View, Button, Image, SectionList } from "react-native";
 import { AppText } from "../../components/CustomText/customText";
 import { AppButton } from "../../components/Buttons/buttons";
 import { Divider } from "../../components/Divider/divider"
@@ -11,9 +11,37 @@ import { SelectionOptions } from "../../components/SelectionOptions/SelectionOpt
 // Lucide Icons
 import { Bell } from "lucide-react-native"
 import Milestone from "../../components/Cards/Milestone";
+import InvitationCard from "../../components/Cards/InvitationCard";
+
 
 export default function HomeScreen({navigation, route}) {
     const bellContent = <Bell color={Themes.colors.neutral_600} size={20} />
+    const DATA = [
+        {
+        title: 'My Index Funds',
+        data: ['1', '2'],
+        },
+        {
+        title: 'My Stocks',
+        data: ['3', '4'],
+        },
+    ];
+    
+    const renderCards = ({item}) => {
+        return (
+            <View style={{marginVertical:12}}>
+                <InvitationCard GroupName={'Brave Potatoes'} Price={"USD 27.4 total"}></InvitationCard>
+            </View>
+        )
+    }
+    
+    const renderSectionTitle = ({ section: { title } }) => {
+        return (
+            <View style={styles.sectionListTitle}>
+                <AppText.TitleSemiBoldFour>{title}</AppText.TitleSemiBoldFour>
+            </View>
+        )
+    }
     return(
         <SafeAreaView style={styles.container}>
             <View style={styles.header}>
@@ -27,11 +55,16 @@ export default function HomeScreen({navigation, route}) {
                 <AppButton.notif navigation={navigation}/>
             </View>
             <Milestone></Milestone>
-{/* 
-            <Text>Home Screen</Text>
-            <Button title="Notifs" onPress={() => navigation.navigate('Notifications')} />
-            <Button title="Invitation" onPress={() => navigation.navigate('Invitation')} />
-            <Button title="Stock" onPress={() => navigation.navigate('Stock')} /> */}
+            <SectionList
+                sections={DATA}
+                keyExtractor={(item, index) => item + index} /* unique key for each item */
+                renderItem={renderCards } /* render each item as a MenuItem component with the given name */
+                renderSectionHeader={renderSectionTitle}
+                style={styles.sectionList}
+                contentContainerStyle={styles.sectionListContent}
+                stickySectionHeadersEnabled={false}
+            />
+            
         </SafeAreaView>
     );
 }
@@ -85,4 +118,14 @@ const styles = StyleSheet.create({
         height: 38,
         marginLeft: 10
     },
+    sectionList: {
+        width: '100%',
+    },
+    sectionListContent: {
+        marginHorizontal: 16,
+    },
+    sectionListTitle: {
+        marginTop: 24,
+        marginBottom: 12
+    }
 });

@@ -4,7 +4,7 @@ import { Themes} from "../../../assets/themes";
 import { AppText } from '../CustomText/customText';
 import { TrendTags } from '../TrendTags/TrendTags';
 
-export default function InvitationCard() {
+export default function InvitationCard({GroupName, Price}) {
 
   const onPressName = () => {
     console.log("logging invitation card group name click")
@@ -15,19 +15,15 @@ export default function InvitationCard() {
       <View style={styles.title}>
         <View style={styles.details}>
           <View >
-            <Text style={styles.groupName} onPress={onPressName}> {"Group Name"} </Text>
+            <Text style={styles.groupName} onPress={onPressName}> {GroupName} </Text>
           </View>
           <View style={styles.status}>
-            <View>
             <TrendTags.smallGreen tagText={"Growing"}/>
-            </View>
-            <View>
-              <Text style={styles.stock}> {"S&P 500"} </Text>
-            </View>
+            <Text style={styles.stock}> {"S&P 500"} </Text>
           </View>
         </View>
         <View>
-          <TrendTags.smallGrey tagText={"Price: $28.32"}/>
+          <TrendTags.smallGrey tagText={Price}/>
         </View>
       </View>
       <Image
@@ -45,16 +41,12 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'flex-start',
     padding: 16,
-    gap: 16,
-    position: 'absolute',
     width: 358,
     height: 135,
-    left: 20,
-    top: 20,
     backgroundColor: 'white',
     borderColor: Themes.colors.neutral_200,
     borderWidth: 2,
-    borderRadius: 16,
+    borderRadius: 20,
     boxSizing: 'border-box'
   },
   title: {
@@ -100,6 +92,8 @@ const styles = StyleSheet.create({
     marginTop: 15
   }, 
   profilePic: {
-    marginTop: 8
+    marginTop: 16,
+    width: 128,
+    height: 32
   }
 });  
