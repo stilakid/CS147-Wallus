@@ -39,11 +39,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 16,
     gap: 12,
-    position: 'absolute',
-    color: Themes.colors.neutral_100,
+    backgroundColor: Themes.colors.neutral_100,
     borderRadius: 16,
     width: 358,
-    height: 79
+    height: 80
   },
   container: {
     flexDirection: 'column',
