@@ -4,6 +4,16 @@ import { Themes} from "../../../assets/themes";
 import { AppText } from '../CustomText/customText';
 import { TrendTags } from '../TrendTags/TrendTags';
 
+/*
+you can use this card like this:
+<InvestmentDisplayCard 
+  logoURL={'../../../assets/tesla.png'} 
+  companyName={'Tesla'} 
+  stockPrice={'$124.32'} 
+  status={'stable'}>
+/>
+*/
+
 export default function InvestmentDisplayCard({logoURL, companyName, stockPrice, status}) {
   let tagdisplayed;
   let companyLogo = {logoURL};
