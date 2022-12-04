@@ -11,7 +11,7 @@ export default function CongratsScreen({navigation, route}) {
     // const {  } = route.params;
     return(
         <SafeAreaView style={styles.container}>
-            <Image style={{width: 246.5, height: 201.5, resizeMode: 'contain'}}source={Images.walrus.cheers}/>
+            <Image style={{width: 246.5, height: 201.5, resizeMode: 'contain'}}source={Images.walrus.cheersBackground}/>
             <View style={styles.textContainer}>
                 <AppText.TitleBoldOne style={{color:Themes.colors.neutral_800, textAlign: 'center'}}>
                     Congratulations!</AppText.TitleBoldOne>

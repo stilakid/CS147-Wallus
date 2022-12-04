@@ -10,6 +10,7 @@ const images = {
         },
         Wallus: require('../Walluslogo.png'),
         walrus: {
+            cheersBackground: require('../walrus/cheersBackground.png'),
             cheers: require('../walrus/cheers.png'),
             grin: require('../walrus/grin.png'),
             idea: require('../walrus/idea.png'),
