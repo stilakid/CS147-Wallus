@@ -17,7 +17,7 @@ export default function Milestone ({titleText, bodyText}) {
                     </View>
                     <AppButton.SecondaryOutlineThinFive text='Share'></AppButton.SecondaryOutlineThinFive>
                 </View>
-                <View style={{width: 162, height: 22, flexDirection: 'row', marginTop:12}}>
+                <View style={{width: 162, height: 22, flexDirection: 'row', marginTop:12, alignItems:'center'}}>
                     <TrendTags.xsmallGreen tagText={"Grew 12.80%"}></TrendTags.xsmallGreen>
                     <AppText.LabelBoldTwo style={{color: Themes.colors.white, marginLeft:8}}>Past Year</AppText.LabelBoldTwo>
                 </View>

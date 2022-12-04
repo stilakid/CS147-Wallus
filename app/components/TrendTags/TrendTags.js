@@ -7,7 +7,7 @@ import { AppText } from "../CustomText/customText";
 export function TrendTags ({tagText}) {
     return (
         <View style={styles.tagContainer}>
-             <AppText.LabelSemiBoldTwo>{tagText}</AppText.LabelSemiBoldTwo>
+             <AppText.LabelBoldTwo>{tagText}</AppText.LabelBoldTwo>
         </View>
     );
 }
@@ -17,29 +17,29 @@ export function TrendTags ({tagText}) {
 
 TrendTags.smallGreen = ({tagText}) => (
     <View style={[styles.tagContainer, {backgroundColor: Themes.colors.secondary_50}]}>
-        <AppText.LabelSemiBoldTwo style={{color: Themes.colors.secondary_900}}>{tagText}
-        </AppText.LabelSemiBoldTwo>
+        <AppText.LabelBoldTwo style={{color: Themes.colors.secondary_900}}>{tagText}
+        </AppText.LabelBoldTwo>
     </View>
 )
 
 TrendTags.smallBlue = ({tagText}) => (
     <View style={[styles.tagContainer, {backgroundColor: Themes.colors.primary_50}]}>
-        <AppText.LabelSemiBoldTwo style={{color: Themes.colors.primary_900}}>{tagText}
-        </AppText.LabelSemiBoldTwo>
+        <AppText.LabelBoldTwo style={{color: Themes.colors.primary_900}}>{tagText}
+        </AppText.LabelBoldTwo>
     </View>
 )
 
 TrendTags.smallOrange = ({tagText}) => (
     <View style={[styles.tagContainer, {backgroundColor: Themes.colors.tertiary_200}]}>
-        <AppText.LabelSemiBoldTwo style={{color: "#A43F21"}}>{tagText}
-        </AppText.LabelSemiBoldTwo>
+        <AppText.LabelBoldTwo style={{color: "#A43F21"}}>{tagText}
+        </AppText.LabelBoldTwo>
     </View>
 )
 
 TrendTags.smallGrey = ({tagText}) => (
     <View style={[styles.tagContainer, {backgroundColor: Themes.colors.neutral_100}]}>
-        <AppText.LabelSemiBoldTwo style={{color: Themes.colors.neutral_600}}>{tagText}
-        </AppText.LabelSemiBoldTwo>
+        <AppText.LabelBoldTwo style={{color: Themes.colors.neutral_600}}>{tagText}
+        </AppText.LabelBoldTwo>
     </View>
 )
 
@@ -47,36 +47,38 @@ TrendTags.smallGrey = ({tagText}) => (
 
 TrendTags.bigGreen = ({tagText}) => (
     <View style={[styles.tagContainer, {backgroundColor: Themes.colors.secondary_50}, {height: 32}]}>
-        <AppText.LabelSemiBoldTwo style={{color: Themes.colors.secondary_900}}>{tagText}
-        </AppText.LabelSemiBoldTwo>
+        <AppText.LabelBoldTwo style={{color: Themes.colors.secondary_900}}>{tagText}
+        </AppText.LabelBoldTwo>
     </View>
 )
 
 TrendTags.bigBlue = ({tagText}) => (
     <View style={[styles.tagContainer, {backgroundColor: Themes.colors.primary_50}, {height: 32}]}>
-        <AppText.LabelSemiBoldTwo style={{color: Themes.colors.primary_900}}>{tagText}
-        </AppText.LabelSemiBoldTwo>
+        <AppText.LabelBoldTwo style={{color: Themes.colors.primary_900}}>{tagText}
+        </AppText.LabelBoldTwo>
     </View>
 )
 
 TrendTags.bigOrange = ({tagText}) => (
     <View style={[styles.tagContainer, {backgroundColor: Themes.colors.tertiary_200}, {height: 32}]}>
-        <AppText.LabelSemiBoldTwo style={{color: "#A43F21"}}>{tagText}
-        </AppText.LabelSemiBoldTwo>
+        <AppText.LabelBoldTwo style={{color: "#A43F21"}}>{tagText}
+        </AppText.LabelBoldTwo>
     </View>
 )
 
 TrendTags.bigGrey = ({tagText}) => (
     <View style={[styles.tagContainer, {backgroundColor: Themes.colors.neutral_100},  {height: 32}]}>
-        <AppText.LabelSemiBoldTwo style={{color: Themes.colors.neutral_600}}>{tagText}
-        </AppText.LabelSemiBoldTwo>
+        <AppText.LabelBoldTwo style={{color: Themes.colors.neutral_600}}>{tagText}
+        </AppText.LabelBoldTwo>
     </View>
 )
 
+/******* 24px height tags *******/
+
 TrendTags.xsmallGreen = ({tagText}) => (
-    <View style={[styles.tagContainer, {backgroundColor: Themes.colors.secondary_50}, {height: 22, width: 95}]}>
-        <AppText.LabelSemiBoldTwo style={{color: Themes.colors.secondary_900}}>{tagText}
-        </AppText.LabelSemiBoldTwo>
+    <View style={[styles.tagContainer, {backgroundColor: Themes.colors.secondary_50}, {height: 24, width: 95}, {paddingTop:2}]}>
+        <AppText.LabelBoldTwo style={{color: Themes.colors.secondary_900}}>{tagText}
+        </AppText.LabelBoldTwo>
     </View>
 )
 const styles = StyleSheet.create({
