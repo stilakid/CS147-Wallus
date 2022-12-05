@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Image } from 'react-native';
+import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { Themes} from "../../../assets/themes";
 import { AppText } from '../CustomText/customText';
 import { TrendTags } from '../TrendTags/TrendTags';
@@ -7,55 +7,124 @@ import { TrendTags } from '../TrendTags/TrendTags';
 /*
 you can use this card like this:
 <InvestmentDisplayCard 
+  cardType={'horizontalRecRationale'} 
+  companyName={'SPK 500'} 
   logoURL={'../../../assets/tesla.png'} 
-  companyName={'Tesla'} 
-  stockPrice={'$124.32'} 
-  status={'stable'}>
+  status={'growing'} 
+  stockPrice={'USD24.32'}
+  recRationale={'Invested by Dan'}
 />
+
+HorizontalRecRationale: used in market page where the user gets a recommended list of investments
+Horizontal: used in any list situations
+Vertical: used in market page's daily mover's section 
 */
 
-export default function InvestmentDisplayCard({logoURL, companyName, stockPrice, status}) {
-  let tagdisplayed;
-  let companyLogo = {logoURL};
+/*TODO: WHY IS THE PICTURE NOT SHOWING UP AGAIN :( */
+
+export default function InvestmentDisplayCard({onPress, TouchableOpacityStyle, logoURL, companyName, stockPrice, status, cardType, recRationale, style}) {
+  let tagDisplayed;
+  let cardDisplayed;
+  let logo = {logoURL};
+
+  //display tag according to company status
   if (status == 'growing'){
-    tagdisplayed=<TrendTags.smallGreen tagText={'Growing'}/>
+    tagDisplayed=<TrendTags.smallGreen tagText={'Growing'}/>
   } else if (status == 'stable'){
-    tagdisplayed=<TrendTags.smallBlue tagText={'Stable'}/>
+    tagDisplayed=<TrendTags.smallBlue tagText={'Stable'}/>
   } else {
-    tagdisplayed=<TrendTags.smallOrange tagText={'Unstable'}/>
+    tagDisplayed=<TrendTags.smallOrange tagText={'Unstable'}/>
   }
-  return (
-    <View style={styles.card}>
-        <Image
-            source={companyLogo}
+
+  const Vertical =()=>(
+    <TouchableOpacity onPress={onPress} style={[TouchableOpacityStyle, styles.verticalCard, style]}>
+      <Image
+            source={logo}
             style={styles.profilePic}
+      />
+      <AppText.LabelBoldOne style={styles.companyText}>{companyName}</AppText.LabelBoldOne> 
+      <AppText.LabelSemiBoldTwo style={styles.dollarText}>{stockPrice}</AppText.LabelSemiBoldTwo>
+      {tagDisplayed}
+    </TouchableOpacity>
+  );
+  const Horizontal =()=>(
+    <TouchableOpacity onPress={onPress} style={[TouchableOpacityStyle, styles.horizontalCard, style]}>
+      <View style={styles.leftContainer}>
+        <Image
+              source={logo}
+              style={[styles.profilePic, {marginRight: 12}]}
         />
-        <View style={styles.company}>
-            <AppText.LabelBoldOne style={styles.companyText}>{companyName}</AppText.LabelBoldOne> 
-            <AppText.LabelSemiBoldTwo style={styles.dollarText}>{stockPrice}</AppText.LabelSemiBoldTwo> 
+        <View>
+          <AppText.LabelBoldOne style={[styles.companyText, {marginBottom: 4, marginTop: 0}]}>{companyName}</AppText.LabelBoldOne> 
+          {tagDisplayed}
         </View>
-        {tagdisplayed}
+      </View>
+      <View>
+        <TrendTags.bigGrey tagText={stockPrice}></TrendTags.bigGrey>
+      </View>
+    </TouchableOpacity>
+  );
+  const HorizontalRecRationale =()=>(
+    <TouchableOpacity onPress={onPress} style={[TouchableOpacityStyle, styles.horizontalCard, style]}>
+      <View style={styles.leftContainer}>
+        <Image
+              source={logo}
+              style={[styles.profilePic, {marginRight: 12}]}
+        />
+        <View>
+          <View style={{flexDirection: 'row', alignItems:'center'}}>
+            <AppText.LabelBoldOne style={[styles.companyText, {marginTop:0, marginRight:8}]}>{companyName}</AppText.LabelBoldOne> 
+            {tagDisplayed}
+          </View>
+          <AppText.ParagraphTwo style={styles.recRationale}>{recRationale}</AppText.ParagraphTwo>
+        </View>
+      </View>
+      <View>
+        <TrendTags.bigGrey tagText={stockPrice}></TrendTags.bigGrey>
+      </View>
+    </TouchableOpacity>
+  );
+
+  //choose which type of card to display
+  if (cardType == 'vertical') {
+    cardDisplayed = <Vertical/>
+  } else if (cardType == 'horizontal') {
+    cardDisplayed = <Horizontal/>
+  } else {
+    cardDisplayed = <HorizontalRecRationale/>
+  };
+
+  return (
+    <View>
+      {cardDisplayed}
     </View>
+
   );
 }
 
+
 const styles = StyleSheet.create({
-  card: {
-    display: 'flex',
+  verticalCard: {
     flexDirection: 'column',
     alignItems: 'flex-start',
     padding: 16,
-    gap: 12,
     width: 112,
     height: 157,
-    left: 20,
-    top: 20,
+    paddingTop: 20,
+    paddingTop: 20,
     backgroundColor: 'white',
     borderColor: Themes.colors.neutral_200,
     borderWidth: 2,
     borderRadius: 12,
-    boxSizing: 'border-box',
     borderBottomWidth: 4,
+  },
+  horizontalCard: {
+    width: 358,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 16,
+    paddingHorizontal: 12,
+    justifyContent: 'space-between',
   },
   companyText: {
     color: Themes.colors.neutral_800,
@@ -69,5 +138,13 @@ const styles = StyleSheet.create({
   profilePic: {
     width: 32,
     height: 32
+  },
+  leftContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  recRationale: {
+    color: Themes.colors.neutral_500,
+    marginTop: 4,
   }
 });  
