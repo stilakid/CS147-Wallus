@@ -11,7 +11,8 @@ import { SelectionOptions } from "../SelectionOptions/SelectionOptions";
 import { Outfit_600SemiBold } from "@expo-google-fonts/outfit";
 
 export default function MoneyAmountInput (){
-    const [number, onChangeNumber] = useState(null);
+    const [number, onChangeNumber] = useState(0);
+    console.log(number);
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <View style={styles.container}>
@@ -27,7 +28,7 @@ export default function MoneyAmountInput (){
                     />
                 </View>
                 <View style={styles.optionContainer}>
-                    <Pressable onPress={() => {onChangeNumber(number+1)}}>
+                    <Pressable onPress={() => {onChangeNumber(5)}}>
                         <SelectionOptions.border_Unselected_32px text={"5"}></SelectionOptions.border_Unselected_32px>
                     </Pressable>
                     <Pressable>

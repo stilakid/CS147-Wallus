@@ -2,46 +2,48 @@ import { Themes } from "../../../assets/themes"
 
 // Components
 import { StyleSheet, SafeAreaView, Text, View, Button } from "react-native";
-import { AppText } from "../../components/CustomText/customText";
-import Checkbox from "../../components/Checkbox/Checkbox";
+import { AppText } from "../CustomText/customText";
+import Checkbox from "../Checkbox/Checkbox";
 import { FlatList } from "react-native-gesture-handler";
 import { Divider } from "../Divider/divider";
+import { AppButton } from "../Buttons/buttons";
 
 /*
 You can pass in data to this component like this
 const data = [
     {
         id: '1',
-        text: this is the title of the checkbox
-    }
-    {
-        id: '2',
-        text: this is the title of the checkbox
+        text: 'this is the title of the list item'
+        value: 'item value'
+        tooltip: 'this is the tooltip text of the list item'
     }
 ]
 */
 
-export default function BorderedCheckList ({data, style}) {
-    const CheckListItem =({text})=> {
+export default function BorderedFlatlist ({data}) {
+    const FlatlistItem =({text, value})=> {
         return (
             <View style={styles.itemContainer}>
-                <AppText.ParagraphTwo>{text}</AppText.ParagraphTwo>
-                <Checkbox></Checkbox>
+                <View style={styles.leftContainer}>
+                    <AppText.ParagraphTwo>{text}</AppText.ParagraphTwo>
+                    <AppButton.toolTip TouchableOpacityStyle={styles.toolTipDefault}/>
+                </View>
+                <AppText.ParagraphTwo>{value}</AppText.ParagraphTwo>
             </View>
         );
     }
     
-    const renderCheckListItem =({item, index})=> {
+    const renderFlatlistItem =({item, index})=> {
         return (
-            <CheckListItem text={item.text} />
+            <FlatlistItem text={item.text} value={item.value}/>
         );
     }
 
     return (
-        <View style={[styles.checkListContainer, style]}>
+        <View style={styles.flatlistContainer}>
             <FlatList
                 data={data}
-                renderItem={(item) => renderCheckListItem(item)}
+                renderItem={(item) => renderFlatlistItem(item)}
                 keyExtractor={(item) => item.id}
                 ItemSeparatorComponent={<Divider.Horizontal/>}
                 style={styles.flatList}
@@ -59,12 +61,20 @@ const styles = StyleSheet.create({
         padding: 16,
         flexDirection:'row',
     },
-    checkListContainer: {
+    flatlistContainer: {
         borderRadius:16,
         borderColor: Themes.colors.neutral_200,
         borderWidth: 2,
     },
     flatList: {
         flexGrow:0,
+    },
+    toolTipDefault: {
+        marginLeft: 4
+    },
+    leftContainer: {
+        flexDirection:'row',
+        alignItems: 'center',
+
     }
 });

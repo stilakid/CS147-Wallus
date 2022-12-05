@@ -10,12 +10,12 @@ import { Divider } from "../Divider/divider";
 import { ChevronDown } from "lucide-react-native";
 import { ChevronUp } from "lucide-react-native";
 
-export default function DropdownText ({titleText, bodyText}) {
+export default function DropdownText ({titleText, bodyText, style}) {
     let contentDisplayed;
     const [isExpanded, setIsExpanded] = useState(false);
 
     const Expanded =()=> (
-        <View style={[styles.container, styles.expanded]}>
+        <View style={[styles.container, styles.expanded, style]}>
             <View style={styles.header}>
                 <AppText.LabelBoldOne>{titleText}</AppText.LabelBoldOne>
                 <Pressable onPress={() => {setIsExpanded(!isExpanded)}}>
@@ -26,7 +26,7 @@ export default function DropdownText ({titleText, bodyText}) {
         </View>
     )
     const Collapsed =()=> (
-        <View style={styles.container}>
+        <View style={[styles.container, style]}>
             <AppText.LabelBoldOne>{titleText}</AppText.LabelBoldOne>
             <Pressable onPress={() => {setIsExpanded(!isExpanded)}}>
                 <ChevronDown color={Themes.colors.neutral_600} size={24}/>
