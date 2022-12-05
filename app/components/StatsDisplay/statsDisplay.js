@@ -9,19 +9,19 @@ export default function StatsDisplay() {
     return (
       <View style={styles.card}>
           <View style={styles.section}>
-              <Text style={AppText.LabelBoldOne, styles.text1}>Past Year's trend</Text>
+              <Text style={[AppText.LabelBoldOne, styles.text1]}>Past Year's trend</Text>
               <View style={{marginLeft:8}}>
                     <AppButton.toolTip text={"this is the tooltip text for what this tag means"}/>
               </View>
           </View>
           <View style={styles.divider}/>
-          <View style={styles.section, {alignItems:'center', marginHorizontal: 28}}>
-            <Text style={AppText.LabelBoldOne, styles.text1}>Market</Text>
+          <View style={[styles.section, {alignItems:'center', marginHorizontal: 28}]}>
+            <Text style={[AppText.LabelBoldOne, styles.text1]}>Market</Text>
             <TrendTags.smallGreen tagText='12.38%'></TrendTags.smallGreen>
           </View>
           <View style={styles.divider}/>
-          <View style={styles.section, {alignItems:'center', marginHorizontal: 28}}>
-            <Text style={AppText.LabelBoldOne, styles.text1}>{"S&P 500"}</Text>
+          <View style={[styles.section, {alignItems:'center', marginHorizontal: 28}]}>
+            <Text style={[AppText.LabelBoldOne, styles.text1]}>{"S&P 500"}</Text>
             <TrendTags.smallGreen tagText='12.88%'></TrendTags.smallGreen>
           </View>
           

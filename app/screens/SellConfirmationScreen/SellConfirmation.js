@@ -1,5 +1,5 @@
 // import React from 'react';
-import { Themes } from "../../../assets/themes"
+import { Themes, Images } from "../../../assets/themes"
 
 // Components
 import { StyleSheet, SafeAreaView, Text, View, ScrollView, Image } from "react-native";
@@ -22,9 +22,9 @@ export default function SellConfirmationScreen ({navigation, route}){
             <Header navigation={navigation} hasDivider={false} />
             <AppText.TitleBoldOne style={{width:358, marginBottom:24}}>Sell confirmation</AppText.TitleBoldOne>
             <InvestmentDisplayCard 
-                cardType={'horizontalRecRationale'} 
+                cardType={'horizontal'} 
                 companyName={'SPK 500'} 
-                logoURL={'../../../assets/tesla.png'} 
+                logoURL={Images.company.tesla}  
                 status={'growing'} 
                 stockPrice={'USD24.32'}
                 recRationale={'Invested by Dan'}

@@ -39,7 +39,7 @@ export default function InvestmentDisplayCard({onPress, TouchableOpacityStyle, l
   const Vertical =()=>(
     <TouchableOpacity onPress={onPress} style={[TouchableOpacityStyle, styles.verticalCard, style]}>
       <Image
-            source={logo}
+            source={logoURL}
             style={styles.profilePic}
       />
       <AppText.LabelBoldOne style={styles.companyText}>{companyName}</AppText.LabelBoldOne> 
@@ -51,7 +51,7 @@ export default function InvestmentDisplayCard({onPress, TouchableOpacityStyle, l
     <TouchableOpacity onPress={onPress} style={[TouchableOpacityStyle, styles.horizontalCard, style]}>
       <View style={styles.leftContainer}>
         <Image
-              source={logo}
+              source={logoURL}
               style={[styles.profilePic, {marginRight: 12}]}
         />
         <View>
@@ -68,7 +68,7 @@ export default function InvestmentDisplayCard({onPress, TouchableOpacityStyle, l
     <TouchableOpacity onPress={onPress} style={[TouchableOpacityStyle, styles.horizontalCard, style]}>
       <View style={styles.leftContainer}>
         <Image
-              source={logo}
+              source={logoURL}
               style={[styles.profilePic, {marginRight: 12}]}
         />
         <View>
