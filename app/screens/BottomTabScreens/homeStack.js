@@ -16,6 +16,10 @@ import HomeScreen from "../HomeScreen/homeScreen";
 import InvitationScreen from "../InvitationScreen/invitationScreen";
 import StockScreen from "../StockScreen/stockScreen";
 import CongratsScreen from "../CongratulationsScreen/congratulationsScreen";
+import BuyScreen from "../BuyScreen/BuyScreen";
+import BuyConfirmationScreen from "../BuyConfirmationScreen/BuyConfirmationScreen";
+import SellConfirmationScreen from "../SellConfirmationScreen/SellConfirmation";
+import SellScreen from "../SellScreen/SellScreen";
 
 export default function HomeStack({navigation, route}) {
     
@@ -30,6 +34,10 @@ export default function HomeStack({navigation, route}) {
             <Stack.Screen name="Invitation" component={InvitationScreen} options={{headerShown: false}} />
             <Stack.Screen name="Stock" component={StockScreen} options={{headerShown: false}} />
             <Stack.Screen name="Congrats" component={CongratsScreen} options={{headerShown: false}} />
+            <Stack.Screen name="Buy" component={BuyScreen} options={{headerShown: false}} />
+            <Stack.Screen name="Buy Confirmation" component={BuyConfirmationScreen} options={{headerShown: false}}/>
+            <Stack.Screen name="Sell" component={SellScreen} options={{headerShown: false}} />
+            <Stack.Screen name="Sell Confirmation" component={SellConfirmationScreen} options={{headerShown: false}}/>
         </Stack.Navigator>
     );
 }
