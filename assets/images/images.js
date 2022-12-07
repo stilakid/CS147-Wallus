@@ -9,6 +9,8 @@ const images = {
             trend4: require('../trendCharts/trend4.png'),
         },
         Wallus: require('../Walluslogo.png'),
+        Wallus_4x: require('../Walluslogo_4x.png'),
+        Wallus_square: require('../Wallus_square.png'),
         walrus: {
             cheersBackground: require('../walrus/cheersBackground.png'),
             cheers: require('../walrus/cheers.png'),

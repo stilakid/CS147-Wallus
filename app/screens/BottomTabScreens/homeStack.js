@@ -7,7 +7,6 @@ import { AppButton } from "../../components/Buttons/buttons";
 
 
 // Navigation Packages
-import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 // Stack screens
