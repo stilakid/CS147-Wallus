@@ -418,6 +418,43 @@ AppFloatingButton.PrimaryThickDual = ({textOne, textTwo, onPressOne, onPressTwo,
     )
 }
 
+AppFloatingButton.PrimaryThickDualColor = ({textOne, textTwo, onPressOne, onPressTwo, TouchableOpacityStyleOne, TouchableOpacityStyleTwo, TextStyleOne, TextStyleTwo, containerStyle, dualButtonContainerStyle}) => {
+    let button = (
+        <View style={[styles.dualButton, dualButtonContainerStyle]}>
+            <AppButton.SecondaryOutlineThickThree text={textOne} TouchableOpacityStyle={[styles.buttonOne, TouchableOpacityStyleOne]} TextStyle={TextStyleOne} onPress={onPressOne}/>
+            <AppButton.PrimaryThickThree text={textTwo} TouchableOpacityStyle={[styles.buttonTwo, TouchableOpacityStyleTwo]} TextStyle={TextStyleTwo} onPress={onPressTwo}/>
+        </View>
+    )
+
+    return(
+        <AppFloatingButton
+            containerStyle={containerStyle}
+            button={button}
+        />
+    )
+}
+
+AppFloatingButton.PrimaryThickTriple = ({textOne, textTwo, textThree, onPressOne, onPressTwo, onPressThree, TouchableOpacityStyleOne, TouchableOpacityStyleTwo, TextStyleOne, TextStyleTwo, containerStyle, dualButtonContainerStyle}) => {
+    let button = (
+        <View >
+            <View style={{paddingBottom: 16, alignItems: 'flex-end'}}>
+                <AppButton.PrimaryThickThree text={textTwo} TouchableOpacityStyle={[styles.buttonTwo, TouchableOpacityStyleTwo]} TextStyle={TextStyleTwo} onPress={onPressTwo}/>
+            </View>
+            <View style={[styles.dualButton, dualButtonContainerStyle]}>
+                <AppButton.SecondaryOutlineThickThree text={textOne} TouchableOpacityStyle={[styles.buttonOne, TouchableOpacityStyleOne]} TextStyle={TextStyleOne} onPress={onPressOne}/>
+                <AppButton.PrimaryThickThree text={textThree} TouchableOpacityStyle={[styles.buttonTwo, TouchableOpacityStyleTwo]} TextStyle={TextStyleTwo} onPress={onPressThree}/>
+            </View>
+        </View>
+    )
+
+    return(
+        <AppFloatingButton
+            containerStyle={containerStyle}
+            button={button}
+        />
+    )
+}
+
 AppFloatingButton.PrimaryThinDual = ({textOne, textTwo, onPressOne, onPressTwo, TouchableOpacityStyleOne, TouchableOpacityStyleTwo, TextStyleOne, TextStyleTwo, containerStyle, dualButtonContainerStyle}) => {
     let button = (
         <View style={[styles.dualButton, dualButtonContainerStyle]}>

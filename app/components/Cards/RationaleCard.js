@@ -38,9 +38,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     padding: 16,
-    gap: 12,
+    marginVertical: 16,
     position: 'absolute',
-    color: Themes.colors.neutral_100,
+    backgroundColor: Themes.colors.neutral_100,
     borderRadius: 16,
     width: 358,
     height: 79
