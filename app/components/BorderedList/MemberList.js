@@ -1,5 +1,5 @@
 // import React from 'react';
-import { Themes } from "../../../assets/themes"
+import { Themes, Images } from "../../../assets/themes"
 
 // Components
 import { StyleSheet, SafeAreaView, Text, View, FlatList, Image } from "react-native";
@@ -21,7 +21,7 @@ export const MemberList = ({boughtAt, currentPrice, investingFor, typicalHold}) 
                     <Image
                     style={styles.image}
                     // source={require({imageURL})}
-                    source={require("/Users/xinyiwang/Desktop/Junior Fall 2022/CS 147/CS147-Wallus/assets/profilePic.png")}
+                    source={Images.profilePic.Dan}
                     resizeMode='contain'
 
                     />
@@ -43,7 +43,7 @@ export const MemberList = ({boughtAt, currentPrice, investingFor, typicalHold}) 
                     <Image
                     style={styles.image}
                     // source={require({imageURL})}
-                    source={require("/Users/xinyiwang/Desktop/Junior Fall 2022/CS 147/CS147-Wallus/assets/profilePic.png")}
+                    source={Images.profilePic.Dan}
                     resizeMode='contain'
 
                     />
@@ -65,7 +65,7 @@ export const MemberList = ({boughtAt, currentPrice, investingFor, typicalHold}) 
                 <Image
                     style={styles.image}
                     // source={require({imageURL})}
-                    source={require("/Users/xinyiwang/Desktop/Junior Fall 2022/CS 147/CS147-Wallus/assets/profilePic.png")}
+                    source={Images.profilePic.Dan}
                     resizeMode='contain'
 
                     />
@@ -87,7 +87,7 @@ export const MemberList = ({boughtAt, currentPrice, investingFor, typicalHold}) 
                     <Image
                     style={styles.image}
                     // source={require({imageURL})}
-                    source={require("/Users/xinyiwang/Desktop/Junior Fall 2022/CS 147/CS147-Wallus/assets/profilePic.png")}
+                    source={Images.profilePic.Dan}
                     resizeMode='contain'
 
                     />
@@ -109,7 +109,7 @@ export const MemberList = ({boughtAt, currentPrice, investingFor, typicalHold}) 
                     <Image
                     style={styles.image}
                     // source={require({imageURL})}
-                    source={require("/Users/xinyiwang/Desktop/Junior Fall 2022/CS 147/CS147-Wallus/assets/profilePic.png")}
+                    source={Images.profilePic.Dan}
                     resizeMode='contain'
 
                     />

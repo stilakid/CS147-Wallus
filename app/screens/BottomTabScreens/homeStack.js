@@ -16,8 +16,8 @@ import HomeScreen from "../HomeScreen/homeScreen";
 import InvitationScreen from "../InvitationScreen/invitationScreen";
 import StockScreen from "../StockScreen/stockScreen";
 import CongratsScreen from "../CongratulationsScreen/congratulationsScreen";
-import GroupDetail from "/Users/xinyiwang/Desktop/Junior Fall 2022/CS 147/CS147-Wallus/app/screens/GroupScreens.js/GroupDetail";
-import Rationale from "/Users/xinyiwang/Desktop/Junior Fall 2022/CS 147/CS147-Wallus/app/screens/GroupScreens.js/Rationale"
+import GroupDetail from "../GroupScreens.js/GroupDetail";
+import Rationale from "../GroupScreens.js/Rationale";
 import MemberScreen from "../GroupScreens.js/MemberScreen";
 import BuyScreen from "../BuyScreen/BuyScreen";
 import BuyConfirmationScreen from "../BuyConfirmationScreen/BuyConfirmationScreen";
