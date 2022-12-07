@@ -24,7 +24,7 @@ WallusTips.green = ({titleText, bodyText}) => (
 
 WallusTips.orange = ({titleText, bodyText}) => (
     <View style={[styles.tipContainer]}>
-        <View style={[styles.innerContainer, {backgroundColor: Themes.colors.tertiary_400}]}>
+        <View style={[styles.innerContainer, {backgroundColor: Themes.colors.tertiary_300}]}>
             <View style={styles.textContainer}>
                 <AppText.LabelBoldOne style={{marginBottom:8}}>{titleText}</AppText.LabelBoldOne>
                 <AppText.ParagraphTwo>{bodyText}</AppText.ParagraphTwo>
@@ -34,6 +34,17 @@ WallusTips.orange = ({titleText, bodyText}) => (
     </View>
 )
 
+WallusTips.white = ({titleText, bodyText}) => (
+    <View style={[styles.tipContainer]}>
+        <View style={[styles.innerContainer, {backgroundColor: Themes.colors.neutral_100}]}>
+            <View style={styles.textContainer}>
+                <AppText.LabelBoldOne style={{marginBottom:8}}>{titleText}</AppText.LabelBoldOne>
+                <AppText.ParagraphTwo>{bodyText}</AppText.ParagraphTwo>
+                <Image source={require("../../../../assets/walrus/wise.png")} style={styles.wallus}/>
+            </View>
+        </View>
+    </View>
+)
 const styles = StyleSheet.create({
     tipContainer: {
         marginVertical: 24,

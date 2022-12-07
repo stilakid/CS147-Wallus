@@ -85,6 +85,10 @@ AppText.LabelBoldThree = ({style, ...props }: AppTextProps) => (
     <AppText {...props} style={[styles.labelBoldThree, style]} />
 )
 
+AppText.LabelBoldFour = ({style, ...props }: AppTextProps) => (
+    <AppText {...props} style={[styles.labelBoldFour, style]} />
+)
+
 AppText.LabelSemiBoldOne = ({style, ...props }: AppTextProps) => (
     <AppText {...props} style={[styles.labelSemiBoldOne, style]} />
 )
@@ -228,7 +232,12 @@ const styles = StyleSheet.create({
         lineHeight: Themes.typography.label_bold_3.line_height,
         color: Themes.typography.label_bold_3.color
     },
-
+    labelBoldFour: {
+        fontFamily:Themes.typography.label_bold_3.font,
+        fontSize: 24,
+        lineHeight: 24,
+        color: Themes.typography.label_bold_4.color
+    },
 
     labelSemiBoldOne: {
         fontFamily: Themes.typography.label_semibold_1.font,
