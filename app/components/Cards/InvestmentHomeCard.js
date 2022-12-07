@@ -99,6 +99,9 @@ const styles = StyleSheet.create({
     marginTop: 15
   }, 
   profilePic: {
-    marginTop: 8
+    marginTop: 12,
+    width: 128,
+    height: 32,
+    resizeMode: 'contain',
   }
 });  

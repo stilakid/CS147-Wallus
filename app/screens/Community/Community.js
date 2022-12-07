@@ -24,7 +24,7 @@ import { MemberList } from "../../components/BorderedList/MemberList";
 
 
 {/* <Home color="black" size={24} />; */}
-export default function CommunityScreen({navigation, route}) {
+export default function Community({navigation, route}) {
 
     // const {  } = route.params;
 

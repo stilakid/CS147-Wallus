@@ -30,7 +30,7 @@ export default function HomeScreen({navigation, route}) {
     const renderCards = ({item}) => {
         return (
             <View style={{marginVertical:12}}>
-                <InvitationCard GroupName={'Brave Potatoes'} Price={"USD 27.4 total"}></InvitationCard>
+                <InvitationCard GroupName={'Brave Potatoes'} Price={"USD 27.4 total"} onPress={()=>navigation.navigate('Group Detail')} ></InvitationCard>
             </View>
         )
     }
@@ -43,7 +43,8 @@ export default function HomeScreen({navigation, route}) {
         )
     }
     return(
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent}>
+            {/* <Button title="Community" onPress={()=>navigation.navigate('Community')}></Button> */}
             <View style={styles.header}>
                 <View style={styles.nameCard}>
                     <Image style={styles.profilePic} source={require("../../../assets/profilePic.png")} resizeMode='contain'></Image>
@@ -127,5 +128,12 @@ const styles = StyleSheet.create({
     sectionListTitle: {
         marginTop: 24,
         marginBottom: 12
-    }
+    },
+    scrollView: {
+        width: '100%',
+    },
+    scrollViewContent: {
+        display: 'flex',
+        alignItems: "center",
+    },
 });

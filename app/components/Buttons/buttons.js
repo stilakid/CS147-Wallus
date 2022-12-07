@@ -9,7 +9,7 @@ import { AppText } from "../CustomText/customText";
 import { ChevronLeft } from 'lucide-react-native';
 import { HelpCircle } from 'lucide-react-native';
 import { Bell } from "lucide-react-native"
-
+import { ChevronRight } from 'lucide-react-native';
 export const AppButton = ({text, content, onPress, TouchableOpacityStyle, TextStyle}) => {
 
     if (!content) {
@@ -379,7 +379,18 @@ AppButton.SecondaryGreyThinFour = ({text, onPress, TouchableOpacityStyle, TextSt
     );
 }
 
+AppButton.SecondaryGreyThinFive = ({text, onPress, TouchableOpacityStyle, TextStyle}) => {
 
+    const content = <AppText.LabelBoldTwo style={[styles.secondaryText, TextStyle, {color: Themes.colors.neutral_400}]}> {text} </AppText.LabelBoldTwo>
+
+    return (
+        <AppButton
+            content={content}
+            onPress={onPress}
+            TouchableOpacityStyle={[ styles.defaultTextButton, styles.secondaryGrey, styles.smallHeight, styles.xsmallWidth, TouchableOpacityStyle]}
+        />
+    );
+}
 
 // **********************************************************************************************
 // Disabled Buttons
@@ -541,7 +552,18 @@ AppButton.notif = ({navigation, TouchableOpacityStyle}) => {
     );
 }
 
+AppButton.rightArrow = ({navigation, TouchableOpacityStyle}) => {
 
+    const content = <ChevronRight style={{width: 24, height: 24}}></ChevronRight>
+
+    return (
+        <AppButton
+            content={content}
+            onPress={() => navigation.navigate('Rationale')}
+            TouchableOpacityStyle={TouchableOpacityStyle}
+        />
+    );
+}
 
 
 

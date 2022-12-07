@@ -4,7 +4,7 @@ import { Themes} from "../../../assets/themes";
 import { AppText } from '../CustomText/customText';
 import { TrendTags } from '../TrendTags/TrendTags';
 
-export default function InvitationCard({GroupName, Price}) {
+export default function InvitationCard({GroupName, Price, onPress}) {
 
   const onPressName = () => {
     console.log("logging invitation card group name click")
@@ -15,7 +15,7 @@ export default function InvitationCard({GroupName, Price}) {
       <View style={styles.title}>
         <View style={styles.details}>
           <View >
-            <Text style={styles.groupName} onPress={onPressName}> {GroupName} </Text>
+            <Text style={styles.groupName} onPress={onPress}> {GroupName} </Text>
           </View>
           <View style={styles.status}>
             <TrendTags.smallGreen tagText={"Growing"}/>

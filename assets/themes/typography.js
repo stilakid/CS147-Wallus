@@ -120,7 +120,13 @@ export const typography = {
         // letter_spacing: 0.25,
         color: '#303030', 
     },
-
+    label_bold_4: {
+        font: 'Roboto_700Bold',
+        size: 24,
+        line_height: 24,
+        // letter_spacing: 0.25,
+        color: '#303030', 
+    },
 
     label_semibold_1: {
         font: 'Roboto_500Medium',

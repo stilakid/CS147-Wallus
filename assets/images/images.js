@@ -24,8 +24,10 @@ const images = {
             wise: require('../walrus/wise.png'),
 
         },
-        temp: require('../temp.png')
-
+        temp: require('../temp.png'),
+        company: {
+            tesla: require('../tesla.png'),
+        }
     };
     
     export default images;

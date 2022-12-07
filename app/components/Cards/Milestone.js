@@ -21,7 +21,7 @@ export default function Milestone ({titleText, bodyText}) {
                     <TrendTags.xsmallGreen tagText={"Grew 12.80%"}></TrendTags.xsmallGreen>
                     <AppText.LabelBoldTwo style={{color: Themes.colors.white, marginLeft:8}}>Past Year</AppText.LabelBoldTwo>
                 </View>
-                <Image source={require("../../../assets/groupProfiles.png")} style={{width: 160, height: 40, marginTop: 16}}/>
+                <Image source={require("../../../assets/groupProfiles.png")} style={{width: 128, height: 32, marginTop: 16}}/>
                 <Image source={require("../../../assets/walrus/squint.png")} style={styles.wallus}/>
             </View>
         </View>
