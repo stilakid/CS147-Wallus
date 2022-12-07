@@ -24,7 +24,7 @@ const images = {
         },
         temp: require('../temp.png'),
         company: {
-            tesla: require('../tesla.png')
+            tesla: require('../tesla.png'),
         }
     };
     
