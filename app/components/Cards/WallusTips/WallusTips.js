@@ -10,8 +10,8 @@ export default function WallusTips ({titleText, bodyText}) {
     );
 }
 
-WallusTips.green = ({titleText, bodyText}) => (
-    <View style={[styles.tipContainer]}>
+WallusTips.green = ({titleText, bodyText, style}) => (
+    <View style={[styles.tipContainer, style]}>
         <View style={[styles.innerContainer, {backgroundColor: '#E1F8B1'}]}>
             <View style={styles.textContainer}>
                 <AppText.LabelBoldOne style={{marginBottom:8}}>{titleText}</AppText.LabelBoldOne>
@@ -22,8 +22,8 @@ WallusTips.green = ({titleText, bodyText}) => (
     </View>
 )
 
-WallusTips.orange = ({titleText, bodyText}) => (
-    <View style={[styles.tipContainer]}>
+WallusTips.orange = ({titleText, bodyText, style}) => (
+    <View style={[styles.tipContainer, style]}>
         <View style={[styles.innerContainer, {backgroundColor: Themes.colors.tertiary_300}]}>
             <View style={styles.textContainer}>
                 <AppText.LabelBoldOne style={{marginBottom:8}}>{titleText}</AppText.LabelBoldOne>
@@ -34,8 +34,8 @@ WallusTips.orange = ({titleText, bodyText}) => (
     </View>
 )
 
-WallusTips.white = ({titleText, bodyText}) => (
-    <View style={[styles.tipContainer]}>
+WallusTips.white = ({titleText, bodyText, style}) => (
+    <View style={[styles.tipContainer, style]}>
         <View style={[styles.innerContainer, {backgroundColor: Themes.colors.neutral_100}]}>
             <View style={styles.textContainer}>
                 <AppText.LabelBoldOne style={{marginBottom:8}}>{titleText}</AppText.LabelBoldOne>
@@ -45,6 +45,20 @@ WallusTips.white = ({titleText, bodyText}) => (
         </View>
     </View>
 )
+
+WallusTips.bordered = ({titleText, bodyText, style}) => (
+    <View style={[styles.tipContainer, {marginVertical:0}, style]}>
+        <View style={[styles.innerContainer, {backgroundColor: 'white', borderRadius: 16, borderColor: Themes.colors.neutral_200, borderWidth:2}]}>
+            <View style={styles.textContainer}>
+                <AppText.LabelBoldOne style={{marginBottom:8}}>{titleText}</AppText.LabelBoldOne>
+                <AppText.ParagraphTwo>{bodyText}</AppText.ParagraphTwo>
+                <Image source={require("../../../../assets/walrus/wise.png")} style={styles.wallus}/>
+            </View>
+        </View>
+    </View>
+)
+
+
 const styles = StyleSheet.create({
     tipContainer: {
         marginVertical: 24,
