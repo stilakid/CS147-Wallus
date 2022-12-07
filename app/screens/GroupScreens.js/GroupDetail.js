@@ -121,7 +121,7 @@ export default function GroupDetail({navigation, route}) {
                 <View style={{height: 60}}></View>
             </ScrollView>
 
-            <AppFloatingButton.PrimaryThickTriple textOne='Invite Friends' textTwo={'Buy'} textThree={'Sell'} onPressOne={() => navigation.pop(1)} onPressTwo={() => navigation.navigate('Congrats')} />
+            <AppFloatingButton.PrimaryThickTriple textOne='Invite Friends' textTwo={'Buy'} textThree={'Sell'} onPressOne={() => navigation.navigate('Invitation')} onPressTwo={() => navigation.navigate('Buy')} onPressThree={() => navigation.navigate('Sell')}/>
         </SafeAreaView>
     );
 }

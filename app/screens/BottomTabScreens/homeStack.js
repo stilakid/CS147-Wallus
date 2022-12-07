@@ -23,7 +23,7 @@ import BuyScreen from "../BuyScreen/BuyScreen";
 import BuyConfirmationScreen from "../BuyConfirmationScreen/BuyConfirmationScreen";
 import SellConfirmationScreen from "../SellConfirmationScreen/SellConfirmation";
 import SellScreen from "../SellScreen/SellScreen";
-
+import Community from "/Users/xinyiwang/Desktop/Junior Fall 2022/CS 147/CS147-Wallus/app/screens/Community/Community"
 export default function HomeStack({navigation, route}) {
     
     // const {  } = route.params;
@@ -44,6 +44,7 @@ export default function HomeStack({navigation, route}) {
             <Stack.Screen name="Buy Confirmation" component={BuyConfirmationScreen} options={{headerShown: false}}/>
             <Stack.Screen name="Sell" component={SellScreen} options={{headerShown: false}} />
             <Stack.Screen name="Sell Confirmation" component={SellConfirmationScreen} options={{headerShown: false}}/>
+            <Stack.Screen name="Community" component={Community} options={{headerShown: false}}/>
         </Stack.Navigator>
     );
 }
