@@ -14,6 +14,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 // Stack screens
 import NotificationScreen from "../NotificationScreen/notificationScreen";
 import DictionaryScreen from "../DictionaryScreen/dictionaryScreen";
+import DueDiligence from "../DictionaryScreen/DueDilligence"
+import Dividend from "../DictionaryScreen/Dividend"
+import Taxes from "../DictionaryScreen/Taxes"
 
 export default function DictionaryStack({navigation, route}) {
     
@@ -25,6 +28,9 @@ return(
     <Stack.Navigator>
         <Stack.Screen name="Dictionary Screen" component={DictionaryScreen} options={{headerShown: false}} />
         <Stack.Screen name="Notifications" component={NotificationScreen} options={{headerShown: false}} />
+        <Stack.Screen name="DueDiligence" component={DueDiligence} options={{headerShown: false}} />
+        <Stack.Screen name="Dividend" component={Dividend} options={{headerShown: false}} />
+        <Stack.Screen name="Taxes" component={Taxes} options={{headerShown: false}} />
     </Stack.Navigator>
 );
 }

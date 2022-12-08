@@ -1,17 +1,11 @@
 import { Themes } from "../../../assets/themes"
 
 // Components
-import { StyleSheet, SafeAreaView, Text, View, Button, Image } from "react-native";
+import { StyleSheet, SafeAreaView, Text, View, Button, Image, TouchableOpacity } from "react-native";
 import { AppText } from "../../components/CustomText/customText";
 import { AppButton } from "../../components/Buttons/buttons";
 import { Divider } from "../../components/Divider/divider"
 import { Navigation } from "lucide-react-native";
-
-export default function DictionaryScreen({navigation, route}) {
-    // const {  } = route.params;
-
-import { TouchableOpacity } from "react-native-gesture-handler";
-
 
 export default function DictionaryScreen({navigation, route}) {
     // const {  } = route.params;
@@ -21,7 +15,7 @@ export default function DictionaryScreen({navigation, route}) {
                 style={styles.image}
                 source={require('../../../assets/dictionary.png')}
             />
-            <TouchableOpacity onClick={() => navigation.navigate('Notifications')}>
+            <TouchableOpacity onPress={() => navigation.navigate('Notifications')}>
                 <View style={styles.search}>
                     <Image
                         source={require('../../../assets/search.png')}
@@ -33,25 +27,25 @@ export default function DictionaryScreen({navigation, route}) {
 
             <View style={styles.recent}>
                 <AppText.TitleSemiBoldFour style={styles.recenttitle}>Recent Searches</AppText.TitleSemiBoldFour>
-                <TouchableOpacity onClick={() => navigation.navigate('Notifications')}>
+                <TouchableOpacity onPress={() => navigation.navigate('DueDiligence')}>
                     <View style={styles.option}>
-                        <AppText.ParagraphTwo style={styles.optionText}>Due Dilligence</AppText.ParagraphTwo>
+                        <AppText.ParagraphTwo style={styles.optionText}>Due Diligence</AppText.ParagraphTwo>
                         <Image
                             source={require('../../../assets/arrow.png')}
                             style={styles.arrow}
                         />
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity onClick={() => navigation.navigate('Notifications')}>
+                <TouchableOpacity onPress={() => navigation.navigate('Dividend')}>
                     <View style={styles.option}>
-                        <AppText.ParagraphTwo style={styles.optionText}>Day Trading</AppText.ParagraphTwo>
+                        <AppText.ParagraphTwo style={styles.optionText}>Dividend</AppText.ParagraphTwo>
                         <Image
                             source={require('../../../assets/arrow.png')}
                             style={styles.arrow}
                         />
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity onClick={() => navigation.navigate('Notifications')}>
+                <TouchableOpacity onPress={() => navigation.navigate('Taxes')}>
                     <View style={styles.option}>
                         <AppText.ParagraphTwo style={styles.optionText}>Taxes</AppText.ParagraphTwo>
                         <Image
@@ -74,7 +68,7 @@ const styles = StyleSheet.create({
       }, 
       image: {
         width: '100%',
-        height: 260,
+        height: 240,
         position: 'absolute',
         top: 0,
         marginBottom: 40
@@ -82,14 +76,14 @@ const styles = StyleSheet.create({
       search: {
         flexDirection: 'row',
         alignItems: 'center',
-        width: 378,
+        width: 358,
         height: 48,
         backgroundColor: '#FFFFFF',
         borderWidth: 2,
         borderColor: Themes.colors.neutral_200,
         alignSelf: 'stretch',
         borderRadius: 16,
-        top: 250,
+        top: 230,
         marginBottom: 40
       },
       mag: {
@@ -107,7 +101,7 @@ const styles = StyleSheet.create({
         width: 358,
         height: 132,
         position: 'absolute',
-        top: 408
+        top: 378
       },
     recenttitle: {
         color: Themes.colors.neutral_800,
@@ -117,7 +111,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        width: 378,
+        width: 358,
         height: 24,
         marginBottom: 12,
         paddingRight: 8
