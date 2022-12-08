@@ -7,6 +7,7 @@ import { Divider } from "../Divider/divider"
 import { AppText } from "../CustomText/customText";
 import { AppButton } from "../Buttons/buttons";
 import { TrendTags } from "../TrendTags/TrendTags";
+import { MyTooltip } from "../ToolTip/tooltip";
 
 {/* <Home color="black" size={24} />; */}
 export const InvestmentStat = ({portfolioFit, expectedReturn, volatility, typicalHold, market, sp500, containerStyle}) => {
@@ -22,7 +23,7 @@ export const InvestmentStat = ({portfolioFit, expectedReturn, volatility, typica
         performanceTitle = <AppText.TitleSemiBoldFour style={styles.title} >Performance</AppText.TitleSemiBoldFour>
 
         performance = (
-            <View style={[styles.container, styles.profileFitContainer]}>
+            <View style={[styles.container, styles.profileFitContainer, {marginBottom:24}]}>
                 <View style={styles.row}>
                     <View style={[styles.columnAlt, styles.columnAlt1]}>
                         <AppText.LabelBoldOne>Past Year's trend</AppText.LabelBoldOne>
@@ -63,23 +64,24 @@ export const InvestmentStat = ({portfolioFit, expectedReturn, volatility, typica
             {performanceTitle}
             {performance}
 
-            <View style={[styles.container, styles.profileFitContainer]}>
+            {/*portfolio fit not needed anymore*/}
+            {/* <View style={[styles.container, styles.profileFitContainer]}>
                 <View style={styles.row}>
                     <View style={[styles.column, styles.column1]}>
                         <AppText.LabelBoldOne>Profile fit</AppText.LabelBoldOne>
-                        <AppButton.toolTip TouchableOpacityStyle={styles.toolTipDefault}/>
+                        <MyTooltip text='Profit fit means...'></MyTooltip>
                     </View>
                     <View style={[styles.column, styles.column2]}>
                         {fitIndicator}
                     </View>
 
                 </View>
-            </View>
+            </View> */}
 
             <View style={styles.container}>
                 <View style={styles.row}>
                     <View style={[styles.column, styles.column1]}>
-                        <AppText.LabelBoldOne>Expected return</AppText.LabelBoldOne>
+                        <AppText.LabelBoldOne>Historical return</AppText.LabelBoldOne>
                         <AppButton.toolTip TouchableOpacityStyle={styles.toolTipDefault}/>
                     </View>
                     <View style={[styles.column, styles.column2]}>

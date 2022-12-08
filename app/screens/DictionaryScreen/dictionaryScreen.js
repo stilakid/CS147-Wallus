@@ -24,7 +24,7 @@ export default function DictionaryScreen({navigation, route}) {
                     <AppText.ParagraphTwo style={styles.searchany}>Search anything</AppText.ParagraphTwo>
                 </View>
             </TouchableOpacity>
-
+            
             <View style={styles.recent}>
                 <AppText.TitleSemiBoldFour style={styles.recenttitle}>Recent Searches</AppText.TitleSemiBoldFour>
                 <TouchableOpacity onPress={() => navigation.navigate('DueDiligence')}>

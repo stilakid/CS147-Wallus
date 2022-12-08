@@ -24,7 +24,30 @@ const images = {
         },
         temp: require('../temp.png'),
         company: {
-            tesla: require('../tesla.png'),
+            tesla: require('../companyLogo/Tesla.png'),
+            adobe: require('../companyLogo/Adobe.png'),
+            discord: require('../companyLogo/Discord.png'),
+            dribbble: require('../companyLogo/Dribbble.png'),
+            dropbox: require('../companyLogo/Dropbox.png'),
+            linkedin: require('../companyLogo/Linkedin.png'),
+            mcdonalds: require('../companyLogo/Mcdonalds.png'),
+            figma: require('../companyLogo/Figma.png'),
+            microsoft: require('../companyLogo/Microsoft.png'),
+            netflix: require('../companyLogo/Netflix.png'),
+            pinterest: require('../companyLogo/Pintrest.png'),
+            amazon: require('../companyLogo/Amazon.png'),
+            paypal: require('../companyLogo/PayPal.png')
+        },
+        indexFunds: {
+            sp500: require('../companyLogo/S.png'),
+            nasdaq: require('../companyLogo/N.png'),
+            dowJones: require('../companyLogo/D.png'),
+            wilshire: require('../companyLogo/W.png'),
+            msciEafe: require('../companyLogo/M.png'),
+        },
+        groupProfile: {
+            potato: require('../potato.png'),
+            banana: require('../banana.png')
         }
     };
     

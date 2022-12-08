@@ -1,5 +1,5 @@
 // import React from 'react';
-import { Themes } from "../../../assets/themes"
+import { Themes, Images } from "../../../assets/themes"
 
 // Components
 import { StyleSheet, SafeAreaView, Text, View, ScrollView, Image } from "react-native";
@@ -15,6 +15,7 @@ import WallusTips from "../../components/Cards/WallusTips/WallusTips";
 
 // Lucide Icons
 import { ChevronLeft } from 'lucide-react-native';
+import dailyMovers from "../../../assets/stockData/dailyMovers";
 
 
 const investmentInfo = [
@@ -63,13 +64,37 @@ export default function InvitationScreen({navigation, route}) {
         <SafeAreaView style={styles.container}>
             <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent} >
                 <Header text="Dan's Invitation" navigation={navigation} hasDivider={false} />
-                <Image
-                    source={require('../../../assets/InvitationBanner.png')}
-                    style={
-                        styles.banner
-                    }
-                />
-
+                
+                {/* Invitation information */}
+                <View style={{flexDirection:'row',justifyContent:'space-between', width:358, alignItems:'center', marginBottom: 24}}>
+                    <Image style={{height:64, width:64}} source={Images.groupProfile.banana}/>
+                    <View style={{alignItems:'flex-end'}}>
+                        <Image style={{height:32, width: 128, marginBottom:8}} source={require('../../../assets/groupProfiles.png')}/>
+                        <AppText.LabelSemiBoldThree>5 members</AppText.LabelSemiBoldThree>
+                    </View>
+                </View>
+                <AppText.TitleSemiBoldThree style={{width:358, marginBottom: 8}}>Friendly Bananas</AppText.TitleSemiBoldThree>
+                <View style={{flexDirection:'row', alignItems: 'center', width: 358}}>
+                    <TrendTags.smallBlue tagText={'Stable'}/>
+                    <AppText.TitleSemiBoldFour style={{marginTop:4, marginLeft: 8, marginBottom:24}}>Tesla</AppText.TitleSemiBoldFour>
+                </View>
+                
+                {/* message card */}
+                <View style={styles.messageCard}>
+                    <Image
+                        source={require('../../../assets/profilePic.png')}
+                        style={{heigh:40, width:40, marginRight:12}}
+                    />
+                    <View style={{flexDirection:'col', width:282}}>
+                        <View style={{flexDirection:'row', alignItems:'center', justifyContent:'space-between', marginBottom: 8}}> 
+                            <AppText.LabelSemiBoldOne>From Dan</AppText.LabelSemiBoldOne> 
+                            <AppText.ParagraphThree >Oct 16 2022</AppText.ParagraphThree>
+                        </View>
+                        <AppText.ParagraphTwo >Hey Emily! I think you should join this group because we’re both tring to do low risk and long term investments!</AppText.ParagraphTwo>
+                    </View>
+                </View>
+                
+                {/* Investment stats */}
                 <Divider.Horizontal />
                 <WallusTips.orange titleText={'Not aligned with your preference'} bodyText={'This is a text that explains the reason why it does not match'} />
 
@@ -78,7 +103,7 @@ export default function InvitationScreen({navigation, route}) {
                 <BorderedList.InvestmentStat data={investmentInfo} data_primary_key={(item) => item.id} /> */}
 
                 <InvestmentStat portfolioFit={'Great'} expectedReturn={'3.1%'} volatility={'Medium'} typicalHold={'4Y 3M'} />
-                <AppButton.SecondaryOutlineThickOne text={'Stock details'} TouchableOpacityStyle={[styles.stockDetailsButton, styles.endOfPage]} onPress={() => navigation.navigate('Stock')} />
+                <AppButton.SecondaryOutlineThickOne text={'Stock details'} TouchableOpacityStyle={[styles.stockDetailsButton, styles.endOfPage]} onPress={() => navigation.navigate('Stock', {stock:'tesla', dataSource:'dailyMovers'})} />
             </ScrollView>
 
             <AppFloatingButton.PrimaryThickDual textOne='Decline' textTwo={'Accept'} onPressOne={() => navigation.pop(1)} onPressTwo={() => navigation.navigate('Congrats')} />
@@ -116,6 +141,16 @@ const styles = StyleSheet.create({
     },
     endOfPage: {
         marginBottom: 80
+    },
+    messageCard: {
+        width:358,
+        backgroundColor: Themes.colors.neutral_100,
+        borderRadius:16,
+        paddingHorizontal:12,
+        paddingVertical: 16,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginBottom:24,
     }
 });
 
