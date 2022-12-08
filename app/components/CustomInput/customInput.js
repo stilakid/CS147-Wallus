@@ -5,7 +5,7 @@ import { Themes } from "../../../assets/themes";
 import { Controller } from "react-hook-form";
 
 
-export default function AppInput({control, name, rules = {}, placeholder, secureTextEntry=false}) {
+export default function AppInput({control, name, rules = {}, placeholder, secureTextEntry=false, TextStyle, ContainerStyle}) {
     
     return (
         <Controller
@@ -14,13 +14,13 @@ export default function AppInput({control, name, rules = {}, placeholder, secure
             rules={rules}
             render={({field: {value, onChange, onBlur}, fieldState: {error}}) => (
                 <>
-                    <View style={[styles.container, {borderColor: error? Themes.colors.error_500 : Themes.colors.neutral_200}]}>
+                    <View style={[styles.container, {borderColor: error? Themes.colors.error_500 : Themes.colors.neutral_200}, ContainerStyle]}>
                         <TextInput
                             value={value}
                             onChangeText={onChange}
                             onBlur={onBlur}
                             placeholder={placeholder}
-                            style={[styles.input]}
+                            style={[styles.input, TextStyle]}
                             secureTextEntry={secureTextEntry}
                             placeholderTextColor={Themes.colors.neutral_500}
                             keyboardType={'default'}
@@ -40,7 +40,6 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: Themes.colors.white,
         // width: '100%',
-        flex: 1,
         borderColor: Themes.colors.neutral_200,
         borderWidth: 2,
         borderRadius: 16,

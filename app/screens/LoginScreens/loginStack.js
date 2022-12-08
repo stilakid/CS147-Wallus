@@ -15,7 +15,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 // Basic Login Screens
 import LoginScreen from "./loginScreen";
-import ChatScreen from "../ChatScreen/chatScreen";
 import RegisterScreen from "./registerScreen";
 import ForgotPasswordScreen from "./forgotPasswordScreen";
 import ConfirmEmailScreen from "./confirmEmailScreen";
@@ -44,7 +43,14 @@ export default function LoginStack({navigation, route}) {
             <Stack.Screen name="Forgot Password Screen" component={ForgotPasswordScreen} options={{headerShown: false}} />
             <Stack.Screen name="Confirm Email Screen" component={ConfirmEmailScreen} options={{headerShown: false}} />
             <Stack.Screen name="New Password Screen" component={NewPasswordScreen} options={{headerShown: false}} />
-            <Stack.Screen name="Chat Screen" component={ChatScreen} options={{headerShown: false}} />
+
+            <Stack.Screen name="Investment Experience Screen" component={AskInvestmentExpScreen} options={{headerShown: false}} />
+            <Stack.Screen name="Expanded Preference Screen" component={ExpandedPreferencesScreen} options={{headerShown: false}} />
+            <Stack.Screen name="High Preference Screen" component={HighPreferenceScreen} options={{headerShown: false}} />
+            <Stack.Screen name="Investment Goals Screen" component={InvestmentGoalsScreen} options={{headerShown: false}} />
+            <Stack.Screen name="Medium Preference Screen" component={MediumPreferenceScreen} options={{headerShown: false}} />
+            <Stack.Screen name="Onboarding Confirmation Screen" component={OnboardingConfirmationSCreen} options={{headerShown: false}} />
+            <Stack.Screen name="Starting Preference Screen" component={StartingPreferenceScreen} options={{headerShown: false}} />
             <Stack.Screen name="Username Screen" component={UserNameInputScreen} options={{headerShown: false}} />
         </Stack.Navigator>
     );

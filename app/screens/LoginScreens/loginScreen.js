@@ -57,33 +57,38 @@ export default function LoginScreen({navigation, route}) {
     return (
         <SafeAreaView style = {styles.container} showVerticalScrollIndicator={false} >
             <ScrollView style={styles.scrollContainer} contentContainerStyle={styles.scrollContent}>
-            <Image
-                source={Images.Wallus_square}
-                style={styles.logo}
-            />
-            <AppInput
-                name="email"
-                placeholder={'Email'}
-                control={control}
-                rules={{required: 'Email is required'}}
-            />
-            <AppInput
-                name="password"
-                placeholder={'Password'}
-                control={control}
-                secureTextEntry
-                rules={{required: 'Password is required'}}
-            />
+                <Image
+                    source={Images.Wallus_square}
+                    style={styles.logo}
+                />
+                <View style={styles.credentialsContainer}>
+                    <AppInput
+                        name="email"
+                        placeholder={'Email'}
+                        control={control}
+                        rules={{required: 'Email is required'}}
+                        ContainerStyle={styles.inputBox}
+                    />
+                    <AppInput
+                        name="password"
+                        placeholder={'Password'}
+                        control={control}
+                        secureTextEntry
+                        rules={{required: 'Password is required'}}
+                        ContainerStyle={styles.inputBox}
+                    />
+                </View>
+                
 
-            
+                
 
-            <AppButton.PrimaryThickOne text={'Sign in'} onPress={handleSubmit(onSignInPressed)} />
+                <AppButton.PrimaryThickOne text={'Sign in'} onPress={handleSubmit(onSignInPressed)} />
 
-            <AppButton.SecondaryOutlineThickOne text={'Forgot password'} onPress={onForgotPasswordPressed} />
+                <AppButton.SecondaryOutlineThickOne text={'Forgot password'} onPress={onForgotPasswordPressed} />
 
-            <SocialSignInButtons />
+                <SocialSignInButtons />
 
-            <Text>Don't have an account? <Text onPress={onSignUpPressed} >Create one.</Text></Text>
+                <Text>Don't have an account? <Text onPress={onSignUpPressed} >Create one.</Text></Text>
 
             </ScrollView>
         </SafeAreaView>
@@ -98,18 +103,30 @@ const styles = StyleSheet.create({
         height: '100%',
         display: 'flex',
         alignItems: 'center',
-        padding: 16,
+        // backgroundColor: 'black'
     },
     scrollContent: {
+        paddingHorizontal: 16,
         display: 'flex',
         alignItems: 'center',
+        width: '100%',
     },
     scrollContainer: {
-        marginHorizontal: 16
+        width: '100%'
     },
     logo: {
-        width: '75%',
-        height: '50%',
-        resizeMode: 'contain'
+        resizeMode: 'contain',
+        width: 350,
+        height: 350
+    },
+    inputBox: {
+        width: '91%'
+    },
+    credentialsContainer: {
+        alignItems: 'center',
+        display: 'flex',
+        marginVertical: 32,
+        width: '100%'
     }
 });
+// TODO: I hardcoded inputBox width

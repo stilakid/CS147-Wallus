@@ -31,7 +31,7 @@ export default function StartingPreferenceScreen ({navigation, route}){
                     </View>
                 </TouchableOpacity>
             </View>
-            <AppFloatingButton.PrimaryThickOne text={'Continue'}/>
+            <AppFloatingButton.PrimaryThickOne text={'Continue'} onPress={() => navigation.navigate('Investment Goals Screen')} />
         </SafeAreaView>
     );
 }

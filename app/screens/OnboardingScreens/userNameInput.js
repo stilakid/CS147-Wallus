@@ -36,7 +36,7 @@ export default function UserNameInputScreen ({navigation, route}){
         //     return;
         // }
         
-        navigation.navigate('Chat Screen');
+        navigation.navigate('Investment Experience Screen');
     }
 
     return (

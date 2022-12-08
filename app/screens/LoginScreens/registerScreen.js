@@ -60,48 +60,55 @@ export default function RegisterScreen({navigation, route}) {
         <SafeAreaView style = {styles.container} showVerticalScrollIndicator={false} >
             <ScrollView style={styles.scrollContainer} contentContainerStyle={styles.scrollContent}>
             <AppText.TitleBoldOne>Create an account</AppText.TitleBoldOne>
-            <AppInput
-                name="email"
-                control={control}
-                placeholder={'Email'}
-                rules={{
-                    required: 'Email is required',
-                    pattern: {
-                        value: EMAIL_REGEX,
-                        message: "Email is invalid"
-                    }
-                }}
-            />
-            <AppInput
-                name="password"
-                control={control}
-                placeholder={'Password'}
-                secureTextEntry
-                rules={{
-                    required: 'Password is required',
-                    minLength: {
-                        value: 8,
-                        message: 'Password should be at least 8 characters long'
-                    },
-                }}
-            />
-            <AppInput
-                name="confirm_password"
-                control={control}
-                placeholder={'Confirm Password'}
-                secureTextEntry
-                rules={{
-                    validate: value => 
-                        value === pwd || 'Password do not match'
-                }}
-            />
-
+            <View style={styles.credentialsContainer}>
+                <AppInput
+                    name="email"
+                    control={control}
+                    placeholder={'Email'}
+                    rules={{
+                        required: 'Email is required',
+                        pattern: {
+                            value: EMAIL_REGEX,
+                            message: "Email is invalid"
+                        }
+                    }}
+                    ContainerStyle={styles.inputBox}
+                />
+                <AppInput
+                    name="password"
+                    control={control}
+                    placeholder={'Password'}
+                    secureTextEntry
+                    rules={{
+                        required: 'Password is required',
+                        minLength: {
+                            value: 8,
+                            message: 'Password should be at least 8 characters long'
+                        },
+                    }}
+                    ContainerStyle={styles.inputBox}
+                />
+                <AppInput
+                    name="confirm_password"
+                    control={control}
+                    placeholder={'Confirm Password'}
+                    secureTextEntry
+                    rules={{
+                        validate: value => 
+                            value === pwd || 'Password do not match'
+                    }}
+                    ContainerStyle={styles.inputBox}
+                />
+            </View>
+            
             <AppButton.PrimaryThickOne text={'Register'} onPress={handleSubmit(onRegisterPressed)} />
 
-            <Text>By registering, you confirm that you accept our <Text style={styles.link} onPress={onTermsOfUsePressed} >Terms of Use</Text> and <Text style={styles.link} onPress={onPrivacyPolicyPressed} >Privacy Policy</Text></Text>
+            <Text style={{width: '80%'}}>By registering, you confirm that you accept our <Text style={styles.link} onPress={onTermsOfUsePressed} >Terms of Use</Text> and <Text style={styles.link} onPress={onPrivacyPolicyPressed} >Privacy Policy</Text></Text>
+            
             <AppButton.SecondaryOutlineThickOne
                 text={'Forgot password'}
                 onPress={onForgotPasswordPressed}
+                TouchableOpacityStyle={styles.forgotPasswordContainer}
             />
 
             <SocialSignInButtons />
@@ -128,4 +135,16 @@ const styles = StyleSheet.create({
     scrollContainer: {
         marginHorizontal: 16
     },
+    inputBox: {
+        width: '91%'
+    },
+    credentialsContainer: {
+        alignItems: 'center',
+        display: 'flex',
+        marginVertical: 32,
+        width: '100%'
+    },
+    forgotPasswordContainer: {
+        marginVertical: 32
+    }
 });

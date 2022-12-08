@@ -50,6 +50,14 @@ const images = {
         groupProfile: {
             potato: require('../potato.png'),
             banana: require('../banana.png')
+        },
+        userProfilePics: {
+            pic1: require('../userProfilePics/Pic1.png'),
+            pic2: require('../userProfilePics/Pic2.png'),
+            pic3: require('../userProfilePics/Pic3.png'),
+            pic4: require('../userProfilePics/Pic4.png'),
+            pic5: require('../userProfilePics/Pic5.png'),
+            pic6: require('../userProfilePics/Pic6.png'),
         }
     };
     

@@ -56,7 +56,7 @@ export default function InvestmentGoalsScreen ({navigation, route}){
             </View>
 
 
-            <AppFloatingButton.PrimaryThickOne text={'Finish'}/>
+            <AppFloatingButton.PrimaryThickOne text={'Finish'} onPress={() => navigation.navigate('Onboarding Confirmation Screen')} />
         </SafeAreaView>
     );
 }

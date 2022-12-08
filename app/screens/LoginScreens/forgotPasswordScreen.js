@@ -41,16 +41,13 @@ export default function ForgotPasswordScreen({navigation, route}) {
 
             <AppButton.PrimaryThickOne
                 text={'Send'}
-                onPress={onSendPressed}
+                onPress={handleSubmit(onSendPressed)}
             />
 
             <AppButton.PrimaryThickOne
                 text={'Back to Sign In'}
                 onPress={onSignInPressed}
             />
-
-            <Text>Have an account? <Text onPress={handleSubmit(onSignInPressed)} >Sign in.</Text></Text>
-
 
             </ScrollView>
         </SafeAreaView>
