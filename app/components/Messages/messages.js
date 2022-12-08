@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../../../supabase";
-import { Text, View } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
+import { Themes } from "../../../assets/themes";
 
 // type Message = {
 //     id: string,
@@ -52,12 +53,8 @@ export default function Messages() {
 
     return (
         messages.map(message => (
-            <View style={{}} >
-                <Text
-                    style={{
-                        backgroundColor: (message.profile_id === '1cb8a13e-5957-4646-be6b-9cb06f396ec9') ? 'red' : 'blue'
-                    }}
-                >
+            <View style={ [styles.messageContainer, { backgroundColor: (message.profile_id === '1cb8a13e-5957-4646-be6b-9cb06f396ec9') ? Themes.colors.primary_700 : Themes.colors.white }]} >
+                <Text>
                     {message.profile.username}
                 </Text>
                 <Text>
@@ -67,3 +64,14 @@ export default function Messages() {
         ))
     )
 }
+
+const styles = StyleSheet.create({
+    messageContainer: {
+        paddingVertical: 12,
+        paddingHorizontal: 16,
+        backgroundColor: Themes.colors.primary_700,
+        borderRadius: 16,
+        marginVertical: 8
+    }
+});
+

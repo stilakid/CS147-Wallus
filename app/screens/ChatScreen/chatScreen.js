@@ -8,6 +8,8 @@ import { supabase } from "../../../supabase";
 import Messages from "../../components/Messages/messages";
 import { useEffect, useState } from "react";
 
+// TODO: Right now, it is possible to send empty messages if you type and delete everythiing before pressing the send button.
+
 
 export default function ChatScreen({navigation, route}) {
     const {control, handleSubmit, resetField} = useForm('');
@@ -36,16 +38,21 @@ export default function ChatScreen({navigation, route}) {
         <SafeAreaView style={styles.container}>
             <Header text="Brave Potatoes" navigation={navigation} hasDivider={true} />
             <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent} >
-                <Messages />
+                <View style={styles.messagesContainer}>
+                    <Messages />
+                </View>
 
-                <AppInput
-                    name="message"
-                    placeholder={'Message'}
-                    control={control}
-                    rules={{required: 'Message is required'}}
-                />
+                <View style={ [styles.textControlsContainer, styles.endOfPage] } >
+                    <AppInput
+                        name="message"
+                        placeholder={'Message'}
+                        control={control}
+                        rules={{required: ''}}
+                    />
 
-                <AppButton.PrimaryThickOne text={'Send'} onPress={handleSubmit(onSendPressed)} />
+                    <AppButton.sendText onPress={handleSubmit(onSendPressed)} TouchableOpacityStyle={styles.sendTextButton} />
+                </View>
+                
 
             </ScrollView>
         </SafeAreaView>
@@ -60,11 +67,12 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingHorizontal: 16,
         paddingTop: 56,
+        height: '100%'
     },
     scrollView: {
         backgroundColor: Themes.colors.neutral_100,
         // backgroundColor: Themes.colors.black,
-        width: '100%'
+        width: '100%',
     },
     input: {
         borderColor: 'black',
@@ -76,5 +84,23 @@ const styles = StyleSheet.create({
     scrollViewContent: {
         paddingHorizontal: 16,
         alignItems: 'center',
+        height: '100%',
+    },
+    textControlsContainer: {
+        width: '100%',
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
+    sendTextButton: {
+        marginLeft: 8
+    },
+    endOfPage: {
+        marginBottom: 80
+    },
+    messagesContainer: {
+        flex:1,
+        width: '100%',
+        justifyContent: 'flex-end'
     }
 });

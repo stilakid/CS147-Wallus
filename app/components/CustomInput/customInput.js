@@ -39,11 +39,12 @@ export default function AppInput({control, name, rules = {}, placeholder, secure
 const styles = StyleSheet.create({
     container: {
         backgroundColor: Themes.colors.white,
-        width: '100%',
+        // width: '100%',
+        flex: 1,
         borderColor: Themes.colors.neutral_200,
         borderWidth: 2,
         borderRadius: 16,
-        paddingVertical: 12,
+        padding: 12,
         marginVertical: 5,
 
         },
