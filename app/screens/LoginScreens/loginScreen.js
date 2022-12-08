@@ -24,7 +24,6 @@ export default function LoginScreen({navigation, route}) {
 
 
     const onSignInPressed = async (data) => {
-        // navigation.navigate('Register Screen');
         console.warn("Sign in");
         console.log(data);
 
@@ -41,7 +40,7 @@ export default function LoginScreen({navigation, route}) {
             return;
         }
 
-        navigation.navigate('Chat Screen')
+        navigation.navigate('Bottom Tab Navigator', { screen: 'HomeStack' });
     }
     
     const onForgotPasswordPressed = () => {

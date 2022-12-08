@@ -85,7 +85,7 @@ export default function GroupDetail({navigation, route}) {
                             <AppText.TitleSemiBoldFour style={{marginLeft:8, marginTop: 5}}>S&P 500</AppText.TitleSemiBoldFour>
                         </View>
                     </View>
-                    <AppButton.SecondaryOutlineThickOne text="Enter Chatroom" onPress={() => navigation.navigate('Member Screen')}></AppButton.SecondaryOutlineThickOne>
+                    <AppButton.SecondaryOutlineThickOne text="Enter Chatroom" onPress={() => navigation.navigate('Chat Screen')}></AppButton.SecondaryOutlineThickOne>
                 </View>
 
                 <Divider.Horizontal />

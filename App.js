@@ -44,12 +44,6 @@ import { createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator} from '@react-navigation/drawer';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
-// Tab Stacks
-import HomeStack from "./app/screens/BottomTabScreens/homeStack";
-import MarketStack from "./app/screens/BottomTabScreens/marketStack";
-import DictionaryStack from "./app/screens/BottomTabScreens/dictionaryStack";
-import CommunityStack from "./app/screens/BottomTabScreens/communityStack";
-
 // Navigators
 import LoginNavigator from './app/navigators/LoginNavigator/loginNavigator';
 
@@ -59,10 +53,7 @@ import { TrendingUp } from 'lucide-react-native';
 import { BookOpen } from 'lucide-react-native';
 import { Users } from 'lucide-react-native';
 
-// Temporary
-import ChatScreen from './app/screens/ChatScreen/chatScreen'
-import LoginScreen from './app/screens/LoginScreens/loginScreen';
-import LoginStack from './app/screens/LoginScreens/loginStack';
+
 
 
 SplashScreen.preventAutoHideAsync();
@@ -204,7 +195,7 @@ export default function App() {
         // </SafeAreaView>
 
         <NavigationContainer onReady={onLayoutRootView}>
-            <LoginStack />
+            <LoginNavigator />
         </NavigationContainer>
 
     );
