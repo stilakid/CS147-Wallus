@@ -11,20 +11,36 @@ import InvestmentDisplayCard from "../../components/Cards/InvestmentDisplayCard"
 import DropdownText from "../../components/DropdownText/DropdownText";
 import MoneyAmountInput from "../../components/MoneyAmontInput/MoneyAmountInput";
 import { useState } from "react";
+import dailyMovers from "../../../assets/stockData/dailyMovers";
+import recInvestment from "../../../assets/stockData/recInvestment";
+import investmentGroups from "../../../assets/stockData/investmentGroups";
 
 export default function BuyScreen ({navigation, route}){
+    const dataSource = route.params.dataSource;
+    const key = route.params.key
+    const firstPurchase = route.params.firstPurchase;
+    let stock;
+    if (dataSource == 'dailyMovers'){
+        stock = dailyMovers[key];
+    } else if (dataSource == 'recInvestment'){
+        stock = recInvestment[key];
+    } else {
+        stock = investmentGroups[key]
+    }
+
+    console.log(dataSource);
+
     const [value, setValue] = useState(0)
-    console.log({value});
     return (
         <SafeAreaView style={styles.container}>
             <Header navigation={navigation} hasDivider={false} />
             <AppText.TitleBoldOne style={{width:358, marginBottom:24}}>You are buying</AppText.TitleBoldOne>
             <InvestmentDisplayCard 
                 cardType={'horizontal'} 
-                companyName={'SPK 500'} 
-                logoURL={Images.company.tesla} 
-                status={'growing'} 
-                stockPrice={'USD24.32'}
+                companyName={stock.companyName} 
+                logoURL={stock.logoURL} 
+                status={stock.status} 
+                stockPrice={stock.stockPrice}
                 recRationale={'Invested by Dan'}
                 style={[styles.borderedContainer, {marginBottom: 12}]}
             />
@@ -34,7 +50,7 @@ export default function BuyScreen ({navigation, route}){
                 style={{marginBottom: 40}}
             />
             <MoneyAmountInput/>
-            <AppFloatingButton.PrimaryThickOne text={'Review'} onPress={()=> navigation.navigate("Buy Confirmation")}/>
+            <AppFloatingButton.PrimaryThickOne text={'Review'} onPress={()=> navigation.navigate("Buy Confirmation", {key:key, dataSource:dataSource, firstPurchase: firstPurchase})}/>
             
         </SafeAreaView>
     );

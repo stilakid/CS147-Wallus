@@ -1,25 +1,32 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, Image } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Themes} from "../../../assets/themes";
 import { AppText } from '../CustomText/customText';
 import { TrendTags } from '../TrendTags/TrendTags';
 
-export default function InvitationCard({GroupName, Price, onPress}) {
+export default function InvitationCard({GroupName, Price, stock, status, memberPicURL, onPress}) {
 
-  const onPressName = () => {
-    console.log("logging invitation card group name click")
+  //determine which trend tag to display based on route.params
+  let trendTagdisplayed;
+  if (status == 'stable'){
+      trendTagdisplayed= <TrendTags.smallBlue tagText={'Stable'}/>
+  } else if (status == 'growing') {
+      trendTagdisplayed = <TrendTags.smallGreen tagText={'Growing'}/>
+  } else {
+      trendTagdisplayed = <TrendTags.smallOrange tagText={'Unstable'}/>
   }
 
   return (
-    <View style={styles.card}>
+    <TouchableOpacity style={styles.card} onPress={onPress}>
       <View style={styles.title}>
         <View style={styles.details}>
           <View >
-            <Text style={styles.groupName} onPress={onPress}> {GroupName} </Text>
+            <Text style={styles.groupName}> {GroupName} </Text>
           </View>
           <View style={styles.status}>
-            <TrendTags.smallGreen tagText={"Growing"}/>
-            <Text style={styles.stock}> {"S&P 500"} </Text>
+            {trendTagdisplayed}
+            <Text style={styles.stock}> {stock} </Text>
           </View>
         </View>
         <View>
@@ -27,11 +34,11 @@ export default function InvitationCard({GroupName, Price, onPress}) {
         </View>
       </View>
       <Image
-            source={require('../../../assets/groupProfiles.png')}
+            source={memberPicURL}
             style={styles.profilePic}
       />
       
-    </View>
+    </TouchableOpacity>
   );
 }
 
@@ -94,6 +101,6 @@ const styles = StyleSheet.create({
   profilePic: {
     marginTop: 16,
     width: 128,
-    height: 32
+    height: 32,
   }
 });  

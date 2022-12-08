@@ -3,27 +3,27 @@ import { Text, View, StyleSheet, Image } from 'react-native';
 import { Themes} from "../../../assets/themes";
 import { AppText } from '../CustomText/customText';
 
-export default function RationaleCard() {
+export default function RationaleCard({style, name, profileURL, date, rationale}) {
   function onPressUser() {
     console.log("clicked user name in rationale card")
   }
 
   return (
-    <View style={styles.card}>
+    <View style={[styles.card, style]}>
       <Image
-            source={require('../../../assets/profilePic.png')}
+            source={profileURL}
             style={styles.profilePic}
       />
       <View style={styles.container}>
         <View style={styles.header}>
           <View> 
-            <AppText.LabelSemiBoldTwo style={styles.userText} onPress={onPressUser}>{"Benji"}</AppText.LabelSemiBoldTwo> 
+            <AppText.LabelSemiBoldTwo style={styles.userText} onPress={onPressUser}>{name}</AppText.LabelSemiBoldTwo> 
           </View>
           <View style={styles.time}>
-            <AppText.ParagraphThree style={styles.dateText}>{"Oct 16 2022"}</AppText.ParagraphThree>
+            <AppText.ParagraphThree style={styles.dateText}>{date}</AppText.ParagraphThree>
           </View>
         </View>
-        <AppText.LabelSemiBoldOne style={styles.commentText}>"I wanted to invest in something safe."</AppText.LabelSemiBoldOne>
+        <AppText.LabelSemiBoldOne style={styles.commentText}>{rationale}</AppText.LabelSemiBoldOne>
       </View>
 
 
@@ -34,16 +34,12 @@ export default function RationaleCard() {
 
 const styles = StyleSheet.create({
   card: {
-    display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     padding: 16,
-    marginVertical: 16,
-    position: 'absolute',
     backgroundColor: Themes.colors.neutral_100,
     borderRadius: 16,
     width: 358,
-    height: 80
   },
   container: {
     flexDirection: 'column',
@@ -51,7 +47,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     gap: 8,
     width: 282,
-    height: 47,
     flexGrow: 1,
     paddingLeft: 10,
   },
@@ -60,8 +55,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    gap: 4,
-    height: 21
+    marginBottom: 4,
+
   },
   profilePic: {
     height: 40,

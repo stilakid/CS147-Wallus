@@ -15,7 +15,7 @@ import Header from "../../components/Header/header";
 import { useEffect, useState } from "react";
 import Checkbox from "../../components/Checkbox/Checkbox";
 
-export default function CommunityScreen({navigation, route}) {
+export default function SelectFriends({navigation, route}) {
     const [value, setValue] = useState(0)
     console.log({value});
     const [data, setData] = useState([]);
@@ -73,7 +73,7 @@ export default function CommunityScreen({navigation, route}) {
             </ScrollView>
             
             
-            <AppFloatingButton.PrimaryThickOne text={'Next'} onPress={()=> navigation.navigate("Buy Confirmation")}/>
+            <AppFloatingButton.PrimaryThickOne text={'Next'} onPress={()=> navigation.navigate("Invite Confirmation")}/>
         </SafeAreaView>
     );
 }
