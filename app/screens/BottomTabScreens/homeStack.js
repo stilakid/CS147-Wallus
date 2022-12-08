@@ -16,14 +16,14 @@ import HomeScreen from "../HomeScreen/homeScreen";
 import InvitationScreen from "../InvitationScreen/invitationScreen";
 import StockScreen from "../StockScreen/stockScreen";
 import CongratsScreen from "../CongratulationsScreen/congratulationsScreen";
-import GroupDetail from "../GroupScreens.js/GroupDetail";
-import Rationale from "../GroupScreens.js/Rationale";
-import MemberScreen from "../GroupScreens.js/MemberScreen";
+import GroupDetail from "../GroupScreens/GroupDetail";
+import Rationale from "../GroupScreens/Rationale"
+import MemberScreen from "../GroupScreens/MemberScreen";
 import BuyScreen from "../BuyScreen/BuyScreen";
 import BuyConfirmationScreen from "../BuyConfirmationScreen/BuyConfirmationScreen";
 import SellConfirmationScreen from "../SellConfirmationScreen/SellConfirmation";
 import SellScreen from "../SellScreen/SellScreen";
-import Community from "/Users/xinyiwang/Desktop/Junior Fall 2022/CS 147/CS147-Wallus/app/screens/Community/Community"
+import Community from "../Community/Community"
 export default function HomeStack({navigation, route}) {
     
     // const {  } = route.params;

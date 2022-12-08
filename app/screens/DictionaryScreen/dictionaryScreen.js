@@ -6,14 +6,11 @@ import { AppText } from "../../components/CustomText/customText";
 import { AppButton } from "../../components/Buttons/buttons";
 import { Divider } from "../../components/Divider/divider"
 import { Navigation } from "lucide-react-native";
-
+import Home from '../../components/SearchBar/Home'
 export default function DictionaryScreen({navigation, route}) {
     // const {  } = route.params;
     return(
-        <SafeAreaView style={styles.container}>
-            <Text>Dictionary Screen</Text>
-            <Button title="Notifs" onPress={() => navigation.navigate('Notifications')} />
-        </SafeAreaView>
+        <Home/>
     );
 }
 
