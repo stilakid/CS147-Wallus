@@ -1,0 +1,17 @@
+[
+    {
+      "id": "1",
+      "name": "Absolute Advantage",
+      "details": "Absolute advantage is the ability of an individual, company, region, or country to produce a greater quantity of a good or service with the same quantity of inputs per unit of time, or to produce the same quantity of a good or service per unit of time using a lesser quantity of inputs, than its competitors."
+    },
+    {
+      "id": "2",
+      "name": "Bond",
+      "details": "A bond is a fixed-income instrument that represents a loan made by an investor to a borrower (typically corporate or governmental). A bond could be thought of as an I.O.U. between the lender and borrower that includes the details of the loan and its payments. Bonds are used by companies, municipalities, states, and sovereign governments to finance projects and operations. Owners of bonds are debtholders, or creditors, of the issuer."
+    },
+    {
+      "id": "3",
+      "name": "Capital",
+      "details": "Capital is a broad term that can describe anything that confers value or benefit to its owners, such as a factory and its machinery, intellectual property like patents, or the financial assets of a business or an individual."
+    }
+]

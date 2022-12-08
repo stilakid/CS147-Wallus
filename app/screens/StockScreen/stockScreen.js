@@ -17,6 +17,10 @@ import TrendChart from "../../components/TrendChart/TrendChart";
 // Lucide Icons
 import { ChevronLeft } from 'lucide-react-native';
 
+// Data
+import dailyMovers from "../../../assets/stockData/dailyMovers";
+import recInvestment from "../../../assets/stockData/recInvestment";
+
 
 const investmentInfo = [
     {
@@ -55,29 +59,44 @@ const portfolioFit= [
 {/* <Home color="black" size={24} />; */}
 export default function StockScreen({navigation, route}) {
 
-    // const {  } = route.params;
+    const dataSource = route.params.dataSource;
+    const stockID = route.params.stock;
+    let stock;
+    if (dataSource == 'dailyMovers'){
+        stock = dailyMovers[stockID];
+    } else {
+        stock = recInvestment[stockID];
+    };
 
+    //determine which trend tag to display based on route.params
+    let trendTagdisplayed;
+    if (stock.status == 'stable'){
+        trendTagdisplayed= <TrendTags.smallBlue tagText={'Stable'}/>
+    } else if (stock.status == 'growing') {
+        trendTagdisplayed = <TrendTags.smallGreen tagText={'Growing'}/>
+    } else {
+        trendTagdisplayed = <TrendTags.smallOrange tagText={'Unstable'}/>
+    }
 
-
-    
     return(
         <SafeAreaView style={styles.container}>
             <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent} >
                 <Header text="" navigation={navigation} hasDivider={false} />
                 <View style={styles.bannerContainer}>
-                    <Image
-                        source={require('../../../assets/StockBanner.png')}
-                        style={
-                            styles.banner
-                        }
-                    />
+                    <Image source={stock.logoURL} style={{width:48,height:48, marginBottom: 16}}/>
+                    <View style={{flexDirection:'row', alignItems: 'center', marginBottom: 16}}>
+                        <AppText.TitleSemiBoldTwo style={{marginRight: 8}}>{stock.companyName}</AppText.TitleSemiBoldTwo>
+                        {trendTagdisplayed}
+                    </View>
+                    <AppText.TitleBoldOne>{stock.stockPrice}</AppText.TitleBoldOne>
                 </View>
 
                 <TrendChart trendGraphURL={Images.trendCharts.trend2} />
 
                 <WallusTips.orange titleText={'Not aligned with your preference'} bodyText={'This is a text that explains the reason why it does not match'} />
 
-                <InvestmentStat  portfolioFit={'Great'} market={'12.38%'} sp500={'12.88%'} expectedReturn={'3.1%'} volatility={'Medium'} typicalHold={'4Y 3M'} containerStyle={styles.endOfPage} />
+                <InvestmentStat portfolioFit={'Great'} market={'12.38%'} sp500={'12.88%'} expectedReturn={'3.1%'} volatility={'Medium'} typicalHold={'4Y 3M'} containerStyle={{marginBottom:24}} />
+                <WallusTips.bordered titleText={'Stock information'} bodyText={stock.stockInfo} style={styles.endOfPage}></WallusTips.bordered>
             </ScrollView>
 
             <AppFloatingButton.PrimaryThickDual textOne='Decline' textTwo={'Accept'} onPressOne={() => navigation.pop(2)} onPressTwo={() => navigation.navigate('Congrats')} />
@@ -114,7 +133,7 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
     },
     bannerContainer: {
-        width: '100%',
+        width: 358,
         marginVertical: 24,
     },
     trendChart: {
