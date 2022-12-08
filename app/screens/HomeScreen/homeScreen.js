@@ -47,6 +47,7 @@ export default function HomeScreen({navigation, route}) {
     return(
         <SafeAreaView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent}>
             {/* <Button title="Community" onPress={()=>navigation.navigate('Community')}></Button> */}
+            
             <View style={styles.header}>
                 <View style={styles.nameCard}>
                     <Image style={styles.profilePic} source={require("../../../assets/profilePic.png")} resizeMode='contain'></Image>

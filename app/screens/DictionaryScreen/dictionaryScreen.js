@@ -7,6 +7,7 @@ import { AppButton } from "../../components/Buttons/buttons";
 import { Divider } from "../../components/Divider/divider"
 import { Navigation } from "lucide-react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import Home from "../../components/SearchBar/Home";
 
 
 
@@ -27,7 +28,7 @@ export default function DictionaryScreen({navigation, route}) {
                     <AppText.ParagraphTwo style={styles.searchany}>Search anything</AppText.ParagraphTwo>
                 </View>
             </TouchableOpacity>
-
+            
             <View style={styles.recent}>
                 <AppText.TitleSemiBoldFour style={styles.recenttitle}>Recent Searches</AppText.TitleSemiBoldFour>
                 <TouchableOpacity onClick={() => navigation.navigate('Notifications')}>
