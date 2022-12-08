@@ -124,12 +124,8 @@ export default function GroupDetail({navigation, route}) {
                                     <AppText.TitleSemiBoldFour style={{marginLeft:8, marginTop: 5}}>{group.companyName}</AppText.TitleSemiBoldFour>
                                 </View>
                             </View>
-                            <AppButton.SecondaryOutlineThickOne text="Enter Chatroom" onPress={() => navigation.navigate('Member Screen')}></AppButton.SecondaryOutlineThickOne>
                         </View>
-                    </View>
-                    <AppButton.SecondaryOutlineThickOne text="Enter Chatroom" onPress={() => navigation.navigate('Chat Screen')}></AppButton.SecondaryOutlineThickOne>
-                </View>
-
+                    <AppButton.SecondaryOutlineThickOne style={{marginBottom: 24}} text="Enter Chatroom" onPress={() => navigation.navigate('Chat Screen')}></AppButton.SecondaryOutlineThickOne>
                         <Divider.Horizontal />
                         <WallusTips.green titleText={'Hold is recommended'} bodyText={'Index funds tend to maintain positive growth overtime despite temporary descreases'} />
                         <InvestmentDetailCard investAmount={group.investAmount}></InvestmentDetailCard>
