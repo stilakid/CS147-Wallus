@@ -13,21 +13,46 @@ import BorderedCheckList from "../../components/BorderedCheckList/BorderedCheckL
 import { TextInput } from "react-native-gesture-handler";
 import { Roboto_400Regular } from "@expo-google-fonts/roboto";
 
+//database
+import dailyMovers from "../../../assets/stockData/dailyMovers";
+import recInvestment from "../../../assets/stockData/recInvestment";
+import investmentGroups from "../../../assets/stockData/investmentGroups";
+
 export default function BuyConfirmationScreen ({navigation, route}){
-    const [value, setValue] = useState(0)
     const [input, setInput] = useState(null)
-    console.log('Value is',{value});
+    const dataSource = route.params.dataSource;
+    const key = route.params.key;
+    const firstPurchase = route.params.firstPurchase;
+
+    console.log(dataSource);
+    let stock;
+    if (dataSource == 'dailyMovers'){
+        stock = dailyMovers[key];
+    } else if (dataSource == 'recInvestment'){
+        stock = recInvestment[key];
+    } else {
+        stock = investmentGroups[key]
+    }
+
+    //determine which page "complete" would lead to based on first purchase or not. If first purhchase
+    //button leads to home, if not it leads to investment group page
+    let buttonDisplayed;
+    if (firstPurchase==true) {
+        buttonDisplayed = <AppFloatingButton.PrimaryThickOne text={'Complete'} onPress={() => navigation.navigate("Home Screen")}/>
+    } else {
+        buttonDisplayed = <AppFloatingButton.PrimaryThickOne text={'Complete'} onPress={() => navigation.navigate("Group Detail", {group: key})}/>
+    }
+
     return (
         <SafeAreaView style={styles.container}>
             <Header navigation={navigation} hasDivider={false} />
             <AppText.TitleBoldOne style={{width:358, marginBottom:24}}>Purchase confirmation</AppText.TitleBoldOne>
             <InvestmentDisplayCard 
                 cardType={'horizontal'} 
-                companyName={'SPK 500'} 
-                logoURL={Images.company.tesla} 
-                status={'growing'} 
-                stockPrice={'USD24.32'}
-                recRationale={'Invested by Dan'}
+                companyName={stock.companyName} 
+                logoURL={stock.logoURL} 
+                status={stock.status} 
+                stockPrice={stock.stockPrice}
                 style={[styles.borderedContainer, {marginBottom: 12}]}
             />
             <BorderedFlatlist
@@ -67,7 +92,7 @@ export default function BuyConfirmationScreen ({navigation, route}){
                 keyboardType="default"
                 placeholderTextColor={Themes.colors.neutral_500}
             />
-            <AppFloatingButton.PrimaryThickOne text={'Complete'}/>
+            {buttonDisplayed}
             
         </SafeAreaView>
     );

@@ -11,71 +11,55 @@ import { Notification } from "../../components/Community & Feed/Notification";
 // Lucide Icons
 import { ChevronLeft } from 'lucide-react-native';
 import RationaleCard from "../../components/Cards/RationaleCard";
+import { FlatList } from "react-native-gesture-handler";
 
 {/* <Home color="black" size={24} />; */}
 export default function Rationale({navigation, route}) {
+    const friend = route.params.friend;
 
-    // const {  } = route.params;
+    //Datasets
+    const placeholder =[
+        {
+            random: 'placeholder',
+        }
+    ];
 
-    // const DATA = [
-    //     {
-    //     title: 'Invitations',
-    //     data: [['Dan invites you to join Friendly Bananas', 'Investment: Apple', Images.profilePic.Dan, () => navigation.navigate('Invitation')], ['Dan invites you to join Friendly Bananas', 'Investment: Apple', Images.profilePic.Dan, () => navigation.navigate('Invitation')]],
-    //     },
-    //     {
-    //     title: 'Wallus reminders',
-    //     data: [['This investment is no longer aligned with your goals', 'Investment: Apple', Images.Wallus, () => navigation.navigate('Invitation')], ['This investment is no longer aligned with your goals', 'Investment: Apple', Images.Wallus, () => navigation.navigate('Invitation')]],
-    //     },
-    // ];
+    const renderFriendRationaleItem =({item, index}) => {
+        const person = friend[item];
+        return (
+            <RationaleCard
+                name={person.name}
+                profileURL={person.profilePicURL}
+                date={person.dateCommented}
+                rationale={person.rationale}
+                style={{marginBottom:12}}
+            />
+        );
+    }
+    const renderPlaceholder =({item}) => {
+        return (
+            <View>
+                <Header text="Why your friends joined" navigation={navigation} hasDivider={true} />
+                <View style={{color: Themes.colors.neutral_800, alignItems: 'flex-start',  marginTop:16, marginLeft: 16, marginBottom: 16}}>
+                    <AppText.TitleSemiBoldThree>5 comments</AppText.TitleSemiBoldThree>
+                </View>
+                <FlatList
+                    data={Object.keys(friend)}
+                    renderItem={(item) => renderFriendRationaleItem(item)}
+                    keyExtractor={(item) => item}
+                    scrollEnabled='false'
+                    style={{marginHorizontal:16}}
+                /> 
+            </View>
+        );
+    }
 
-    // const renderNotifications = ({item}) => {
-    //     console.log(item)
-    //     return (
-    //         <View>
-    //             {/* <Notification message={'Dan invites you to join Friendly Bananas'} investment={'Investment: Apple'} imageURL={Images.profilePic.Dan} onPress={() => navigation.navigate('Invitation')}/>   */}
-    //             <Notification message={item[0]} investment={item[1]} imageURL={item[2]} onPress={item[3]}/>    
-  
-    //         </View>
-    //     )
-    // }
-    // const renderWallusReminders = ({item}) => {
-    //     return (
-    //         <View>
-    //             <Notification message={'This investment is no longer aligned with your goals'} investment={'Investment: Apple'} imageURL={Images.Wallus} onPress={() => navigation.navigate('Invitation')}/>    
-    //         </View>
-    //     )
-    // }
-
-    // const renderSectionTitle = ({ section: { title } }) => {
-    //     return (
-    //         <View style={styles.sectionListTitle}>
-    //             <AppText.TitleSemiBoldFour>{title}</AppText.TitleSemiBoldFour>
-    //         </View>
-    //     )
-    // }
-
-
-    
     return(
         <SafeAreaView style={styles.container}>
-            <Header text="Why your friends joined" navigation={navigation} hasDivider={true} />
-            <View style={{color: Themes.colors.neutral_800, alignItems: 'flex-start',  marginTop:16, marginLeft: 16}}>
-                <AppText.TitleSemiBoldThree>4 comments</AppText.TitleSemiBoldThree>
-            </View>
-            <View style={{width: 358, height: 388, flexDirection: 'column', alignItems: 'flex-start'}}>
-                <View style={{marginLeft:16}}>
-                    <RationaleCard></RationaleCard>
-                </View>
-                <View style={{marginTop: 91, marginLeft:16}}>
-                    <RationaleCard></RationaleCard>
-                </View>
-                <View style={{marginTop: 91, marginLeft:16}}>
-                    <RationaleCard></RationaleCard>
-                </View>
-                <View style={{marginTop: 91, marginLeft:16}}>
-                    <RationaleCard></RationaleCard>
-                </View>
-            </View>
+            <FlatList data={placeholder}
+                renderItem={(item) => renderPlaceholder(item)}
+                >
+            </FlatList>
         </SafeAreaView>
     );
 }

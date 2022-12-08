@@ -554,14 +554,14 @@ AppButton.notif = ({navigation, TouchableOpacityStyle}) => {
     );
 }
 
-AppButton.rightArrow = ({navigation, TouchableOpacityStyle}) => {
+AppButton.rightArrow = ({navigation, TouchableOpacityStyle, onPress}) => {
 
-    const content = <ChevronRight style={{width: 24, height: 24}}></ChevronRight>
+    const content = <ChevronRight style={{width: 24, height: 24}} color={Themes.colors.neutral_600}></ChevronRight>
 
     return (
         <AppButton
             content={content}
-            onPress={() => navigation.navigate('Rationale')}
+            onPress={onPress}
             TouchableOpacityStyle={TouchableOpacityStyle}
         />
     );

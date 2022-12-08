@@ -13,7 +13,22 @@ import BorderedCheckList from "../../components/BorderedCheckList/BorderedCheckL
 import { TextInput } from "react-native-gesture-handler";
 import { Roboto_400Regular } from "@expo-google-fonts/roboto";
 
+//database
+import dailyMovers from "../../../assets/stockData/dailyMovers";
+import recInvestment from "../../../assets/stockData/recInvestment";
+import investmentGroups from "../../../assets/stockData/investmentGroups";
+
 export default function SellConfirmationScreen ({navigation, route}){
+    const dataSource = route.params.dataSource;
+    const key = route.params.key
+    let stock;
+    if (dataSource == 'dailyMovers'){
+        stock = dailyMovers[key];
+    } else if (dataSource == 'recInvestment'){
+        stock = recInvestment[key];
+    } else {
+        stock = investmentGroups[key]
+    }
     const [value, setValue] = useState(0)
     const [input, setInput] = useState(null)
     console.log('Value is',{value});
@@ -23,11 +38,10 @@ export default function SellConfirmationScreen ({navigation, route}){
             <AppText.TitleBoldOne style={{width:358, marginBottom:24}}>Sell confirmation</AppText.TitleBoldOne>
             <InvestmentDisplayCard 
                 cardType={'horizontal'} 
-                companyName={'SPK 500'} 
-                logoURL={Images.company.tesla}  
-                status={'growing'} 
-                stockPrice={'USD24.32'}
-                recRationale={'Invested by Dan'}
+                companyName={stock.companyName} 
+                logoURL={stock.logoURL}  
+                status={stock.status} 
+                stockPrice={stock.stockPrice}
                 style={[styles.borderedContainer, {marginBottom: 12}]}
             />
             <BorderedFlatlist
@@ -66,7 +80,7 @@ export default function SellConfirmationScreen ({navigation, route}){
                 keyboardType="default"
                 placeholderTextColor={Themes.colors.neutral_500}
             />
-            <AppFloatingButton.PrimaryThickOne text={'Complete'}/>
+            <AppFloatingButton.PrimaryThickOne text={'Complete'} onPress={() => navigation.navigate("Group Detail", {group: key})}/>
             
         </SafeAreaView>
     );

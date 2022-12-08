@@ -72,6 +72,9 @@ export default function MarketStockScreen({navigation, route}) {
         stock = recInvestment[stockID];
     };
 
+    console.log(dataSource)
+    
+
     //determine which trend tag to display based on route.params
     let trendTagdisplayed;
     if (stock.status == 'stable'){
@@ -89,7 +92,8 @@ export default function MarketStockScreen({navigation, route}) {
         buttonDisplayed = <AppFloatingButton.PrimarySecondaryStacked 
             textOne={'Invite friends to invest together'}
             textTwo={'Invest alone'}
-            onPressTwo={()=> navigation.navigate('Buy', {stock:stockID, dataSource:dataSource})}
+            onPressOne={()=> navigation.navigate('Select Friends')}
+            onPressTwo={()=> navigation.navigate('Buy', {key:stockID, dataSource:dataSource, firstPurchase: true})}
             />
     }
 

@@ -19,7 +19,7 @@ export default function NotificaitonScreen({navigation, route}) {
     const DATA = [
         {
         title: 'Invitations',
-        data: [['Dan invites you to join Friendly Bananas', 'Investment: Apple', Images.profilePic.Dan, () => navigation.navigate('Invitation')], ['Dan invites you to join Friendly Bananas', 'Investment: Apple', Images.profilePic.Dan, () => navigation.navigate('Invitation')]],
+        data: [['Dan invites you to join Friendly Bananas', 'Investment: Apple', Images.profilePic.two, () => navigation.navigate('Invitation')], ['Alex invites you to join Crazy Mangoes', 'Investment: VTI', Images.profilePic.three, () => navigation.navigate('Invitation')]],
         },
         {
         title: 'Wallus reminders',
