@@ -6,6 +6,10 @@ import { AppText } from "../../components/CustomText/customText";
 import { AppButton } from "../../components/Buttons/buttons";
 import { Divider } from "../../components/Divider/divider"
 import { Navigation } from "lucide-react-native";
+
+export default function DictionaryScreen({navigation, route}) {
+    // const {  } = route.params;
+
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 

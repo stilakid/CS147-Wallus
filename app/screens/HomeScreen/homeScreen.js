@@ -12,7 +12,8 @@ import { SelectionOptions } from "../../components/SelectionOptions/SelectionOpt
 import { Bell } from "lucide-react-native"
 import Milestone from "../../components/Cards/Milestone";
 import InvitationCard from "../../components/Cards/InvitationCard";
-
+import React from 'react';
+import Home from '../../components/SearchBar/Home'
 
 export default function HomeScreen({navigation, route}) {
     const bellContent = <Bell color={Themes.colors.neutral_600} size={20} />
@@ -42,6 +43,7 @@ export default function HomeScreen({navigation, route}) {
             </View>
         )
     }
+
     return(
         <SafeAreaView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent}>
             {/* <Button title="Community" onPress={()=>navigation.navigate('Community')}></Button> */}
