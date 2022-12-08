@@ -7,7 +7,6 @@ import { AppButton } from "../../components/Buttons/buttons";
 
 
 // Navigation Packages
-import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 // Stack screens
@@ -27,6 +26,13 @@ import Community from "../Community/Community"
 import SelectFriends from "../InviteFriend/selectFriends";
 import InviteConfirmation from "../InviteFriend/InviteConfirmation";
 import InviteCongratsScreen from "../CongratulationsScreen/inviteCongratulations";
+import ChatScreen from "../ChatScreen/chatScreen";
+
+
+
+
+
+
 export default function HomeStack({navigation, route}) {
     
     // const {  } = route.params;
@@ -41,6 +47,7 @@ export default function HomeStack({navigation, route}) {
             <Stack.Screen name="Stock" component={StockScreen} options={{headerShown: false}} />
             <Stack.Screen name="Congrats" component={CongratsScreen} options={{headerShown: false}} />
             <Stack.Screen name="Group Detail" component={GroupDetail} options={{headerShown: false}} />
+            <Stack.Screen name="Chat Screen" component={ChatScreen} options={{headerShown: false}} />
             <Stack.Screen name="Rationale" component={Rationale} options={{headerShown: false}} />
             <Stack.Screen name="Member Screen" component={MemberScreen} options={{headerShown: false}} />
             <Stack.Screen name="Buy" component={BuyScreen} options={{headerShown: false}} />

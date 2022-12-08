@@ -9,6 +9,8 @@ const images = {
             trend4: require('../trendCharts/trend4.png'),
         },
         Wallus: require('../Walluslogo.png'),
+        Wallus_4x: require('../Walluslogo_4x.png'),
+        Wallus_square: require('../Wallus_square.png'),
         walrus: {
             cheersBackground: require('../walrus/cheersBackground.png'),
             cheers: require('../walrus/cheers.png'),
@@ -64,6 +66,15 @@ const images = {
             seven: require('../profilePics/profile7.png'),
             eight: require('../profilePics/profile8.png'),
             nine: require('../profilePics/profile9.png'),
+            banana: require('../banana.png')
+        },
+        userProfilePics: {
+            pic1: require('../userProfilePics/Pic1.png'),
+            pic2: require('../userProfilePics/Pic2.png'),
+            pic3: require('../userProfilePics/Pic3.png'),
+            pic4: require('../userProfilePics/Pic4.png'),
+            pic5: require('../userProfilePics/Pic5.png'),
+            pic6: require('../userProfilePics/Pic6.png'),
         }
     };
     

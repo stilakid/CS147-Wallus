@@ -126,6 +126,9 @@ export default function GroupDetail({navigation, route}) {
                             </View>
                             <AppButton.SecondaryOutlineThickOne text="Enter Chatroom" onPress={() => navigation.navigate('Member Screen')}></AppButton.SecondaryOutlineThickOne>
                         </View>
+                    </View>
+                    <AppButton.SecondaryOutlineThickOne text="Enter Chatroom" onPress={() => navigation.navigate('Chat Screen')}></AppButton.SecondaryOutlineThickOne>
+                </View>
 
                         <Divider.Horizontal />
                         <WallusTips.green titleText={'Hold is recommended'} bodyText={'Index funds tend to maintain positive growth overtime despite temporary descreases'} />

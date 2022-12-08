@@ -10,6 +10,8 @@ import { ChevronLeft } from 'lucide-react-native';
 import { HelpCircle } from 'lucide-react-native';
 import { Bell } from "lucide-react-native"
 import { ChevronRight } from 'lucide-react-native';
+import { Send } from 'lucide-react-native';
+
 export const AppButton = ({text, content, onPress, TouchableOpacityStyle, TextStyle}) => {
 
     if (!content) {
@@ -526,14 +528,14 @@ AppButton.goBack = ({navigation, TouchableOpacityStyle}) => {
 // Other UI Buttons
 // **********************************************************************************************
 
-AppButton.toolTip = ({text, TouchableOpacityStyle}) => {
+AppButton.toolTip = ({Press, TouchableOpacityStyle}) => {
 
     const content = <HelpCircle color={Themes.colors.neutral_600} size={20} />
 
     return (
         <AppButton
             content={content}
-            // onPress={() => navigation.goBack()}
+            onPress={Press}
             TouchableOpacityStyle={TouchableOpacityStyle}
         />
     );
@@ -563,6 +565,18 @@ AppButton.rightArrow = ({navigation, TouchableOpacityStyle, onPress}) => {
             TouchableOpacityStyle={TouchableOpacityStyle}
         />
     );
+}
+
+AppButton.sendText = ({TouchableOpacityStyle, onPress}) => {
+    const content = <Send color={Themes.colors.white} size={24} />;
+
+    return(
+        <AppButton
+        content={content}
+        onPress={onPress}
+        TouchableOpacityStyle={[styles.sendTextButton, TouchableOpacityStyle]}
+    />
+    )
 }
 
 
@@ -678,5 +692,17 @@ const styles = StyleSheet.create({
     backButton: {
         // paddingLeft: 16,
         paddingRight: 16
+    },
+
+
+
+    sendTextButton: {
+        backgroundColor: Themes.colors.primary_700,
+        width: 48,
+        height: 48,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 16
     }
 });

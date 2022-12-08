@@ -7,6 +7,7 @@ import { AppButton } from "../../components/Buttons/buttons";
 import { Divider } from "../../components/Divider/divider"
 import { Navigation } from "lucide-react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import Home from "../../components/SearchBar/Home";
 
 
 
@@ -27,10 +28,10 @@ export default function DictionaryScreen({navigation, route}) {
                     <AppText.ParagraphTwo style={styles.searchany}>Search anything</AppText.ParagraphTwo>
                 </View>
             </TouchableOpacity>
-
+            
             <View style={styles.recent}>
                 <AppText.TitleSemiBoldFour style={styles.recenttitle}>Recent Searches</AppText.TitleSemiBoldFour>
-                <TouchableOpacity onClick={() => navigation.navigate('Notifications')}>
+                <TouchableOpacity onPress={() => navigation.navigate('DueDiligence')}>
                     <View style={styles.option}>
                         <AppText.ParagraphTwo style={styles.optionText}>Due Dilligence</AppText.ParagraphTwo>
                         <Image
@@ -39,7 +40,7 @@ export default function DictionaryScreen({navigation, route}) {
                         />
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity onClick={() => navigation.navigate('Notifications')}>
+                <TouchableOpacity onPress={() => navigation.navigate('Dividend')}>
                     <View style={styles.option}>
                         <AppText.ParagraphTwo style={styles.optionText}>Day Trading</AppText.ParagraphTwo>
                         <Image
@@ -48,7 +49,7 @@ export default function DictionaryScreen({navigation, route}) {
                         />
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity onClick={() => navigation.navigate('Notifications')}>
+                <TouchableOpacity onPress={() => navigation.navigate('Taxes')}>
                     <View style={styles.option}>
                         <AppText.ParagraphTwo style={styles.optionText}>Taxes</AppText.ParagraphTwo>
                         <Image
@@ -70,23 +71,22 @@ const styles = StyleSheet.create({
         flex: 1,
       }, 
       image: {
-        width: '100%',
-        height: 260,
+        width: 390,
+        height: 240,
         position: 'absolute',
         top: 0,
-        marginBottom: 40
       },
       search: {
         flexDirection: 'row',
         alignItems: 'center',
-        width: 378,
+        width: 358,
         height: 48,
         backgroundColor: '#FFFFFF',
         borderWidth: 2,
         borderColor: Themes.colors.neutral_200,
         alignSelf: 'stretch',
         borderRadius: 16,
-        top: 250,
+        top: 240,
         marginBottom: 40
       },
       mag: {
@@ -104,7 +104,8 @@ const styles = StyleSheet.create({
         width: 358,
         height: 132,
         position: 'absolute',
-        top: 408
+        top: 388,
+        paddingLeft: 8
       },
     recenttitle: {
         color: Themes.colors.neutral_800,
@@ -114,7 +115,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        width: 378,
+        width: 358,
         height: 24,
         marginBottom: 12,
         paddingRight: 8

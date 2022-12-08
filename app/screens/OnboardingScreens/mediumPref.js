@@ -9,7 +9,7 @@ import { useState } from "react";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { AppFloatingButton } from "../../components/Buttons/floatingButtons";
 
-export default function BuyConfirmationScreen ({navigation, route}){
+export default function MediumPreferenceScreen ({navigation, route}){
     const [value, setValue] = useState(0)
     const [input, setInput] = useState(null)
     console.log('Value is',{value});
@@ -23,7 +23,7 @@ export default function BuyConfirmationScreen ({navigation, route}){
                 <AppText.LabelSemiBoldThree style={styles.risk}>Risk Tolerance</AppText.LabelSemiBoldThree>
                 <TouchableOpacity onClick={() => navigation.navigate('Notifications')}>
                     <View style={styles.group}>
-                        <AppText.ParagraphTwo style={styles.name}>High</AppText.ParagraphTwo>
+                        <AppText.ParagraphTwo style={styles.name}>Medium</AppText.ParagraphTwo>
                         <Image
                             source={require('../../../assets/drop.png')}
                             style={styles.drop}
