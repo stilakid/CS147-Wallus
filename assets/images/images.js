@@ -47,7 +47,23 @@ const images = {
         },
         groupProfile: {
             potato: require('../potato.png'),
-            banana: require('../banana.png')
+            banana: require('../banana.png'),
+            popcorn:require('../popcorn.png')
+        },
+        groupMembers: {
+            five: require('../groupProfiles.png'),
+            three: require('../groupProfiles2.png'),
+        },
+        profilePic: {
+            one: require('../profilePics/profile1.png'),
+            two: require('../profilePics/profile2.png'),
+            three: require('../profilePics/profile3.png'),
+            four: require('../profilePics/profile4.png'),
+            five: require('../profilePics/profile5.png'),
+            six: require('../profilePics/profile6.png'),
+            seven: require('../profilePics/profile7.png'),
+            eight: require('../profilePics/profile8.png'),
+            nine: require('../profilePics/profile9.png'),
         }
     };
     
