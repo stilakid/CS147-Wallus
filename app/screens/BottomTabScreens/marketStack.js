@@ -15,6 +15,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import NotificationScreen from "../NotificationScreen/notificationScreen";
 import MarketScreen from "../MarketScreen/marketScreen";
 import MarketStockScreen from "../StockScreen/marketStockScreen";
+import BuyScreen from "../BuyScreen/BuyScreen";
+import BuyConfirmationScreen from "../BuyConfirmationScreen/BuyConfirmationScreen";
 
 export default function MarketStack({navigation, route}) {
     
@@ -27,6 +29,8 @@ return(
         <Stack.Screen name="Market Screen" component={MarketScreen} options={{headerShown: false}} />
         <Stack.Screen name="Notifications" component={NotificationScreen} options={{headerShown: false}} />
         <Stack.Screen name="Stock" component={MarketStockScreen} options={{headerShown: false}} />
+        <Stack.Screen name="Buy" component={BuyScreen} options={{headerShown: false}} />
+        <Stack.Screen name="Buy Confirmation" component={BuyConfirmationScreen} options={{headerShown: false}} />
     </Stack.Navigator>
 );
 }
