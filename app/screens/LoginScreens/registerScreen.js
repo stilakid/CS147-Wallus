@@ -25,13 +25,18 @@ export default function RegisterScreen({navigation, route}) {
     const onRegisterPressed = async (data) => {
         console.warn(data);
         console.log(data);
-        await supabase.auth.signUp(
+        const {error} = await supabase.auth.signUp(
             {
                 email: data.email,
                 password: data.password
             },
         );
-        navigation.navigate('Confirm Email Screen');
+        if (error) {
+            console.log(error);
+            console.warn(error);
+            return;
+        }
+        navigation.navigate('Username Screen');
     }
     
     const onForgotPasswordPressed = () => {

@@ -9,7 +9,7 @@ import { useState } from "react";
 import { AppFloatingButton } from "../../components/Buttons/floatingButtons";
 import Checkbox from "../../components/Checkbox/Checkbox";
 
-export default function BuyConfirmationScreen ({navigation, route}){
+export default function InvestmentGoalsScreen ({navigation, route}){
     const [value, setValue] = useState(0)
     const [input, setInput] = useState(null)
     console.log('Value is',{value});

@@ -8,7 +8,7 @@ import Header from "../../components/Header/header";
 import { useState } from "react";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
-export default function BuyConfirmationScreen ({navigation, route}){
+export default function AskInvestmentExpScreen ({navigation, route}){
     const [value, setValue] = useState(0)
     const [input, setInput] = useState(null)
     console.log('Value is',{value});

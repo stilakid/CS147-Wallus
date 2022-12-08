@@ -22,7 +22,13 @@ import BuyScreen from "../BuyScreen/BuyScreen";
 import BuyConfirmationScreen from "../BuyConfirmationScreen/BuyConfirmationScreen";
 import SellConfirmationScreen from "../SellConfirmationScreen/SellConfirmation";
 import SellScreen from "../SellScreen/SellScreen";
-import Community from "/Users/xinyiwang/Desktop/Junior Fall 2022/CS 147/CS147-Wallus/app/screens/Community/Community"
+import Community from "../Community/Community";
+
+
+
+
+
+
 export default function HomeStack({navigation, route}) {
     
     // const {  } = route.params;

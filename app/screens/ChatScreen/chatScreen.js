@@ -6,19 +6,31 @@ import { useForm } from "react-hook-form";
 import { AppButton } from "../../components/Buttons/buttons";
 import { supabase } from "../../../supabase";
 import Messages from "../../components/Messages/messages";
+import { useEffect, useState } from "react";
 
 
 export default function ChatScreen({navigation, route}) {
-    const {control, handleSubmit} = useForm('');
+    const {control, handleSubmit, resetField} = useForm('');
+    useEffect(() => {
+        console.log("update chat box");
+    }, [])
 
     const onSendPressed = async (data) => {
-        // navigation.navigate('Register Screen');
+        resetField("message");
         console.warn("Sending Message");
-        console.log(data);
+        console.log(data.message);
 
         const {error} = await supabase.from('messages').insert({ content: data.message });
-        console.log({error});
+        if (error) {
+            console.log({error});
+            console.warn({error});
+            return;
+        }
+
+        // clear input message
     }
+
+
 
     return(
         <SafeAreaView style={styles.container}>
@@ -33,7 +45,7 @@ export default function ChatScreen({navigation, route}) {
                     rules={{required: 'Message is required'}}
                 />
 
-                <AppButton.PrimaryThickOne text={'Sign in'} onPress={handleSubmit(onSendPressed)} />
+                <AppButton.PrimaryThickOne text={'Send'} onPress={handleSubmit(onSendPressed)} />
 
             </ScrollView>
         </SafeAreaView>

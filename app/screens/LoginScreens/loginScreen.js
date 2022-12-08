@@ -35,7 +35,11 @@ export default function LoginScreen({navigation, route}) {
             },
         );
 
-        // console.log('error', error)
+        if (error) {
+            console.log('error', error);
+            console.warn('error', error);
+            return;
+        }
 
         navigation.navigate('Chat Screen')
     }

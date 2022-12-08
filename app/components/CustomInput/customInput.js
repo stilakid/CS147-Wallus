@@ -22,6 +22,8 @@ export default function AppInput({control, name, rules = {}, placeholder, secure
                             placeholder={placeholder}
                             style={[styles.input]}
                             secureTextEntry={secureTextEntry}
+                            placeholderTextColor={Themes.colors.neutral_500}
+                            keyboardType={'default'}
                         />
                     </View>
                     {error && (
@@ -48,6 +50,8 @@ const styles = StyleSheet.create({
     input: {
         fontSize: Themes.typography.paragraph_text_2.size,
         fontFamily: Themes.typography.paragraph_text_2.font,
+        color: Themes.colors.neutral_800,
+        backgroundColor: Themes.colors.white,
     },
     
 });
