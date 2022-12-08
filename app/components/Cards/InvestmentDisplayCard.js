@@ -15,9 +15,9 @@ you can use this card like this:
   recRationale={'Invested by Dan'}
 />
 
-HorizontalRecRationale: used in market page where the user gets a recommended list of investments
-Horizontal: used in any list situations
-Vertical: used in market page's daily mover's section 
+horizontalRecRationale: used in market page where the user gets a recommended list of investments
+horizontal: used in any list situations
+vertical: used in market page's daily mover's section 
 */
 
 /*TODO: WHY IS THE PICTURE NOT SHOWING UP AGAIN :( */

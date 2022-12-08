@@ -20,6 +20,9 @@ import { ChevronLeft } from 'lucide-react-native';
 // Data
 import dailyMovers from "../../../assets/stockData/dailyMovers";
 import recInvestment from "../../../assets/stockData/recInvestment";
+import { useState } from "react";
+import { TouchableWithoutFeedback } from "react-native-gesture-handler";
+import { NavigationHelpersContext } from "@react-navigation/native";
 
 
 const investmentInfo = [
@@ -57,7 +60,8 @@ const portfolioFit= [
 
 
 {/* <Home color="black" size={24} />; */}
-export default function StockScreen({navigation, route}) {
+export default function MarketStockScreen({navigation, route}) {
+    const [buttonExpanded, setButtonExpanded] = useState(false)
 
     const dataSource = route.params.dataSource;
     const stockID = route.params.stock;
@@ -78,37 +82,51 @@ export default function StockScreen({navigation, route}) {
         trendTagdisplayed = <TrendTags.smallOrange tagText={'Unstable'}/>
     }
 
+    let buttonDisplayed
+    if (buttonExpanded == false) {
+        buttonDisplayed = <AppFloatingButton.PrimaryThickOne text={'Invest now'} onPress={()=>setButtonExpanded(true)}/>
+    } else {
+        buttonDisplayed = <AppFloatingButton.PrimarySecondaryStacked 
+            textOne={'Invite friends to invest together'}
+            textTwo={'Invest alone'}
+            onPressTwo={()=> navigation.navigate('Buy', {stock:stockID, dataSource:dataSource})}
+            />
+    }
+
     return(
         <SafeAreaView style={styles.container}>
             <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent} >
                 <Header text="" navigation={navigation} hasDivider={false} />
-                <View style={styles.bannerContainer}>
-                    <Image source={stock.logoURL} style={{width:48,height:48, marginBottom: 16}}/>
-                    <View style={{flexDirection:'row', alignItems: 'center', marginBottom: 16}}>
-                        <AppText.TitleSemiBoldTwo style={{marginRight: 8}}>{stock.companyName}</AppText.TitleSemiBoldTwo>
-                        {trendTagdisplayed}
+                <TouchableWithoutFeedback style={{width: 390}} onPress={()=> setButtonExpanded(false)}>
+                    <View style={{width:'100%', alignItems: 'center'}}>
+                        <View style={{width:358}}>
+                            <Image source={stock.logoURL} style={{width:48,height:48, marginBottom: 16}}/>
+                            <View style={{flexDirection:'row', alignItems: 'center', marginBottom: 16}}>
+                                <AppText.TitleSemiBoldTwo style={{marginRight: 8}}>{stock.companyName}</AppText.TitleSemiBoldTwo>
+                                {trendTagdisplayed}
+                            </View>
+                            <AppText.TitleBoldOne>{stock.stockPrice}</AppText.TitleBoldOne>
+                        </View>
+                        <TrendChart trendGraphURL={Images.trendCharts.trend2} />
+                        <WallusTips.orange titleText={'Not aligned with your preference'} bodyText={'This is a text that explains the reason why it does not match'} />
+                        <InvestmentStat portfolioFit={'Great'} market={'12.38%'} sp500={'12.88%'} expectedReturn={'3.1%'} volatility={'Medium'} typicalHold={'4Y 3M'} containerStyle={{marginBottom:24}} />
+                        <WallusTips.bordered titleText={'Stock information'} bodyText={stock.stockInfo} style={styles.endOfPage}></WallusTips.bordered>
                     </View>
-                    <AppText.TitleBoldOne>{stock.stockPrice}</AppText.TitleBoldOne>
-                </View>
-
-                <TrendChart trendGraphURL={Images.trendCharts.trend2} />
-
-                <WallusTips.orange titleText={'Not aligned with your preference'} bodyText={'This is a text that explains the reason why it does not match'} />
-
-                <InvestmentStat portfolioFit={'Great'} market={'12.38%'} sp500={'12.88%'} expectedReturn={'3.1%'} volatility={'Medium'} typicalHold={'4Y 3M'} containerStyle={{marginBottom:24}} />
-                <WallusTips.bordered titleText={'Stock information'} bodyText={stock.stockInfo} style={styles.endOfPage}></WallusTips.bordered>
+                </TouchableWithoutFeedback>     
             </ScrollView>
 
-            <AppFloatingButton.PrimaryThickDual textOne='Decline' textTwo={'Accept'} onPressOne={() => navigation.pop(2)} onPressTwo={() => navigation.navigate('Congrats')} />
+            {buttonDisplayed}
         </SafeAreaView>
     );
+
+    
 }
 
 
 const styles = StyleSheet.create({
     container: {
         backgroundColor: Themes.colors.white,
-        alignItems: "center",
+        alignItems: 'center',
         height: '100%',
     },
     scrollView: {
@@ -133,7 +151,7 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
     },
     bannerContainer: {
-        width: 358,
+        width: '100%',
         marginVertical: 24,
     },
     trendChart: {
