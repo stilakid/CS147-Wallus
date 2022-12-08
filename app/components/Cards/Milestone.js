@@ -15,7 +15,7 @@ export default function Milestone ({titleText, bodyText}) {
                         <AppText.LabelBoldThree style={{color: Themes.colors.white}}>1 YEAR AGO</AppText.LabelBoldThree>
                         <AppText.LabelBoldOne style={{color: Themes.colors.white}}>You joined Brave Potatoes!</AppText.LabelBoldOne>
                     </View>
-                    <AppButton.SecondaryOutlineThinFive text='Share'></AppButton.SecondaryOutlineThinFive>
+                    {/* <AppButton.SecondaryOutlineThinFive text='Share'></AppButton.SecondaryOutlineThinFive> */}
                 </View>
                 <View style={{width: 162, height: 22, flexDirection: 'row', marginTop:12, alignItems:'center'}}>
                     <TrendTags.xsmallGreen tagText={"Grew 12.80%"}></TrendTags.xsmallGreen>
@@ -54,8 +54,8 @@ const styles = StyleSheet.create({
         position: 'absolute',
         resizeMode: 'contain',
         left: 245,
-        bottom: -30,
-        transform: [{ rotateY: '180deg' }, { rotate: '11.05deg' }],
+        bottom: -28,
+        transform: [{ rotateY: '180deg' }, { rotate: '6.05deg' }],
     },
     header: {
         width: 326,

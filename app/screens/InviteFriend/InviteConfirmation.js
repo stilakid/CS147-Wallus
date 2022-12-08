@@ -1,7 +1,7 @@
 import { Themes } from "../../../assets/themes"
 
 // Components
-import { StyleSheet, SafeAreaView, Text, View, Button, SectionList } from "react-native";
+import { StyleSheet, SafeAreaView, Text, View, Button, SectionList, Keyboard } from "react-native";
 import { AppText } from "../../components/CustomText/customText";
 import { AppButton } from "../../components/Buttons/buttons";
 import { Divider } from "../../components/Divider/divider"
@@ -17,7 +17,7 @@ import InvitationCard from "../../components/Cards/InvitationCard";
 import { TextInput } from "react-native-gesture-handler";
 import { Roboto_400Regular } from "@expo-google-fonts/roboto";
 
-export default function CommunityScreen({navigation, route}) {
+export default function InviteConfirmation({navigation, route}) {
     const [value, setValue] = useState(0)
     const [input, setInput] = useState(null)
     console.log({value});
@@ -50,7 +50,7 @@ export default function CommunityScreen({navigation, route}) {
                 />
             </View>
 
-            <AppFloatingButton.PrimaryThickOne text={'Next'} onPress={()=> navigation.navigate("Send Invitation!")}/>
+            <AppFloatingButton.PrimaryThickOne text={'Send Invitation!'} onPress={()=> navigation.navigate('Invite Congrats Screen')}/>
         </SafeAreaView>
     );
 }

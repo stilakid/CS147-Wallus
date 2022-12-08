@@ -22,7 +22,10 @@ import BuyScreen from "../BuyScreen/BuyScreen";
 import BuyConfirmationScreen from "../BuyConfirmationScreen/BuyConfirmationScreen";
 import SellConfirmationScreen from "../SellConfirmationScreen/SellConfirmation";
 import SellScreen from "../SellScreen/SellScreen";
-import Community from "../Community/Community";
+import Community from "../Community/Community"
+import SelectFriends from "../InviteFriend/selectFriends";
+import InviteConfirmation from "../InviteFriend/InviteConfirmation";
+import InviteCongratsScreen from "../CongratulationsScreen/inviteCongratulations";
 import ChatScreen from "../ChatScreen/chatScreen";
 
 
@@ -52,6 +55,10 @@ export default function HomeStack({navigation, route}) {
             <Stack.Screen name="Sell" component={SellScreen} options={{headerShown: false}} />
             <Stack.Screen name="Sell Confirmation" component={SellConfirmationScreen} options={{headerShown: false}}/>
             <Stack.Screen name="Community" component={Community} options={{headerShown: false}}/>
+            <Stack.Screen name="Select Friends" component={SelectFriends} options={{headerShown: false}}/>
+            <Stack.Screen name="Invite Confirmation" component={InviteConfirmation} options={{headerShown: false}}/>
+            <Stack.Screen name="Invite Congrats Screen" component={InviteCongratsScreen} options={{headerShown: false}} />
+            
         </Stack.Navigator>
     );
 }

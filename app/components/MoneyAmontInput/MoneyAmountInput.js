@@ -12,7 +12,6 @@ import { Outfit_600SemiBold } from "@expo-google-fonts/outfit";
 
 export default function MoneyAmountInput (){
     const [number, onChangeNumber] = useState(0);
-    console.log(number);
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <View style={styles.container}>
