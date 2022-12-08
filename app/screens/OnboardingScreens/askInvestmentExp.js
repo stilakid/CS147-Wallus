@@ -8,7 +8,7 @@ import Header from "../../components/Header/header";
 import { useState } from "react";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
-export default function BuyConfirmationScreen ({navigation, route}){
+export default function AskInvestmentExpScreen ({navigation, route}){
     const [value, setValue] = useState(0)
     const [input, setInput] = useState(null)
     console.log('Value is',{value});
@@ -19,7 +19,7 @@ export default function BuyConfirmationScreen ({navigation, route}){
             <AppText.TitleSemiBoldThree style={styles.title2}>experience do you have?</AppText.TitleSemiBoldThree>
             <AppText.ParagraphTwo style={styles.para}>Based on your investment experience, we will either provide default preference setting or allow you to set your own preference. </AppText.ParagraphTwo>
             <View style={styles.options}>
-                <TouchableOpacity onClick={() => navigation.navigate('Notifications')}>
+                <TouchableOpacity onClick={() => navigation.navigate('Starting Preference Screen')}>
                     <View style={styles.group}>
                         <AppText.LabelSemiBoldOne style={styles.name}>None</AppText.LabelSemiBoldOne>
                     <Image
@@ -28,7 +28,7 @@ export default function BuyConfirmationScreen ({navigation, route}){
                         />
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity onClick={() => navigation.navigate('Notifications')}>
+                <TouchableOpacity onClick={() => navigation.navigate('Starting Preference Screen')}>
                     <View style={styles.group}>
                         <AppText.LabelSemiBoldOne style={styles.name}>Not much</AppText.LabelSemiBoldOne>
                         <Image
@@ -37,7 +37,7 @@ export default function BuyConfirmationScreen ({navigation, route}){
                         />
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity onClick={() => navigation.navigate('Notifications')}>
+                <TouchableOpacity onClick={() => navigation.navigate('Starting Preference Screen')}>
                     <View style={styles.group}>
                         <AppText.LabelSemiBoldOne style={styles.name}>I know what I'm doing</AppText.LabelSemiBoldOne>
                         <Image
@@ -46,7 +46,7 @@ export default function BuyConfirmationScreen ({navigation, route}){
                         />
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity onClick={() => navigation.navigate('Notifications')}>
+                <TouchableOpacity onClick={() => navigation.navigate('Starting Preference Screen')}>
                     <View style={styles.group}>
                         <AppText.LabelSemiBoldOne style={styles.name}>I'm an expert</AppText.LabelSemiBoldOne>
                         <Image

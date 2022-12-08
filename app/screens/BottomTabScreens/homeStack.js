@@ -7,7 +7,6 @@ import { AppButton } from "../../components/Buttons/buttons";
 
 
 // Navigation Packages
-import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 // Stack screens
@@ -23,7 +22,13 @@ import BuyScreen from "../BuyScreen/BuyScreen";
 import BuyConfirmationScreen from "../BuyConfirmationScreen/BuyConfirmationScreen";
 import SellConfirmationScreen from "../SellConfirmationScreen/SellConfirmation";
 import SellScreen from "../SellScreen/SellScreen";
-import Community from "../Community/Community"
+import Community from "../Community/Community";
+
+
+
+
+
+
 export default function HomeStack({navigation, route}) {
     
     // const {  } = route.params;

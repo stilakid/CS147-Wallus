@@ -7,7 +7,7 @@ import { AppButton } from "../../components/Buttons/buttons";
 import { Divider } from "../../components/Divider/divider"
 import { Navigation } from "lucide-react-native";
 
-export default function CongratsScreen({navigation, route}) {
+export default function OnboardingConfirmationSCreen({navigation, route}) {
     // const {  } = route.params;
     return(
         <SafeAreaView style={styles.container}>
@@ -23,7 +23,7 @@ export default function CongratsScreen({navigation, route}) {
             {/* Buttons are not linked yet */}
 
             <View style={{paddingVertical:12}}>
-                <AppButton.SecondaryOutlineThickTwo text="Home" />
+                <AppButton.SecondaryOutlineThickTwo text="Home" onPress={() => navigation.navigate('Login Screen')} />
             </View>
         </SafeAreaView>
     );
