@@ -53,8 +53,10 @@ import { TrendingUp } from 'lucide-react-native';
 import { BookOpen } from 'lucide-react-native';
 import { Users } from 'lucide-react-native';
 
-
-
+// Hide all logs and warnings
+import { LogBox } from 'react-native';
+LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
+LogBox.ignoreAllLogs();//Ignore all log notifications
 
 SplashScreen.preventAutoHideAsync();
 

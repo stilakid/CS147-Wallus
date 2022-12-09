@@ -64,7 +64,7 @@ export default function InvitationAlex({navigation, route}) {
     
     return(
         <SafeAreaView style={styles.container}>
-            <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent} >
+            <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent}  showsVerticalScrollIndicator={false} >
                 <Header text="Alex's Invitation" navigation={navigation} hasDivider={false} />
                 
                 {/* Invitation information */}
