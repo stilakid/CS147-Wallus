@@ -18,18 +18,22 @@ export default function DictionaryScreen({navigation, route}) {
                 style={styles.image}
                 source={require('../../../assets/dictionary.png')}
             />
-            <TouchableOpacity onPress={() => {
-                console.warn('Search bar cliked');
-                console.log('search bar clicked');
-                navigation.navigate('SearchScreen')}}>
-                <View style={styles.search}>
+            <View>
+                <TouchableOpacity
+                    onPress={() => {
+                        console.warn('Search bar cliked');
+                        console.log('search bar clicked');
+                        navigation.navigate('SearchScreen')
+                    }}
+                    style={[styles.search]}
+                >
                     <Image
                         source={require('../../../assets/search.png')}
                         style={styles.mag}
                     />
                     <AppText.ParagraphTwo style={styles.searchany}>Search anything</AppText.ParagraphTwo>
-                </View>
-            </TouchableOpacity>
+                </TouchableOpacity>
+            </View>
             
             <View style={styles.recent}>
                 <AppText.TitleSemiBoldFour style={styles.recenttitle}>Recent Searches</AppText.TitleSemiBoldFour>
