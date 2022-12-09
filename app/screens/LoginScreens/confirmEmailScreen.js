@@ -16,7 +16,7 @@ export default function ConfirmEmailScreen({navigation, route}) {
     const {control, handleSubmit} = useForm('');
 
     const onConfirmPressed = (data) => {
-        console.warn(data);
+        // console.warn(data);
         console.warn("onConfrimPressed");
     }
     

@@ -18,7 +18,7 @@ export default function DictionaryScreen({navigation, route}) {
                 style={styles.image}
                 source={require('../../../assets/dictionary.png')}
             />
-            <View>
+            <View style={{width:'100%', paddingHorizontal:16}}>
                 <TouchableOpacity
                     onPress={() => {
                         console.warn('Search bar cliked');
@@ -74,10 +74,11 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: Themes.colors.white,
         alignItems: "center",
+        width:'100%',
         flex: 1,
       }, 
       image: {
-        width: 390,
+        width: '100%',
         height: 240,
         position: 'absolute',
         top: 0,
@@ -85,14 +86,14 @@ const styles = StyleSheet.create({
       search: {
         flexDirection: 'row',
         alignItems: 'center',
-        width: 358,
+
         height: 48,
         backgroundColor: '#FFFFFF',
         borderWidth: 2,
         borderColor: Themes.colors.neutral_200,
         alignSelf: 'stretch',
         borderRadius: 16,
-        top: 240,
+        marginTop: 240,
         marginBottom: 40
       },
       mag: {
@@ -106,12 +107,9 @@ const styles = StyleSheet.create({
       },
       recent: {
         flexDirection: 'column',
+        paddingHorizontal:16,
         alignItems: 'flex-start',
-        width: 358,
-        height: 132,
-        position: 'absolute',
-        top: 388,
-        paddingLeft: 8
+        width: '100%',
       },
     recenttitle: {
         color: Themes.colors.neutral_800,
@@ -121,10 +119,9 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        width: 358,
+        width: '100%',
         height: 24,
         marginBottom: 12,
-        paddingRight: 8
     },
     optionText: {
         color: Themes.colors.neutral_600

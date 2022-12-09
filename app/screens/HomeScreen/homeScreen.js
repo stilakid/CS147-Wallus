@@ -70,9 +70,11 @@ export default function HomeScreen({navigation, route}) {
                         <AppText.LabelSemiBoldTwo style={{color: Themes.colors.neutral_500}}> @emilysndr</AppText.LabelSemiBoldTwo>
                     </View>
                 </TouchableOpacity>
-                <AppButton.notif navigation={navigation}/>
-                <View style={{position: 'absolute'}}>
-                    <View style={{backgroundColor: 'red', width: 10, height: 10, borderRadius: 10, marginLeft: 340, bottom: 7}}></View>
+                <View>
+                    <AppButton.notif navigation={navigation}></AppButton.notif>
+                    <View style={{position: 'absolute'}}>
+                        <View style={{backgroundColor: Themes.colors.tertiary_600, width: 10, height: 10, borderRadius: 10,left:0, bottom: 2}}></View>
+                    </View>
                 </View>
             </View>
 

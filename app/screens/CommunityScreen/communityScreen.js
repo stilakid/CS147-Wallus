@@ -32,7 +32,7 @@ export default function CommunityScreen({navigation, route}) {
     return(
         <SafeAreaView style={styles.container}>
             <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent} >
-            <Header hasBackButton={false} text={"Community"} isTabPageHeader />
+            <Header hasBackButton={false} text={"Community"} isTabPageHeader OuterContainerStyle={{marginLeft:32}}/>
                 <View style={{marginTop: 40, alignItems:'center'}}>
                     <View style={styles.news}>
                         <Image
@@ -156,16 +156,18 @@ const styles = StyleSheet.create({
     },
     scrollView: {
         width: '100%',
+        marginHorizontal:16,
     },
     scrollViewContent: {
         display: 'flex',
         alignItems: "center",
-        marginHorizontal: 16,
+        // marginHorizontal: 16,
     },
     news: {
         flexDirection: 'row',
         alignItems: 'flex-start',
         marginBottom:24,
+        paddingHorizontal:16,
     },
     investmentStyle:{
         color: Themes.colors.neutral_500,
@@ -179,7 +181,6 @@ const styles = StyleSheet.create({
     rationale: {
         alignItems: 'flex-start',
         padding: 16,
-        width: 306,
         backgroundColor: Themes.colors.neutral_100,
         borderRadius: 16,
         marginTop: 16

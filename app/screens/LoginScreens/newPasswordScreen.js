@@ -10,7 +10,7 @@ import { SocialSignInButtons } from "../../components/Buttons/socialSignInButton
 import { useForm } from "react-hook-form";
 
 const onSubmitPressed = (data) => {
-    console.warn(data);
+    // console.warn(data);
     console.warn("onSubmitPressed");
 }
 

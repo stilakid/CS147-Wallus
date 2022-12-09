@@ -46,7 +46,7 @@ export default function MarketScreen({navigation, route}) {
                     <MyTooltip text={"Stocks today that have seen high number of purchases today"}/>
                 </View>
             </View>
-            <View style={[{flexDirection: 'row', marginBottom: 56}]}> 
+            <View style={[{flexDirection: 'row', marginBottom: 56, justifyContent:'center'}]}> 
                 <InvestmentDisplayCard 
                     cardType={'vertical'}
                     companyName={dailyMovers['tesla'].companyName} 
@@ -127,6 +127,7 @@ export default function MarketScreen({navigation, route}) {
         <SafeAreaView style={styles.container}>
             <FlatList data={placeholder}
             renderItem={(item) => renderPlaceholder(item)}
+            style={styles.flatlistContainer}
             >
             </FlatList>
             
@@ -138,16 +139,16 @@ export default function MarketScreen({navigation, route}) {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: Themes.colors.white,
-        alignItems: "center",
-        justifyContent: 'center',
         flex: 1,
+    },
+    flatlistContainer: {
+        marginHorizontal:16,
     },
     heading: {
         color: Themes.colors.neutral_800,
-        width: 358,
+        width: '100%',
     },
     paragraph: {
         color: Themes.colors.neutral_600,
-        width: 358,
     }
 });

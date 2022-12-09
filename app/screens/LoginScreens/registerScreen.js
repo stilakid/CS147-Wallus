@@ -25,7 +25,7 @@ export default function RegisterScreen({navigation, route}) {
     const pwd = watch('password');
 
     const onRegisterPressed = async (data) => {
-        console.warn(data);
+        // console.warn(data);
         console.log(data);
         const {error} = await supabase.auth.signUp(
             {
