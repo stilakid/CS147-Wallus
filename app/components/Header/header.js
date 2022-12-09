@@ -11,6 +11,7 @@ export default function Header({hasDivider, text, navigation, OuterContainerStyl
     if (hasDivider) {
         divider = <Divider.Horizontal />
     }
+  
 
     return (
         <View style={[styles.outermostContainer, OuterContainerStyle]}>

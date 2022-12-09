@@ -64,7 +64,7 @@ export default function HomeScreen({navigation, route}) {
             <>
             <View style={styles.header}>
                 <TouchableOpacity style={styles.nameCard} onPress={()=> navigation.navigate("Profile Screen")}>
-                    <Image style={styles.profilePic} source={require("../../../assets/profilePic.png")} resizeMode='contain'></Image>
+                    <Image style={styles.profilePic} source={Images.profilePic.nine} resizeMode='contain'></Image>
                     <View style={styles.nameCardText}>
                         <AppText.LabelBoldOne>Emily Sanders</AppText.LabelBoldOne>
                         <AppText.LabelSemiBoldTwo style={{color: Themes.colors.neutral_500}}> @emilysndr</AppText.LabelSemiBoldTwo>
