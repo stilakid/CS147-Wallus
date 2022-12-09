@@ -94,7 +94,7 @@ export default function Jenny({navigation, route}) {
             </ScrollView>
             
             
-            <AppFloatingButton.PrimaryThickOne text={'Next'} onPress={()=> navigation.navigate("confirmationJenny")}/>
+            <AppFloatingButton.PrimaryThickOne text={'Next'} onPress={()=> navigation.navigate("confirmationJenny", {group:groupID})}/>
         </SafeAreaView>
     );
 }

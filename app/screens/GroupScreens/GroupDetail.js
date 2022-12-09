@@ -120,7 +120,7 @@ export default function GroupDetail({navigation, route}) {
                                 <Image style={styles.groupPic} source={group.groupPicURL}></Image>
                                 
                                 <View style={styles.members}>
-                                    <Pressable onPress={()=>navigation.navigate('Member Screen')}>
+                                    <Pressable onPress={()=>navigation.navigate('Member Screen', {group:groupID})}>
                                         <Image style={{width: 128, height: 32, marginBottom: 8}} source={group.memberPicURL}></Image>
                                     </Pressable>
                                     <AppText.LabelSemiBoldTwo>5 members</AppText.LabelSemiBoldTwo>
@@ -219,7 +219,6 @@ const styles = StyleSheet.create({
     groupCard: {
         alignItems: "flex-start",
         width: '100%',
-        marginBottom: 24,
     },
     pics: {
         flexDirection: 'row',

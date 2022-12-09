@@ -7,7 +7,7 @@ import { AppButton } from "../../components/Buttons/buttons";
 import { Divider } from "../../components/Divider/divider"
 import { Navigation } from "lucide-react-native";
 
-export default function inviteCelebration({navigation, route}) {
+export default function InviteCelebration({navigation, route}) {
     // const {  } = route.params;
     return(
         <SafeAreaView style={styles.container}>
