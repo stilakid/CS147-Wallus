@@ -104,7 +104,7 @@ export default function CommunityScreen({navigation, route}) {
                                 <AppText.LabelSemiBoldTwo>Rationale</AppText.LabelSemiBoldTwo>
                                 <AppText.ParagraphTwo style={{color:Themes.colors.neutral_600}}>Need cash </AppText.ParagraphTwo>
                             </View>
-                            <View style={[styles.icons, {width: 48}]}>
+                            <View style={[styles.icons]}>
                                 <View style={styles.icon}>
                                     <Smile style={{color:Themes.colors.neutral_600}}></Smile>
                                 </View>
@@ -178,27 +178,25 @@ const styles = StyleSheet.create({
     },
     rationale: {
         alignItems: 'flex-start',
-        padding: 12,
+        padding: 16,
         width: 306,
-        height: 70,
         backgroundColor: Themes.colors.neutral_100,
         borderRadius: 16,
         marginTop: 16
     },
     icons: {
-        width: 256,
         height: 32,
         alignItems: 'flex-start',
         flexDirection: 'row',
-        justifyContent: 'space-evenly',
         marginTop: 16
     },
     icon: {
-        width: 63,
+        width: 64,
         height: 32,
         backgroundColor: Themes.colors.neutral_100,
         borderRadius: 32,
         justifyContent: 'center',
         alignItems: 'center',
+        marginRight:4,
     }
 });

@@ -12,7 +12,7 @@ import {useState} from 'react'
 import { AppButton } from "../Buttons/buttons";
 import { readBuilderProgram } from "typescript";
 
-export const MyTooltip = ({text}) => {
+export const MyTooltip = ({text, style}) => {
     const [showTip, setTip] = useState(false);
     return (
         
@@ -28,7 +28,7 @@ export const MyTooltip = ({text}) => {
             contentStyle={{backgroundColor:Themes.colors.neutral_700}}
             backgroundColor = 'rgba(0,0,0,0)'
         >
-            <AppButton.toolTip onPress={() => {setTip(true); console.log('pressed')}} TouchableOpacityStyle={[styles.toolTipDefault, styles.columnValue]}/>
+            <AppButton.toolTip onPress={() => {setTip(true); console.log('pressed')}} TouchableOpacityStyle={[styles.toolTipDefault, styles.columnValue, style]}/>
         </Tooltip>
     );
 
