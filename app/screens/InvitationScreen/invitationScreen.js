@@ -77,7 +77,7 @@ export default function InvitationScreen({navigation, route}) {
                 </View>
                 <AppText.TitleSemiBoldThree style={{width:'100%', marginBottom: 8}}>Friendly Bananas</AppText.TitleSemiBoldThree>
                 <View style={{flexDirection:'row', alignItems: 'center', width: '100%'}}>
-                    <TrendTags.smallBlue tagText={'Stable'}/>
+                    <TrendTags.smallOrange tagText={'Unstable'}/>
                     <AppText.TitleSemiBoldFour style={{marginTop:4, marginLeft: 8, marginBottom:24}}>Tesla</AppText.TitleSemiBoldFour>
                 </View>
                 
