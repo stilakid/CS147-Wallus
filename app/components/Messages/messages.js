@@ -24,7 +24,7 @@ export default function Messages({scrollRef}) {
             .select('*, profile: profiles(username)');
 
         if (!data) {
-            console.warn('no data');
+            // console.warn('no data');
             return
         }
 

@@ -37,8 +37,8 @@ export default function LoginScreen({navigation, route}) {
         );
 
         if (error) {
-            console.log('error', error);
-            console.warn('error', error);
+            // console.log('error', error);
+            // console.warn('error', error);
             return;
         }
 

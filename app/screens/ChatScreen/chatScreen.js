@@ -23,13 +23,13 @@ export default function ChatScreen({navigation, route}) {
 
     const onSendPressed = async (data) => {
         resetField("message");
-        console.warn("Sending Message");
-        console.log(data.message);
+        // console.warn("Sending Message");
+        // console.log(data.message);
 
         const {error} = await supabase.from('messages').insert({ content: data.message });
         if (error) {
-            console.log({error});
-            console.warn({error});
+            // console.log({error});
+            // console.warn({error});
             return;
         }
     }

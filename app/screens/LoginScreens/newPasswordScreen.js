@@ -11,15 +11,15 @@ import { useForm } from "react-hook-form";
 
 const onSubmitPressed = (data) => {
     // console.warn(data);
-    console.warn("onSubmitPressed");
+    // console.warn("onSubmitPressed");
 }
 
 const onResendPressed = () => {
-    console.warn('onResendPressed');
+    // console.warn('onResendPressed');
 }
 
 const onSignInPressed = () => {
-    console.warn('onSignInPressed');
+    // console.warn('onSignInPressed');
 }
 
 export default function NewPasswordScreen({navigation, route}) {

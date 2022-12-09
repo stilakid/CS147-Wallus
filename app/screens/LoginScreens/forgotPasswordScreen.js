@@ -18,7 +18,7 @@ export default function ForgotPasswordScreen({navigation, route}) {
 
     const onSendPressed = (data) => {
         // console.warn(data);
-        console.warn("onSendPressed");
+        // console.warn("onSendPressed");
     }
     
     const onSignInPressed = () => {

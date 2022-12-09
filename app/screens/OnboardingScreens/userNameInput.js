@@ -17,8 +17,6 @@ export default function UserNameInputScreen ({navigation, route}){
 
     const onContinuePressed = async (data) => {
         // navigation.navigate('Register Screen');
-        console.warn("Gave Username");
-        console.log(data);
 
         // const {error} = await supabase.from('profiles').update(
         //     {

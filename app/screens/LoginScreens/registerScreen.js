@@ -35,7 +35,7 @@ export default function RegisterScreen({navigation, route}) {
         );
         if (error) {
             console.log(error);
-            console.warn(error);
+            // console.warn(error);
             return;
         }
         navigation.navigate('Username Screen');
@@ -50,11 +50,11 @@ export default function RegisterScreen({navigation, route}) {
     }
     
     const onTermsOfUsePressed = () => {
-        console.warn('onTermsOfUsePressed');
+        // console.warn('onTermsOfUsePressed');
     }
     
     const onPrivacyPolicyPressed = () => {
-        console.warn('onPrivacyPolicyPressed');
+        // console.warn('onPrivacyPolicyPressed');
     }
     
 
