@@ -27,15 +27,21 @@ import SelectFriends from "../InviteFriend/selectFriends";
 import InviteConfirmation from "../InviteFriend/InviteConfirmation";
 import InviteCongratsScreen from "../CongratulationsScreen/inviteCongratulations";
 import ChatScreen from "../ChatScreen/chatScreen";
+import SelectFriends from "../InviteFriend/selectFriends";
 import ProfileScreen from "../ProfileScreen/profileScreen";
 import AskInvestmentExpScreen from "../UpdatePrefScreens/askInvestmentExp";
 import InvestmentGoalsScreen from "../UpdatePrefScreens/investmentGoals";
 import UpdatePrefConfirmation from "../UpdatePrefScreens/updatePrefConfirmation";
 
-
-
-
-
+import InviteConfirmation from "../InviteFriend/InviteConfirmation";
+import David from "../InviteFriend/davidSelected";
+import Jenny from "../InviteFriend/jennySelected";
+import JennyDavid from "../InviteFriend/JennyDavid";
+import DavidJenny from "../InviteFriend/DavidJenny";
+import confirmationDavid from "../InviteFriend/confirmationDavid";
+import confirmationJenny from "../InviteFriend/confirmationJenny";
+import confirmationJennyDavid from "../InviteFriend/confirmationJennyDavid";
+import inviteCelebration from "../InviteFriend/inviteCelebration";
 
 export default function HomeStack({navigation, route}) {
     
@@ -60,6 +66,16 @@ export default function HomeStack({navigation, route}) {
             <Stack.Screen name="Sell Confirmation" component={SellConfirmationScreen} options={{headerShown: false}}/>
             <Stack.Screen name="Community" component={Community} options={{headerShown: false}}/>
             <Stack.Screen name="Select Friends" component={SelectFriends} options={{headerShown: false}}/>
+            
+            <Stack.Screen name="Invite Confirmation" component={InviteConfirmation} options={{headerShown: false}}/>
+            <Stack.Screen name="David" component={David} options={{headerShown: false, animationEnabled: false}}/>
+            <Stack.Screen name="Jenny" component={Jenny} options={{headerShown: false, animationEnabled: false}}/>
+            <Stack.Screen name="JennyDavid" component={JennyDavid} options={{headerShown: false, animationEnabled: false}}/>
+            <Stack.Screen name="DavidJenny" component={DavidJenny} options={{headerShown: false, animationEnabled: false}}/>
+            <Stack.Screen name="confirmationDavid" component={confirmationDavid} options={{headerShown: false}}/>
+            <Stack.Screen name="confirmationJenny" component={confirmationJenny} options={{headerShown: false}}/>
+            <Stack.Screen name="confirmationJennyDavid" component={confirmationJennyDavid} options={{headerShown: false}}/>
+            <Stack.Screen name="Invite Celebration" component={inviteCelebration} options={{headerShown: false}}/>
             <Stack.Screen name="Invite Confirmation" component={InviteConfirmation} options={{headerShown: false}}/>
             <Stack.Screen name="Invite Congrats Screen" component={InviteCongratsScreen} options={{headerShown: false}} />
             <Stack.Screen name="Profile Screen" component={ProfileScreen} options={{headerShown: false}}/>
@@ -67,7 +83,6 @@ export default function HomeStack({navigation, route}) {
             <Stack.Screen name="Investment Goals Screen" component={InvestmentGoalsScreen} options={{headerShown: false}}/>
             <Stack.Screen name="Update Preference Confirmation Screen" component={UpdatePrefConfirmation} options={{headerShown: false}}/>
 
-            
         </Stack.Navigator>
     );
 }

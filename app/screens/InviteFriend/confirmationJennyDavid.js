@@ -17,7 +17,7 @@ import InvitationCard from "../../components/Cards/InvitationCard";
 import { TextInput } from "react-native-gesture-handler";
 import { Roboto_400Regular } from "@expo-google-fonts/roboto";
 
-export default function InviteConfirmation({navigation, route}) {
+export default function confirmationJennyDavid({navigation, route}) {
     const [value, setValue] = useState(0)
     const [input, setInput] = useState(null)
     console.log({value});
@@ -28,11 +28,11 @@ export default function InviteConfirmation({navigation, route}) {
             <AppText.TitleBoldOne style={{width:358, marginBottom:8}}>You are inviting...</AppText.TitleBoldOne>
             
             <View style={styles.box}>
-                <View style={styles.davidbox}>
-                    <AppText.LabelSemiBoldTwo style={styles.addedName}>David</AppText.LabelSemiBoldTwo> 
-                </View>
                 <View style={styles.jennybox}>
                     <AppText.LabelSemiBoldTwo style={styles.addedName}>Jenny</AppText.LabelSemiBoldTwo> 
+                </View>
+                <View style={styles.davidbox}>
+                    <AppText.LabelSemiBoldTwo style={styles.addedName}>David</AppText.LabelSemiBoldTwo> 
                 </View>
             </View>
 
@@ -55,7 +55,6 @@ export default function InviteConfirmation({navigation, route}) {
             </View>
 
             <AppFloatingButton.PrimaryThickOne text={'Send Invitation!'} onPress={()=> navigation.navigate("Invite Celebration")}/>
-
         </SafeAreaView>
     );
 }
@@ -115,7 +114,6 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         width: 54,
         height: 32,
-        marginLeft: 8
     },
     davidbox: {
         flexDirection: 'row',
@@ -127,6 +125,7 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         width: 52,
         height: 32,
+        marginLeft: 8
     },
     addedName: {
         color: Themes.colors.neutral_600,
