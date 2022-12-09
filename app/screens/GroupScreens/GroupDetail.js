@@ -2,7 +2,7 @@
 import { Themes } from "../../../assets/themes"
 
 // Components
-import { StyleSheet, SafeAreaView, Text, View, ScrollView, Image, Pressable, TouchableWithoutFeedback, Touchable } from "react-native";
+import { StyleSheet, SafeAreaView, Text, View, ScrollView, Image, Pressable, TouchableWithoutFeedback, TouchableOpacity } from "react-native";
 import { AppText } from "../../components/CustomText/customText";
 import { AppButton } from "../../components/Buttons/buttons";
 import { Divider } from "../../components/Divider/divider"
@@ -110,7 +110,16 @@ export default function GroupDetail({navigation, route}) {
     return(
         <SafeAreaView style={styles.container}>
             <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent} showsVerticalScrollIndicator={false} >
-                <Header navigation={navigation} hasDivider={false} />
+                <View style={styles.outermostContainer}>
+                    <View style={styles.innerContainer}>
+                        <TouchableOpacity onPress={() => navigation.navigate('Home Screen')} TouchableOpacityStyle={styles.goBack}>
+                            <Image
+                                source={require('../../../assets/back.png')}
+                                style={styles.arrow}
+                            />
+                        </TouchableOpacity>
+                    </View>
+                </View>
                 
                 <TouchableWithoutFeedback style={{width: '100%'}} onPress={()=> setButtonExpanded(false)}>
                     <View style={{width:'100%', alignItems: 'center'}}>
@@ -254,5 +263,20 @@ const styles = StyleSheet.create({
     },
     rationalelil: {
         flex: 1
+    },
+    outermostContainer: {
+        display: 'flex',
+        width: '100%',
+    },
+    innerContainer: {
+        display: 'flex',
+        flexDirection: "row",
+        alignItems: 'center',
+        height: 70,
+        paddingHorizontal: 16
+    },
+    arrow: {
+        width: 24,
+        height: 24
     }
 });

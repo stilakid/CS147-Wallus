@@ -13,6 +13,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import NotificationScreen from "../NotificationScreen/notificationScreen";
 import HomeScreen from "../HomeScreen/homeScreen";
 import InvitationScreen from "../InvitationScreen/invitationScreen";
+import InvitationAlex from "../InvitationScreen/invitationAlex";
 import StockScreen from "../StockScreen/stockScreen";
 import CongratsScreen from "../CongratulationsScreen/congratulationsScreen";
 import GroupDetail from "../GroupScreens/GroupDetail";
@@ -42,6 +43,8 @@ import confirmationDavid from "../InviteFriend/confirmationDavid";
 import confirmationJenny from "../InviteFriend/confirmationJenny";
 import confirmationJennyDavid from "../InviteFriend/confirmationJennyDavid";
 import inviteCelebration from "../InviteFriend/inviteCelebration";
+import NoAlex from "../NotificationScreen/NoAlex";
+import NoDan from "../NotificationScreen/NoDan";
 
 export default function HomeStack({navigation, route}) {
     
@@ -81,7 +84,9 @@ export default function HomeStack({navigation, route}) {
             <Stack.Screen name="Ask Investment Experience Screen" component={AskInvestmentExpScreen} options={{headerShown: false}}/>
             <Stack.Screen name="Investment Goals Screen" component={InvestmentGoalsScreen} options={{headerShown: false}}/>
             <Stack.Screen name="Update Preference Confirmation Screen" component={UpdatePrefConfirmation} options={{headerShown: false}}/>
-
+            <Stack.Screen name="Invitation Alex" component={InvitationAlex} options={{headerShown: false}}/>
+            <Stack.Screen name="No Alex" component={NoAlex} options={{headerShown: false}}/>
+            <Stack.Screen name="No Dan" component={NoDan} options={{headerShown: false}}/>
         </Stack.Navigator>
     );
 }

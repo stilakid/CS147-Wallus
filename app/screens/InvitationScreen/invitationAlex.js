@@ -2,7 +2,7 @@
 import { Themes, Images } from "../../../assets/themes"
 
 // Components
-import { StyleSheet, SafeAreaView, Text, View, ScrollView, Image, TouchableOpacity } from "react-native";
+import { StyleSheet, SafeAreaView, Text, View, ScrollView, Image } from "react-native";
 import { AppText } from "../../components/CustomText/customText";
 import { AppButton } from "../../components/Buttons/buttons";
 import { Divider } from "../../components/Divider/divider"
@@ -53,7 +53,7 @@ const portfolioFit= [
 
 
 {/* <Home color="black" size={24} />; */}
-export default function InvitationScreen({navigation, route}) {
+export default function InvitationAlex({navigation, route}) {
 
     // const {  } = route.params;
 
@@ -63,34 +63,34 @@ export default function InvitationScreen({navigation, route}) {
     return(
         <SafeAreaView style={styles.container}>
             <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent} >
-                <Header text="Dan's Invitation" navigation={navigation} hasDivider={false} />
+                <Header text="Alex's Invitation" navigation={navigation} hasDivider={false} />
                 
                 {/* Invitation information */}
                 <View style={{flexDirection:'row',justifyContent:'space-between', width: '100%', alignItems:'center', marginBottom: 24}}>
-                    <Image style={{height:64, width:64}} source={Images.groupProfile.banana}/>
+                    <Image style={{height:64, width:64}} source={Images.groupProfile.popcorn}/>
                     <View style={{alignItems:'flex-end'}}>
                         <Image style={{height:32, width: 128, marginBottom:8}} source={require('../../../assets/groupProfiles.png')}/>
                         <AppText.LabelSemiBoldThree>5 members</AppText.LabelSemiBoldThree>
                     </View>
                 </View>
-                <AppText.TitleSemiBoldThree style={{width:'100%', marginBottom: 8}}>Friendly Bananas</AppText.TitleSemiBoldThree>
+                <AppText.TitleSemiBoldThree style={{width:'100%', marginBottom: 8}}>Movers & Groovers </AppText.TitleSemiBoldThree>
                 <View style={{flexDirection:'row', alignItems: 'center', width: '100%'}}>
                     <TrendTags.smallBlue tagText={'Stable'}/>
-                    <AppText.TitleSemiBoldFour style={{marginTop:4, marginLeft: 8, marginBottom:24}}>Tesla</AppText.TitleSemiBoldFour>
+                    <AppText.TitleSemiBoldFour style={{marginTop:4, marginLeft: 8, marginBottom:24}}>VTI</AppText.TitleSemiBoldFour>
                 </View>
                 
                 {/* message card */}
                 <View style={styles.messageCard}>
                     <Image
-                        source={require('../../../assets/profilePic.png')}
-                        style={{heigh:40, width:40, marginRight:12}}
+                        source={Images.profilePic.three}
+                        style={{height:40, width:40, marginRight:12}}
                     />
                     <View style={styles.messageContainer}>
                         <View style={{flexDirection:'row', alignItems:'center', marginBottom: 8, justifyContent: 'space-between'}}> 
-                            <AppText.LabelSemiBoldOne>From Dan</AppText.LabelSemiBoldOne> 
+                            <AppText.LabelSemiBoldOne>From Alex</AppText.LabelSemiBoldOne> 
                             <AppText.ParagraphThree>Oct 16 2022</AppText.ParagraphThree>
                         </View>
-                        <AppText.ParagraphTwo >Hey Emily! I think you should join this group because we’re both tring to do low risk and long term investments!</AppText.ParagraphTwo>
+                        <AppText.ParagraphTwo >Hihi Emily! I heard you wanted to start investing! This is a group I've been in that is consistent and stable... would love to have you join!</AppText.ParagraphTwo>
                     </View>
                 </View>
                 
@@ -102,7 +102,7 @@ export default function InvitationScreen({navigation, route}) {
                 <AppButton.SecondaryOutlineThickOne text={'Stock details'} TouchableOpacityStyle={[styles.stockDetailsButton, styles.endOfPage]} onPress={() => navigation.navigate('Stock', {stock:'tesla', dataSource:'dailyMovers'})} />
             </ScrollView>
 
-            <AppFloatingButton.PrimaryThickDual textOne='Decline' textTwo={'Accept'} onPressOne={() => navigation.navigate('No Dan')} onPressTwo={() => navigation.navigate('Congrats')} />
+            <AppFloatingButton.PrimaryThickDual textOne='Decline' textTwo={'Accept'} onPressOne={() => navigation.navigate('No Alex')} onPressTwo={() => navigation.navigate('Congrats')} />
         </SafeAreaView>
     );
 }

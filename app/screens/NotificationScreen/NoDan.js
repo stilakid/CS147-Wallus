@@ -1,7 +1,7 @@
 import { Themes, Images } from "../../../assets/themes"
 
 // Components
-import { StyleSheet, SafeAreaView, Text, View, SectionList } from "react-native";
+import { StyleSheet, SafeAreaView, Text, View, SectionList, Image, TouchableOpacity } from "react-native";
 import { AppText } from "../../components/CustomText/customText";
 import { AppButton } from "../../components/Buttons/buttons";
 import { Divider } from "../../components/Divider/divider"
@@ -19,7 +19,7 @@ export default function NotificaitonScreen({navigation, route}) {
     const DATA = [
         {
         title: 'Invitations',
-        data: [['Dan invites you to join Friendly Bananas', 'Investment: Apple', Images.profilePic.two, () => navigation.navigate('Invitation')], ['Alex invites you to join Crazy Mangoes', 'Investment: VTI', Images.profilePic.three, () => navigation.navigate('Invitation Alex')]],
+        data: [ ['Alex invites you to join Crazy Mangoes', 'Investment: VTI', Images.profilePic.three, () => navigation.navigate('Invitation Alex')]],
         },
         {
         title: 'Wallus reminders',
@@ -57,7 +57,16 @@ export default function NotificaitonScreen({navigation, route}) {
     
     return(
         <SafeAreaView style={styles.container}>
-            <Header text="Notifications" navigation={navigation} hasDivider={true} />
+            <View style={styles.outermostContainer}>
+                <View style={styles.innerContainer}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Home Screen')} TouchableOpacityStyle={styles.goBack}>
+                        <Image
+                            source={require('../../../assets/back.png')}
+                            style={styles.arrow}
+                        />
+                    </TouchableOpacity>
+                </View>
+            </View>
             <SectionList
                 sections={DATA}
                 keyExtractor={(item, index) => item + index} /* unique key for each item */
@@ -104,8 +113,6 @@ const styles = StyleSheet.create({
         height: 24
     }
 });
-
-
 
 // Branch
 
