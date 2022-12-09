@@ -39,8 +39,7 @@ export default function Rationale({navigation, route}) {
     const renderPlaceholder =({item}) => {
         return (
             <View>
-                <Header text="Why your friends joined" navigation={navigation} hasDivider={true} />
-                <View style={{color: Themes.colors.neutral_800, alignItems: 'flex-start',  marginTop:16, marginLeft: 16, marginBottom: 16}}>
+                <View style={{color: Themes.colors.neutral_800, alignItems: 'flex-start',  marginTop:16, marginBottom: 16}}>
                     <AppText.TitleSemiBoldThree>5 comments</AppText.TitleSemiBoldThree>
                 </View>
                 <FlatList
@@ -48,7 +47,6 @@ export default function Rationale({navigation, route}) {
                     renderItem={(item) => renderFriendRationaleItem(item)}
                     keyExtractor={(item) => item}
                     scrollEnabled='false'
-                    style={{marginHorizontal:16}}
                 /> 
             </View>
         );
@@ -56,10 +54,12 @@ export default function Rationale({navigation, route}) {
 
     return(
         <SafeAreaView style={styles.container}>
-            <FlatList data={placeholder}
-                renderItem={(item) => renderPlaceholder(item)}
-                >
-            </FlatList>
+            <Header text="Why your friends joined" navigation={navigation} hasDivider={true} InnerContainerStyle={{paddingHorizontal: 16}} />
+            <View style={styles.innerContainer}>
+                <FlatList data={placeholder}
+                    renderItem={(item) => renderPlaceholder(item)}
+                />
+            </View>
         </SafeAreaView>
     );
 }
@@ -70,15 +70,8 @@ const styles = StyleSheet.create({
         backgroundColor: Themes.colors.white,
         flex: 1,
     },
-    sectionList: {
-        width: '100%',
-    },
-    sectionListContent: {
+    innerContainer: {
         marginHorizontal: 16
-    },
-    sectionListTitle: {
-        marginTop: 24,
-        marginBottom: 12
     }
 });
 

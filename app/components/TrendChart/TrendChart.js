@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     container: {
         width: '100%',
         borderRadius: 16,
-        padding: 16,
+        // padding: 16,
     },
     chart: {
         width: "100%",

@@ -25,9 +25,6 @@ export default function RationaleCard({style, name, profileURL, date, rationale}
         </View>
         <AppText.LabelSemiBoldOne style={styles.commentText}>{rationale}</AppText.LabelSemiBoldOne>
       </View>
-
-
-
     </View>
   );
 }
@@ -35,28 +32,23 @@ export default function RationaleCard({style, name, profileURL, date, rationale}
 const styles = StyleSheet.create({
   card: {
     flexDirection: 'row',
-    alignItems: 'center',
+    // alignItems: 'center',
     padding: 16,
     backgroundColor: Themes.colors.neutral_100,
     borderRadius: 16,
-    width: 358,
+    width: '100%',
   },
   container: {
     flexDirection: 'column',
-    alignItems: 'flex-start',
     justifyContent: 'space-between',
-    gap: 8,
-    width: 282,
-    flexGrow: 1,
     paddingLeft: 10,
+    flex: 1,
   },
   header: {
-    display: 'flex',
     flexDirection: 'row',
-    alignItems: 'center',
+    // alignItems: 'center',
     justifyContent: 'space-between',
     marginBottom: 4,
-
   },
   profilePic: {
     height: 40,
@@ -65,13 +57,9 @@ const styles = StyleSheet.create({
   },
   userText: {
     color: Themes.colors.neutral_600,
-    width: 202,
-    height: 18
   },
   dateText: {
     color: Themes.colors.neutral_600,
-    width: 76,
-    height: 21
   },
   commentText: {
     color: Themes.colors.neutral_800,

@@ -38,7 +38,7 @@ export default function InvestmentDetailCard({investAmount, trendText, trendGrap
 
 const styles = StyleSheet.create({
     detailContainer: {
-        width: 358,
+        width: '100%',
         borderColor: Themes.colors.neutral_200,
         borderWidth: 2,
         borderRadius: 16,
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     },
     chart: {
         width: "100%",
-        height: 64,
+        height: 70,
         marginVertical: 12,
     },
     selectionContainer: {

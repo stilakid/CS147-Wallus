@@ -103,7 +103,8 @@ export default function GroupDetail({navigation, route}) {
         <SafeAreaView style={styles.container}>
             <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent} >
                 <Header navigation={navigation} hasDivider={false} />
-                <TouchableWithoutFeedback style={{width: 390}} onPress={()=> setButtonExpanded(false)}>
+                
+                <TouchableWithoutFeedback style={{width: '100%'}} onPress={()=> setButtonExpanded(false)}>
                     <View style={{width:'100%', alignItems: 'center'}}>
                         <View style={styles.groupCard}>
                             <View style={styles.pics}>
@@ -125,14 +126,18 @@ export default function GroupDetail({navigation, route}) {
                                 </View>
                             </View>
                         </View>
-                    <AppButton.SecondaryOutlineThickOne style={{marginBottom: 24}} text="Enter Chatroom" onPress={() => navigation.navigate('Chat Screen')}></AppButton.SecondaryOutlineThickOne>
+                        <AppButton.SecondaryOutlineThickOne TouchableOpacityStyle={{marginBottom: 24}} text="Enter Chatroom" onPress={() => navigation.navigate('Chat Screen')}></AppButton.SecondaryOutlineThickOne>
+
                         <Divider.Horizontal />
+
                         <WallusTips.green titleText={'Hold is recommended'} bodyText={'Index funds tend to maintain positive growth overtime despite temporary descreases'} />
                         <InvestmentDetailCard investAmount={group.investAmount}></InvestmentDetailCard>
-                        <View style={{marginVertical: 24, width: 390}}>
+                        <View style={{marginVertical: 24, width: '100%'}}>
                             <GroupStats boughtAt={group.boughtAt} currentPrice={group.stockPrice} investingFor={group.investingFor} typicalHold={group.typicalHold}></GroupStats>
                         </View>
+
                         <Divider.Horizontal />
+
                         <View style={styles.rationale}>
                             <View style={styles.rationaleHeader}>
                                 <View style={styles.rationalelil}>
@@ -156,10 +161,11 @@ export default function GroupDetail({navigation, route}) {
                                 rationale={secRationaleFriend.rationale}
                             />
                         </View>
+
                         <Divider.Horizontal />
-                        <WallusTips.white titleText='Stock information' bodyText={group.stockInfo} >
-                        </WallusTips.white>
-                        <View style={{height: 60}}></View>
+
+                        <WallusTips.white titleText='Stock information' bodyText={group.stockInfo} style={{marginBottom: 80}} />
+                        {/* <View style={{height: 60}}></View> */}
                     </View>
                 </TouchableWithoutFeedback>
             </ScrollView>
@@ -182,6 +188,7 @@ const styles = StyleSheet.create({
     scrollViewContent: {
         display: 'flex',
         alignItems: "center",
+        marginHorizontal: 16
     },
     portfolioFit: {
         marginBottom: 12,
@@ -202,7 +209,7 @@ const styles = StyleSheet.create({
     },
     groupCard: {
         alignItems: "flex-start",
-        width: 358,
+        width: '100%',
         marginBottom: 24,
     },
     pics: {
@@ -210,7 +217,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         marginBottom: 16,
-        width: 358,
+        width: '100%',
 
     },
     groupPic: {
@@ -229,13 +236,15 @@ const styles = StyleSheet.create({
     },
     rationale: {
         marginVertical: 24,
+        width: '100%'
     },
     rationaleHeader: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         marginBottom: 16,
+        width: '100%'
     },
     rationalelil: {
-        width: 318
+        flex: 1
     }
 });
