@@ -28,7 +28,7 @@ export const MyTooltip = ({text}) => {
             contentStyle={{backgroundColor:Themes.colors.neutral_700}}
             backgroundColor = 'rgba(0,0,0,0)'
         >
-            <AppButton.toolTip Press={() => setTip(true)} TouchableOpacityStyle={[styles.toolTipDefault, styles.columnValue]}/>
+            <AppButton.toolTip onPress={() => {setTip(true); console.log('pressed')}} TouchableOpacityStyle={[styles.toolTipDefault, styles.columnValue]}/>
         </Tooltip>
     );
 
