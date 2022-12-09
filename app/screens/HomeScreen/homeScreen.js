@@ -1,7 +1,7 @@
 import { Themes, Images } from "../../../assets/themes"
 
 // Components
-import { StyleSheet, SafeAreaView, Text, View, Button, Image, SectionList } from "react-native";
+import { StyleSheet, SafeAreaView, Text, View, Button, Image, SectionList, FlatList } from "react-native";
 import { AppText } from "../../components/CustomText/customText";
 import { AppButton } from "../../components/Buttons/buttons";
 import { Divider } from "../../components/Divider/divider"
@@ -15,60 +15,85 @@ import InvitationCard from "../../components/Cards/InvitationCard";
 import React from 'react';
 import Home from '../../components/SearchBar/Home'
 
+//Investment group data
+import investmentGroups from "../../../assets/stockData/investmentGroups";
+import { TouchableOpacity } from "react-native-gesture-handler";
+
 export default function HomeScreen({navigation, route}) {
     const bellContent = <Bell color={Themes.colors.neutral_600} size={20} />
+    console.log(DATA);
     const DATA = [
         {
-        title: 'My Index Funds',
-        data: ['1', '2'],
+        title: 'My investments',
+        data: investmentGroups,
         },
+        // {
+        // title: 'My Stocks',
+        // data: ['3', '4'],
+        // },
+    ];
+
+    //Datasets
+    const placeholder =[
         {
-        title: 'My Stocks',
-        data: ['3', '4'],
-        },
+            random: 'placeholder',
+        }
     ];
     
     const renderCards = ({item}) => {
+        const group = investmentGroups[item];
+        console.log(group);
+
         return (
-            <View style={{marginVertical:12}}>
-                <InvitationCard GroupName={'Brave Potatoes'} Price={"USD 27.4 total"} onPress={()=>navigation.navigate('Group Detail')} ></InvitationCard>
+            <View style={{marginBottom:12}}>
+                <InvitationCard 
+                    GroupName={group.groupName} 
+                    Price={"USD 27.4 total"} 
+                    stock={group.companyName}
+                    status={group.status}
+                    memberPicURL={group.memberPicURL}
+                    onPress={()=>navigation.navigate('Group Detail',{group: item})}>
+                </InvitationCard>
             </View>
         )
     }
     
-    const renderSectionTitle = ({ section: { title } }) => {
-        return (
-            <View style={styles.sectionListTitle}>
-                <AppText.TitleSemiBoldFour>{title}</AppText.TitleSemiBoldFour>
-            </View>
-        )
-    }
 
-    return(
-        <SafeAreaView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent}>
-            {/* <Button title="Community" onPress={()=>navigation.navigate('Community')}></Button> */}
-            
+    const renderPlaceholder =()=> {
+        return(
+            <>
             <View style={styles.header}>
-                <View style={styles.nameCard}>
+                <TouchableOpacity style={styles.nameCard} onPress={()=> navigation.navigate("Profile Screen")}>
                     <Image style={styles.profilePic} source={require("../../../assets/profilePic.png")} resizeMode='contain'></Image>
                     <View style={styles.nameCardText}>
                         <AppText.LabelBoldOne>Emily Sanders</AppText.LabelBoldOne>
                         <AppText.LabelSemiBoldTwo style={{color: Themes.colors.neutral_500}}> @emilysndr</AppText.LabelSemiBoldTwo>
                     </View>
-                </View>
+                </TouchableOpacity>
                 <AppButton.notif navigation={navigation}/>
             </View>
+
             <Milestone></Milestone>
-            <SectionList
-                sections={DATA}
-                keyExtractor={(item, index) => item + index} /* unique key for each item */
-                renderItem={renderCards } /* render each item as a MenuItem component with the given name */
-                renderSectionHeader={renderSectionTitle}
-                style={styles.sectionList}
-                contentContainerStyle={styles.sectionListContent}
-                stickySectionHeadersEnabled={false}
+
+            <AppText.TitleSemiBoldFour style={{marginHorizontal:16, marginBottom:16}}>My investments</AppText.TitleSemiBoldFour>
+            <FlatList
+                data={Object.keys(investmentGroups)}
+                renderItem={(item) => renderCards(item)}
+                keyExtractor={(item) => item}
+                scrollEnabled='false'
+                style={{flexGrow: 1, alignItems:'center'}}
+            /> 
+            </>
+
+        )
+    }
+
+    return(
+        <SafeAreaView style={styles.scrollView} contentContainerStyle={[styles.scrollViewContent,]}>
+            <FlatList data={placeholder}
+                renderItem={(item) => renderPlaceholder(item)}
+                contentContainerStyle={{flexGrow:1,}}
             />
-            
         </SafeAreaView>
     );
 }
@@ -79,8 +104,8 @@ const styles = StyleSheet.create({
         backgroundColor: Themes.colors.white,
         alignItems: "center",
         flex: 1,
-        paddingHorizontal: 16,
-        paddingTop: 56
+        // paddingHorizontal: 16,
+        // paddingTop: 56
     },
     image: {
         // backgroundColor: 'red',
@@ -92,7 +117,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        width: 358,
+        marginHorizontal:16,
         height: 64,
         marginTop: 24
     },
@@ -124,16 +149,20 @@ const styles = StyleSheet.create({
     },
     sectionList: {
         width: '100%',
+        alignItems: 'flex-start',
+        paddingHorizontal:16
     },
     sectionListContent: {
-        marginHorizontal: 16,
+        // marginHorizontal: 16,
+        alignItems:'center',
     },
     sectionListTitle: {
         marginTop: 24,
-        marginBottom: 12
+        marginBottom: 16
     },
     scrollView: {
         width: '100%',
+        flex:1,
     },
     scrollViewContent: {
         display: 'flex',

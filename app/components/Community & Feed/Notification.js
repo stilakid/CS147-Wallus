@@ -9,7 +9,6 @@ export function Notification ({message, investment, imageURL, onPress}){
         <View style={styles.container}>
             <Image
                 style={styles.image}
-                // source={require({imageURL})}
                 source={imageURL}
                 resizeMode='contain'
 

@@ -55,7 +55,7 @@ export default function BorderedFlatlist ({data}) {
 
 const styles = StyleSheet.create({
     itemContainer: {
-        width: 358,
+        width: '100%',
         alignItems:'center',
         justifyContent: "space-between",
         padding: 16,

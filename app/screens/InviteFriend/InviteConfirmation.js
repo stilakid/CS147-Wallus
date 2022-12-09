@@ -55,6 +55,7 @@ export default function InviteConfirmation({navigation, route}) {
             </View>
 
             <AppFloatingButton.PrimaryThickOne text={'Send Invitation!'} onPress={()=> navigation.navigate("Invite Celebration")}/>
+
         </SafeAreaView>
     );
 }

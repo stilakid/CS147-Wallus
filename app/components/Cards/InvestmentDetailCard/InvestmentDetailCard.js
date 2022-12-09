@@ -15,7 +15,7 @@ export default function InvestmentDetailCard({investAmount, trendText, trendGrap
                     <AppButton.toolTip text={"this is the tooltip text for what this investment card means"}/>
                 </View>
             </View>
-            <AppText.TitleBoldOne style={{color:Themes.colors.neutral_800, marginBottom: 16}}>$13.24</AppText.TitleBoldOne>
+            <AppText.TitleBoldOne style={{color:Themes.colors.neutral_800, marginBottom: 16}}>{investAmount}</AppText.TitleBoldOne>
             <Image style={styles.chart} source={require("../../../../assets/trendCharts/trend1.png")}></Image>
             <View style={styles.selectionContainer}>
                 <SelectionOptions.noBorder_Unselected_28px text={"1D"}/>

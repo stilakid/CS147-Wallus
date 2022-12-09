@@ -567,6 +567,21 @@ AppFloatingButton.DisabledThinDual = ({textOne, textTwo, onPressOne, onPressTwo,
     )
 }
 
+AppFloatingButton.PrimarySecondaryThickDual = ({textOne, textTwo, onPressOne, onPressTwo, TouchableOpacityStyleOne, TouchableOpacityStyleTwo, TextStyleOne, TextStyleTwo, containerStyle, dualButtonContainerStyle}) => {
+    let button = (
+        <View style={[styles.dualButton, dualButtonContainerStyle]}>
+            <AppButton.SecondaryOutlineThickThree text={textOne} TouchableOpacityStyle={[styles.buttonOne, TouchableOpacityStyleOne]} TextStyle={TextStyleOne} onPress={onPressOne}/>
+            <AppButton.PrimaryThickThree text={textTwo} TouchableOpacityStyle={[styles.buttonTwo, TouchableOpacityStyleTwo]} TextStyle={TextStyleTwo} onPress={onPressTwo}/>
+        </View>
+    )
+    return(
+        <AppFloatingButton
+            containerStyle={containerStyle}
+            button={button}
+        />
+    )
+}
+
 // **********************************************************************************************
 // Stacked Floating Buttons
 // **********************************************************************************************
