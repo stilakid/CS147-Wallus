@@ -48,6 +48,7 @@ export default function BorderedFlatlist ({data}) {
                 keyExtractor={(item) => item.id}
                 ItemSeparatorComponent={<Divider.Horizontal/>}
                 style={styles.flatList}
+                scrollEnabled={false}
             />
         </View>
     );

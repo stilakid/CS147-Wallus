@@ -47,6 +47,7 @@ export default function BorderedCheckList ({data, style}) {
                 keyExtractor={(item) => item.id}
                 ItemSeparatorComponent={<Divider.Horizontal/>}
                 style={styles.flatList}
+                scrollEnabled={false}
             />
         </View>
     );
