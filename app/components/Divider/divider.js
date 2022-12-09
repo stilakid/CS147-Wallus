@@ -12,13 +12,13 @@ export const Divider = ({style}) => {
 
 Divider.Vertical = ({style}) => (
     <Divider
-        style={styles.vertical}
+        style={[styles.vertical, style]}
     />
 )
 
 Divider.Horizontal = ({style}) => (
     <Divider
-        style={styles.horizontal}
+        style={[styles.horizontal, style]}
     />
 )
 
