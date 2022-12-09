@@ -6,23 +6,36 @@ import { AppButton } from "../Buttons/buttons";
 import { AppText } from "../CustomText/customText";
 import { Divider } from "../Divider/divider";
 
-export default function Header({hasDivider, text, navigation, OuterContainerStyle, InnerContainerStyle, TextStyle}) {
+export default function Header({hasDivider, isTabPageHeader, hasBackButton=true, text, navigation, OuterContainerStyle, InnerContainerStyle, TextStyle}) {
     let divider;
+    let backButton;
+    let headerText = (
+        <AppText.TitleSemiBoldThree style={[styles.text, TextStyle]}>
+            {text}
+        </AppText.TitleSemiBoldThree>
+    );
     if (hasDivider) {
         divider = <Divider.Horizontal />
+    }
+    if (hasBackButton) {
+        backButton = <AppButton.goBack navigation={navigation} TouchableOpacityStyle={styles.goBack} />
+    }
+    if (isTabPageHeader) {
+        headerText = (
+            <AppText.TitleBoldOne style={[styles.text, TextStyle]}>
+                    {text}
+            </AppText.TitleBoldOne>
+        )
     }
 
     return (
         <View style={[styles.outermostContainer, OuterContainerStyle]}>
             <View style={[styles.innerContainer, InnerContainerStyle]}>
-                <AppButton.goBack navigation={navigation} TouchableOpacityStyle={styles.goBack} />
-                <AppText.TitleSemiBoldThree style={[styles.text, TextStyle]}>
-                    {text}
-                </AppText.TitleSemiBoldThree>
+                {backButton}
+                {headerText}
             </View>
             {divider}
         </View>
-        
     );
 }
 
