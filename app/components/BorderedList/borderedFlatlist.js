@@ -27,7 +27,7 @@ export default function BorderedFlatlist ({data}) {
             <View style={styles.itemContainer}>
                 <View style={styles.leftContainer}>
                     <AppText.ParagraphTwo>{text}</AppText.ParagraphTwo>
-                    <MyTooltip text={tooltiptext}/>
+                    {/* <MyTooltip text={tooltiptext}/> */}
                 </View>
                 <AppText.ParagraphTwo>{value}</AppText.ParagraphTwo>
             </View>
