@@ -25,9 +25,9 @@ export default function CongratsScreen({navigation, route}) {
             {/* Buttons are not linked yet */}
 
             <View style={{paddingVertical:12}}>
-                <AppButton.SecondaryOutlineThickTwo text="Invite more friends" onPress={()=>navigation.navigate('Select Friends')}/>
+                <AppButton.SecondaryOutlineThickTwo text="Home" onPress={() => {navigation.popToTop()}} /> 
             </View>
-            <AppButton.SecondaryOutlineThickTwo text="Home" onPress={() => {navigation.popToTop()}} /> 
+            
         </SafeAreaView>
     );
 }
