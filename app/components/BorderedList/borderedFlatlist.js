@@ -7,6 +7,7 @@ import Checkbox from "../Checkbox/Checkbox";
 import { FlatList } from "react-native-gesture-handler";
 import { Divider } from "../Divider/divider";
 import { AppButton } from "../Buttons/buttons";
+import { MyTooltip } from "../ToolTip/tooltip";
 
 /*
 You can pass in data to this component like this
@@ -21,12 +22,12 @@ const data = [
 */
 
 export default function BorderedFlatlist ({data}) {
-    const FlatlistItem =({text, value})=> {
+    const FlatlistItem =({text, value, tooltiptext})=> {
         return (
             <View style={styles.itemContainer}>
                 <View style={styles.leftContainer}>
                     <AppText.ParagraphTwo>{text}</AppText.ParagraphTwo>
-                    <AppButton.toolTip TouchableOpacityStyle={styles.toolTipDefault}/>
+                    <MyTooltip text={tooltiptext}/>
                 </View>
                 <AppText.ParagraphTwo>{value}</AppText.ParagraphTwo>
             </View>
