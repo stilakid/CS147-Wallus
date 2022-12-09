@@ -1,5 +1,5 @@
 // import React from 'react';
-import { Themes } from "../../../assets/themes"
+import { Images, Themes } from "../../../assets/themes"
 
 // Components
 import { StyleSheet, SafeAreaView, Text, View, ScrollView, Image } from "react-native";
@@ -12,6 +12,7 @@ import { TrendTags } from "../../components/TrendTags/TrendTags";
 import { AppFloatingButton } from "../../components/Buttons/floatingButtons";
 import { InvestmentStat } from "../../components/BorderedList/borderedList";
 import WallusTips from "../../components/Cards/WallusTips/WallusTips";
+import { Dimensions } from "react-native";
 
 // Lucide Icons
 import { Smile } from 'lucide-react-native';
@@ -21,7 +22,7 @@ import RationaleCard from "../../components/Cards/RationaleCard";
 import { MemberList } from "../../components/BorderedList/MemberList";
 
 
-
+const windowWidth = Dimensions.get('window').width;
 
 {/* <Home color="black" size={24} />; */}
 export default function CommunityScreen({navigation, route}) {
@@ -30,13 +31,13 @@ export default function CommunityScreen({navigation, route}) {
 
     return(
         <SafeAreaView style={styles.container}>
-            <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent} >
-            <Header hasBackButton={false} text={"Community"} isTabPageHeader />
-                <View style={{marginTop: 40}}>
+            <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent} showsVerticalScrollIndicator={false} >
+            <Header hasBackButton={false} text={"Community"} isTabPageHeader OuterContainerStyle={{marginLeft:32}}/>
+                <View style={{marginTop: 40, alignItems:'center'}}>
                     <View style={styles.news}>
                         <Image
                             style={styles.image}
-                            source={require('../../../assets/profilePic.png')}
+                            source={Images.profilePic.two}
                             resizeMode='contain'
                         />
                         <View style={styles.textContainer}>
@@ -63,12 +64,12 @@ export default function CommunityScreen({navigation, route}) {
                         </View>
                     </View>
 
-                    <Divider.Horizontal />
+                    <Divider.Horizontal style={styles.divider}/>
 
                     <View style={[styles.news, {marginTop: 20}]}>
                         <Image
                             style={styles.image}
-                            source={require('../../../assets/profilePic.png')}
+                            source={Images.profilePic.one}
                             resizeMode='contain'
                         />
                         <View style={styles.textContainer}>
@@ -89,22 +90,22 @@ export default function CommunityScreen({navigation, route}) {
                         </View>
                     </View>
 
-                    <Divider.Horizontal />
+                    <Divider.Horizontal  style={styles.divider} />
 
                     <View style={[styles.news, {marginTop: 20}]}>
                         <Image
                             style={styles.image}
-                            source={require('../../../assets/profilePic.png')}
+                            source={Images.profilePic.three}
                             resizeMode='contain'
                         />
                         <View style={styles.textContainer}>
-                            <AppText.LabelSemiBoldOne><AppText.LabelSemiBoldOne style={{color: Themes.colors.primary_700}}>Cindy</AppText.LabelSemiBoldOne> sold her Paypal Stock</AppText.LabelSemiBoldOne>
-                            <Text style={styles.investmentStyle}>Paypal · 5hr</Text>
+                            <AppText.LabelSemiBoldOne><AppText.LabelSemiBoldOne style={{color: Themes.colors.primary_700}}>Anna</AppText.LabelSemiBoldOne> joined Crazy Potatoes</AppText.LabelSemiBoldOne>
+                            <Text style={styles.investmentStyle}>S&P500 · 5hr</Text>
                             <View style={styles.rationale}>
                                 <AppText.LabelSemiBoldTwo>Rationale</AppText.LabelSemiBoldTwo>
                                 <AppText.ParagraphTwo style={{color:Themes.colors.neutral_600}}>Need cash </AppText.ParagraphTwo>
                             </View>
-                            <View style={[styles.icons, {width: 48}]}>
+                            <View style={[styles.icons]}>
                                 <View style={styles.icon}>
                                     <Smile style={{color:Themes.colors.neutral_600}}></Smile>
                                 </View>
@@ -112,17 +113,17 @@ export default function CommunityScreen({navigation, route}) {
                         </View>
                     </View>
 
-                    <Divider.Horizontal />
+                    <Divider.Horizontal  style={styles.divider} />
 
                     <View style={[styles.news, {marginTop: 20}]}>
                         <Image
                             style={styles.image}
-                            source={require('../../../assets/profilePic.png')}
+                            source={Images.profilePic.six}
                             resizeMode='contain'
                         />
                         <View style={styles.textContainer}>
-                            <AppText.LabelSemiBoldOne><AppText.LabelSemiBoldOne style={{color: Themes.colors.primary_700}}>Cindy</AppText.LabelSemiBoldOne> sold her Paypal Stock</AppText.LabelSemiBoldOne>
-                            <Text style={styles.investmentStyle}>Paypal · 5hr</Text>
+                            <AppText.LabelSemiBoldOne><AppText.LabelSemiBoldOne style={{color: Themes.colors.primary_700}}>Justine</AppText.LabelSemiBoldOne> invested in VTI</AppText.LabelSemiBoldOne>
+                            <Text style={styles.investmentStyle}>VTI · 5hr</Text>
                             <View style={styles.rationale}>
                                 <AppText.LabelSemiBoldTwo>Rationale</AppText.LabelSemiBoldTwo>
                                 <AppText.ParagraphTwo style={{color:Themes.colors.neutral_600}}>I wanted to diversify my portfolio!</AppText.ParagraphTwo>
@@ -155,17 +156,22 @@ const styles = StyleSheet.create({
     },
     scrollView: {
         width: '100%',
+        marginHorizontal:16,
+    },
+    image: {
+        width:40,
+        height:40,
     },
     scrollViewContent: {
         display: 'flex',
-        // alignItems: "center",
-        paddingHorizontal: 16
+        alignItems: "center",
+        // marginHorizontal: 16,
     },
     news: {
         flexDirection: 'row',
         alignItems: 'flex-start',
-        width: 358,
-        height: 200,
+        marginBottom:24,
+        paddingHorizontal:16,
     },
     investmentStyle:{
         color: Themes.colors.neutral_500,
@@ -178,27 +184,27 @@ const styles = StyleSheet.create({
     },
     rationale: {
         alignItems: 'flex-start',
-        padding: 12,
-        width: 306,
-        height: 70,
+        padding: 16,
         backgroundColor: Themes.colors.neutral_100,
         borderRadius: 16,
         marginTop: 16
     },
     icons: {
-        width: 256,
         height: 32,
         alignItems: 'flex-start',
         flexDirection: 'row',
-        justifyContent: 'space-evenly',
         marginTop: 16
     },
     icon: {
-        width: 63,
+        width: 64,
         height: 32,
         backgroundColor: Themes.colors.neutral_100,
         borderRadius: 32,
         justifyContent: 'center',
         alignItems: 'center',
+        marginRight:4,
+    },
+    divider: {
+        width:windowWidth,
     }
 });

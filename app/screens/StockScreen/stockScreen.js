@@ -95,11 +95,11 @@ export default function StockScreen({navigation, route}) {
 
                 <WallusTips.orange titleText={'Not aligned with your preference'} bodyText={'This is a text that explains the reason why it does not match'} />
 
-                <InvestmentStat portfolioFit={'Great'} market={'12.38%'} sp500={'12.88%'} expectedReturn={'3.1%'} volatility={'Medium'} typicalHold={'4Y 3M'} containerStyle={{marginBottom:24}} />
+                <InvestmentStat stock={stock.companyName} portfolioFit={'Great'} market={'12.38%'} sp500={'12.88%'} expectedReturn={'3.1%'} volatility={'Medium'} typicalHold={'4Y 3M'} />
                 <WallusTips.bordered titleText={'Stock information'} bodyText={stock.stockInfo} style={styles.endOfPage}></WallusTips.bordered>
             </ScrollView>
 
-            <AppFloatingButton.PrimaryThickDual textOne='Decline' textTwo={'Accept'} onPressOne={() => navigation.pop(2)} onPressTwo={() => navigation.navigate('Congrats')} />
+            <AppFloatingButton.PrimaryThickDual textOne='Decline' textTwo={'Accept'} onPressOne={() => navigation.navigate('No Dan')} onPressTwo={() => navigation.navigate('Congrats')} />
         </SafeAreaView>
     );
 }

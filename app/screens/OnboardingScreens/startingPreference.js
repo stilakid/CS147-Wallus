@@ -8,11 +8,57 @@ import Header from "../../components/Header/header";
 import { useState } from "react";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { AppFloatingButton } from "../../components/Buttons/floatingButtons";
+import { ChevronUp } from "lucide-react-native";
+import { ChevronDown } from "lucide-react-native";
 
 export default function StartingPreferenceScreen ({navigation, route}){
-    const [value, setValue] = useState(0)
-    const [input, setInput] = useState(null)
     console.log('Value is',{value});
+    const [value, setValue] = useState(0)
+    const [input, setInput] = useState('')
+    const [down, setDown] = useState(true)
+    console.log('Value is',{value});
+    const downFormat= (
+        <>
+            <View style={styles.group}>
+                <TouchableOpacity style={styles.arrowDown} onPress={()=>setDown(false)}>
+                    {/* <Image
+                        source={require('../../../assets/up.png')}
+                        style={styles.up}
+                    /> */}
+                    <ChevronUp style={{color: Themes.colors.black}}></ChevronUp>
+                </TouchableOpacity>
+    
+        
+                <TouchableOpacity onPress={()=> {setDown(false), setInput('Low')}}>
+                    <View style={styles.low}>
+                        <AppText.ParagraphTwo style={styles.name}>Low</AppText.ParagraphTwo>
+                    </View>
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={() => {setDown(false), setInput('Medium')}}>
+                    <View style={styles.medium}>
+                        <AppText.ParagraphTwo style={styles.name}>Medium</AppText.ParagraphTwo>
+                    </View>
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={() => {setDown(false), setInput('High')}}>
+                    <View style={styles.high}>
+                        <AppText.ParagraphTwo style={styles.name}>High</AppText.ParagraphTwo>  
+                    </View>
+                </TouchableOpacity>
+            </View>
+            
+        </>
+    )
+    const upFormat = (
+        <View style={styles.groupup}>
+            <AppText.ParagraphTwo style={styles.name}>{input}</AppText.ParagraphTwo>
+            <TouchableOpacity style={styles.arrow} onPress={() => {setDown(true), setInput('')}}>
+                <ChevronDown style={{color: Themes.colors.black}}></ChevronDown>
+            </TouchableOpacity>     
+        </View>
+    );
+ 
     return (
         <SafeAreaView style={styles.container}>
             <Header navigation={navigation} hasDivider={false} />
@@ -21,15 +67,9 @@ export default function StartingPreferenceScreen ({navigation, route}){
             <AppText.ParagraphTwo style={styles.para2}>  now or later in your profile. </AppText.ParagraphTwo>
             <View style={styles.combined}>
                 <AppText.LabelSemiBoldThree style={styles.risk}>Risk Tolerance</AppText.LabelSemiBoldThree>
-                <TouchableOpacity onClick={() => navigation.navigate('Notifications')}>
-                    <View style={styles.group}>
-                        <AppText.ParagraphTwo style={styles.name}>Low</AppText.ParagraphTwo>
-                        <Image
-                            source={require('../../../assets/drop.png')}
-                            style={styles.drop}
-                        />
-                    </View>
-                </TouchableOpacity>
+
+                {down && (downFormat)}
+                {!down && (upFormat)}
             </View>
             <AppFloatingButton.PrimaryThickOne text={'Continue'} onPress={() => navigation.navigate('Investment Goals Screen')} />
         </SafeAreaView>
@@ -88,25 +128,87 @@ const styles = StyleSheet.create({
         height: 20,
         color: Themes.colors.neutral_800,
     },
+    
+    // name: {
+    //     color: Themes.colors.neutral_800,
+    // },
+    // drop: {
+    //     width: 24,
+    //     height:24,
+    //     marginRight: 20
+    // },
+    ///////
+
     group: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        paddingLeft: 20,
+        flexDirection: 'column',
         gap: 40,
         backgroundColor: '#FFFFFF',
         borderWidth: 2,
         borderColor: Themes.colors.neutral_200,
         borderRadius: 16,
         width: 358,
-        height: 48
+        height: 192,
+        alignItems: 'center',
+    },
+    groupup: {
+        flexDirection: 'row',
+        backgroundColor: '#FFFFFF',
+        borderWidth: 2,
+        borderColor: Themes.colors.neutral_200,
+        borderRadius: 16,
+        width: 358,
+        height: 48,
+        justifyContent: 'space-between'
+        
+
     },
     name: {
         color: Themes.colors.neutral_800,
+        marginLeft: 20,
+        marginTop: 10,
+        flexDirection: 'row'
     },
-    drop: {
+    up: {
         width: 24,
-        height:24,
-        marginRight: 20
+        height:24
+    },
+    arrow: {
+        flexDirection: 'row',
+        height: 48,
+        marginRight: 15,
+        // justifyContent: 'flex-end',
+        // marginRight: 52,
+        // paddingRight: 24,
+        paddingTop: 12
+    },
+    arrowDown: {
+        flexDirection: 'row',
+        height: 48,
+        marginLeft: 300,
+        // justifyContent: 'flex-end',
+        // marginRight: 52,
+        // paddingRight: 24,
+        paddingTop: 12
+    },
+    low: {
+        flexDirection: 'row',
+        width: 358,
+        height: 48,
+        backgroundColor: '#FFFFFF',
+        borderWidth: 2,
+        borderColor: Themes.colors.neutral_200,
+    },
+    medium: {
+        flexDirection: 'row',
+        width: 358,
+        height: 48,
+        backgroundColor: '#FFFFFF',
+        borderBottomWidth: 2,
+        borderLeftWidth: 2,
+        borderRightWidth: 2,
+        borderColor: Themes.colors.neutral_200,
+    }, 
+    high: {
+        width: 358
     }
 })

@@ -27,7 +27,7 @@ export default function BorderedFlatlist ({data}) {
             <View style={styles.itemContainer}>
                 <View style={styles.leftContainer}>
                     <AppText.ParagraphTwo>{text}</AppText.ParagraphTwo>
-                    <MyTooltip text={tooltiptext}/>
+                    {/* <MyTooltip text={tooltiptext}/> */}
                 </View>
                 <AppText.ParagraphTwo>{value}</AppText.ParagraphTwo>
             </View>
@@ -48,6 +48,7 @@ export default function BorderedFlatlist ({data}) {
                 keyExtractor={(item) => item.id}
                 ItemSeparatorComponent={<Divider.Horizontal/>}
                 style={styles.flatList}
+                scrollEnabled={false}
             />
         </View>
     );

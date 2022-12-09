@@ -56,7 +56,7 @@ export default function ConfirmationDavidJenny({navigation, route}) {
                     onChangeText={setInput}
                     onPressOut={() => {Keyboard.dismiss()}}
                     value={input}
-                    placeholder="Write down any unlisted reasons..."
+                    placeholder="Write an invitation message to your friends"
                     keyboardType="default"
                     placeholderTextColor={Themes.colors.neutral_500}
                 />

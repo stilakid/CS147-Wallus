@@ -15,7 +15,7 @@ import { AppText } from "../CustomText/customText";
 // to retrieve current user data from browser context. We can only get it through a request to the server and it is an async function,
 // which is not playing well with the code. 
 
-export default function Messages() {
+export default function Messages({scrollRef}) {
     const [messages, setMessages] = useState([])
 
     const getData = async () => {
@@ -24,11 +24,15 @@ export default function Messages() {
             .select('*, profile: profiles(username)');
 
         if (!data) {
-            console.warn('no data');
+            // console.warn('no data');
             return
         }
 
         setMessages(data);
+
+        if (scrollRef) {
+            scrollRef.current?.scrollToOffset({offset: 0});
+        }
     } 
 
     useEffect(() => {

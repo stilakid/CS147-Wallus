@@ -7,6 +7,7 @@ import { AppButton } from "../../components/Buttons/buttons";
 import { Divider } from "../../components/Divider/divider"
 import { Navigation } from "lucide-react-native";
 import InvestmentDisplayCard from "../../components/Cards/InvestmentDisplayCard";
+import { MyTooltip } from "../../components/ToolTip/tooltip";
 
 // Data
 import dailyMovers from "../../../assets/stockData/dailyMovers";
@@ -42,10 +43,10 @@ export default function MarketScreen({navigation, route}) {
             <View style={{flexDirection:'row',justifyContent:'row'}}>
                 <AppText.TitleSemiBoldTwo style={[styles.heading, {marginBottom:16, width: 'auto'}]}>Daily movers</AppText.TitleSemiBoldTwo>
                 <View style={{marginTop: 2, marginLeft: 8}}>
-                    <AppButton.toolTip></AppButton.toolTip>
+                    <MyTooltip text={"Stocks today that have seen high number of purchases today"}/>
                 </View>
             </View>
-            <View style={[{flexDirection: 'row', marginBottom: 56}]}> 
+            <View style={[{flexDirection: 'row', marginBottom: 56, justifyContent:'center'}]}> 
                 <InvestmentDisplayCard 
                     cardType={'vertical'}
                     companyName={dailyMovers['tesla'].companyName} 
@@ -126,9 +127,9 @@ export default function MarketScreen({navigation, route}) {
         <SafeAreaView style={styles.container}>
             <FlatList data={placeholder}
             renderItem={(item) => renderPlaceholder(item)}
-            >
-            </FlatList>
-            
+            style={styles.flatlistContainer}
+            showsVerticalScrollIndicator={false}
+            />            
         </SafeAreaView>
     );
 }
@@ -137,16 +138,16 @@ export default function MarketScreen({navigation, route}) {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: Themes.colors.white,
-        alignItems: "center",
-        justifyContent: 'center',
         flex: 1,
+    },
+    flatlistContainer: {
+        marginHorizontal:16,
     },
     heading: {
         color: Themes.colors.neutral_800,
-        width: 358,
+        width: '100%',
     },
     paragraph: {
         color: Themes.colors.neutral_600,
-        width: 358,
     }
 });

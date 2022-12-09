@@ -11,6 +11,11 @@ import { HelpCircle } from 'lucide-react-native';
 import { Bell } from "lucide-react-native"
 import { ChevronRight } from 'lucide-react-native';
 import { Send } from 'lucide-react-native';
+import { Dimensions } from 'react-native';
+
+const windowWidth = Dimensions.get('window').width; 
+const fullWidth = windowWidth - 32;
+const halfWidth = (windowWidth-48)/2;
 
 export const AppButton = ({text, content, onPress, TouchableOpacityStyle, TextStyle}) => {
 
@@ -565,7 +570,7 @@ AppButton.toolTip = ({onPress, TouchableOpacityStyle}) => {
 
 AppButton.notif = ({navigation, TouchableOpacityStyle}) => {
 
-    const content = <Bell color={Themes.colors.neutral_600} size={20} />
+    const content = <Bell color={Themes.colors.neutral_600} size={30} />
 
     return (
         <AppButton
@@ -678,7 +683,7 @@ const styles = StyleSheet.create({
     // Button Widths
     
     fullWidth: {
-        width: 358
+        width: fullWidth
     },
 
     smallWidth: {
@@ -692,7 +697,7 @@ const styles = StyleSheet.create({
         width: 61
     },
     halfWidth: {
-        width: 173
+        width: halfWidth
     },
     mediumWidth: {
         width: 249

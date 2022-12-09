@@ -71,7 +71,8 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     innerContainer: {
-        marginHorizontal: 16
+        marginHorizontal: 16,
+        flex: 1
     }
 });
 

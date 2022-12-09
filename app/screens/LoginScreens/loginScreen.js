@@ -26,7 +26,7 @@ export default function LoginScreen({navigation, route}) {
 
 
     const onSignInPressed = async (data) => {
-        console.warn("Sign in");
+        // console.warn("Sign in");
         console.log(data);
 
         const {error} = await supabase.auth.signInWithPassword(
@@ -37,8 +37,8 @@ export default function LoginScreen({navigation, route}) {
         );
 
         if (error) {
-            console.log('error', error);
-            console.warn('error', error);
+            // console.log('error', error);
+            // console.warn('error', error);
             return;
         }
 

@@ -3,6 +3,7 @@
     "name": "Wallus",
     "slug": "Wallus",
     "version": "0.0.2",
+    "owner": "stilakid",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",

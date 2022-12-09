@@ -24,7 +24,7 @@ export const GroupStats = ({boughtAt, currentPrice, investingFor, typicalHold}) 
                 <View style={styles.row}>
                     <View style={[styles.column, styles.column1]}>
                         <AppText.LabelBoldOne>You bought at</AppText.LabelBoldOne>
-                        <MyTooltip text={"Price of one share of stock at the time you invested"}/>
+                        <MyTooltip style={styles.tooltip} text={"Price of one share of stock at the time you invested"}/>
                     </View>
                     <View style={[styles.column, styles.column2]}>
                         <AppText.ParagraphTwo>{boughtAt}</AppText.ParagraphTwo>
@@ -36,7 +36,7 @@ export const GroupStats = ({boughtAt, currentPrice, investingFor, typicalHold}) 
                 <View style={styles.row}>
                     <View style={[styles.column, styles.column1]}>
                         <AppText.LabelBoldOne>Current price</AppText.LabelBoldOne>
-                        <MyTooltip text={"The current value of one stock if you sold"}/>
+                        <MyTooltip style={styles.tooltip} text={"The current value of one stock if you sold"}/>
                     </View>
                     <View style={[styles.column, styles.column2]}>
                         <AppText.ParagraphTwo>{currentPrice}</AppText.ParagraphTwo>
@@ -48,7 +48,7 @@ export const GroupStats = ({boughtAt, currentPrice, investingFor, typicalHold}) 
                 <View style={styles.row}>
                     <View style={[styles.column, styles.column1]}>
                         <AppText.LabelBoldOne>You have been investing for</AppText.LabelBoldOne>
-                        <MyTooltip text={"Time since you first started investing in this stock"}/>
+                        <MyTooltip style={styles.tooltip} text={"Time since you first started investing in this stock"}/>
                     </View>
                     <View style={[styles.column, styles.column2]}>
                         <AppText.ParagraphTwo>{investingFor}</AppText.ParagraphTwo>
@@ -60,7 +60,7 @@ export const GroupStats = ({boughtAt, currentPrice, investingFor, typicalHold}) 
                 <View style={styles.row}>
                     <View style={[styles.column, styles.column1]}>
                         <AppText.LabelBoldOne>Typical hold</AppText.LabelBoldOne>
-                        <MyTooltip text={"How long most investors keep this stock before selling"}/>
+                        <MyTooltip style={styles.tooltip} text={"How long most investors keep this stock before selling"}/>
                     </View>
                     <View style={[styles.column, styles.column2]}>
                         <AppText.ParagraphTwo>{typicalHold}</AppText.ParagraphTwo>
@@ -147,8 +147,8 @@ const styles = StyleSheet.create({
         padding: 16
     },
 
-    toolTipDefault: {
-    marginLeft: 4
+    tooltip: {
+    marginTop: 0
     },
 
     investmentStat: {
