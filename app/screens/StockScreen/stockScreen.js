@@ -117,6 +117,7 @@ const styles = StyleSheet.create({
     scrollViewContent: {
         display: 'flex',
         alignItems: "center",
+        marginHorizontal: 16
     },
     portfolioFit: {
         marginBottom: 12,
@@ -133,7 +134,7 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
     },
     bannerContainer: {
-        width: 358,
+        width: '100%',
         marginVertical: 24,
     },
     trendChart: {
