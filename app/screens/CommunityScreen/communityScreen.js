@@ -1,5 +1,5 @@
 // import React from 'react';
-import { Themes } from "../../../assets/themes"
+import { Images, Themes } from "../../../assets/themes"
 
 // Components
 import { StyleSheet, SafeAreaView, Text, View, ScrollView, Image } from "react-native";
@@ -37,7 +37,7 @@ export default function CommunityScreen({navigation, route}) {
                     <View style={styles.news}>
                         <Image
                             style={styles.image}
-                            source={require('../../../assets/profilePic.png')}
+                            source={Images.profilePic.two}
                             resizeMode='contain'
                         />
                         <View style={styles.textContainer}>
@@ -69,7 +69,7 @@ export default function CommunityScreen({navigation, route}) {
                     <View style={[styles.news, {marginTop: 20}]}>
                         <Image
                             style={styles.image}
-                            source={require('../../../assets/profilePic.png')}
+                            source={Images.profilePic.one}
                             resizeMode='contain'
                         />
                         <View style={styles.textContainer}>
@@ -95,12 +95,12 @@ export default function CommunityScreen({navigation, route}) {
                     <View style={[styles.news, {marginTop: 20}]}>
                         <Image
                             style={styles.image}
-                            source={require('../../../assets/profilePic.png')}
+                            source={Images.profilePic.three}
                             resizeMode='contain'
                         />
                         <View style={styles.textContainer}>
-                            <AppText.LabelSemiBoldOne><AppText.LabelSemiBoldOne style={{color: Themes.colors.primary_700}}>Cindy</AppText.LabelSemiBoldOne> sold her Paypal Stock</AppText.LabelSemiBoldOne>
-                            <Text style={styles.investmentStyle}>Paypal · 5hr</Text>
+                            <AppText.LabelSemiBoldOne><AppText.LabelSemiBoldOne style={{color: Themes.colors.primary_700}}>Anna</AppText.LabelSemiBoldOne> joined Crazy Potatoes</AppText.LabelSemiBoldOne>
+                            <Text style={styles.investmentStyle}>S&P500 · 5hr</Text>
                             <View style={styles.rationale}>
                                 <AppText.LabelSemiBoldTwo>Rationale</AppText.LabelSemiBoldTwo>
                                 <AppText.ParagraphTwo style={{color:Themes.colors.neutral_600}}>Need cash </AppText.ParagraphTwo>
@@ -118,12 +118,12 @@ export default function CommunityScreen({navigation, route}) {
                     <View style={[styles.news, {marginTop: 20}]}>
                         <Image
                             style={styles.image}
-                            source={require('../../../assets/profilePic.png')}
+                            source={Images.profilePic.six}
                             resizeMode='contain'
                         />
                         <View style={styles.textContainer}>
-                            <AppText.LabelSemiBoldOne><AppText.LabelSemiBoldOne style={{color: Themes.colors.primary_700}}>Cindy</AppText.LabelSemiBoldOne> sold her Paypal Stock</AppText.LabelSemiBoldOne>
-                            <Text style={styles.investmentStyle}>Paypal · 5hr</Text>
+                            <AppText.LabelSemiBoldOne><AppText.LabelSemiBoldOne style={{color: Themes.colors.primary_700}}>Justine</AppText.LabelSemiBoldOne> invested in VTI</AppText.LabelSemiBoldOne>
+                            <Text style={styles.investmentStyle}>VTI · 5hr</Text>
                             <View style={styles.rationale}>
                                 <AppText.LabelSemiBoldTwo>Rationale</AppText.LabelSemiBoldTwo>
                                 <AppText.ParagraphTwo style={{color:Themes.colors.neutral_600}}>I wanted to diversify my portfolio!</AppText.ParagraphTwo>
@@ -157,6 +157,10 @@ const styles = StyleSheet.create({
     scrollView: {
         width: '100%',
         marginHorizontal:16,
+    },
+    image: {
+        width:40,
+        height:40,
     },
     scrollViewContent: {
         display: 'flex',
