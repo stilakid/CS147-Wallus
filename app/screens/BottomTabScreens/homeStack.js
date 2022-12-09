@@ -27,13 +27,13 @@ import SelectFriends from "../InviteFriend/selectFriends";
 import InviteConfirmation from "../InviteFriend/InviteConfirmation";
 import InviteCongratsScreen from "../CongratulationsScreen/inviteCongratulations";
 import ChatScreen from "../ChatScreen/chatScreen";
-import SelectFriends from "../InviteFriend/selectFriends";
+
 import ProfileScreen from "../ProfileScreen/profileScreen";
 import AskInvestmentExpScreen from "../UpdatePrefScreens/askInvestmentExp";
 import InvestmentGoalsScreen from "../UpdatePrefScreens/investmentGoals";
 import UpdatePrefConfirmation from "../UpdatePrefScreens/updatePrefConfirmation";
 
-import InviteConfirmation from "../InviteFriend/InviteConfirmation";
+
 import David from "../InviteFriend/davidSelected";
 import Jenny from "../InviteFriend/jennySelected";
 import JennyDavid from "../InviteFriend/JennyDavid";
