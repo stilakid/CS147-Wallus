@@ -5,11 +5,14 @@ import {
   Text,
   SafeAreaView,
   ActivityIndicator,
+  View
 } from "react-native";
+import { Themes } from "../../../assets/themes";
+import { AppButton } from "../Buttons/buttons";
 import List from "./List";
 import SearchBar from "./SearchBar";
 
-const Home = () => {
+const Home = ({navigation}) => {
   const [searchPhrase, setSearchPhrase] = useState("");
   const [clicked, setClicked] = useState(false);
   const [fakeData, setFakeData] = useState();
@@ -18,7 +21,7 @@ const Home = () => {
   useEffect(() => {
     const getData = async () => {
       const apiResponse = await fetch(
-        "https://mocki.io/v1/6c9e8528-d67f-4d93-8aec-de4cffc45089"
+        "https://mocki.io/v1/a2e2c101-8336-4a61-94ae-9c61ad2101ab"
       );
       const data = await apiResponse.json();
       setFakeData(data);
@@ -28,20 +31,27 @@ const Home = () => {
 
   return (
     <SafeAreaView style={styles.root}>
-      {!clicked && <Text style={styles.title}>Financial Dictionary</Text>}
-      <SearchBar
-        searchPhrase={searchPhrase}
-        setSearchPhrase={setSearchPhrase}
-        clicked={clicked}
-        setClicked={setClicked}
-      />
-      {
+      {/* {!clicked && <Text style={styles.title}>Financial Dictionary</Text>} */}
+      <View style={styles.header}>
 
-          <List
-            searchPhrase={searchPhrase}
-            data={fakeData}
-            setClicked={setClicked}
-          />
+        <SearchBar
+          searchPhrase={searchPhrase}
+          setSearchPhrase={setSearchPhrase}
+          clicked={clicked}
+          setClicked={setClicked}
+          navigation={navigation}
+        />
+      </View>
+
+      {
+          <View style={{alignItems: 'center'}}>
+            <List
+              searchPhrase={searchPhrase}
+              data={fakeData}
+              setClicked={setClicked}
+              navigation={navigation}
+            />
+          </View>
 
       }
     </SafeAreaView>
@@ -52,8 +62,9 @@ export default Home;
 
 const styles = StyleSheet.create({
   root: {
-    justifyContent: "center",
-    alignItems: "center",
+    // justifyContent: "center",
+    // alignItems: "center",
+    // backgroundColor: 'red'
   },
   title: {
     width: "100%",
@@ -62,4 +73,8 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginLeft: "10%",
   },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  }
 });

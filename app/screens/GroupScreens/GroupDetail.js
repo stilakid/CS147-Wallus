@@ -76,7 +76,7 @@ export default function GroupDetail({navigation, route}) {
             textOne='Invite friends' 
             textTwo={'Buy'} 
             textThree={'Sell'} 
-            onPressOne={() => navigation.navigate('Invitation')} 
+            onPressOne={() => navigation.navigate('Select Friends')} 
             onPressTwo={() => navigation.navigate('Buy', {dataSource:'investmentGroups', key: groupID, firstPurchase: false})} 
             onPressThree={() => navigation.navigate('Sell', {dataSource: 'investmentGroups', key:groupID})}
         />
@@ -170,7 +170,8 @@ export default function GroupDetail({navigation, route}) {
                 </TouchableWithoutFeedback>
             </ScrollView>
 
-            {buttonDisplayed}
+            <AppFloatingButton.PrimaryThickTriple textOne='Invite Friends' textTwo={'Buy'} textThree={'Sell'} onPressOne={() => navigation.navigate('Select Friends')} onPressTwo={() => navigation.navigate('Buy')} onPressThree={() => navigation.navigate('Sell')}/>
+
         </SafeAreaView>
     );
 }
@@ -231,8 +232,8 @@ const styles = StyleSheet.create({
         alignItems:"flex-end",
     },
     words: {
+        alignItems: 'flex-start',
         marginBottom:16,
-        alignItems: 'flex-start'
     },
     rationale: {
         marginVertical: 24,

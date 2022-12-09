@@ -7,29 +7,37 @@ import {
   FlatList,
   SafeAreaView,
 } from "react-native";
+import { isTemplateSpan } from "typescript";
+import { Themes } from "../../../assets/themes";
+import { AppButton } from "../Buttons/buttons";
+import { AppText } from "../CustomText/customText";
+import { Navigation } from 'lucide-react-native'
 
 // definition of the Item, which will be rendered in the FlatList
-const Item = ({ name, details }) => (
+const Item = ({ name, details, nav, navigation }) => (
   <View style={styles.item}>
-    <Text style={styles.title}>{name}</Text>
-    {/* <Text style={styles.details}>{details}</Text> */}
+    <View style={styles.header}>
+      <AppText.LabelBoldOne style={styles.title}>{name}</AppText.LabelBoldOne>
+      <AppButton.rightArrow onPress={()=>{navigation.navigate(nav)}}></AppButton.rightArrow>
+    </View>
+    <AppText.ParagraphTwo style={{color: Themes.colors.neutral_500}}>{details}</AppText.ParagraphTwo>
   </View>
 );
 
 // the filter
-const List = ({ searchPhrase, setClicked, data }) => {
+const List = ({ searchPhrase, setClicked, data, navigation }) => {
   const renderItem = ({ item }) => {
     // when no input, show all
     if (searchPhrase === "") {
-      return <Item name={item.name} details={item.details} />;
+      return <Item name={item.name} details={item.details} nav={item.nav} navigation={navigation}/>;
     }
     // filter of the name
     if (item.name.toUpperCase().includes(searchPhrase.toUpperCase().trim().replace(/\s/g, ""))) {
-      return <Item name={item.name} details={item.details} />;
+      return <Item name={item.name} details={item.details} nav={item.nav} navigation={navigation}/>;
     }
     // filter of the description
     if (item.details.toUpperCase().includes(searchPhrase.toUpperCase().trim().replace(/\s/g, ""))) {
-      return <Item name={item.name} details={item.details} />;
+      return <Item name={item.name} details={item.details} nav={item.nav} navigation={navigation}/>;
     }
   };
 
@@ -57,11 +65,25 @@ const styles = StyleSheet.create({
     margin: 10,
     height: "85%",
     width: "100%",
+    alignItems: 'center',
   },
   item: {
-    margin: 30,
-    borderBottomWidth: 2,
-    borderBottomColor: "lightgrey"
+    marginVertical: 30,
+    borderWidth: 1,
+    borderRadius: 16,
+    alignItems: "flex-start",
+    padding: 16,
+    height: 114,
+    width: 358,
+    backgroundColor: Themes.colors.white,
+  },
+  header: {
+    width: 326,
+    height: 24,
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 16
   },
   title: {
     fontSize: 20,

@@ -3,11 +3,19 @@ import React, { useState } from "react";
 import { StyleSheet, TextInput, View, Keyboard, Button } from "react-native";
 import { Feather, Entypo } from "@expo/vector-icons";
 import { Themes } from "../../../assets/themes";
+import { AppButton } from "../Buttons/buttons";
 
-const SearchBar = ({clicked, setClicked, searchPhrase, setSearchPhrase}) => {
+const SearchBar = ({clicked, setClicked, searchPhrase, setSearchPhrase, navigation}) => {
     // const [clicked, setCLicked] = useState(false)
     // const [searchPhrase, setSearchPhrase] = useState('')
     return (
+      <>
+        {!clicked && (
+          <View style={{marginLeft: 10}}>
+          <AppButton.goBackDic
+            navigation={navigation}/>
+          </View>
+        )}
         <View style={styles.container}>
             <View
                 style={
@@ -16,6 +24,7 @@ const SearchBar = ({clicked, setClicked, searchPhrase, setSearchPhrase}) => {
                     : styles.searchBar__unclicked
                 }
             >
+            
                 {/* search Icon */}
                 <Feather
                 name="search"
@@ -53,6 +62,7 @@ const SearchBar = ({clicked, setClicked, searchPhrase, setSearchPhrase}) => {
                 </View>
             )}
         </View>
+        </>
     );
 };
 export default SearchBar;
@@ -60,17 +70,17 @@ export default SearchBar;
 // styles
 const styles = StyleSheet.create({
   container: {
-    margin: 15,
+    margin: 16,
     justifyContent: "flex-start",
     alignItems: "center",
     flexDirection: "row",
-    width: "90%",
+    // width: "90%",
 
   },
   searchBar__unclicked: {
     padding: 10,
     flexDirection: "row",
-    width: "95%",
+    width: "90%",
     backgroundColor: Themes.colors.white,
     borderRadius: 15,
     alignItems: "center",

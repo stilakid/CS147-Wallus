@@ -1,7 +1,7 @@
 import { Themes } from "../../../assets/themes"
 
 // Components
-import { StyleSheet, SafeAreaView, Text, View, Button, SectionList, Pressable } from "react-native";
+import { StyleSheet, SafeAreaView, Text, View, Button, SectionList, Pressable, Keyboard } from "react-native";
 import { AppText } from "../../components/CustomText/customText";
 import { AppButton } from "../../components/Buttons/buttons";
 import { Divider } from "../../components/Divider/divider"
@@ -17,7 +17,7 @@ import Header from "../../components/Header/header";
 import { useEffect, useState } from "react";
 import Checkbox from "../../components/Checkbox/Checkbox";
 
-export default function SelectFriends({navigation, route}) {
+export default function Jenny({navigation, route}) {
     const [value, setValue] = useState(0)
     console.log({value});
 
@@ -35,7 +35,9 @@ export default function SelectFriends({navigation, route}) {
             </View>
             <AppText.TitleBoldOne style={{width:358, marginBottom:24}}>Select friends to invite</AppText.TitleBoldOne>
             <View style={styles.box}>
-
+                <View style={styles.jennybox}>
+                    <AppText.LabelSemiBoldTwo style={styles.addedName}>Jenny</AppText.LabelSemiBoldTwo> 
+                </View>
             </View>
             <ScrollView> 
                 <View style={styles.people}>
@@ -50,7 +52,7 @@ export default function SelectFriends({navigation, route}) {
                                 <AppText.ParagraphTwo style={styles.textGroup}>2 shared groups</AppText.ParagraphTwo> 
                             </View>
                         </View>
-                        <TouchableOpacity onPress={() => navigation.navigate('David')}>
+                        <TouchableOpacity onPress={() => navigation.navigate('JennyDavid')}>
                             <Pressable style={styles.notSelectedContainer} onPress={() => {setIsSelected(!isSelected)}}>
                                 <Check color={"#FFFFFF"} size={20}/>
                             </Pressable>
@@ -82,8 +84,8 @@ export default function SelectFriends({navigation, route}) {
                                 <AppText.ParagraphTwo style={styles.textGroup}>2 shared groups</AppText.ParagraphTwo> 
                             </View>
                         </View>
-                        <TouchableOpacity onPress={() => navigation.navigate('Jenny')}>
-                            <Pressable style={styles.notSelectedContainer} onPress={() => {setIsSelected(!isSelected)}}>
+                        <TouchableOpacity onPress={() => navigation.navigate('Select Friends')}>
+                            <Pressable style={styles.selectedContainer} onPress={() => {setIsSelected(!isSelected)}}>
                                 <Check color={"#FFFFFF"} size={20}/>
                             </Pressable>
                         </TouchableOpacity>
@@ -92,7 +94,7 @@ export default function SelectFriends({navigation, route}) {
             </ScrollView>
             
             
-            <AppFloatingButton.DisabledThickOne text={'Next'}/>
+            <AppFloatingButton.PrimaryThickOne text={'Next'} onPress={()=> navigation.navigate("confirmationJenny")}/>
         </SafeAreaView>
     );
 }
@@ -143,7 +145,9 @@ const styles = StyleSheet.create({
         height: 48,
         backgroundColor: Themes.colors.neutral_100,
         borderRadius: 8,
-        marginBottom: 16
+        marginBottom: 16,
+        flexDirection: 'row',
+        padding: 12
     },
     people: {
         flexDirection: 'column',
@@ -170,6 +174,20 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderColor: Themes.colors.neutral_200,
         borderRadius: 8,
+    },
+    addedName: {
+        color: Themes.colors.neutral_600,
+    },
+    jennybox: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#FFFFFF',
+        borderWidth: 2,
+        borderColor: Themes.colors.neutral_200,
+        borderRadius: 8,
+        width: 54,
+        height: 32
     },
     outermostContainer: {
         display: 'flex',

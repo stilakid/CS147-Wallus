@@ -1,6 +1,6 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, TouchableOpacity, Image } from "react-native";
 import { AppButton } from "./buttons";
-import { Themes } from "../../../assets/themes";
+import { Themes, Images } from "../../../assets/themes";
 
 
 const onSignInFacebook = () => {
@@ -20,13 +20,33 @@ export function SocialSignInButtons() {
 
     return (
         <View style={styles.container} >
-            <AppButton.SecondaryOutlineThickOne
+            <View style={{flexDirection: 'row', justifyContent: 'center'}}>
+                <TouchableOpacity
+                    onPress={onSignInFacebook}
+                    TouchableOpacityStyle={styles.facebookContainer}
+                    >
+                    <Image source={Images.company.google} style={[styles.socialButton,{borderColor:Themes.colors.neutral_200, borderWidth:2, borderRadius:999} ]}/>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    onPress={onSignInGoogle}
+                    TouchableOpacityStyle={styles.googleContainer}
+                    >
+                    <Image source={Images.company.apple} style={styles.socialButton}/>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    onPress={onSignInApple}
+                    TouchableOpacityStyle={styles.appleContainer}
+                    >
+                    <Image source={Images.company.facebook} style={styles.socialButton}/>
+                </TouchableOpacity>
+            </View>
+            
+            {/* <AppButton.SecondaryOutlineThickOne
                 text={'Sign In with Facebook'}
                 onPress={onSignInFacebook}
                 TouchableOpacityStyle={styles.facebookContainer}
                 TextStyle={styles.facebookText}
             />
-
             <AppButton.SecondaryOutlineThickOne
                 text={'Sign In with Google'}
                 onPress={onSignInGoogle}
@@ -38,7 +58,7 @@ export function SocialSignInButtons() {
                 onPress={onSignInApple}
                 TouchableOpacityStyle={styles.appleContainer}
                 TextStyle={styles.appleText}
-            />
+            /> */}
         </View>
     );
 }
@@ -46,7 +66,7 @@ export function SocialSignInButtons() {
 
 const styles = StyleSheet.create({
     container: {
-        marginVertical: 16
+        marginVertical: 24
     },
     facebookContainer: {
         backgroundColor: '#1877F2',
@@ -67,5 +87,10 @@ const styles = StyleSheet.create({
     },
     appleText: {
         color: Themes.colors.white
+    },
+    socialButton: {
+        height:40,
+        width:40,
+        marginHorizontal:8,
     }
 })

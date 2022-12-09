@@ -14,7 +14,7 @@ import { useState } from "react";
 import InvitationCard from "../../components/Cards/InvitationCard";
 
 
-export default function CommunityScreen({navigation, route}) {
+export default function ChooseInvestmentGroup({navigation, route}) {
     // const {  } = route.params;
     const [value, setValue] = useState(0)
     console.log({value});

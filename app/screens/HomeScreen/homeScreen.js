@@ -17,6 +17,7 @@ import Home from '../../components/SearchBar/Home'
 
 //Investment group data
 import investmentGroups from "../../../assets/stockData/investmentGroups";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 export default function HomeScreen({navigation, route}) {
     const bellContent = <Bell color={Themes.colors.neutral_600} size={20} />
@@ -61,16 +62,16 @@ export default function HomeScreen({navigation, route}) {
     const renderPlaceholder =()=> {
         return(
             <>
-                <View style={styles.header}>
-                    <View style={styles.nameCard}>
-                        <Image style={styles.profilePic} source={require("../../../assets/profilePic.png")} resizeMode='contain'></Image>
-                        <View style={styles.nameCardText}>
-                            <AppText.LabelBoldOne>Emily Sanders</AppText.LabelBoldOne>
-                            <AppText.LabelSemiBoldTwo style={{color: Themes.colors.neutral_500}}> @emilysndr</AppText.LabelSemiBoldTwo>
-                        </View>
+            <View style={styles.header}>
+                <TouchableOpacity style={styles.nameCard} onPress={()=> navigation.navigate("Profile Screen")}>
+                    <Image style={styles.profilePic} source={require("../../../assets/profilePic.png")} resizeMode='contain'></Image>
+                    <View style={styles.nameCardText}>
+                        <AppText.LabelBoldOne>Emily Sanders</AppText.LabelBoldOne>
+                        <AppText.LabelSemiBoldTwo style={{color: Themes.colors.neutral_500}}> @emilysndr</AppText.LabelSemiBoldTwo>
                     </View>
-                    <AppButton.notif navigation={navigation}/>
-                </View>
+                </TouchableOpacity>
+                <AppButton.notif navigation={navigation}/>
+            </View>
 
                 <Milestone></Milestone>
 

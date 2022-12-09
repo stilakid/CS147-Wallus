@@ -7,7 +7,7 @@ import { AppButton } from "../../components/Buttons/buttons";
 import { Divider } from "../../components/Divider/divider"
 import { Navigation } from "lucide-react-native";
 
-export default function OnboardingConfirmationSCreen({navigation, route}) {
+export default function UpdatePrefConfirmation({navigation, route}) {
     // const {  } = route.params;
     return(
         <SafeAreaView style={styles.container}>
@@ -16,14 +16,14 @@ export default function OnboardingConfirmationSCreen({navigation, route}) {
                 <AppText.TitleBoldOne style={{color:Themes.colors.neutral_800, textAlign: 'center'}}>
                     Congratulations!</AppText.TitleBoldOne>
                 <AppText.LabelSemiBoldOne style={{color: Themes.colors.neutral_600, textAlign: 'center', marginTop: 16}}>
-                    You just finished setting up.</AppText.LabelSemiBoldOne>
+                    Your Wallus Tips and recommendations will be adjusted to your updated settings</AppText.LabelSemiBoldOne>
             </View>
             {/* <AppButton.PrimaryThickTwo text="Create first investment group"/>
 
             {/* Buttons are not linked yet */}
 
             {/* <View style={{paddingVertical:12}}>  */}
-                <AppButton.PrimaryThickTwo text="Home" onPress={() => navigation.navigate('Login Screen')} />
+                <AppButton.PrimaryThickTwo text="Back to Profiles" onPress={() => navigation.navigate('Profile Screen')} />
             {/* </View> */}
         </SafeAreaView>
     );

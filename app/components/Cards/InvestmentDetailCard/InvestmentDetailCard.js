@@ -4,6 +4,7 @@ import { AppText } from "../../../components/CustomText/customText";
 import { AppButton } from "../../../components/Buttons/buttons";
 import { SelectionOptions } from "../../../components/SelectionOptions/SelectionOptions";
 import { TrendTags } from "../../TrendTags/TrendTags";
+import MyTooltip from "../../ToolTip/tooltip";
 
 export default function InvestmentDetailCard({investAmount, trendText, trendGraphURL}) {
     // const {  } = route.params;
@@ -12,7 +13,7 @@ export default function InvestmentDetailCard({investAmount, trendText, trendGrap
             <View style={styles.header}>
                 <AppText.TitleSemiBoldFour style={{color:Themes.colors.neutral_800}}>Your investment</AppText.TitleSemiBoldFour>
                 <View style={styles.textAlignWrapper}>
-                    <AppButton.toolTip text={"this is the tooltip text for what this investment card means"}/>
+                    
                 </View>
             </View>
             <AppText.TitleBoldOne style={{color:Themes.colors.neutral_800, marginBottom: 16}}>{investAmount}</AppText.TitleBoldOne>
@@ -28,7 +29,7 @@ export default function InvestmentDetailCard({investAmount, trendText, trendGrap
             <View style={styles.footer}>
                 <TrendTags.smallGreen tagText={"1Y: 12.88%"}/>
                 <View style={{marginLeft:8}}>
-                    <AppButton.toolTip text={"this is the tooltip text for what this tag means"}/>
+                    
                 </View>
             </View>
         </View>
