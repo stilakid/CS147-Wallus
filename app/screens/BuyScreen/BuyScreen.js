@@ -33,25 +33,26 @@ export default function BuyScreen ({navigation, route}){
     const [value, setValue] = useState(0)
     return (
         <SafeAreaView style={styles.container}>
-            <Header navigation={navigation} hasDivider={false} />
-            <AppText.TitleBoldOne style={{width:358, marginBottom:24}}>You are buying</AppText.TitleBoldOne>
-            <InvestmentDisplayCard 
-                cardType={'horizontal'} 
-                companyName={stock.companyName} 
-                logoURL={stock.logoURL} 
-                status={stock.status} 
-                stockPrice={stock.stockPrice}
-                recRationale={'Invested by Dan'}
-                style={[styles.borderedContainer, {marginBottom: 12}]}
-            />
-            <DropdownText 
-                titleText={"What does buying a stock mean?"} 
-                bodyText={"Sell refers to converting non-liquid (asset that cannot be easily converted to cash), into liquid proptery (similar to cash). In our case, that would be converting the S&P 500 stock into $56.67."}
-                style={{marginBottom: 40}}
-            />
-            <MoneyAmountInput/>
+            <View style={styles.innerContainer}>
+                <Header navigation={navigation} hasDivider={false} />
+                <AppText.TitleBoldOne style={{ marginBottom:24}}>You are buying</AppText.TitleBoldOne>
+                <InvestmentDisplayCard 
+                    cardType={'horizontal'} 
+                    companyName={stock.companyName} 
+                    logoURL={stock.logoURL} 
+                    status={stock.status} 
+                    stockPrice={stock.stockPrice}
+                    recRationale={'Invested by Dan'}
+                    style={[styles.borderedContainer, {marginBottom: 12}]}
+                />
+                <DropdownText 
+                    titleText={"What does buying a stock mean?"} 
+                    bodyText={"Sell refers to converting non-liquid (asset that cannot be easily converted to cash), into liquid proptery (similar to cash). In our case, that would be converting the S&P 500 stock into $56.67."}
+                    style={{marginBottom: 40}}
+                />
+                <MoneyAmountInput/>            
+            </View>
             <AppFloatingButton.PrimaryThickOne text={'Review'} onPress={()=> navigation.navigate("Buy Confirmation", {key:key, dataSource:dataSource, firstPurchase: firstPurchase})}/>
-            
         </SafeAreaView>
     );
 }
@@ -61,6 +62,12 @@ const styles = StyleSheet.create({
         backgroundColor: Themes.colors.white,
         alignItems: "center",
         height: '100%',
+        width: '100%'
+    },
+    innerContainer: {
+        flex: 1,
+        paddingHorizontal: 16,
+        width: '100%',
     },
     borderedContainer: {
         borderRadius: 16,
