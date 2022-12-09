@@ -90,10 +90,9 @@ export default function HomeScreen({navigation, route}) {
     return(
         <SafeAreaView style={styles.scrollView} contentContainerStyle={[styles.scrollViewContent,]}>
             <FlatList data={placeholder}
-            renderItem={(item) => renderPlaceholder(item)}
-            contentContainerStyle={{flexGrow:1,}}
-            >
-            </FlatList>
+                renderItem={(item) => renderPlaceholder(item)}
+                contentContainerStyle={{flexGrow:1,}}
+            />
         </SafeAreaView>
     );
 }
@@ -167,6 +166,5 @@ const styles = StyleSheet.create({
     scrollViewContent: {
         display: 'flex',
         alignItems: "center",
-
     },
 });
