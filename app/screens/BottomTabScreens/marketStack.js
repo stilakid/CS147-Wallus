@@ -33,8 +33,7 @@ return(
         <Stack.Screen name="Stock" component={MarketStockScreen} options={{headerShown: false}} />
         <Stack.Screen name="Buy" component={BuyScreen} options={{headerShown: false}} />
         <Stack.Screen name="Buy Confirmation" component={BuyConfirmationScreen} options={{headerShown: false}} />
-        <Stack.Screen name="Select Friends" component={SelectFriends} options={{headerShown: false}} />
-        <Stack.Screen name="Invite Confirmation" component={InviteConfirmation} options={{headerShown: false}} />
+        <Stack.Screen name="Select Friends" component={SelectFriends} options={{headerShown: false}} /> 
         <Stack.Screen name="Invite Congrats Screen" component={InviteCongratsScreen} options={{headerShown: false}} />
     </Stack.Navigator>
 );
