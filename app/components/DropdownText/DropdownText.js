@@ -48,7 +48,7 @@ export default function DropdownText ({titleText, bodyText, style}) {
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        width: 358,
+        width: '100%',
         borderWidth: 2,
         borderColor: Themes.colors.neutral_200,
         alignItems: 'center',

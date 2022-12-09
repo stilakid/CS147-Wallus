@@ -31,31 +31,33 @@ export default function SellScreen ({navigation, route}){
     const [value, setValue] = useState(0)
     return (
         <SafeAreaView style={styles.container}>
-            <Header navigation={navigation} hasDivider={false} />
-            <AppText.TitleBoldOne style={{width:358, marginBottom:24}}>You are selling</AppText.TitleBoldOne>
-            <InvestmentDisplayCard 
-                cardType={'horizontal'} 
-                companyName={stock.companyName} 
-                logoURL={stock.logoURL} 
-                status={stock.status} 
-                stockPrice={'USD24.32'}
-                recRationale={'Invested by Dan'}
-                style={[styles.borderedContainer, {marginBottom: 12}]}
-            />
-            {/* Change filler text here */}
-            <DropdownText 
-                titleText={"What does selling a stock mean?"} 
-                bodyText={"Sell refers to converting non-liquid (asset that cannot be easily converted to cash), into liquid proptery (similar to cash). In our case, that would be converting the S&P 500 stock into $56.67."}
-                style={{marginBottom: 12}}
-            />
-            <DropdownText 
-                titleText={"How do taxes play a row in selling?"} 
-                bodyText={"Sell refers to converting non-liquid (asset that cannot be easily converted to cash), into liquid proptery (similar to cash). In our case, that would be converting the S&P 500 stock into $56.67."}
-                style={{marginBottom: 40}}
-            />
-            <MoneyAmountInput setValue={setValue}/>
+            <View style={styles.innerContainer} >
+                <Header navigation={navigation} hasDivider={false} />
+                <AppText.TitleBoldOne style={{width:358, marginBottom:24}}>You are selling</AppText.TitleBoldOne>
+                <InvestmentDisplayCard 
+                    cardType={'horizontal'} 
+                    companyName={stock.companyName} 
+                    logoURL={stock.logoURL} 
+                    status={stock.status} 
+                    stockPrice={'USD24.32'}
+                    recRationale={'Invested by Dan'}
+                    style={[styles.borderedContainer, {marginBottom: 12}]}
+                />
+                {/* Change filler text here */}
+                <DropdownText 
+                    titleText={"What does selling a stock mean?"} 
+                    bodyText={"Sell refers to converting non-liquid (asset that cannot be easily converted to cash), into liquid proptery (similar to cash). In our case, that would be converting the S&P 500 stock into $56.67."}
+                    style={{marginBottom: 12}}
+                />
+                <DropdownText 
+                    titleText={"How do taxes play a row in selling?"} 
+                    bodyText={"Sell refers to converting non-liquid (asset that cannot be easily converted to cash), into liquid proptery (similar to cash). In our case, that would be converting the S&P 500 stock into $56.67."}
+                    style={{marginBottom: 40}}
+                />
+                <MoneyAmountInput setValue={setValue}/>
+            </View>
+
             <AppFloatingButton.PrimaryThickOne text={'Review'} onPress={()=> navigation.navigate("Sell Confirmation", {key:key, dataSource:dataSource})}/>
-            
         </SafeAreaView>
     );
 }
@@ -65,6 +67,12 @@ const styles = StyleSheet.create({
         backgroundColor: Themes.colors.white,
         alignItems: "center",
         height: '100%',
+        width: '100%'
+    },
+    innerContainer: {
+        flex: 1,
+        paddingHorizontal: 16,
+        width: '100%',
     },
     borderedContainer: {
         borderRadius: 16,
