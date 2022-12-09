@@ -45,7 +45,6 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: Themes.colors.neutral_700,
         borderRadius: 12,
-       
 
     },
     toolTipDefault: {
