@@ -151,7 +151,7 @@ export default function GroupDetail({navigation, route}) {
 
                         <Divider.Horizontal style={styles.divider}/>
 
-                        <WallusTips.green titleText={'Hold is recommended'} bodyText={'Index funds tend to maintain positive growth overtime despite temporary descreases'} />
+                        <WallusTips.green titleText={'Hold is recommended'} bodyText={'Index funds tend to maintain positive growth overtime despite temporary decreases'} />
                         <InvestmentDetailCard investAmount={group.investAmount}></InvestmentDetailCard>
                         <View style={{marginVertical: 24, width: '100%'}}>
                             <GroupStats boughtAt={group.boughtAt} currentPrice={group.stockPrice} investingFor={group.investingFor} typicalHold={group.typicalHold}></GroupStats>
