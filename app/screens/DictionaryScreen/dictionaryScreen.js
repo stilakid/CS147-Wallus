@@ -21,7 +21,6 @@ export default function DictionaryScreen({navigation, route}) {
             <View style={{width:'100%', paddingHorizontal:16}}>
                 <TouchableOpacity
                     onPress={() => {
-                        console.warn('Search bar cliked');
                         console.log('search bar clicked');
                         navigation.navigate('SearchScreen')
                     }}
