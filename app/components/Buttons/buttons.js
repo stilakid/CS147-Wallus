@@ -570,7 +570,7 @@ AppButton.toolTip = ({onPress, TouchableOpacityStyle}) => {
 
 AppButton.notif = ({navigation, TouchableOpacityStyle}) => {
 
-    const content = <Bell color={Themes.colors.neutral_600} size={20} />
+    const content = <Bell color={Themes.colors.neutral_600} size={30} />
 
     return (
         <AppButton
