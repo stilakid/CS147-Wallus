@@ -75,7 +75,7 @@ export default function InvitationAlex({navigation, route}) {
                         <AppText.LabelSemiBoldThree>5 members</AppText.LabelSemiBoldThree>
                     </View>
                 </View>
-                <AppText.TitleSemiBoldThree style={{width:'100%', marginBottom: 8}}>Movers & Groovers </AppText.TitleSemiBoldThree>
+                <AppText.TitleSemiBoldThree style={{width:'100%', marginBottom: 8}}>Crazy Mangos </AppText.TitleSemiBoldThree>
                 <View style={{flexDirection:'row', alignItems: 'center', width: '100%'}}>
                     <TrendTags.smallBlue tagText={'Stable'}/>
                     <AppText.TitleSemiBoldFour style={{marginTop:4, marginLeft: 8, marginBottom:24}}>VTI</AppText.TitleSemiBoldFour>
