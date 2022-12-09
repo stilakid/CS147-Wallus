@@ -100,9 +100,9 @@ export default function MarketStockScreen({navigation, route}) {
         <SafeAreaView style={styles.container}>
             <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent} >
                 <Header text="" navigation={navigation} hasDivider={false} />
-                <TouchableWithoutFeedback style={{width: 390}} onPress={()=> setButtonExpanded(false)}>
+                <TouchableWithoutFeedback style={{backgroundColor:'blue'}} onPress={()=> setButtonExpanded(false)}>
                     <View style={{width:'100%', alignItems: 'center'}}>
-                        <View style={{width:358}}>
+                        <View style={{width:'100%'}}>
                             <Image source={stock.logoURL} style={{width:48,height:48, marginBottom: 16}}/>
                             <View style={{flexDirection:'row', alignItems: 'center', marginBottom: 16}}>
                                 <AppText.TitleSemiBoldTwo style={{marginRight: 8}}>{stock.companyName}</AppText.TitleSemiBoldTwo>
@@ -112,7 +112,7 @@ export default function MarketStockScreen({navigation, route}) {
                         </View>
                         <TrendChart trendGraphURL={Images.trendCharts.trend2} />
                         <WallusTips.orange titleText={'Not aligned with your preference'} bodyText={'This is a text that explains the reason why it does not match'} />
-                        <InvestmentStat stock={stock.companyName} portfolioFit={'Great'} market={'12.38%'} sp500={'12.88%'} expectedReturn={'3.1%'} volatility={'Medium'} typicalHold={'4Y 3M'} containerStyle={{marginBottom:24}} />
+                        <InvestmentStat stock={stock.companyName} portfolioFit={'Great'} market={'12.38%'} sp500={'12.88%'} expectedReturn={'3.1%'} volatility={'Medium'} typicalHold={'4Y 3M'} />
                         <WallusTips.bordered titleText={'Stock information'} bodyText={stock.stockInfo} style={styles.endOfPage}></WallusTips.bordered>
                     </View>
                 </TouchableWithoutFeedback>     
@@ -138,6 +138,7 @@ const styles = StyleSheet.create({
     scrollViewContent: {
         display: 'flex',
         alignItems: "center",
+        marginHorizontal:16,
     },
     portfolioFit: {
         marginBottom: 12,
