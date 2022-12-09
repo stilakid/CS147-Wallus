@@ -534,7 +534,17 @@ AppButton.goBack = ({navigation, TouchableOpacityStyle}) => {
     );
 }
 
+AppButton.goBackDic = ({navigation, TouchableOpacityStyle}) => {
+    const content = <ChevronLeft color={Themes.colors.black} size={24} />
 
+    return (
+        <AppButton
+            content={content}
+            onPress={() => navigation.navigate('Dictionary Screen')}
+            TouchableOpacityStyle={[ styles.backButton, TouchableOpacityStyle, ]}
+        />
+    );
+}
 
 // **********************************************************************************************
 // Other UI Buttons
@@ -568,7 +578,7 @@ AppButton.notif = ({navigation, TouchableOpacityStyle}) => {
 
 AppButton.rightArrow = ({navigation, TouchableOpacityStyle, onPress}) => {
 
-    const content = <ChevronRight style={{width: 24, height: 24}} color={Themes.colors.neutral_600}></ChevronRight>
+    const content = <ChevronRight color={Themes.colors.black} size={24} ></ChevronRight>
 
     return (
         <AppButton
@@ -578,6 +588,7 @@ AppButton.rightArrow = ({navigation, TouchableOpacityStyle, onPress}) => {
         />
     );
 }
+
 
 AppButton.sendText = ({TouchableOpacityStyle, onPress}) => {
     const content = <Send color={Themes.colors.white} size={24} />;

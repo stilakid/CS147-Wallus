@@ -1,12 +1,11 @@
 import { Themes } from "../../../assets/themes"
 
 // Components
-import { StyleSheet, SafeAreaView, Text, View, Button, Image } from "react-native";
+import { StyleSheet, SafeAreaView, Text, View, Button, Image, TouchableOpacity } from "react-native";
 import { AppText } from "../../components/CustomText/customText";
 import { AppButton } from "../../components/Buttons/buttons";
 import { Divider } from "../../components/Divider/divider"
 import { Navigation } from "lucide-react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
 import Home from "../../components/SearchBar/Home";
 
 
@@ -19,7 +18,10 @@ export default function DictionaryScreen({navigation, route}) {
                 style={styles.image}
                 source={require('../../../assets/dictionary.png')}
             />
-            <TouchableOpacity onClick={() => navigation.navigate('Notifications')}>
+            <TouchableOpacity onPress={() => {
+                console.warn('Search bar cliked');
+                console.log('search bar clicked');
+                navigation.navigate('SearchScreen')}}>
                 <View style={styles.search}>
                     <Image
                         source={require('../../../assets/search.png')}
@@ -42,7 +44,7 @@ export default function DictionaryScreen({navigation, route}) {
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('Dividend')}>
                     <View style={styles.option}>
-                        <AppText.ParagraphTwo style={styles.optionText}>Day Trading</AppText.ParagraphTwo>
+                        <AppText.ParagraphTwo style={styles.optionText}>Dividend</AppText.ParagraphTwo>
                         <Image
                             source={require('../../../assets/arrow.png')}
                             style={styles.arrow}
