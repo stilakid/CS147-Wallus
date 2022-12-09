@@ -277,7 +277,6 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: 'center',
         height: 70,
-        paddingHorizontal: 16
     },
     arrow: {
         width: 24,
