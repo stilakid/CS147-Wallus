@@ -20,7 +20,7 @@ import DividendScreen from "../DictionaryScreen/Dividend";
 import DueDiligence from "../DictionaryScreen/DueDilligence";
 import Dividend from "../DictionaryScreen/Dividend";
 import Taxes from "../DictionaryScreen/Taxes";
-
+import SearchScreen from "../DictionaryScreen/SearchScreen"
 export default function DictionaryStack({navigation, route}) {
     
 // const {  } = route.params;
@@ -34,6 +34,7 @@ return(
         <Stack.Screen name="DueDiligence" component={DueDiligence} options={{headerShown: false}} />
         <Stack.Screen name="Dividend" component={Dividend} options={{headerShown: false}} />
         <Stack.Screen name="Taxes" component={Taxes} options={{headerShown: false}} />
+        <Stack.Screen name="SearchScreen" component={SearchScreen} options={{headerShown: false}} />
     </Stack.Navigator>
 );
 }

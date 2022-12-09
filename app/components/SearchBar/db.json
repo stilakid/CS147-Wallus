@@ -15,3 +15,25 @@
       "details": "Capital is a broad term that can describe anything that confers value or benefit to its owners, such as a factory and its machinery, intellectual property like patents, or the financial assets of a business or an individual."
     }
 ]
+
+
+[
+  {
+    "id": "1",
+    "name": "Due Dilligence",
+    "details": "Due diligence is an investigation, audit, or review performed to confirm facts or details...",
+    "nav": "DueDiligence"
+  },
+  {
+    "id": "2",
+    "name": "Dividend",
+    "details": "A dividend is the distribution of a company's earnings to its shareholders and...",
+    "nav": "Dividend"
+  },
+  {
+    "id": "3",
+    "name": "Taxes",
+    "details": "Taxes are mandatory contributions levied on individuals or corporations by a...",
+    "nav": "Taxes"
+  }
+]
