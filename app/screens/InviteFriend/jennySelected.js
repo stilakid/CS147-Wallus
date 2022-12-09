@@ -1,7 +1,7 @@
 import { Themes } from "../../../assets/themes"
 
 // Components
-import { StyleSheet, SafeAreaView, Text, View, Button, SectionList, Pressable, Keyboard } from "react-native";
+import { StyleSheet, SafeAreaView, Text, View, Button, SectionList, Pressable, Keyboard, TouchableOpacity } from "react-native";
 import { AppText } from "../../components/CustomText/customText";
 import { AppButton } from "../../components/Buttons/buttons";
 import { Divider } from "../../components/Divider/divider"
@@ -9,7 +9,6 @@ import { Navigation } from "lucide-react-native";
 import {CheckBox} from "../../components/Checkbox/Checkbox"
 import { SearchBar } from "react-native-screens";
 import { Check } from 'lucide-react-native';
-import { TouchableOpacity } from "react-native-gesture-handler";
 
 import { ScrollView, Image } from "react-native";
 import { AppFloatingButton } from "../../components/Buttons/floatingButtons";
@@ -18,6 +17,7 @@ import { useEffect, useState } from "react";
 import Checkbox from "../../components/Checkbox/Checkbox";
 
 export default function Jenny({navigation, route}) {
+    const groupID = route.params.group;
     const [value, setValue] = useState(0)
     console.log({value});
 
@@ -25,7 +25,7 @@ export default function Jenny({navigation, route}) {
         <SafeAreaView style={styles.container}>
             <View style={styles.outermostContainer}>
                 <View style={styles.innerContainer}>
-                    <TouchableOpacity onPress={() => navigation.navigate('Group Detail')} TouchableOpacityStyle={styles.goBack}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Group Detail', {group: groupID})} TouchableOpacityStyle={styles.goBack}>
                         <Image
                             source={require('../../../assets/back.png')}
                             style={styles.arrow}
@@ -52,10 +52,10 @@ export default function Jenny({navigation, route}) {
                                 <AppText.ParagraphTwo style={styles.textGroup}>2 shared groups</AppText.ParagraphTwo> 
                             </View>
                         </View>
-                        <TouchableOpacity onPress={() => navigation.navigate('JennyDavid')}>
-                            <Pressable style={styles.notSelectedContainer} onPress={() => {setIsSelected(!isSelected)}}>
+                        <TouchableOpacity onPress={() => navigation.navigate('JennyDavid', {group: groupID})} style={styles.notSelectedContainer}>
+                           
                                 <Check color={"#FFFFFF"} size={20}/>
-                            </Pressable>
+                            
                         </TouchableOpacity>
                     </View>
 
@@ -84,10 +84,10 @@ export default function Jenny({navigation, route}) {
                                 <AppText.ParagraphTwo style={styles.textGroup}>2 shared groups</AppText.ParagraphTwo> 
                             </View>
                         </View>
-                        <TouchableOpacity onPress={() => navigation.navigate('Select Friends')}>
-                            <Pressable style={styles.selectedContainer} onPress={() => {setIsSelected(!isSelected)}}>
+                        <TouchableOpacity onPress={() => navigation.navigate('Select Friends', {group: groupID})} style={styles.selectedContainer}>
+                            
                                 <Check color={"#FFFFFF"} size={20}/>
-                            </Pressable>
+                         
                         </TouchableOpacity>
                     </View>
                 </View>

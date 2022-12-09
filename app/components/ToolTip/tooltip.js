@@ -10,6 +10,7 @@ import { X } from 'lucide-react-native';
 import Tooltip from 'react-native-walkthrough-tooltip';
 import {useState} from 'react'
 import { AppButton } from "../Buttons/buttons";
+import { readBuilderProgram } from "typescript";
 
 export const MyTooltip = ({text}) => {
     const [showTip, setTip] = useState(false);
@@ -25,6 +26,7 @@ export const MyTooltip = ({text}) => {
             onClose={() => setTip(false)}
             placement="right"
             contentStyle={{backgroundColor:Themes.colors.neutral_700}}
+            backgroundColor = 'rgba(0,0,0,0)'
         >
             <AppButton.toolTip Press={() => setTip(true)} TouchableOpacityStyle={[styles.toolTipDefault, styles.columnValue]}/>
         </Tooltip>
