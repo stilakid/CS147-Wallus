@@ -1,5 +1,5 @@
 import { Themes, Images } from "../../../assets/themes"
-import { StyleSheet, SafeAreaView, Text, View, Button, Image, TextInput, ScrollView, FlatList } from "react-native";
+import { StyleSheet, SafeAreaView, Text, View, Button, Image, TextInput, ScrollView, FlatList, KeyboardAvoidingView } from "react-native";
 import Header from "../../components/Header/header";
 import AppInput from "../../components/CustomInput/customInput";
 import { useForm } from "react-hook-form";
@@ -50,25 +50,30 @@ export default function ChatScreen({navigation, route}) {
         <SafeAreaView style={styles.container}>
             <Header text="Brave Potatoes" navigation={navigation} hasDivider={true} />
 
-            <FlatList
-                data={data}
-                renderItem={(item) => renderMessage(item)}
-                style={styles.scrollView}
-                contentContainerStyle={styles.scrollViewContent}
-                inverted
-                ref={scrollRef}
-            />
-
-            <View style={ styles.textControlsContainer } >
-                <AppInput
-                    name="message"
-                    placeholder={'Message'}
-                    control={control}
-                    rules={{required: ''}}
-                    ContainerStyle={styles.messageInput}
+            <KeyboardAvoidingView style={{flex: 1}}
+                behavior={Platform.OS === "ios" ? "padding" : "height"}
+            >
+                <FlatList
+                    data={data}
+                    renderItem={(item) => renderMessage(item)}
+                    style={styles.scrollView}
+                    contentContainerStyle={styles.scrollViewContent}
+                    inverted
+                    ref={scrollRef}
                 />
-                <AppButton.sendText onPress={handleSubmit(onSendPressed)} TouchableOpacityStyle={styles.sendTextButton} />
-            </View>
+
+                <View style={ styles.textControlsContainer } >
+                    <AppInput
+                        name="message"
+                        placeholder={'Message'}
+                        control={control}
+                        rules={{required: ''}}
+                        ContainerStyle={styles.messageInput}
+                    />
+                    <AppButton.sendText onPress={handleSubmit(onSendPressed)} TouchableOpacityStyle={styles.sendTextButton} />
+                </View>
+            </KeyboardAvoidingView>
+            
         </SafeAreaView>
     );
 }
