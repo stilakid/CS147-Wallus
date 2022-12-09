@@ -17,7 +17,7 @@ import InvitationCard from "../../components/Cards/InvitationCard";
 import { TextInput } from "react-native-gesture-handler";
 import { Roboto_400Regular } from "@expo-google-fonts/roboto";
 
-export default function confirmationDavid({navigation, route}) {
+export default function ConfirmationDavid({navigation, route}) {
     const [value, setValue] = useState(0)
     const [input, setInput] = useState(null)
     console.log({value});
