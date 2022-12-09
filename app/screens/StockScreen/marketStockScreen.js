@@ -98,7 +98,7 @@ export default function MarketStockScreen({navigation, route}) {
 
     return(
         <SafeAreaView style={styles.container}>
-            <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent} >
+            <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent} showsVerticalScrollIndicator={false}>
                 <Header text="" navigation={navigation} hasDivider={false} />
                 <TouchableWithoutFeedback style={{backgroundColor:'blue'}} onPress={()=> setButtonExpanded(false)}>
                     <View style={{width:'100%', alignItems: 'center'}}>
