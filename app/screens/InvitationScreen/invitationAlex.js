@@ -12,11 +12,13 @@ import { TrendTags } from "../../components/TrendTags/TrendTags";
 import { AppFloatingButton } from "../../components/Buttons/floatingButtons";
 import { InvestmentStat } from "../../components/BorderedList/borderedList";
 import WallusTips from "../../components/Cards/WallusTips/WallusTips";
+import { Dimensions } from "react-native";
 
 // Lucide Icons
 import { ChevronLeft } from 'lucide-react-native';
 import dailyMovers from "../../../assets/stockData/dailyMovers";
 
+const windowWidth = Dimensions.get('window').width;
 
 const investmentInfo = [
     {
@@ -95,7 +97,7 @@ export default function InvitationAlex({navigation, route}) {
                 </View>
                 
                 {/* Investment stats */}
-                <Divider.Horizontal style={{width: '100%'}} />
+                <Divider.Horizontal style={styles.divider} />
                 <WallusTips.orange titleText={'Not aligned with your preference'} bodyText={'This is a text that explains the reason why it does not match'} />
 
                 <InvestmentStat portfolioFit={'Great'} expectedReturn={'3.1%'} volatility={'Medium'} typicalHold={'4Y 3M'} />
@@ -151,6 +153,9 @@ const styles = StyleSheet.create({
     },
     messageContainer: {
         flex: 1,
+    },
+    divider: {
+        width: windowWidth,
     }
 });
 

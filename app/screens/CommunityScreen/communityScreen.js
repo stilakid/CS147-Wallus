@@ -12,6 +12,7 @@ import { TrendTags } from "../../components/TrendTags/TrendTags";
 import { AppFloatingButton } from "../../components/Buttons/floatingButtons";
 import { InvestmentStat } from "../../components/BorderedList/borderedList";
 import WallusTips from "../../components/Cards/WallusTips/WallusTips";
+import { Dimensions } from "react-native";
 
 // Lucide Icons
 import { Smile } from 'lucide-react-native';
@@ -21,7 +22,7 @@ import RationaleCard from "../../components/Cards/RationaleCard";
 import { MemberList } from "../../components/BorderedList/MemberList";
 
 
-
+const windowWidth = Dimensions.get('window').width;
 
 {/* <Home color="black" size={24} />; */}
 export default function CommunityScreen({navigation, route}) {
@@ -32,7 +33,7 @@ export default function CommunityScreen({navigation, route}) {
         <SafeAreaView style={styles.container}>
             <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent} >
             <Header hasBackButton={false} text={"Community"} isTabPageHeader />
-                <View style={{marginTop: 40}}>
+                <View style={{marginTop: 40, alignItems:'center'}}>
                     <View style={styles.news}>
                         <Image
                             style={styles.image}
@@ -63,7 +64,7 @@ export default function CommunityScreen({navigation, route}) {
                         </View>
                     </View>
 
-                    <Divider.Horizontal />
+                    <Divider.Horizontal style={styles.divider}/>
 
                     <View style={[styles.news, {marginTop: 20}]}>
                         <Image
@@ -89,7 +90,7 @@ export default function CommunityScreen({navigation, route}) {
                         </View>
                     </View>
 
-                    <Divider.Horizontal />
+                    <Divider.Horizontal  style={styles.divider} />
 
                     <View style={[styles.news, {marginTop: 20}]}>
                         <Image
@@ -112,7 +113,7 @@ export default function CommunityScreen({navigation, route}) {
                         </View>
                     </View>
 
-                    <Divider.Horizontal />
+                    <Divider.Horizontal  style={styles.divider} />
 
                     <View style={[styles.news, {marginTop: 20}]}>
                         <Image
@@ -158,14 +159,13 @@ const styles = StyleSheet.create({
     },
     scrollViewContent: {
         display: 'flex',
-        // alignItems: "center",
-        paddingHorizontal: 16
+        alignItems: "center",
+        marginHorizontal: 16,
     },
     news: {
         flexDirection: 'row',
         alignItems: 'flex-start',
-        width: 358,
-        height: 200,
+        marginBottom:24,
     },
     investmentStyle:{
         color: Themes.colors.neutral_500,
@@ -198,5 +198,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginRight:4,
+    },
+    divider: {
+        width:windowWidth,
     }
 });

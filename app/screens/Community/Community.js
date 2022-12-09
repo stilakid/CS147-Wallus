@@ -12,6 +12,7 @@ import { TrendTags } from "../../components/TrendTags/TrendTags";
 import { AppFloatingButton } from "../../components/Buttons/floatingButtons";
 import { InvestmentStat } from "../../components/BorderedList/borderedList";
 import WallusTips from "../../components/Cards/WallusTips/WallusTips";
+import { Dimensions } from "react-native";
 
 // Lucide Icons
 import { Smile } from 'lucide-react-native';
@@ -20,8 +21,7 @@ import { GroupStats } from "../../components/BorderedList/groupBoarderedList";
 import RationaleCard from "../../components/Cards/RationaleCard";
 import { MemberList } from "../../components/BorderedList/MemberList";
 
-
-
+const windowWidth = Dimensions.get('window').width;
 
 {/* <Home color="black" size={24} />; */}
 export default function Community({navigation, route}) {
@@ -63,7 +63,7 @@ export default function Community({navigation, route}) {
                         </View>
                     </View>
 
-                    <Divider.Horizontal />
+                    <Divider.Horizontal style={styles.divider}/>
 
                     <View style={[styles.news, {marginTop: 20}]}>
                         <Image
@@ -89,7 +89,7 @@ export default function Community({navigation, route}) {
                         </View>
                     </View>
 
-                    <Divider.Horizontal />
+                    <Divider.Horizontal style={styles.divider} />
 
                     <View style={[styles.news, {marginTop: 20}]}>
                         <Image
@@ -112,7 +112,7 @@ export default function Community({navigation, route}) {
                         </View>
                     </View>
 
-                    <Divider.Horizontal />
+                    <Divider.Horizontal  style={styles.divider}/>
 
                     <View style={[styles.news, {marginTop: 20}]}>
                         <Image
@@ -200,5 +200,8 @@ const styles = StyleSheet.create({
         borderRadius: 32,
         justifyContent: 'center',
         alignItems: 'center',
+    },
+    divider: {
+        width: windowWidth,
     }
 });

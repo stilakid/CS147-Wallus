@@ -13,6 +13,7 @@ import { AppFloatingButton } from "../../components/Buttons/floatingButtons";
 import { InvestmentStat } from "../../components/BorderedList/borderedList";
 import WallusTips from "../../components/Cards/WallusTips/WallusTips";
 import { useState } from "react";
+import { Dimensions } from "react-native";
 
 // Lucide Icons
 import { ChevronRight } from 'lucide-react-native';
@@ -24,6 +25,9 @@ import RationaleCard from "../../components/Cards/RationaleCard";
 import investmentGroups from "../../../assets/stockData/investmentGroups";
 import { color } from "react-native-reanimated";
 import joiningGroup from "../../../assets/stockData/joiningGroup";
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 
 const investmentInfo = [
@@ -145,7 +149,7 @@ export default function GroupDetail({navigation, route}) {
                         </View>
                         <AppButton.SecondaryOutlineThickOne TouchableOpacityStyle={{marginBottom: 24}} text="Enter Chatroom" onPress={() => navigation.navigate('Chat Screen')}></AppButton.SecondaryOutlineThickOne>
 
-                        <Divider.Horizontal />
+                        <Divider.Horizontal style={styles.divider}/>
 
                         <WallusTips.green titleText={'Hold is recommended'} bodyText={'Index funds tend to maintain positive growth overtime despite temporary descreases'} />
                         <InvestmentDetailCard investAmount={group.investAmount}></InvestmentDetailCard>
@@ -153,7 +157,7 @@ export default function GroupDetail({navigation, route}) {
                             <GroupStats boughtAt={group.boughtAt} currentPrice={group.stockPrice} investingFor={group.investingFor} typicalHold={group.typicalHold}></GroupStats>
                         </View>
 
-                        <Divider.Horizontal />
+                        <Divider.Horizontal style={styles.divider}/>
 
                         <View style={styles.rationale}>
                             <View style={styles.rationaleHeader}>
@@ -179,7 +183,7 @@ export default function GroupDetail({navigation, route}) {
                             />
                         </View>
 
-                        <Divider.Horizontal />
+                        <Divider.Horizontal style={styles.divider}/>
 
                         <WallusTips.white titleText='Stock information' bodyText={group.stockInfo} style={{marginBottom: 80}} />
                         {/* <View style={{height: 60}}></View> */}
@@ -278,5 +282,8 @@ const styles = StyleSheet.create({
     arrow: {
         width: 24,
         height: 24
+    },
+    divider: {
+        width: windowWidth,
     }
 });
