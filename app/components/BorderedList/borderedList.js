@@ -27,7 +27,7 @@ export const InvestmentStat = ({portfolioFit, expectedReturn, volatility, typica
                 <View style={styles.row}>
                     <View style={[styles.columnAlt, styles.columnAlt1]}>
                         <AppText.LabelBoldOne>Past Year's trend</AppText.LabelBoldOne>
-                        <AppButton.toolTip TouchableOpacityStyle={[styles.toolTipDefault, styles.columnValue]}/>
+                        <MyTooltip text={"The change of price of this company's stock versus the overall gain or loss of the entire market"}/>
                     </View>
                     <Divider.Vertical />
                     <View style={styles.columnAlt}>
@@ -82,7 +82,7 @@ export const InvestmentStat = ({portfolioFit, expectedReturn, volatility, typica
                 <View style={styles.row}>
                     <View style={[styles.column, styles.column1]}>
                         <AppText.LabelBoldOne>Historical return</AppText.LabelBoldOne>
-                        <AppButton.toolTip TouchableOpacityStyle={styles.toolTipDefault}/>
+                        <MyTooltip text={"Based off of history, the percentage increase you would expect for an investment in this stock"}/>
                     </View>
                     <View style={[styles.column, styles.column2]}>
                         <AppText.ParagraphTwo>{expectedReturn}</AppText.ParagraphTwo>
@@ -94,7 +94,7 @@ export const InvestmentStat = ({portfolioFit, expectedReturn, volatility, typica
                 <View style={styles.row}>
                     <View style={[styles.column, styles.column1]}>
                         <AppText.LabelBoldOne>Volatility</AppText.LabelBoldOne>
-                        <AppButton.toolTip TouchableOpacityStyle={styles.toolTipDefault}/>
+                        <MyTooltip text={"The amount of variation in the day-to-day value of this investment from Low-High"}/>
                     </View>
                     <View style={[styles.column, styles.column2]}>
                         <AppText.ParagraphTwo>{volatility}</AppText.ParagraphTwo>
@@ -106,7 +106,7 @@ export const InvestmentStat = ({portfolioFit, expectedReturn, volatility, typica
                 <View style={styles.row}>
                     <View style={[styles.column, styles.column1]}>
                         <AppText.LabelBoldOne>Typical Hold</AppText.LabelBoldOne>
-                        <AppButton.toolTip TouchableOpacityStyle={styles.toolTipDefault}/>
+                        <MyTooltip text={"How long most investors keep this stock before selling"}/>
                     </View>
                     <View style={[styles.column, styles.column2]}>
                         <AppText.ParagraphTwo>{typicalHold}</AppText.ParagraphTwo>
