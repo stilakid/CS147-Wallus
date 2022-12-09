@@ -16,7 +16,7 @@ import Header from "../../components/Header/header";
 import { useEffect, useState } from "react";
 import Checkbox from "../../components/Checkbox/Checkbox";
 
-export default function inviteMarketFriend({navigation, route}) {
+export default function InviteMarketFriend({navigation, route}) {
     const groupID = route.params.group;
     const [value, setValue] = useState(0)
     console.log({value});
