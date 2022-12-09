@@ -27,6 +27,10 @@ import SelectFriends from "../InviteFriend/selectFriends";
 import InviteConfirmation from "../InviteFriend/InviteConfirmation";
 import InviteCongratsScreen from "../CongratulationsScreen/inviteCongratulations";
 import ChatScreen from "../ChatScreen/chatScreen";
+import ProfileScreen from "../ProfileScreen/profileScreen";
+import AskInvestmentExpScreen from "../UpdatePrefScreens/askInvestmentExp";
+import InvestmentGoalsScreen from "../UpdatePrefScreens/investmentGoals";
+import UpdatePrefConfirmation from "../UpdatePrefScreens/updatePrefConfirmation";
 
 
 
@@ -58,6 +62,11 @@ export default function HomeStack({navigation, route}) {
             <Stack.Screen name="Select Friends" component={SelectFriends} options={{headerShown: false}}/>
             <Stack.Screen name="Invite Confirmation" component={InviteConfirmation} options={{headerShown: false}}/>
             <Stack.Screen name="Invite Congrats Screen" component={InviteCongratsScreen} options={{headerShown: false}} />
+            <Stack.Screen name="Profile Screen" component={ProfileScreen} options={{headerShown: false}}/>
+            <Stack.Screen name="Ask Investment Experience Screen" component={AskInvestmentExpScreen} options={{headerShown: false}}/>
+            <Stack.Screen name="Investment Goals Screen" component={InvestmentGoalsScreen} options={{headerShown: false}}/>
+            <Stack.Screen name="Update Preference Confirmation Screen" component={UpdatePrefConfirmation} options={{headerShown: false}}/>
+
             
         </Stack.Navigator>
     );
