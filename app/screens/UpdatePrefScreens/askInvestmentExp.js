@@ -7,7 +7,7 @@ import { AppText } from "../../components/CustomText/customText";
 import Header from "../../components/Header/header";
 import { useState } from "react";
 import { AppFloatingButton } from "../../components/Buttons/floatingButtons";
-import { ChevronDown } from 'lucide-react-native'
+import { ChevronDown, ChevronUp } from 'lucide-react-native'
 
 export default function ExpandedPreferencesScreen ({navigation, route}){
     const [value, setValue] = useState(0)
@@ -17,11 +17,12 @@ export default function ExpandedPreferencesScreen ({navigation, route}){
     const downFormat= (
         <>
             <View style={styles.group}>
-                <TouchableOpacity style={styles.arrow} onClick={() => navigation.navigate('Notifications')}>
-                    <Image
+                <TouchableOpacity style={styles.arrowDown} onPress={()=>setDown(false)}>
+                    {/* <Image
                         source={require('../../../assets/up.png')}
                         style={styles.up}
-                    />
+                    /> */}
+                    <ChevronUp style={{color: Themes.colors.black}}></ChevronUp>
                 </TouchableOpacity>
     
         
@@ -50,7 +51,7 @@ export default function ExpandedPreferencesScreen ({navigation, route}){
         <View style={styles.groupup}>
             <AppText.ParagraphTwo style={styles.name}>{input}</AppText.ParagraphTwo>
             <TouchableOpacity style={styles.arrow} onPress={() => {setDown(true), setInput('')}}>
-                <ChevronDown style={{marginRight: 52, color: Themes.colors.black}}></ChevronDown>
+                <ChevronDown style={{color: Themes.colors.black}}></ChevronDown>
             </TouchableOpacity>     
         </View>
     );
@@ -148,6 +149,7 @@ const styles = StyleSheet.create({
         width: 358,
         height: 48,
         alignItems: 'center',
+        justifyContent: 'space-between'
         
 
     },
@@ -163,10 +165,20 @@ const styles = StyleSheet.create({
     },
     arrow: {
         flexDirection: 'row',
-        width: 358,
         height: 48,
-        justifyContent: 'flex-end',
-        paddingRight: 24,
+        marginRight: 15,
+        // justifyContent: 'flex-end',
+        // marginRight: 52,
+        // paddingRight: 24,
+        paddingTop: 12
+    },
+    arrowDown: {
+        flexDirection: 'row',
+        height: 48,
+        marginLeft: 300,
+        // justifyContent: 'flex-end',
+        // marginRight: 52,
+        // paddingRight: 24,
         paddingTop: 12
     },
     low: {
