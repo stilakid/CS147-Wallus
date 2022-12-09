@@ -109,7 +109,7 @@ export default function GroupDetail({navigation, route}) {
 
     return(
         <SafeAreaView style={styles.container}>
-            <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent} >
+            <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent} showsVerticalScrollIndicator={false} >
                 <Header navigation={navigation} hasDivider={false} />
                 
                 <TouchableWithoutFeedback style={{width: '100%'}} onPress={()=> setButtonExpanded(false)}>
