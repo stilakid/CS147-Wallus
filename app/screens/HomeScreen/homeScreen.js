@@ -71,6 +71,9 @@ export default function HomeScreen({navigation, route}) {
                     </View>
                 </TouchableOpacity>
                 <AppButton.notif navigation={navigation}/>
+                <View style={{position: 'absolute'}}>
+                    <View style={{backgroundColor: 'red', width: 10, height: 10, borderRadius: 10, marginLeft: 340, bottom: 7}}></View>
+                </View>
             </View>
 
                 <Milestone></Milestone>
