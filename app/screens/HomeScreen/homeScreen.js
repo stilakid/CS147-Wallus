@@ -51,8 +51,8 @@ export default function HomeScreen({navigation, route}) {
                     stock={group.companyName}
                     status={group.status}
                     memberPicURL={group.memberPicURL}
-                    onPress={()=>navigation.navigate('Group Detail',{group: item})}>
-                </InvitationCard>
+                    onPress={()=>navigation.navigate('Group Detail',{group: item})}
+                />
             </View>
         )
     }
@@ -61,37 +61,37 @@ export default function HomeScreen({navigation, route}) {
     const renderPlaceholder =()=> {
         return(
             <>
-            <View style={styles.header}>
-                <View style={styles.nameCard}>
-                    <Image style={styles.profilePic} source={require("../../../assets/profilePic.png")} resizeMode='contain'></Image>
-                    <View style={styles.nameCardText}>
-                        <AppText.LabelBoldOne>Emily Sanders</AppText.LabelBoldOne>
-                        <AppText.LabelSemiBoldTwo style={{color: Themes.colors.neutral_500}}> @emilysndr</AppText.LabelSemiBoldTwo>
+                <View style={styles.header}>
+                    <View style={styles.nameCard}>
+                        <Image style={styles.profilePic} source={require("../../../assets/profilePic.png")} resizeMode='contain'></Image>
+                        <View style={styles.nameCardText}>
+                            <AppText.LabelBoldOne>Emily Sanders</AppText.LabelBoldOne>
+                            <AppText.LabelSemiBoldTwo style={{color: Themes.colors.neutral_500}}> @emilysndr</AppText.LabelSemiBoldTwo>
+                        </View>
                     </View>
+                    <AppButton.notif navigation={navigation}/>
                 </View>
-                <AppButton.notif navigation={navigation}/>
-            </View>
 
-            <Milestone></Milestone>
+                <Milestone></Milestone>
 
-            <AppText.TitleSemiBoldFour style={{marginHorizontal:16, marginBottom:16}}>My investments</AppText.TitleSemiBoldFour>
-            <FlatList
-                data={Object.keys(investmentGroups)}
-                renderItem={(item) => renderCards(item)}
-                keyExtractor={(item) => item}
-                scrollEnabled='false'
-                style={{flexGrow: 1, alignItems:'center'}}
-            /> 
+                <AppText.TitleSemiBoldFour style={{marginBottom:16}}>My investments</AppText.TitleSemiBoldFour>
+                <FlatList
+                    data={Object.keys(investmentGroups)}
+                    renderItem={(item) => renderCards(item)}
+                    keyExtractor={(item) => item}
+                    scrollEnabled='false'
+                /> 
             </>
 
         )
     }
 
     return(
-        <SafeAreaView style={styles.scrollView} contentContainerStyle={[styles.scrollViewContent,]}>
+        <SafeAreaView style={styles.container}>
             <FlatList data={placeholder}
                 renderItem={(item) => renderPlaceholder(item)}
-                contentContainerStyle={{flexGrow:1,}}
+                contentContainerStyle={styles.flatListContent}
+                style={styles.flatListContainer}
             />
         </SafeAreaView>
     );
@@ -101,10 +101,13 @@ export default function HomeScreen({navigation, route}) {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: Themes.colors.white,
-        alignItems: "center",
-        flex: 1,
-        // paddingHorizontal: 16,
-        // paddingTop: 56
+        // alignItems: "center",
+    },
+    flatListContainer: {
+        marginHorizontal: 16
+    },
+    flatListContent: {
+        height: '100%'
     },
     image: {
         // backgroundColor: 'red',
@@ -112,11 +115,12 @@ const styles = StyleSheet.create({
         height: 100,
         resizeMode: 'contain'
     },
+
+
     header: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginHorizontal:16,
         height: 64,
         marginTop: 24
     },
@@ -158,13 +162,5 @@ const styles = StyleSheet.create({
     sectionListTitle: {
         marginTop: 24,
         marginBottom: 16
-    },
-    scrollView: {
-        width: '100%',
-        flex:1,
-    },
-    scrollViewContent: {
-        display: 'flex',
-        alignItems: "center",
     },
 });
