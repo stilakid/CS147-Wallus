@@ -91,7 +91,7 @@ export default function MarketStockScreen({navigation, route}) {
         buttonDisplayed = <AppFloatingButton.PrimarySecondaryStacked 
             textOne={'Invite friends to invest together'}
             textTwo={'Invest alone'}
-            onPressOne={()=> navigation.navigate('Select Friends')}
+            onPressOne={()=> navigation.navigate('Select Friends', {group:'bravePotatoes'})}
             onPressTwo={()=> navigation.navigate('Buy', {key:stockID, dataSource:dataSource, firstPurchase: true})}
             />
     }
