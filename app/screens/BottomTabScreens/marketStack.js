@@ -18,7 +18,6 @@ import MarketStockScreen from "../StockScreen/marketStockScreen";
 import BuyScreen from "../BuyScreen/BuyScreen";
 import BuyConfirmationScreen from "../BuyConfirmationScreen/BuyConfirmationScreen";
 import SelectFriends from "../InviteFriend/selectFriends";
-import InviteConfirmation from "../InviteFriend/InviteConfirmation";
 import InviteCongratsScreen from "../CongratulationsScreen/inviteCongratulations";
 
 export default function MarketStack({navigation, route}) {

@@ -65,7 +65,7 @@ export default function InvestmentDisplayCard({onPress, TouchableOpacityStyle, l
     </TouchableOpacity>
   );
   const HorizontalRecRationale =()=>(
-    <TouchableOpacity onPress={onPress} style={[TouchableOpacityStyle, styles.horizontalCard, style]}>
+    <TouchableOpacity onPress={onPress} style={[styles.horizontalCard, style, TouchableOpacityStyle]}>
       <View style={styles.leftContainer}>
         <Image
               source={logoURL}
@@ -119,12 +119,12 @@ const styles = StyleSheet.create({
     borderBottomWidth: 4,
   },
   horizontalCard: {
-    width: 358,
+    width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
     paddingVertical: 16,
     paddingHorizontal: 12,
-    justifyContent: 'space-between',
+    // justifyContent: 'space-between',
   },
   companyText: {
     color: Themes.colors.neutral_800,
@@ -142,6 +142,7 @@ const styles = StyleSheet.create({
   leftContainer: {
     flexDirection: 'row',
     alignItems: 'center',
+    flex: 1
   },
   recRationale: {
     color: Themes.colors.neutral_500,

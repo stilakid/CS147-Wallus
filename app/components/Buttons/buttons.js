@@ -502,6 +502,18 @@ AppButton.DisabledThinFour = ({text, onPress, TouchableOpacityStyle, TextStyle})
     );
 }
 
+AppButton.DisabledThinFive = ({text, onPress, TouchableOpacityStyle, TextStyle}) => {
+
+    const content = <AppText.LabelBoldTwo style={[styles.disabledText, TextStyle]}> {text} </AppText.LabelBoldTwo>
+
+    return (
+        <AppButton
+            content={content}
+            onPress={onPress}
+            TouchableOpacityStyle={[ styles.defaultTextButton, styles.disabled, styles.smallHeight, styles.xsmallWidth, TouchableOpacityStyle]}
+        />
+    );
+}
 
 
 
