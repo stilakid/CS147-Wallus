@@ -107,6 +107,7 @@ export default function ProfileScreen({navigation, route}) {
             <FlatList
             data={placeholder}
             renderItem={(item) => renderPlaceholder(item)}
+            showsVerticalScrollIndicator={false}
             />
         </SafeAreaView>
     );

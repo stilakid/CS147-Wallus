@@ -92,7 +92,7 @@ export default function SelectFriends({navigation, route}) {
             </ScrollView>
             
             
-            <AppFloatingButton.PrimaryThickOne text={'Next'} onPress={()=> navigation.navigate("Invite Confirmation")}/>
+            <AppFloatingButton.PrimaryThickOne text={'Next'}/>
         </SafeAreaView>
     );
 }

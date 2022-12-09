@@ -44,7 +44,7 @@ export default function ConfirmationJenny({navigation, route}) {
                     stock={group.companyName}
                     status={group.status}
                     memberPicURL={group.memberPicURL}
-                    onPress={()=>navigation.navigate('Group Detail',{group: item})}
+                    // onPress={()=>navigation.navigate('Group Detail',{group: item})}
                 />
               
                 <AppText.TitleSemiBoldFour style={styles.invite}>Invite message</AppText.TitleSemiBoldFour>

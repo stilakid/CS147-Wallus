@@ -80,7 +80,7 @@ export default function StockScreen({navigation, route}) {
 
     return(
         <SafeAreaView style={styles.container}>
-            <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent} >
+            <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent} showsVerticalScrollIndicator={false}>
                 <Header text="" navigation={navigation} hasDivider={false} />
                 <View style={styles.bannerContainer}>
                     <Image source={stock.logoURL} style={{width:48,height:48, marginBottom: 16}}/>
