@@ -2,7 +2,7 @@
 import { Themes, Images } from "../../../assets/themes"
 
 // Components
-import { StyleSheet, SafeAreaView, Text, View, ScrollView, Image } from "react-native";
+import { StyleSheet, SafeAreaView, Text, View, ScrollView, Image, TouchableWithoutFeedback } from "react-native";
 import { AppText } from "../../components/CustomText/customText";
 import { AppButton } from "../../components/Buttons/buttons";
 import { Divider } from "../../components/Divider/divider"
@@ -21,7 +21,6 @@ import { ChevronLeft } from 'lucide-react-native';
 import dailyMovers from "../../../assets/stockData/dailyMovers";
 import recInvestment from "../../../assets/stockData/recInvestment";
 import { useState } from "react";
-import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 import { NavigationHelpersContext } from "@react-navigation/native";
 
 

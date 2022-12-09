@@ -13,6 +13,7 @@ import dailyMovers from "../../../assets/stockData/dailyMovers";
 import recInvestment from "../../../assets/stockData/recInvestment";
 import { ObjectFlags } from "typescript";
 import { AppFloatingButton } from "../../components/Buttons/floatingButtons";
+import Header from "../../components/Header/header";
 
 {/* <InvestmentDisplayCard 
   cardType={'horizontalRecRationale'} 
@@ -36,7 +37,8 @@ export default function MarketScreen({navigation, route}) {
     //List item render functions
     const renderPlaceholder = () => (
         <>
-            <AppText.TitleBoldOne style={[styles.heading, {marginTop:80, marginBottom:40}]}>Market</AppText.TitleBoldOne>
+            <Header text={"Market"} isTabPageHeader hasBackButton={false} />
+
             <View style={{flexDirection:'row',justifyContent:'row'}}>
                 <AppText.TitleSemiBoldTwo style={[styles.heading, {marginBottom:16, width: 'auto'}]}>Daily movers</AppText.TitleSemiBoldTwo>
                 <View style={{marginTop: 2, marginLeft: 8}}>
