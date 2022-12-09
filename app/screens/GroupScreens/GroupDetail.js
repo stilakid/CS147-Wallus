@@ -23,6 +23,7 @@ import RationaleCard from "../../components/Cards/RationaleCard";
 // database
 import investmentGroups from "../../../assets/stockData/investmentGroups";
 import { color } from "react-native-reanimated";
+import joiningGroup from "../../../assets/stockData/joiningGroup";
 
 
 const investmentInfo = [
@@ -62,7 +63,14 @@ const portfolioFit= [
 {/* <Home color="black" size={24} />; */}
 export default function GroupDetail({navigation, route}) {
     const groupID = route.params.group;
-    const group = investmentGroups[groupID];
+    let group 
+    console.log(groupID);
+    if (groupID == 'friendlyBanana'){
+        group = joiningGroup['friendlyBanana'];
+    } else {
+        group = investmentGroups[groupID];
+    }
+
     const friend = group.friend;
     //the two featured rationale cards
     const firstRationaleFriend = friend[Object.keys(friend)[0]];
