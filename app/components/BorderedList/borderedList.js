@@ -10,7 +10,7 @@ import { TrendTags } from "../TrendTags/TrendTags";
 import { MyTooltip } from "../ToolTip/tooltip";
 
 {/* <Home color="black" size={24} />; */}
-export const InvestmentStat = ({portfolioFit, expectedReturn, volatility, typicalHold, market, sp500, containerStyle}) => {
+export const InvestmentStat = ({stock, portfolioFit, expectedReturn, volatility, typicalHold, market, sp500, containerStyle}) => {
 
     //TODO: This is a hack
     let marketTag = <TrendTags.bigGreen tagText={market} />
@@ -26,17 +26,17 @@ export const InvestmentStat = ({portfolioFit, expectedReturn, volatility, typica
             <View style={[styles.container, styles.profileFitContainer, {marginBottom:24}]}>
                 <View style={styles.row}>
                     <View style={[styles.columnAlt, styles.columnAlt1]}>
-                        <AppText.LabelBoldOne>Past Year's trend</AppText.LabelBoldOne>
+                        <AppText.LabelBoldOne style={{marginBottom:4}}>Past Year's trend</AppText.LabelBoldOne>
                         <MyTooltip text={"The change of price of this company's stock versus the overall gain or loss of the entire market"}/>
                     </View>
                     <Divider.Vertical />
                     <View style={styles.columnAlt}>
-                        <AppText.LabelBoldOne>Market</AppText.LabelBoldOne>
+                        <AppText.LabelBoldOne style={{marginBottom:4}}>Market</AppText.LabelBoldOne>
                         <AppText.ParagraphTwo style={styles.columnValue} >{marketTag}</AppText.ParagraphTwo>
                     </View>
                     <Divider.Vertical />
                     <View style={styles.columnAlt}>
-                        <AppText.LabelBoldOne>S&P 500</AppText.LabelBoldOne>
+                        <AppText.LabelBoldOne style={{marginBottom:4}}>{stock}</AppText.LabelBoldOne>
                         <AppText.ParagraphTwo style={styles.columnValue} >{sp500Tag}</AppText.ParagraphTwo>
                     </View>
 
@@ -82,7 +82,7 @@ export const InvestmentStat = ({portfolioFit, expectedReturn, volatility, typica
                 <View style={styles.row}>
                     <View style={[styles.column, styles.column1]}>
                         <AppText.LabelBoldOne>Historical return</AppText.LabelBoldOne>
-                        <MyTooltip text={"Based off of history, the percentage increase you would expect for an investment in this stock"}/>
+                        <MyTooltip style={styles.tooltip} text={"Based off of history, the percentage increase you would expect for an investment in this stock"}/>
                     </View>
                     <View style={[styles.column, styles.column2]}>
                         <AppText.ParagraphTwo>{expectedReturn}</AppText.ParagraphTwo>
@@ -94,7 +94,7 @@ export const InvestmentStat = ({portfolioFit, expectedReturn, volatility, typica
                 <View style={styles.row}>
                     <View style={[styles.column, styles.column1]}>
                         <AppText.LabelBoldOne>Volatility</AppText.LabelBoldOne>
-                        <MyTooltip text={"The amount of variation in the day-to-day value of this investment from Low-High"}/>
+                        <MyTooltip style={styles.tooltip} text={"The amount of variation in the day-to-day value of this investment from Low-High"}/>
                     </View>
                     <View style={[styles.column, styles.column2]}>
                         <AppText.ParagraphTwo>{volatility}</AppText.ParagraphTwo>
@@ -106,7 +106,7 @@ export const InvestmentStat = ({portfolioFit, expectedReturn, volatility, typica
                 <View style={styles.row}>
                     <View style={[styles.column, styles.column1]}>
                         <AppText.LabelBoldOne>Typical Hold</AppText.LabelBoldOne>
-                        <MyTooltip text={"How long most investors keep this stock before selling"}/>
+                        <MyTooltip style={styles.tooltip} text={"How long most investors keep this stock before selling"}/>
                     </View>
                     <View style={[styles.column, styles.column2]}>
                         <AppText.ParagraphTwo>{typicalHold}</AppText.ParagraphTwo>
@@ -194,8 +194,8 @@ const styles = StyleSheet.create({
         padding: 16
     },
 
-    toolTipDefault: {
-    marginLeft: 4
+    tooltip: {
+    marginTop: 0,
     },
 
     investmentStat: {
