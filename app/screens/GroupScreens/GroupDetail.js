@@ -76,7 +76,7 @@ export default function GroupDetail({navigation, route}) {
             textOne='Invite friends' 
             textTwo={'Buy'} 
             textThree={'Sell'} 
-            onPressOne={() => navigation.navigate('Select Friends')} 
+            onPressOne={() => navigation.navigate('Select Friends', {group: groupID})} 
             onPressTwo={() => navigation.navigate('Buy', {dataSource:'investmentGroups', key: groupID, firstPurchase: false})} 
             onPressThree={() => navigation.navigate('Sell', {dataSource: 'investmentGroups', key:groupID})}
         />
@@ -84,7 +84,7 @@ export default function GroupDetail({navigation, route}) {
         buttonDisplayed = <AppFloatingButton.PrimarySecondaryThickDual
             textOne={'Invite friends'}
             textTwo={'Trade options'}
-            onPressOne = {()=> navigation.navigate("Select Friends")}
+            onPressOne = {()=> navigation.navigate("Select Friends", {group: groupID})}
             onPressTwo={()=> setButtonExpanded(true)}
             />
     }
@@ -171,7 +171,7 @@ export default function GroupDetail({navigation, route}) {
             </ScrollView>
 
             {buttonDisplayed}
-
+            
         </SafeAreaView>
     );
 }
