@@ -2,7 +2,7 @@
 import { Themes } from "../../../assets/themes"
 
 // Components
-import { StyleSheet, SafeAreaView, Text, View, ScrollView, Image } from "react-native";
+import { StyleSheet, SafeAreaView, Text, View, ScrollView, Image, TouchableOpacity } from "react-native";
 import { AppText } from "../../components/CustomText/customText";
 import { AppButton } from "../../components/Buttons/buttons";
 import { Divider } from "../../components/Divider/divider"
@@ -19,6 +19,8 @@ import InvestmentDetailCard from "../../components/Cards/InvestmentDetailCard/In
 import { GroupStats } from "../../components/BorderedList/groupBoarderedList";
 import RationaleCard from "../../components/Cards/RationaleCard";
 import { MemberList } from "../../components/BorderedList/MemberList";
+
+import investmentGroups from "../../../assets/stockData/investmentGroups";
 
 
 const investmentInfo = [
@@ -57,36 +59,43 @@ const portfolioFit= [
 
 {/* <Home color="black" size={24} />; */}
 export default function MemberScreen({navigation, route}) {
-
     // const {  } = route.params;
+    const groupID = route.params.group;
+    const group = investmentGroups[groupID];
+    const friend = group.friend;
 
-
-
+    let trendTagdisplayed;
+    if (group.status == 'stable'){
+        trendTagdisplayed= <TrendTags.smallBlue tagText={'Stable'}/>
+    } else if (group.status == 'growing') {
+        trendTagdisplayed = <TrendTags.smallGreen tagText={'Growing'}/>
+    } else {
+        trendTagdisplayed = <TrendTags.smallOrange tagText={'Unstable'}/>
+    }
     
     return(
         <SafeAreaView style={styles.container}>
             <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent} >
                 <Header navigation={navigation} hasDivider={false} />
+
                 <View style={styles.groupCard}>
                     <View style={styles.pics}>
-                        <Image style={styles.groupPic} source={require("../../../assets/potato.png")}></Image>
-                        <View style={styles.members}>
-                            <Image style={{width: 128, height: 32, resizeMode: 'contain'}} source={require('../../../assets/groupProfiles.png') }></Image>
-                            <AppText.LabelSemiBoldTwo>5 members</AppText.LabelSemiBoldTwo>
-                        </View>
+                        
+                        <Image style={styles.groupPic} source={group.groupPicURL}></Image>
+                        
                     </View>
+                    
                     <View style={styles.words}>
-                        <AppText.LabelBoldFour>Brave Potatoes</AppText.LabelBoldFour>
-                        <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: 151, height: 24}}>
-                            <TrendTags.smallGreen tagText={"Growing"}></TrendTags.smallGreen>
-                            <AppText.TitleSemiBoldFour style={{marginLeft:8, marginTop: 5}}>S&P 500</AppText.TitleSemiBoldFour>
+                        <AppText.LabelBoldFour style={{marginBottom:8}}>{group.groupName}</AppText.LabelBoldFour>
+                        <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                            {trendTagdisplayed}
+                            <AppText.TitleSemiBoldFour style={{marginLeft:8, marginTop: 5}}>{group.companyName}</AppText.TitleSemiBoldFour>
                         </View>
                     </View>
-        
                 </View>
 
                 <Divider.Horizontal />
-                <View style={{color: Themes.colors.neutral_800, marginVertical:16, marginLeft: 16, alignItems: 'flex-start'}}>
+                <View style={{color: Themes.colors.neutral_800, marginVertical:16, marginLeft: 8, alignItems: 'flex-start'}}>
                     <AppText.TitleSemiBoldThree>5 Members</AppText.TitleSemiBoldThree>
                 </View>
                 <MemberList boughtAt="USD 45.88" currentPrice='USD 45.88' investingFor='1Y 3M' typicalHold='4Y 3M'></MemberList>
@@ -131,15 +140,15 @@ const styles = StyleSheet.create({
     },
     groupCard: {
         alignItems: "flex-start",
-        width: 358,
-        height: 136
+        width: '100%',
+        marginBottom:24,
     },
     pics: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        height: 64,
-        width: 358,
+        marginBottom: 16,
+        width: '100%',
 
     },
     groupPic: {

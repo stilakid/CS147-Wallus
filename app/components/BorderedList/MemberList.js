@@ -21,7 +21,7 @@ export const MemberList = ({boughtAt, currentPrice, investingFor, typicalHold}) 
                     <Image
                     style={styles.image}
                     // source={require({imageURL})}
-                    source={Images.profilePic.Dan}
+                    source={Images.profilePic.three}
                     resizeMode='contain'
 
                     />
@@ -43,7 +43,7 @@ export const MemberList = ({boughtAt, currentPrice, investingFor, typicalHold}) 
                     <Image
                     style={styles.image}
                     // source={require({imageURL})}
-                    source={Images.profilePic.Dan}
+                    source={Images.profilePic.two}
                     resizeMode='contain'
 
                     />
@@ -65,7 +65,7 @@ export const MemberList = ({boughtAt, currentPrice, investingFor, typicalHold}) 
                 <Image
                     style={styles.image}
                     // source={require({imageURL})}
-                    source={Images.profilePic.Dan}
+                    source={Images.profilePic.four}
                     resizeMode='contain'
 
                     />
@@ -87,7 +87,7 @@ export const MemberList = ({boughtAt, currentPrice, investingFor, typicalHold}) 
                     <Image
                     style={styles.image}
                     // source={require({imageURL})}
-                    source={Images.profilePic.Dan}
+                    source={Images.profilePic.five}
                     resizeMode='contain'
 
                     />
@@ -109,7 +109,7 @@ export const MemberList = ({boughtAt, currentPrice, investingFor, typicalHold}) 
                     <Image
                     style={styles.image}
                     // source={require({imageURL})}
-                    source={Images.profilePic.Dan}
+                    source={Images.profilePic.one}
                     resizeMode='contain'
 
                     />
