@@ -92,13 +92,13 @@ export default function InvitationScreen({navigation, route}) {
                             <AppText.LabelSemiBoldOne>From Dan</AppText.LabelSemiBoldOne> 
                             <AppText.ParagraphThree>Oct 16 2022</AppText.ParagraphThree>
                         </View>
-                        <AppText.ParagraphTwo >Hey Emily! I think you should join this group because we’re both tring to do low risk and long term investments!</AppText.ParagraphTwo>
+                        <AppText.ParagraphTwo >Hey Emily! I think you should join this group because Elon Musk is sooo cool!</AppText.ParagraphTwo>
                     </View>
                 </View>
                 
                 {/* Investment stats */}
                 <Divider.Horizontal style={styles.divider} />
-                <WallusTips.orange titleText={'Not aligned with your preference'} bodyText={'This is a text that explains the reason why it does not match'} />
+                <WallusTips.orange titleText={'Not aligned with your preference'} bodyText={'This investment has a higher risk level than your preference.'} />
 
                 <InvestmentStat portfolioFit={'Great'} expectedReturn={'3.1%'} volatility={'Medium'} typicalHold={'4Y 3M'} />
                 <AppButton.SecondaryOutlineThickOne text={'Stock details'} TouchableOpacityStyle={[styles.stockDetailsButton, styles.endOfPage]} onPress={() => navigation.navigate('Stock', {stock:'tesla', dataSource:'dailyMovers'})} />

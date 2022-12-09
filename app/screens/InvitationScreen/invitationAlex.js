@@ -98,7 +98,7 @@ export default function InvitationAlex({navigation, route}) {
                 
                 {/* Investment stats */}
                 <Divider.Horizontal style={styles.divider} />
-                <WallusTips.orange titleText={'Not aligned with your preference'} bodyText={'This is a text that explains the reason why it does not match'} />
+                <WallusTips.green titleText={'Aligned with your preference'} bodyText={'Index funds are a low risk option for long term investments.'} />
 
                 <InvestmentStat portfolioFit={'Great'} expectedReturn={'3.1%'} volatility={'Medium'} typicalHold={'4Y 3M'} />
                 <AppButton.SecondaryOutlineThickOne text={'Stock details'} TouchableOpacityStyle={[styles.stockDetailsButton, styles.endOfPage]} onPress={() => navigation.navigate('Stock', {stock:'tesla', dataSource:'dailyMovers'})} />
