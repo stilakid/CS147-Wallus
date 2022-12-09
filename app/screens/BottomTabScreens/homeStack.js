@@ -24,7 +24,7 @@ import SellConfirmationScreen from "../SellConfirmationScreen/SellConfirmation";
 import SellScreen from "../SellScreen/SellScreen";
 import Community from "../Community/Community"
 import SelectFriends from "../InviteFriend/selectFriends";
-import InviteConfirmation from "../InviteFriend/InviteConfirmation";
+import confirmationDavidJenny from "../InviteFriend/confirmationDavidJenny";
 import InviteCongratsScreen from "../CongratulationsScreen/inviteCongratulations";
 import ChatScreen from "../ChatScreen/chatScreen";
 
@@ -67,7 +67,7 @@ export default function HomeStack({navigation, route}) {
             <Stack.Screen name="Community" component={Community} options={{headerShown: false}}/>
             <Stack.Screen name="Select Friends" component={SelectFriends} options={{headerShown: false}}/>
             
-            <Stack.Screen name="Invite Confirmation" component={InviteConfirmation} options={{headerShown: false}}/>
+            <Stack.Screen name="confirmationDavidJenny" component={confirmationDavidJenny} options={{headerShown: false}}/>
             <Stack.Screen name="David" component={David} options={{headerShown: false, animationEnabled: false}}/>
             <Stack.Screen name="Jenny" component={Jenny} options={{headerShown: false, animationEnabled: false}}/>
             <Stack.Screen name="JennyDavid" component={JennyDavid} options={{headerShown: false, animationEnabled: false}}/>
@@ -76,7 +76,6 @@ export default function HomeStack({navigation, route}) {
             <Stack.Screen name="confirmationJenny" component={confirmationJenny} options={{headerShown: false}}/>
             <Stack.Screen name="confirmationJennyDavid" component={confirmationJennyDavid} options={{headerShown: false}}/>
             <Stack.Screen name="Invite Celebration" component={inviteCelebration} options={{headerShown: false}}/>
-            <Stack.Screen name="Invite Confirmation" component={InviteConfirmation} options={{headerShown: false}}/>
             <Stack.Screen name="Invite Congrats Screen" component={InviteCongratsScreen} options={{headerShown: false}} />
             <Stack.Screen name="Profile Screen" component={ProfileScreen} options={{headerShown: false}}/>
             <Stack.Screen name="Ask Investment Experience Screen" component={AskInvestmentExpScreen} options={{headerShown: false}}/>
