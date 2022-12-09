@@ -98,7 +98,7 @@ export default function JennyDavid({navigation, route}) {
             </ScrollView>
             
             
-            <AppFloatingButton.PrimaryThickOne text={'Next'} onPress={()=> navigation.navigate("confirmationJennyDavid")}/>
+            <AppFloatingButton.PrimaryThickOne text={'Next'} onPress={()=> navigation.navigate("confirmationJennyDavid", {group:groupID})}/>
         </SafeAreaView>
     );
 }
