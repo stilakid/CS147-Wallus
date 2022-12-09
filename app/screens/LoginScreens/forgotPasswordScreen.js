@@ -8,6 +8,7 @@ import { AppButton } from "../../components/Buttons/buttons";
 import { AppText } from "../../components/CustomText/customText";
 import { SocialSignInButtons } from "../../components/Buttons/socialSignInButtons";
 import { useForm } from "react-hook-form";
+import Header from "../../components/Header/header";
 
 
 export default function ForgotPasswordScreen({navigation, route}) {
@@ -27,8 +28,9 @@ export default function ForgotPasswordScreen({navigation, route}) {
 
     return (
         <SafeAreaView style = {styles.container} showVerticalScrollIndicator={false} >
+            <Header navigation={navigation} style={{width:'100%'}}/>
             <ScrollView style={styles.scrollContainer} contentContainerStyle={styles.scrollContent}>
-            <AppText.TitleBoldOne>Reset your password</AppText.TitleBoldOne>
+            <AppText.TitleBoldOne style={{marginTop:80, width:'100%'}}>Reset your password</AppText.TitleBoldOne>
             
             <AppInput
                 name="username"
@@ -37,17 +39,18 @@ export default function ForgotPasswordScreen({navigation, route}) {
                 rules={{
                     required: 'Username is required'
                 }}
+                ContainerStyle={styles.inputBox}
             /> 
 
             <AppButton.PrimaryThickOne
                 text={'Send'}
                 onPress={handleSubmit(onSendPressed)}
             />
-
-            <AppButton.PrimaryThickOne
+            <View style={{marginBottom:12}}/>
+            {/* <AppButton.SecondaryOutlineThickOne
                 text={'Back to Sign In'}
                 onPress={onSignInPressed}
-            />
+            /> */}
 
             </ScrollView>
         </SafeAreaView>
@@ -67,5 +70,9 @@ const styles = StyleSheet.create({
     },
     scrollContainer: {
         marginHorizontal: 16
+    },
+    inputBox: {
+        width: '100%',
+        marginVertical: 36,
     },
 });

@@ -8,6 +8,8 @@ import AppInput from "../../components/CustomInput/customInput";
 import { AppButton } from "../../components/Buttons/buttons";
 import { SocialSignInButtons } from "../../components/Buttons/socialSignInButtons";
 import { useForm, Controller } from "react-hook-form";
+import { AppText } from "../../components/CustomText/customText";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 
 
@@ -60,6 +62,7 @@ export default function LoginScreen({navigation, route}) {
                     source={Images.Wallus_square}
                     style={styles.logo}
                 />
+                <AppText.TitleBoldTwo>Welcome to Wallus!</AppText.TitleBoldTwo>
                 <View style={styles.credentialsContainer}>
                     <AppInput
                         name="email"
@@ -77,17 +80,15 @@ export default function LoginScreen({navigation, route}) {
                         ContainerStyle={styles.inputBox}
                     />
                 </View>
-                
-
-                
 
                 <AppButton.PrimaryThickOne text={'Sign in'} onPress={handleSubmit(onSignInPressed)} />
+                <View style={{height:12}}/>
+    
 
-                <AppButton.SecondaryOutlineThickOne text={'Forgot password'} onPress={onForgotPasswordPressed} />
+                <SocialSignInButtons/>
 
-                <SocialSignInButtons />
-
-                <Text>Don't have an account? <Text onPress={onSignUpPressed} >Create one.</Text></Text>
+                <AppText.LabelSemiBoldTwo style={styles.clickableText} onPress={onForgotPasswordPressed}>Forgot password?</AppText.LabelSemiBoldTwo>
+                <AppText.ParagraphThree style={styles.text}>Don't have an account? <AppText.LabelSemiBoldTwo style={styles.clickableText} onPress={onSignUpPressed} >Create one.</AppText.LabelSemiBoldTwo></AppText.ParagraphThree>
 
             </ScrollView>
         </SafeAreaView>
@@ -115,17 +116,27 @@ const styles = StyleSheet.create({
     },
     logo: {
         resizeMode: 'contain',
-        width: 350,
-        height: 350
+        marginTop: 148,
+        width: 120,
+        height: 120,
+        marginBottom: 24,
     },
     inputBox: {
-        width: '91%'
+        width: '100%'
     },
     credentialsContainer: {
         alignItems: 'center',
         display: 'flex',
-        marginVertical: 32,
+        marginVertical: 24,
         width: '100%'
+    },
+    text: {
+        color: Themes.colors.neutral_600,
+        marginBottom: 4,
+    },
+    clickableText: {
+        color: Themes.colors.primary_600,
+        marginBottom: 4,
     }
 });
 // TODO: I hardcoded inputBox width

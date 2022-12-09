@@ -37,7 +37,7 @@ export default function BuyConfirmationScreen ({navigation, route}){
     //button leads to home, if not it leads to investment group page
     let buttonDisplayed;
     if (firstPurchase==true) {
-        buttonDisplayed = <AppFloatingButton.PrimaryThickOne text={'Complete'} onPress={() => navigation.navigate("Home Screen")}/>
+        buttonDisplayed = <AppFloatingButton.PrimaryThickOne text={'Complete'} onPress={() => navigation.popToTop()}/>
     } else {
         buttonDisplayed = <AppFloatingButton.PrimaryThickOne text={'Complete'} onPress={() => navigation.navigate("Group Detail", {group: key})}/>
     }

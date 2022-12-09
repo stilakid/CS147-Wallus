@@ -90,7 +90,6 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderColor: Themes.colors.neutral_200,
         borderRadius: 16,
-        marginHorizontal: 16,
     },
 
     profileFitContainer: {

@@ -38,7 +38,10 @@ const images = {
             netflix: require('../companyLogo/Netflix.png'),
             pinterest: require('../companyLogo/Pintrest.png'),
             amazon: require('../companyLogo/Amazon.png'),
-            paypal: require('../companyLogo/PayPal.png')
+            paypal: require('../companyLogo/PayPal.png'),
+            facebook: require('../companyLogo/Facebook.png'),
+            google: require('../companyLogo/Google.png'),
+            apple: require('../companyLogo/Apple.png'),
         },
         indexFunds: {
             sp500: require('../companyLogo/S.png'),

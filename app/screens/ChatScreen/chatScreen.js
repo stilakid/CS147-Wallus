@@ -37,24 +37,23 @@ export default function ChatScreen({navigation, route}) {
     return(
         <SafeAreaView style={styles.container}>
             <Header text="Brave Potatoes" navigation={navigation} hasDivider={true} />
+
             <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent} >
                 <View style={styles.messagesContainer}>
                     <Messages />
                 </View>
-
-                <View style={ [styles.textControlsContainer, styles.endOfPage] } >
-                    <AppInput
-                        name="message"
-                        placeholder={'Message'}
-                        control={control}
-                        rules={{required: ''}}
-                    />
-
-                    <AppButton.sendText onPress={handleSubmit(onSendPressed)} TouchableOpacityStyle={styles.sendTextButton} />
-                </View>
-                
-
             </ScrollView>
+
+            <View style={ styles.textControlsContainer } >
+                <AppInput
+                    name="message"
+                    placeholder={'Message'}
+                    control={control}
+                    rules={{required: ''}}
+                    ContainerStyle={styles.messageInput}
+                />
+                <AppButton.sendText onPress={handleSubmit(onSendPressed)} TouchableOpacityStyle={styles.sendTextButton} />
+            </View>
         </SafeAreaView>
     );
 }
@@ -64,10 +63,10 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: Themes.colors.white,
         alignItems: "center",
-        flex: 1,
         paddingHorizontal: 16,
         paddingTop: 56,
-        height: '100%'
+        height: '100%',
+        width: '100%'
     },
     scrollView: {
         backgroundColor: Themes.colors.neutral_100,
@@ -88,15 +87,15 @@ const styles = StyleSheet.create({
     },
     textControlsContainer: {
         width: '100%',
-        display: 'flex',
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
+        paddingHorizontal: 16
+    },
+    messageInput: {
+        flex: 1
     },
     sendTextButton: {
         marginLeft: 8
-    },
-    endOfPage: {
-        marginBottom: 80
     },
     messagesContainer: {
         flex:1,

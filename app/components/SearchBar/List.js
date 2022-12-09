@@ -12,16 +12,17 @@ import { Themes } from "../../../assets/themes";
 import { AppButton } from "../Buttons/buttons";
 import { AppText } from "../CustomText/customText";
 import { Navigation } from 'lucide-react-native'
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 // definition of the Item, which will be rendered in the FlatList
 const Item = ({ name, details, nav, navigation }) => (
-  <View style={styles.item}>
+  <TouchableOpacity style={styles.item} onPress={()=>{navigation.navigate(nav)}}>
     <View style={styles.header}>
       <AppText.LabelBoldOne style={styles.title}>{name}</AppText.LabelBoldOne>
-      <AppButton.rightArrow onPress={()=>{navigation.navigate(nav)}}></AppButton.rightArrow>
+      <AppButton.rightArrow></AppButton.rightArrow>
     </View>
     <AppText.ParagraphTwo style={{color: Themes.colors.neutral_500}}>{details}</AppText.ParagraphTwo>
-  </View>
+  </TouchableOpacity>
 );
 
 // the filter
@@ -52,6 +53,7 @@ const List = ({ searchPhrase, setClicked, data, navigation }) => {
           data={data}
           renderItem={renderItem}
           keyExtractor={(item) => item.id}
+          style={{marginTop:24}}
         />
       </View>
     </SafeAreaView>
@@ -62,18 +64,17 @@ export default List;
 
 const styles = StyleSheet.create({
   list__container: {
-    margin: 10,
-    height: "85%",
+    // margin: 10,
     width: "100%",
     alignItems: 'center',
   },
   item: {
-    marginVertical: 30,
-    borderWidth: 1,
+    marginBottom: 16,
+    borderWidth: 2,
+    borderColor:Themes.colors.neutral_200,
     borderRadius: 16,
     alignItems: "flex-start",
     padding: 16,
-    height: 114,
     width: 358,
     backgroundColor: Themes.colors.white,
   },
@@ -83,12 +84,12 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 16
+    marginBottom: 8
   },
   title: {
-    fontSize: 20,
+    fontSize: 16,
     fontWeight: "bold",
-    marginBottom: 5,
+    marginBottom: 4,
     fontStyle: "italic",
   },
 });
