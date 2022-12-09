@@ -66,15 +66,15 @@ export default function InvitationScreen({navigation, route}) {
                 <Header text="Dan's Invitation" navigation={navigation} hasDivider={false} />
                 
                 {/* Invitation information */}
-                <View style={{flexDirection:'row',justifyContent:'space-between', width:358, alignItems:'center', marginBottom: 24}}>
+                <View style={{flexDirection:'row',justifyContent:'space-between', width: '100%', alignItems:'center', marginBottom: 24}}>
                     <Image style={{height:64, width:64}} source={Images.groupProfile.banana}/>
                     <View style={{alignItems:'flex-end'}}>
                         <Image style={{height:32, width: 128, marginBottom:8}} source={require('../../../assets/groupProfiles.png')}/>
                         <AppText.LabelSemiBoldThree>5 members</AppText.LabelSemiBoldThree>
                     </View>
                 </View>
-                <AppText.TitleSemiBoldThree style={{width:358, marginBottom: 8}}>Friendly Bananas</AppText.TitleSemiBoldThree>
-                <View style={{flexDirection:'row', alignItems: 'center', width: 358}}>
+                <AppText.TitleSemiBoldThree style={{width:'100%', marginBottom: 8}}>Friendly Bananas</AppText.TitleSemiBoldThree>
+                <View style={{flexDirection:'row', alignItems: 'center', width: '100%'}}>
                     <TrendTags.smallBlue tagText={'Stable'}/>
                     <AppText.TitleSemiBoldFour style={{marginTop:4, marginLeft: 8, marginBottom:24}}>Tesla</AppText.TitleSemiBoldFour>
                 </View>
@@ -85,22 +85,18 @@ export default function InvitationScreen({navigation, route}) {
                         source={require('../../../assets/profilePic.png')}
                         style={{heigh:40, width:40, marginRight:12}}
                     />
-                    <View style={{flexDirection:'col', width:282}}>
-                        <View style={{flexDirection:'row', alignItems:'center', justifyContent:'space-between', marginBottom: 8}}> 
+                    <View style={styles.messageContainer}>
+                        <View style={{flexDirection:'row', alignItems:'center', marginBottom: 8, justifyContent: 'space-between'}}> 
                             <AppText.LabelSemiBoldOne>From Dan</AppText.LabelSemiBoldOne> 
-                            <AppText.ParagraphThree >Oct 16 2022</AppText.ParagraphThree>
+                            <AppText.ParagraphThree>Oct 16 2022</AppText.ParagraphThree>
                         </View>
                         <AppText.ParagraphTwo >Hey Emily! I think you should join this group because we’re both tring to do low risk and long term investments!</AppText.ParagraphTwo>
                     </View>
                 </View>
                 
                 {/* Investment stats */}
-                <Divider.Horizontal />
+                <Divider.Horizontal style={{width: '100%'}} />
                 <WallusTips.orange titleText={'Not aligned with your preference'} bodyText={'This is a text that explains the reason why it does not match'} />
-
-                {/* <BorderedList.InvestmentStat data={portfolioFit} data_primary_key={(item) => item.id} FlatListStyle={styles.portfolioFit} />
-
-                <BorderedList.InvestmentStat data={investmentInfo} data_primary_key={(item) => item.id} /> */}
 
                 <InvestmentStat portfolioFit={'Great'} expectedReturn={'3.1%'} volatility={'Medium'} typicalHold={'4Y 3M'} />
                 <AppButton.SecondaryOutlineThickOne text={'Stock details'} TouchableOpacityStyle={[styles.stockDetailsButton, styles.endOfPage]} onPress={() => navigation.navigate('Stock', {stock:'tesla', dataSource:'dailyMovers'})} />
@@ -124,6 +120,7 @@ const styles = StyleSheet.create({
     scrollViewContent: {
         display: 'flex',
         alignItems: "center",
+        marginHorizontal: 16
     },
     portfolioFit: {
         marginBottom: 12,
@@ -143,7 +140,7 @@ const styles = StyleSheet.create({
         marginBottom: 80
     },
     messageCard: {
-        width:358,
+        width:'100%',
         backgroundColor: Themes.colors.neutral_100,
         borderRadius:16,
         paddingHorizontal:12,
@@ -151,6 +148,9 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         marginBottom:24,
+    },
+    messageContainer: {
+        flex: 1,
     }
 });
 

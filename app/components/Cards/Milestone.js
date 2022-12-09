@@ -1,4 +1,4 @@
-import { StyleSheet, SafeAreaView, Text, View, Button, Image } from "react-native";
+import { StyleSheet, SafeAreaView, Text, View, Button, Image, Dimensions } from "react-native";
 import { color } from "react-native-reanimated";
 import { Themes } from "../../../assets/themes"
 import { colors } from "../../../assets/themes/colors";
@@ -41,11 +41,10 @@ const styles = StyleSheet.create({
         width: 232,
     },
     innerContainer: {
-        marginHorizontal: 16,
         borderRadius: 16,
         overflow: 'hidden',
         padding: 16,
-        width: 358,
+        width: '100%',
         height: 157
     },
     wallus: {
@@ -53,7 +52,7 @@ const styles = StyleSheet.create({
         height:120,
         position: 'absolute',
         resizeMode: 'contain',
-        left: 245,
+        right: -7,
         bottom: -28,
         transform: [{ rotateY: '180deg' }, { rotate: '6.05deg' }],
     },

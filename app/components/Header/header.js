@@ -6,17 +6,17 @@ import { AppButton } from "../Buttons/buttons";
 import { AppText } from "../CustomText/customText";
 import { Divider } from "../Divider/divider";
 
-export default function Header({hasDivider, text, navigation}) {
+export default function Header({hasDivider, text, navigation, OuterContainerStyle, InnerContainerStyle, TextStyle}) {
     let divider;
     if (hasDivider) {
         divider = <Divider.Horizontal />
     }
 
     return (
-        <View style={styles.outermostContainer}>
-            <View style={styles.innerContainer}>
+        <View style={[styles.outermostContainer, OuterContainerStyle]}>
+            <View style={[styles.innerContainer, InnerContainerStyle]}>
                 <AppButton.goBack navigation={navigation} TouchableOpacityStyle={styles.goBack} />
-                <AppText.TitleSemiBoldThree style={styles.text}>
+                <AppText.TitleSemiBoldThree style={[styles.text, TextStyle]}>
                     {text}
                 </AppText.TitleSemiBoldThree>
             </View>
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: 'center',
         height: 70,
-        paddingHorizontal: 16
+        // paddingHorizontal: 16
     },
     text: {
         color: Themes.colors.neutral_800,
