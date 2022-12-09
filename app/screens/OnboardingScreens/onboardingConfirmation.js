@@ -23,7 +23,7 @@ export default function OnboardingConfirmationSCreen({navigation, route}) {
             {/* Buttons are not linked yet */}
 
             {/* <View style={{paddingVertical:12}}>  */}
-                <AppButton.PrimaryThickTwo text="Home" onPress={() => navigation.navigate('Login Screen')} />
+                <AppButton.PrimaryThickTwo text="Log in" onPress={() => navigation.navigate('Login Screen')} />
             {/* </View> */}
         </SafeAreaView>
     );
