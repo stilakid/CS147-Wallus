@@ -7,6 +7,7 @@ import { Divider } from "../Divider/divider"
 import { AppText } from "../CustomText/customText";
 import { AppButton } from "../Buttons/buttons";
 import { TrendTags } from "../TrendTags/TrendTags";
+import { MyTooltip } from "../ToolTip/tooltip";
 
 {/* <Home color="black" size={24} />; */}
 export const GroupStats = ({boughtAt, currentPrice, investingFor, typicalHold}) => {
@@ -23,7 +24,7 @@ export const GroupStats = ({boughtAt, currentPrice, investingFor, typicalHold}) 
                 <View style={styles.row}>
                     <View style={[styles.column, styles.column1]}>
                         <AppText.LabelBoldOne>You bought at</AppText.LabelBoldOne>
-                        <AppButton.toolTip TouchableOpacityStyle={styles.toolTipDefault}/>
+                        <MyTooltip text={"Price of one share of stock at the time you invested"}/>
                     </View>
                     <View style={[styles.column, styles.column2]}>
                         <AppText.ParagraphTwo>{boughtAt}</AppText.ParagraphTwo>
@@ -35,7 +36,7 @@ export const GroupStats = ({boughtAt, currentPrice, investingFor, typicalHold}) 
                 <View style={styles.row}>
                     <View style={[styles.column, styles.column1]}>
                         <AppText.LabelBoldOne>Current price</AppText.LabelBoldOne>
-                        <AppButton.toolTip TouchableOpacityStyle={styles.toolTipDefault}/>
+                        <MyTooltip text={"The current value of one stock if you sold"}/>
                     </View>
                     <View style={[styles.column, styles.column2]}>
                         <AppText.ParagraphTwo>{currentPrice}</AppText.ParagraphTwo>
@@ -47,7 +48,7 @@ export const GroupStats = ({boughtAt, currentPrice, investingFor, typicalHold}) 
                 <View style={styles.row}>
                     <View style={[styles.column, styles.column1]}>
                         <AppText.LabelBoldOne>You have been investing for</AppText.LabelBoldOne>
-                        <AppButton.toolTip TouchableOpacityStyle={styles.toolTipDefault}/>
+                        <MyTooltip text={"Time since you first started investing in this stock"}/>
                     </View>
                     <View style={[styles.column, styles.column2]}>
                         <AppText.ParagraphTwo>{investingFor}</AppText.ParagraphTwo>
@@ -59,7 +60,7 @@ export const GroupStats = ({boughtAt, currentPrice, investingFor, typicalHold}) 
                 <View style={styles.row}>
                     <View style={[styles.column, styles.column1]}>
                         <AppText.LabelBoldOne>Typical hold</AppText.LabelBoldOne>
-                        <AppButton.toolTip TouchableOpacityStyle={styles.toolTipDefault}/>
+                        <MyTooltip text={"How long most investors keep this stock before selling"}/>
                     </View>
                     <View style={[styles.column, styles.column2]}>
                         <AppText.ParagraphTwo>{typicalHold}</AppText.ParagraphTwo>

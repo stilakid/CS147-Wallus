@@ -23,6 +23,7 @@ import RationaleCard from "../../components/Cards/RationaleCard";
 // database
 import investmentGroups from "../../../assets/stockData/investmentGroups";
 import { color } from "react-native-reanimated";
+import joiningGroup from "../../../assets/stockData/joiningGroup";
 
 
 const investmentInfo = [
@@ -62,7 +63,14 @@ const portfolioFit= [
 {/* <Home color="black" size={24} />; */}
 export default function GroupDetail({navigation, route}) {
     const groupID = route.params.group;
-    const group = investmentGroups[groupID];
+    let group 
+    console.log(groupID);
+    if (groupID == 'friendlyBanana'){
+        group = joiningGroup['friendlyBanana'];
+    } else {
+        group = investmentGroups[groupID];
+    }
+
     const friend = group.friend;
     //the two featured rationale cards
     const firstRationaleFriend = friend[Object.keys(friend)[0]];
@@ -76,7 +84,7 @@ export default function GroupDetail({navigation, route}) {
             textOne='Invite friends' 
             textTwo={'Buy'} 
             textThree={'Sell'} 
-            onPressOne={() => navigation.navigate('Select Friends')} 
+            onPressOne={() => navigation.navigate('Select Friends', {group: groupID})} 
             onPressTwo={() => navigation.navigate('Buy', {dataSource:'investmentGroups', key: groupID, firstPurchase: false})} 
             onPressThree={() => navigation.navigate('Sell', {dataSource: 'investmentGroups', key:groupID})}
         />
@@ -84,7 +92,7 @@ export default function GroupDetail({navigation, route}) {
         buttonDisplayed = <AppFloatingButton.PrimarySecondaryThickDual
             textOne={'Invite friends'}
             textTwo={'Trade options'}
-            onPressOne = {()=> navigation.navigate("Select Friends")}
+            onPressOne = {()=> navigation.navigate("Select Friends", {group: groupID})}
             onPressTwo={()=> setButtonExpanded(true)}
             />
     }
@@ -112,7 +120,7 @@ export default function GroupDetail({navigation, route}) {
                                 <Image style={styles.groupPic} source={group.groupPicURL}></Image>
                                 
                                 <View style={styles.members}>
-                                    <Pressable onPress={()=>navigation.navigate('Member Screen')}>
+                                    <Pressable onPress={()=>navigation.navigate('Member Screen', {group:groupID})}>
                                         <Image style={{width: 128, height: 32, marginBottom: 8}} source={group.memberPicURL}></Image>
                                     </Pressable>
                                     <AppText.LabelSemiBoldTwo>5 members</AppText.LabelSemiBoldTwo>
@@ -171,7 +179,7 @@ export default function GroupDetail({navigation, route}) {
             </ScrollView>
 
             {buttonDisplayed}
-
+            
         </SafeAreaView>
     );
 }
@@ -211,7 +219,6 @@ const styles = StyleSheet.create({
     groupCard: {
         alignItems: "flex-start",
         width: '100%',
-        marginBottom: 24,
     },
     pics: {
         flexDirection: 'row',

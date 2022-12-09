@@ -2,17 +2,59 @@
 import { Themes, Images } from "../../../assets/themes"
 
 // Components
-import { StyleSheet, SafeAreaView, Text, View, ScrollView, Image, Keyboard, Touchable} from "react-native";
+import { StyleSheet, SafeAreaView, Text, View, ScrollView, Image, Keyboard, TouchableOpacity } from "react-native";
 import { AppText } from "../../components/CustomText/customText";
 import Header from "../../components/Header/header";
 import { useState } from "react";
-import { TouchableOpacity } from "react-native-gesture-handler";
 import { AppFloatingButton } from "../../components/Buttons/floatingButtons";
+import { ChevronDown } from 'lucide-react-native'
 
 export default function ExpandedPreferencesScreen ({navigation, route}){
     const [value, setValue] = useState(0)
-    const [input, setInput] = useState(null)
+    const [input, setInput] = useState('')
+    const [down, setDown] = useState(true)
     console.log('Value is',{value});
+    const downFormat= (
+        <>
+            <View style={styles.group}>
+                <TouchableOpacity style={styles.arrow} onClick={() => navigation.navigate('Notifications')}>
+                    <Image
+                        source={require('../../../assets/up.png')}
+                        style={styles.up}
+                    />
+                </TouchableOpacity>
+    
+        
+                <TouchableOpacity onPress={()=> {setDown(false), setInput('Low')}}>
+                    <View style={styles.low}>
+                        <AppText.ParagraphTwo style={styles.name}>Low</AppText.ParagraphTwo>
+                    </View>
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={() => {setDown(false), setInput('Medium')}}>
+                    <View style={styles.medium}>
+                        <AppText.ParagraphTwo style={styles.name}>Medium</AppText.ParagraphTwo>
+                    </View>
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={() => {setDown(false), setInput('High')}}>
+                    <View style={styles.high}>
+                        <AppText.ParagraphTwo style={styles.name}>High</AppText.ParagraphTwo>  
+                    </View>
+                </TouchableOpacity>
+            </View>
+            
+        </>
+    )
+    const upFormat = (
+        <View style={styles.groupup}>
+            <AppText.ParagraphTwo style={styles.name}>{input}</AppText.ParagraphTwo>
+            <TouchableOpacity style={styles.arrow} onPress={() => {setDown(true), setInput('')}}>
+                <ChevronDown style={{marginRight: 52, color: Themes.colors.black}}></ChevronDown>
+            </TouchableOpacity>     
+        </View>
+    );
+ 
     return (
         <SafeAreaView style={styles.container}>
             <Header navigation={navigation} hasDivider={false} />
@@ -23,32 +65,9 @@ export default function ExpandedPreferencesScreen ({navigation, route}){
             
             <View style={styles.combined}>
                 <AppText.LabelSemiBoldThree style={styles.risk}>Risk Tolerance</AppText.LabelSemiBoldThree>
-                <View style={styles.group}>
-                    <TouchableOpacity style={styles.arrow} onClick={() => navigation.navigate('Notifications')}>
-                        <Image
-                            source={require('../../../assets/up.png')}
-                            style={styles.up}
-                        />
-                    </TouchableOpacity>
 
-                    <TouchableOpacity onClick={() => navigation.navigate('Notifications')}>
-                    <View style={styles.low}>
-                        <AppText.ParagraphTwo style={styles.name}>Low</AppText.ParagraphTwo>
-                    </View>
-                </TouchableOpacity>
-
-                <TouchableOpacity onClick={() => navigation.navigate('Notifications')}>
-                    <View style={styles.medium}>
-                        <AppText.ParagraphTwo style={styles.name}>Medium</AppText.ParagraphTwo>
-                    </View>
-                </TouchableOpacity>
-
-                <TouchableOpacity onClick={() => navigation.navigate('Notifications')}>
-                    <View style={styles.high}>
-                        <AppText.ParagraphTwo style={styles.name}>High</AppText.ParagraphTwo>  
-                    </View>
-                </TouchableOpacity>
-                </View>
+                {down && (downFormat)}
+                {!down && (upFormat)}
             </View>
 
             <AppFloatingButton.PrimaryThickOne text={'Continue'} onPress={()=> navigation.navigate("Investment Goals Screen")}/>
@@ -119,6 +138,18 @@ const styles = StyleSheet.create({
         width: 358,
         height: 192,
         alignItems: 'center',
+    },
+    groupup: {
+        flexDirection: 'row',
+        backgroundColor: '#FFFFFF',
+        borderWidth: 2,
+        borderColor: Themes.colors.neutral_200,
+        borderRadius: 16,
+        width: 358,
+        height: 48,
+        alignItems: 'center',
+        
+
     },
     name: {
         color: Themes.colors.neutral_800,

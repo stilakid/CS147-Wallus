@@ -550,14 +550,14 @@ AppButton.goBackDic = ({navigation, TouchableOpacityStyle}) => {
 // Other UI Buttons
 // **********************************************************************************************
 
-AppButton.toolTip = ({Press, TouchableOpacityStyle}) => {
+AppButton.toolTip = ({onPress, TouchableOpacityStyle}) => {
 
     const content = <HelpCircle color={Themes.colors.neutral_600} size={20} />
 
     return (
         <AppButton
             content={content}
-            onPress={Press}
+            onPress={onPress}
             TouchableOpacityStyle={TouchableOpacityStyle}
         />
     );
