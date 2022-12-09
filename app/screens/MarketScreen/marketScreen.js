@@ -128,9 +128,8 @@ export default function MarketScreen({navigation, route}) {
             <FlatList data={placeholder}
             renderItem={(item) => renderPlaceholder(item)}
             style={styles.flatlistContainer}
-            >
-            </FlatList>
-            
+            showsVerticalScrollIndicator={false}
+            />            
         </SafeAreaView>
     );
 }

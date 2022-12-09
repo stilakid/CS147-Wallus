@@ -31,7 +31,7 @@ export default function CommunityScreen({navigation, route}) {
 
     return(
         <SafeAreaView style={styles.container}>
-            <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent} >
+            <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent} showsVerticalScrollIndicator={false} >
             <Header hasBackButton={false} text={"Community"} isTabPageHeader OuterContainerStyle={{marginLeft:32}}/>
                 <View style={{marginTop: 40, alignItems:'center'}}>
                     <View style={styles.news}>

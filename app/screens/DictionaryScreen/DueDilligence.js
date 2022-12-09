@@ -12,7 +12,7 @@ export default function DueDiligence({navigation, route}) {
     return(
         <SafeAreaView style={styles.container}>
             <Header navigation={navigation} hasDivider={false} text={"Due Diligence"}/>
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false} >
                 <Image
                     style={styles.image}
                     source={require('../../../assets/duedilligence.png')}

@@ -50,8 +50,9 @@ export default function ChatScreen({navigation, route}) {
         <SafeAreaView style={styles.container}>
             <Header text="Brave Potatoes" navigation={navigation} hasDivider={true} />
 
-            <KeyboardAvoidingView style={{flex: 1}}
+            <KeyboardAvoidingView style={{flex: 1, width: '100%'}}
                 behavior={Platform.OS === "ios" ? "padding" : "height"}
+                
             >
                 <FlatList
                     data={data}
@@ -60,6 +61,7 @@ export default function ChatScreen({navigation, route}) {
                     contentContainerStyle={styles.scrollViewContent}
                     inverted
                     ref={scrollRef}
+                    showsVerticalScrollIndicator={false}
                 />
 
                 <View style={ styles.textControlsContainer } >

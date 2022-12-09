@@ -12,7 +12,7 @@ export default function Taxes({navigation, route}) {
     return(
         <SafeAreaView style={styles.container}>
             <Header navigation={navigation} hasDivider={false} text={"Taxes"}/>
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <Image
                     style={styles.image}
                     source={require('../../../assets/taxes.png')}
